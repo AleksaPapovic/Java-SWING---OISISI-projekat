@@ -1,5 +1,7 @@
 package gui;
 
+import gui.Menubar;
+
 import java.awt.Dimension;
 import java.awt.Toolkit;
 
@@ -36,6 +38,10 @@ public class MainFrame extends JFrame {
 		setLocationRelativeTo(null);
 		
 		setVisible(true);	
+		
+	    Menubar menu = new Menubar();
+	    this.setJMenuBar(menu);
+	
 	
 	
 	}
