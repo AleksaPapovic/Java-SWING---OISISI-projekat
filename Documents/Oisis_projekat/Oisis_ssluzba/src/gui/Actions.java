@@ -7,20 +7,27 @@ import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import javax.swing.KeyStroke;
 
 public class Actions{
 	
-	public void Actions() {
+	public Actions() {
 		
 	}
 
 	public class NewAction extends AbstractAction
 	  {
-	    public NewAction(String name, ImageIcon icon, String shortDescription, Integer mnemonic)
+	    /**
+		 * 
+		 */
+		private static final long serialVersionUID = 4444373563346796488L;
+
+		public NewAction(String name, ImageIcon icon, String shortDescription, Integer mnemonic, KeyStroke accelerator)
 	    {
           super(name, icon);
 	      putValue(SHORT_DESCRIPTION, shortDescription);
 	      putValue(MNEMONIC_KEY, mnemonic);
+	      putValue(ACCELERATOR_KEY,accelerator);
 	    }
 
 	    public void actionPerformed(ActionEvent e)
@@ -30,11 +37,17 @@ public class Actions{
 	  }
 	public class CloseAction extends AbstractAction
 	  {
-	    public CloseAction(String name, ImageIcon icon, String shortDescription, Integer mnemonic)
+	    /**
+		 * 
+		 */
+		private static final long serialVersionUID = 23685682457822238L;
+
+		public CloseAction(String name, ImageIcon icon, String shortDescription, Integer mnemonic, KeyStroke accelerator)
 	    {
         super(name, icon);
 	      putValue(SHORT_DESCRIPTION, shortDescription);
 	      putValue(MNEMONIC_KEY, mnemonic);
+	      putValue(ACCELERATOR_KEY,accelerator);
 	    }
 
 	    public void actionPerformed(ActionEvent e)
@@ -45,11 +58,17 @@ public class Actions{
 
 	public class EditAction extends AbstractAction
 	  {
-	    public EditAction(String name, ImageIcon icon, String shortDescription, Integer mnemonic)
+	    /**
+		 * 
+		 */
+		private static final long serialVersionUID = -5247903053441802302L;
+
+		public EditAction(String name, ImageIcon icon, String shortDescription, Integer mnemonic, KeyStroke accelerator)
 	    {
 	      super(name, icon);
 	      putValue(SHORT_DESCRIPTION, shortDescription);
 	      putValue(MNEMONIC_KEY, mnemonic);
+	      putValue(ACCELERATOR_KEY,accelerator);
 	    }
 
 	    public void actionPerformed(ActionEvent e)
@@ -60,11 +79,17 @@ public class Actions{
 	
 	public class DeleteAction extends AbstractAction
 	  {
-	    public DeleteAction(String name, ImageIcon icon, String shortDescription, Integer mnemonic)
+	    /**
+		 * 
+		 */
+		private static final long serialVersionUID = 7769040185540318009L;
+
+		public DeleteAction(String name, ImageIcon icon, String shortDescription, Integer mnemonic, KeyStroke accelerator)
 	    {
 	      super(name, icon);
 	      putValue(SHORT_DESCRIPTION, shortDescription);
 	      putValue(MNEMONIC_KEY, mnemonic);
+	      putValue(ACCELERATOR_KEY,accelerator);
 	    }
 
 	    public void actionPerformed(ActionEvent e)
@@ -75,11 +100,17 @@ public class Actions{
 	
 	public class HelpAction extends AbstractAction
 	  {
-	    public HelpAction(String name, ImageIcon icon, String shortDescription, Integer mnemonic)
+	    /**
+		 * 
+		 */
+		private static final long serialVersionUID = 1374658992717206617L;
+
+		public HelpAction(String name, ImageIcon icon, String shortDescription, Integer mnemonic, KeyStroke accelerator)
 	    {
         super(name, icon);
 	      putValue(SHORT_DESCRIPTION, shortDescription);
 	      putValue(MNEMONIC_KEY, mnemonic);
+	      putValue(ACCELERATOR_KEY,accelerator);
 	    }
 
 	    public void actionPerformed(ActionEvent e)
@@ -90,11 +121,17 @@ public class Actions{
 	
 	public class AboutAction extends AbstractAction
 	  {
-	    public AboutAction(String name, ImageIcon icon, String shortDescription, Integer mnemonic)
+	    /**
+		 * 
+		 */
+		private static final long serialVersionUID = 9021628910874527061L;
+
+		public AboutAction(String name, ImageIcon icon, String shortDescription, Integer mnemonic, KeyStroke accelerator)
 	    {
         super(name, icon);
 	      putValue(SHORT_DESCRIPTION, shortDescription);
 	      putValue(MNEMONIC_KEY, mnemonic);
+	      putValue(ACCELERATOR_KEY,accelerator);
 	    }
 
 	    public void actionPerformed(ActionEvent e)

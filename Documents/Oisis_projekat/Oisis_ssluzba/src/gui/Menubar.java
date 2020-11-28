@@ -1,7 +1,8 @@
 /*REFERENCA: https://alvinalexander.com/java/java-action-abstractaction-actionlistener/ 
-Icons made by "https://www.flaticon.com/authors/chanut" */
+Icons made by "https://www.flaticon.com/authors/Freepik" */
 package gui;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 
@@ -11,6 +12,9 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.KeyStroke;
+import javax.swing.border.CompoundBorder;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
 
 import gui.Actions.AboutAction;
 import gui.Actions.CloseAction;
@@ -21,6 +25,15 @@ import gui.Actions.NewAction;
 
 public class Menubar extends JMenuBar{
 	
+	/**
+	 * 
+	 */
+	public String tekst="<html>Glavni prozor se sastoji iz Menubar-a, Toolbar-a, Statusbar-a, Searchbar-a u Toolbar-u i centralnog prozora <br>"
+			+ "koji prikazuje studente, profesore i predmete. Meniji koji postoje u Menubar-u su File, Edit i Help. File sadrzi stavke <br>"
+			+ "New, koja pravi novi entitet i Close, koja zatvara aplikaciju. Edit sadrzi stavke Edit, koja sluzi za menjanje podataka entiteta i<br>"
+			+ "i Delete, koja brise postojeci entitet. Help meni sadrzi Help stavku, koja sluzi za pomoc korisniku, i<br>"
+			+ "About stavku, koja sluzi za prikaz verzije aplikacije, kao i kratak opis iste.</html>";
+	private static final long serialVersionUID = -3785591432336951155L;
 	public  NewAction newAction;
 	public  CloseAction closeAction;
 	public  EditAction editAction;
@@ -35,6 +48,9 @@ public class Menubar extends JMenuBar{
 		super();
 	    createActions();
 	 // create the menubar
+	    
+	    this.setBackground(Color.WHITE);
+	    this.setBorder(new CompoundBorder(new LineBorder(Color.BLACK),new EmptyBorder(3, 3, 3, 3)));
 	    
 	    // create our main menu
 	    JMenu fileMenu = new JMenu("File");
@@ -91,12 +107,12 @@ public class Menubar extends JMenuBar{
 	    aboutIcon = new ImageIcon("icons/about.png");
 
 	    // create our actions
-	     newAction = ac.new NewAction("New", newIcon, "Create new", new Integer(KeyEvent.VK_N));
-	     closeAction = ac.new CloseAction("Close", closeIcon, "Close", new Integer(KeyEvent.VK_C));
-	     editAction = ac.new EditAction("Edit", editIcon, "Edit data", new Integer(KeyEvent.VK_E));
-	     deleteAction = ac.new DeleteAction("Delete", deleteIcon, "Delete data", new Integer(KeyEvent.VK_D));
-	     helpAction = ac.new HelpAction("Help", helpIcon, "Help", new Integer(KeyEvent.VK_H));
-	     aboutAction = ac.new AboutAction("About", aboutIcon, "Information", new Integer(KeyEvent.VK_A));
+	     newAction = ac.new NewAction("New", newIcon, "Create new", new Integer(KeyEvent.VK_N),KeyStroke.getKeyStroke(KeyEvent.VK_N, ActionEvent.CTRL_MASK));
+	     closeAction = ac.new CloseAction("Close", closeIcon, "Close", new Integer(KeyEvent.VK_C),KeyStroke.getKeyStroke(KeyEvent.VK_C, ActionEvent.CTRL_MASK));
+	     editAction = ac.new EditAction("Edit", editIcon, "Edit data", new Integer(KeyEvent.VK_E),KeyStroke.getKeyStroke(KeyEvent.VK_E, ActionEvent.CTRL_MASK));
+	     deleteAction = ac.new DeleteAction("Delete", deleteIcon, "Delete data", new Integer(KeyEvent.VK_D),KeyStroke.getKeyStroke(KeyEvent.VK_D, ActionEvent.CTRL_MASK));
+	     helpAction = ac.new HelpAction("Help", helpIcon, tekst, new Integer(KeyEvent.VK_H),KeyStroke.getKeyStroke(KeyEvent.VK_H, ActionEvent.CTRL_MASK));
+	     aboutAction = ac.new AboutAction("About", aboutIcon, "Information", new Integer(KeyEvent.VK_A),KeyStroke.getKeyStroke(KeyEvent.VK_A, ActionEvent.CTRL_MASK));
 	   
 	  }
 	
