@@ -30,7 +30,7 @@ public class MainFrame extends JFrame {
 		int screenHeight = screenSize.height;
 		int screenWidth = screenSize.width;
 	
-		setSize(screenWidth / 2, screenHeight / 2);
+		setSize(screenWidth * 3 / 4, screenHeight * 3 / 4);
 
 		setTitle("Studenska sluzba");
 		
