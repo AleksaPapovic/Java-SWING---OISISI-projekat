@@ -2,6 +2,7 @@
 
 package gui;
 
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 
 import javax.swing.AbstractAction;
@@ -24,7 +25,7 @@ public class Actions{
 
 		public NewAction(String name, ImageIcon icon, String shortDescription, Integer mnemonic, KeyStroke accelerator)
 	    {
-          super(name, icon);
+          super(name, setAbstractAction(icon));
 	      putValue(SHORT_DESCRIPTION, shortDescription);
 	      putValue(MNEMONIC_KEY, mnemonic);
 	      putValue(ACCELERATOR_KEY,accelerator);
@@ -44,7 +45,7 @@ public class Actions{
 
 		public CloseAction(String name, ImageIcon icon, String shortDescription, Integer mnemonic, KeyStroke accelerator)
 	    {
-        super(name, icon);
+        super(name, setAbstractAction(icon));
 	      putValue(SHORT_DESCRIPTION, shortDescription);
 	      putValue(MNEMONIC_KEY, mnemonic);
 	      putValue(ACCELERATOR_KEY,accelerator);
@@ -65,7 +66,7 @@ public class Actions{
 
 		public EditAction(String name, ImageIcon icon, String shortDescription, Integer mnemonic, KeyStroke accelerator)
 	    {
-	      super(name, icon);
+	      super(name, setAbstractAction(icon));
 	      putValue(SHORT_DESCRIPTION, shortDescription);
 	      putValue(MNEMONIC_KEY, mnemonic);
 	      putValue(ACCELERATOR_KEY,accelerator);
@@ -86,7 +87,7 @@ public class Actions{
 
 		public DeleteAction(String name, ImageIcon icon, String shortDescription, Integer mnemonic, KeyStroke accelerator)
 	    {
-	      super(name, icon);
+	      super(name, setAbstractAction(icon));
 	      putValue(SHORT_DESCRIPTION, shortDescription);
 	      putValue(MNEMONIC_KEY, mnemonic);
 	      putValue(ACCELERATOR_KEY,accelerator);
@@ -107,7 +108,7 @@ public class Actions{
 
 		public HelpAction(String name, ImageIcon icon, String shortDescription, Integer mnemonic, KeyStroke accelerator)
 	    {
-        super(name, icon);
+        super(name,setAbstractAction(icon));
 	      putValue(SHORT_DESCRIPTION, shortDescription);
 	      putValue(MNEMONIC_KEY, mnemonic);
 	      putValue(ACCELERATOR_KEY,accelerator);
@@ -128,7 +129,7 @@ public class Actions{
 
 		public AboutAction(String name, ImageIcon icon, String shortDescription, Integer mnemonic, KeyStroke accelerator)
 	    {
-        super(name, icon);
+        super(name, setAbstractAction(icon));
 	      putValue(SHORT_DESCRIPTION, shortDescription);
 	      putValue(MNEMONIC_KEY, mnemonic);
 	      putValue(ACCELERATOR_KEY,accelerator);
@@ -139,6 +140,37 @@ public class Actions{
 	      JOptionPane.showMessageDialog(null, "Would have done the 'About' action.");
 	    }
 	  }
+	
+	public class SearchAction extends AbstractAction
+	  {
+	    /**
+		 * 
+		 */
+		private static final long serialVersionUID = 7769040185540318009L;
+
+		public SearchAction(String name, ImageIcon icon, String shortDescription, Integer mnemonic, KeyStroke accelerator)
+	    {
+	      super(name, setAbstractAction(icon));
+	   
+	      
+	      putValue(SHORT_DESCRIPTION, shortDescription);
+	      putValue(MNEMONIC_KEY, mnemonic);
+	      putValue(ACCELERATOR_KEY,accelerator);
+	    }
+
+	    public void actionPerformed(ActionEvent e)
+	    {
+	      JOptionPane.showMessageDialog(null, "Would have done the 'Search' action.");
+	    }
+    }	
+	
+	
+	private ImageIcon setAbstractAction(ImageIcon icon) {
+		Image img = icon.getImage() ;  
+		Image newimg3 = img.getScaledInstance(24, 24, java.awt.Image.SCALE_SMOOTH ) ;  
+	    icon = new ImageIcon(newimg3);
+	    return icon;
+	}
 	
 
 }
