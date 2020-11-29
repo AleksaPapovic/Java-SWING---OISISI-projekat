@@ -2,8 +2,11 @@ package gui;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.image.BufferedImage;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 public class MainFrame extends JFrame {
@@ -31,6 +34,8 @@ public class MainFrame extends JFrame {
 		setSize(screenWidth * 3 / 4, screenHeight * 3 / 4);
 
 		setTitle("Studenska sluzba");
+		//Image icon = new BufferedImage(1, 1, BufferedImage.TYPE_INT_ARGB_PRE);
+		//setIconImage(icon);
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
