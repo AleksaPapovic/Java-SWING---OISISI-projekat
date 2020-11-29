@@ -6,6 +6,7 @@ package gui;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 
@@ -41,17 +42,21 @@ public class MenuToolbar  extends JToolBar{
 	 super(SwingConstants.HORIZONTAL);
 	 
 	 toolbarActions(); 
+	
+	
+	 
+	 add(Box.createHorizontalStrut(5));
+	 
 	 this.setBorder(BorderFactory.createMatteBorder(0, 2, 2, 2, Color.BLACK));
 	 setFloatable( false);
 	 setLayout(new BoxLayout(this,BoxLayout.X_AXIS));
 	 setBackground(Color.WHITE);
-	 add(Box.createHorizontalStrut(5));
-	 this.setPreferredSize(new Dimension(10,35));
+	 setPreferredSize(new Dimension(10,35));
 	 JButton btnNew = new JButton(newAction);
-	 btnNew.setIcon(new ImageIcon("icons/plus.png"));
-	 btnNew.setPreferredSize(new Dimension(24,24));
-	 btnNew.setMinimumSize(new Dimension(24,24));
-	 btnNew.setMaximumSize(new Dimension(24,24));
+	 btnNew.setPreferredSize(new Dimension(20,24));
+	 btnNew.setMinimumSize(new Dimension(20,24));
+	 btnNew.setMaximumSize(new Dimension(20,24));
+	 btnNew.setOpaque(false);
 	 btnNew.setBorder(null);
 	
 	 add(Box.createHorizontalStrut(15));
@@ -61,28 +66,29 @@ public class MenuToolbar  extends JToolBar{
 	 add(Box.createHorizontalStrut(10));
 
 	 JButton btnEdit = new JButton(editAction);
-	 btnEdit.setIcon(new ImageIcon("icons/pen.png"));
+	
 	 btnEdit.setPreferredSize(new Dimension(24,24));
 	 btnEdit.setMinimumSize(new Dimension(24,24));
 	 btnEdit.setMaximumSize(new Dimension(24,24));
+	 btnEdit.setOpaque(false);
 	 btnEdit.setBorder(null);
    add(btnEdit);
      add(Box.createHorizontalStrut(15));
 
 	 JButton btnDelete = new JButton(deleteAction);
-	 btnDelete.setIcon(new ImageIcon("icons/trashbin.png"));
 	 btnDelete.setPreferredSize(new Dimension(24,24));
 	 btnDelete.setMinimumSize(new Dimension(24,24));
 	 btnDelete.setMaximumSize(new Dimension(24,24));
+	 btnDelete.setOpaque(false);
 	 btnDelete.setBorder(null);
 	add(btnDelete);
 	
 	 add(Box.createHorizontalGlue());
 	
 	 searchbar = new JTextField(20);
-	 searchbar.setPreferredSize(new Dimension(40,25));
-	 searchbar.setMinimumSize(new Dimension(40,25));
-	 searchbar.setMaximumSize(new Dimension(40,25));
+	 searchbar.setPreferredSize(new Dimension(24,24));
+	 searchbar.setMinimumSize(new Dimension(24,24));
+	 searchbar.setMaximumSize(new Dimension(24,24));
 	 searchbar.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, Color.black));
 	add(searchbar); 
 	  
@@ -91,7 +97,8 @@ public class MenuToolbar  extends JToolBar{
 	 btnSearch.setPreferredSize(new Dimension(24,24));
 	 btnSearch.setMinimumSize(new Dimension(24,24));
 	 btnSearch.setMaximumSize(new Dimension(24,24));
-	
+	 btnSearch.setOpaque(false);
+	 btnSearch.setBorder(null);
 	add(btnSearch);
 	  
 	  add(Box.createHorizontalStrut(15));
@@ -112,7 +119,7 @@ public class MenuToolbar  extends JToolBar{
 	     newAction = ac.new NewAction("New", newIcon, "Create new", new Integer(KeyEvent.VK_N),KeyStroke.getKeyStroke(KeyEvent.VK_N, ActionEvent.CTRL_MASK));
 	     editAction = ac.new EditAction("Edit", editIcon, "Edit data", new Integer(KeyEvent.VK_E),KeyStroke.getKeyStroke(KeyEvent.VK_E, ActionEvent.CTRL_MASK));
 	     deleteAction = ac.new DeleteAction("Delete", deleteIcon, "Delete data", new Integer(KeyEvent.VK_D),KeyStroke.getKeyStroke(KeyEvent.VK_D, ActionEvent.CTRL_MASK));
-	     searchAction = ac.new SearchAction("About", searchIcon, "Information", new Integer(KeyEvent.VK_S),KeyStroke.getKeyStroke(KeyEvent.VK_A, ActionEvent.CTRL_MASK));
+	     searchAction = ac.new SearchAction("Search", searchIcon, "Search data", new Integer(KeyEvent.VK_S),KeyStroke.getKeyStroke(KeyEvent.VK_A, ActionEvent.CTRL_MASK));
 	   
 	  }
 	

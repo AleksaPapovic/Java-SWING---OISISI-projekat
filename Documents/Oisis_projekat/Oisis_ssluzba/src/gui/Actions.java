@@ -25,10 +25,11 @@ public class Actions{
 
 		public NewAction(String name, ImageIcon icon, String shortDescription, Integer mnemonic, KeyStroke accelerator)
 	    {
-          super(name, setAbstractAction(icon));
+          super();
 	      putValue(SHORT_DESCRIPTION, shortDescription);
 	      putValue(MNEMONIC_KEY, mnemonic);
 	      putValue(ACCELERATOR_KEY,accelerator);
+	      putValue(SMALL_ICON, setAbstractAction(icon) );
 	    }
 
 	    public void actionPerformed(ActionEvent e)
@@ -45,10 +46,11 @@ public class Actions{
 
 		public CloseAction(String name, ImageIcon icon, String shortDescription, Integer mnemonic, KeyStroke accelerator)
 	    {
-        super(name, setAbstractAction(icon));
-	      putValue(SHORT_DESCRIPTION, shortDescription);
-	      putValue(MNEMONIC_KEY, mnemonic);
-	      putValue(ACCELERATOR_KEY,accelerator);
+			 super();
+		      putValue(SHORT_DESCRIPTION, shortDescription);
+		      putValue(MNEMONIC_KEY, mnemonic);
+		      putValue(ACCELERATOR_KEY,accelerator);
+		      putValue(SMALL_ICON, setAbstractAction(icon) );
 	    }
 
 	    public void actionPerformed(ActionEvent e)
@@ -66,10 +68,11 @@ public class Actions{
 
 		public EditAction(String name, ImageIcon icon, String shortDescription, Integer mnemonic, KeyStroke accelerator)
 	    {
-	      super(name, setAbstractAction(icon));
-	      putValue(SHORT_DESCRIPTION, shortDescription);
-	      putValue(MNEMONIC_KEY, mnemonic);
-	      putValue(ACCELERATOR_KEY,accelerator);
+			 super();
+		      putValue(SHORT_DESCRIPTION, shortDescription);
+		      putValue(MNEMONIC_KEY, mnemonic);
+		      putValue(ACCELERATOR_KEY,accelerator);
+		      putValue(SMALL_ICON, setAbstractAction(icon) );
 	    }
 
 	    public void actionPerformed(ActionEvent e)
@@ -87,10 +90,11 @@ public class Actions{
 
 		public DeleteAction(String name, ImageIcon icon, String shortDescription, Integer mnemonic, KeyStroke accelerator)
 	    {
-	      super(name, setAbstractAction(icon));
-	      putValue(SHORT_DESCRIPTION, shortDescription);
-	      putValue(MNEMONIC_KEY, mnemonic);
-	      putValue(ACCELERATOR_KEY,accelerator);
+			 super();
+		      putValue(SHORT_DESCRIPTION, shortDescription);
+		      putValue(MNEMONIC_KEY, mnemonic);
+		      putValue(ACCELERATOR_KEY,accelerator);
+		      putValue(SMALL_ICON, setAbstractAction(icon) );
 	    }
 
 	    public void actionPerformed(ActionEvent e)
@@ -108,10 +112,11 @@ public class Actions{
 
 		public HelpAction(String name, ImageIcon icon, String shortDescription, Integer mnemonic, KeyStroke accelerator)
 	    {
-        super(name,setAbstractAction(icon));
-	      putValue(SHORT_DESCRIPTION, shortDescription);
-	      putValue(MNEMONIC_KEY, mnemonic);
-	      putValue(ACCELERATOR_KEY,accelerator);
+			 super();
+		      putValue(SHORT_DESCRIPTION, shortDescription);
+		      putValue(MNEMONIC_KEY, mnemonic);
+		      putValue(ACCELERATOR_KEY,accelerator);
+		      putValue(SMALL_ICON, setAbstractAction(icon) );
 	    }
 
 	    public void actionPerformed(ActionEvent e)
@@ -129,10 +134,11 @@ public class Actions{
 
 		public AboutAction(String name, ImageIcon icon, String shortDescription, Integer mnemonic, KeyStroke accelerator)
 	    {
-        super(name, setAbstractAction(icon));
-	      putValue(SHORT_DESCRIPTION, shortDescription);
-	      putValue(MNEMONIC_KEY, mnemonic);
-	      putValue(ACCELERATOR_KEY,accelerator);
+			 super();
+		      putValue(SHORT_DESCRIPTION, shortDescription);
+		      putValue(MNEMONIC_KEY, mnemonic);
+		      putValue(ACCELERATOR_KEY,accelerator);
+		      putValue(SMALL_ICON, setAbstractAction(icon) );
 	    }
 
 	    public void actionPerformed(ActionEvent e)
@@ -150,12 +156,11 @@ public class Actions{
 
 		public SearchAction(String name, ImageIcon icon, String shortDescription, Integer mnemonic, KeyStroke accelerator)
 	    {
-	      super(name, setAbstractAction(icon));
-	   
-	      
-	      putValue(SHORT_DESCRIPTION, shortDescription);
-	      putValue(MNEMONIC_KEY, mnemonic);
-	      putValue(ACCELERATOR_KEY,accelerator);
+			 super();
+		      putValue(SHORT_DESCRIPTION, shortDescription);
+		      putValue(MNEMONIC_KEY, mnemonic);
+		      putValue(ACCELERATOR_KEY,accelerator);
+		      putValue(SMALL_ICON, setAbstractAction(icon) );
 	    }
 
 	    public void actionPerformed(ActionEvent e)
@@ -167,7 +172,7 @@ public class Actions{
 	
 	private ImageIcon setAbstractAction(ImageIcon icon) {
 		Image img = icon.getImage() ;  
-		Image newimg3 = img.getScaledInstance(24, 24, java.awt.Image.SCALE_SMOOTH ) ;  
+		Image newimg3 = img.getScaledInstance(20, 20, java.awt.Image.SCALE_SMOOTH ) ;  
 	    icon = new ImageIcon(newimg3);
 	    return icon;
 	}
