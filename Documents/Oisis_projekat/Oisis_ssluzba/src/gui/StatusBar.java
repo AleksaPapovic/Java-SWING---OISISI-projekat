@@ -4,9 +4,11 @@ package gui;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.Timer;
@@ -28,7 +30,8 @@ public class StatusBar extends JPanel{
 	
 		
 		this.setBackground(Color.WHITE);
-		this.setBorder(new CompoundBorder(new LineBorder(Color.BLACK),new EmptyBorder(3, 3, 3, 3)));
+		this.setPreferredSize(new Dimension(10,27));
+		this.setBorder(BorderFactory.createMatteBorder(2, 2, 2, 2, Color.BLACK));
 		
 	    JLabel labelTitle = new JLabel("Studentska služba");
 	    Date datum = new Date();
