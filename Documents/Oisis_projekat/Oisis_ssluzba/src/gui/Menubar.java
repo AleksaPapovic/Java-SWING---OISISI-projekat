@@ -3,9 +3,11 @@ Icons made by "https://www.flaticon.com/authors/Freepik" */
 package gui;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 
+import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.ImageIcon;
 import javax.swing.JMenu;
@@ -50,7 +52,9 @@ public class Menubar extends JMenuBar{
 	 // create the menubar
 	    
 	    this.setBackground(Color.WHITE);
-	    this.setBorder(new CompoundBorder(new LineBorder(Color.BLACK),new EmptyBorder(3, 3, 3, 3)));
+	    this.setBorder(BorderFactory.createMatteBorder(2, 2, 2, 2, Color.BLACK));
+	    setPreferredSize(new Dimension(10,30));
+	    
 	    
 	    // create our main menu
 	    JMenu fileMenu = new JMenu("File");
@@ -59,7 +63,9 @@ public class Menubar extends JMenuBar{
 
 	    // create our menu items, using the same actions the toolbar buttons use
 	    JMenuItem newMenuItem = new JMenuItem(newAction);
+	    newMenuItem.setText("New");
 	    JMenuItem closeMenuItem = new JMenuItem(closeAction);
+	    closeMenuItem.setText("Close");
 	    newMenuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N, ActionEvent.CTRL_MASK));
 	    closeMenuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_C, ActionEvent.CTRL_MASK));
 	    
@@ -68,7 +74,9 @@ public class Menubar extends JMenuBar{
 	    fileMenu.add(closeMenuItem);
 	    
 	    JMenuItem editMenuItem = new JMenuItem(editAction);
+	    editMenuItem.setText("Edit");
 	    JMenuItem deleteMenuItem = new JMenuItem(deleteAction);
+	    deleteMenuItem.setText("Delete");
 	    editMenuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_E, ActionEvent.CTRL_MASK));
 		deleteMenuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_D, ActionEvent.CTRL_MASK));
 		
@@ -77,7 +85,9 @@ public class Menubar extends JMenuBar{
 	    editMenu.add(deleteMenuItem);
 	      
 	    JMenuItem helpMenuItem = new JMenuItem(helpAction);
+	    helpMenuItem.setText("Help");
 	    JMenuItem aboutMenuItem = new JMenuItem(aboutAction);
+	    aboutMenuItem.setText("About");
 	    helpMenuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_H, ActionEvent.CTRL_MASK));
 		aboutMenuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_A, ActionEvent.CTRL_MASK));
 	    
