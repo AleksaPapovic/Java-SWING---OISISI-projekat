@@ -11,7 +11,11 @@ import javax.swing.JOptionPane;
 import javax.swing.KeyStroke;
 
 public class Actions{
-	
+	public String tekst="<html>Glavni prozor se sastoji iz Menubar-a, Toolbar-a, Statusbar-a, Searchbar-a u Toolbar-u i centralnog prozora <br>"
+			+ "koji prikazuje studente, profesore i predmete. Meniji koji postoje u Menubar-u su File, Edit i Help. File sadrzi stavke <br>"
+			+ "New, koja pravi novi entitet i Close, koja zatvara aplikaciju. Edit sadrzi stavke Edit, koja sluzi za menjanje podataka entiteta i<br>"
+			+ "i Delete, koja brise postojeci entitet. Help meni sadrzi Help stavku, koja sluzi za pomoc korisniku, i<br>"
+			+ "About stavku, koja sluzi za prikaz verzije aplikacije, kao i kratak opis iste.</html>";
 	public Actions() {
 		
 	}
@@ -121,7 +125,8 @@ public class Actions{
 
 	    public void actionPerformed(ActionEvent e)
 	    {
-	      JOptionPane.showMessageDialog(null, "Would have done the 'Help' action.");
+	    	HelpDialog dialog = new HelpDialog(MainFrame.getInstance(), "Help", true);
+			dialog.setVisible(true);
 	    }
 	  }
 	
@@ -143,7 +148,8 @@ public class Actions{
 
 	    public void actionPerformed(ActionEvent e)
 	    {
-	      JOptionPane.showMessageDialog(null, "Would have done the 'About' action.");
+	    	AboutDialog dialog = new AboutDialog(MainFrame.getInstance(), "About", true);
+			dialog.setVisible(true);
 	    }
 	  }
 	
