@@ -30,11 +30,11 @@ public class MainFrame extends JFrame {
 		int screenWidth = screenSize.width;
 	
 		setSize(screenWidth * 3 / 4, screenHeight * 3 / 4);
-
+		
 		setTitle("Studenska sluzba");
 		ImageIcon icon = new ImageIcon("icons/university.png");
 		setIconImage(icon.getImage());
-		
+		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		      	
