@@ -119,7 +119,7 @@ public class MenuToolbar  extends JToolBar{
 	     newAction = ac.new NewAction("New", newIcon, "Create new", new Integer(KeyEvent.VK_N),KeyStroke.getKeyStroke(KeyEvent.VK_N, ActionEvent.CTRL_MASK));
 	     editAction = ac.new EditAction("Edit", editIcon, "Edit data", new Integer(KeyEvent.VK_E),KeyStroke.getKeyStroke(KeyEvent.VK_E, ActionEvent.CTRL_MASK));
 	     deleteAction = ac.new DeleteAction("Delete", deleteIcon, "Delete data", new Integer(KeyEvent.VK_D),KeyStroke.getKeyStroke(KeyEvent.VK_D, ActionEvent.CTRL_MASK));
-	     searchAction = ac.new SearchAction("Search", searchIcon, "Search data", new Integer(KeyEvent.VK_S),KeyStroke.getKeyStroke(KeyEvent.VK_A, ActionEvent.CTRL_MASK));
+	     searchAction = ac.new SearchAction("Search", searchIcon, "Search data", new Integer(KeyEvent.VK_S),KeyStroke.getKeyStroke(KeyEvent.VK_S, ActionEvent.CTRL_MASK));
 	   
 	  }
 	
