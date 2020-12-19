@@ -52,7 +52,7 @@ public class Menubar extends JMenuBar{
 	    JMenu fileMenu = new JMenu("File");
 	    JMenu editMenu = new JMenu("Edit");
 	    JMenu helpMenu = new JMenu("Help");
-
+	    
 	    // create our menu items, using the same actions the toolbar buttons use
 	    JMenuItem newMenuItem = new JMenuItem(newAction);
 	    newMenuItem.setText("New");
