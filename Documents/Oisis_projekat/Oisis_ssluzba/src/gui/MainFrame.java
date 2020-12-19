@@ -51,6 +51,9 @@ public class MainFrame extends JFrame {
 		//Content content = new Content();
 		//add(content, BorderLayout.CENTER);
 		
+		TabsPanel tabPanel  = new TabsPanel();
+		add(tabPanel, BorderLayout.CENTER);
+		
 		setVisible(true);
 	
 	}
