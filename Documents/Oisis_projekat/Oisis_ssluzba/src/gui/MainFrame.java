@@ -48,8 +48,9 @@ public class MainFrame extends JFrame {
 	    StatusBar status = new StatusBar();
 		add(status, BorderLayout.SOUTH);
 		
-		Content content = new Content();
-		add(content, BorderLayout.CENTER);
+		//Content content = new Content();
+		//add(content, BorderLayout.CENTER);
+		
 		setVisible(true);
 	
 	}
