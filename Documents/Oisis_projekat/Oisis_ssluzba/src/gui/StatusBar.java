@@ -5,6 +5,8 @@ package gui;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -35,12 +37,16 @@ public class StatusBar extends JPanel{
 	    
 	    SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss dd.MM.yyyy");
 	    JLabel time = new JLabel(dateFormat.format(datum));
-	    Date date = new Date();
-	    time.setText(dateFormat.format(date));
 	    
-	    Timer timer = new Timer(10, null); 
-	    
-		time.setText(dateFormat.format(date));
+	    Timer timer = new Timer(1000, new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				Date date = new Date();
+				time.setText(dateFormat.format(date));
+			}
+	    	
+	    });
 	    	    	    
 	    timer.start();	    
 	    
