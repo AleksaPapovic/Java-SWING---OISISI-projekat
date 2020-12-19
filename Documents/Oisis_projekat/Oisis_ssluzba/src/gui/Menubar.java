@@ -50,9 +50,12 @@ public class Menubar extends JMenuBar{
 	    
 	    // create our main menu
 	    JMenu fileMenu = new JMenu("File");
+	    fileMenu.setMnemonic(KeyEvent.VK_F);
 	    JMenu editMenu = new JMenu("Edit");
+	    editMenu.setMnemonic(KeyEvent.VK_E);
 	    JMenu helpMenu = new JMenu("Help");
-	    
+	    helpMenu.setMnemonic(KeyEvent.VK_H);
+
 	    // create our menu items, using the same actions the toolbar buttons use
 	    JMenuItem newMenuItem = new JMenuItem(newAction);
 	    newMenuItem.setText("New");
