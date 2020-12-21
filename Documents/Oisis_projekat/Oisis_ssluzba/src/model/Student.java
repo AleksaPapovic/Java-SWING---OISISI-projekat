@@ -19,9 +19,8 @@ public class Student {
 	private String godSt;
 	private Status status;
 	private double prosek;
-	private ArrayList<Integer> polozeni;
-	private ArrayList<Integer> nepolozeni;
-	// treba da budu Student liste
+	private ArrayList<Ocena> polozeniIsp;
+	private ArrayList<Ocena> nepolozeniIsp;
 
 	public Student() {
 		super();
@@ -29,8 +28,8 @@ public class Student {
 	}
 
 	public Student(String prezime, String ime, String datumR, String adresaSt, String kontaktTl, String email,
-			String brojInd, int godUP, String godSt, Status status, double prosek, ArrayList<Integer> polozeni,
-			ArrayList<Integer> nepolozeni) {
+			String brojInd, int godUP, String godSt, Status status, double prosek, ArrayList<Ocena> polozeniIsp,
+			ArrayList<Ocena> nepolozeniIsp) {
 		super();
 		this.prezime = prezime;
 		this.ime = ime;
@@ -43,8 +42,8 @@ public class Student {
 		this.godSt = godSt;
 		this.status = status;
 		this.prosek = prosek;
-		this.polozeni = polozeni;
-		this.nepolozeni = nepolozeni;
+		this.polozeniIsp = polozeniIsp;
+		this.nepolozeniIsp = nepolozeniIsp;
 	}
 
 	public String getPrezime() {
@@ -135,20 +134,20 @@ public class Student {
 		this.prosek = prosek;
 	}
 
-	public ArrayList<Integer> getPolozeni() {
-		return polozeni;
+	public ArrayList<Ocena> getPolozeniIsp() {
+		return polozeniIsp;
 	}
 
-	public void setPolozeni(ArrayList<Integer> polozeni) {
-		this.polozeni = polozeni;
+	public void setPolozeniIsp(ArrayList<Ocena> polozeniIsp) {
+		this.polozeniIsp = polozeniIsp;
 	}
 
-	public ArrayList<Integer> getNepolozeni() {
-		return nepolozeni;
+	public ArrayList<Ocena> getNepolozeniIsp() {
+		return nepolozeniIsp;
 	}
 
-	public void setNepolozeni(ArrayList<Integer> nepolozeni) {
-		this.nepolozeni = nepolozeni;
+	public void setNepolozeniIsp(ArrayList<Ocena> nepolozeniIsp) {
+		this.nepolozeniIsp = nepolozeniIsp;
 	}
 
 }
