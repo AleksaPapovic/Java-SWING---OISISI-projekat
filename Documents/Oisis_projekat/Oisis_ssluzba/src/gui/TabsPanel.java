@@ -15,6 +15,16 @@ public class TabsPanel extends JTabbedPane {
 	
 public TabsPanel(){
 	
+		//Tab student
+		JPanel  tabStudent = new JPanel();
+		tabStudent.setLayout(new BorderLayout());
+		tabStudent.setBackground(Color.white);
+		TablePredmet tableStudent = new TablePredmet();
+		JScrollPane scrollPane1 = new JScrollPane(tableStudent);
+		tabStudent.add(scrollPane1,BorderLayout.CENTER);
+		Icon ikonStud = new ImageIcon("icons" + File.separator + "about.png");
+		this.addTab("Studenti",ikonStud,tabStudent,"Prikaz studenata");
+	
 		//Tab profesor
 		JPanel  tabProfesor = new JPanel();
 		tabProfesor.setLayout(new BorderLayout());
