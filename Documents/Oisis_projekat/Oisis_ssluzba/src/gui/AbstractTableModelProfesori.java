@@ -3,6 +3,8 @@ package gui;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.AbstractTableModel;
 
+import model.BazaProfesora;
+
 public class AbstractTableModelProfesori extends AbstractTableModel {
 
 	@Override
@@ -12,33 +14,53 @@ public class AbstractTableModelProfesori extends AbstractTableModel {
 	}
 
 	@Override
-	public Class<?> getColumnClass(int arg0) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public int getColumnCount() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public String getColumnName(int arg0) {
-		// TODO Auto-generated method stub
-		return null;
+		return BazaProfesora.getInstance().getColumnCount();
 	}
 
 	@Override
 	public int getRowCount() {
-		// TODO Auto-generated method stub
-		return 0;
+		return BazaProfesora.getInstance().getProfesori().size();
 	}
 
 	@Override
-	public Object getValueAt(int arg0, int arg1) {
-		// TODO Auto-generated method stub
-		return null;
+	public Class<?> getColumnClass(int columnIndex) {
+		switch (columnIndex) {
+		case 0:
+			return String.class;
+		case 1:
+			return String.class;
+		case 2:
+			return String.class;
+		case 3:
+			return String.class;
+		case 4:
+			return String.class;
+		case 5:
+			return String.class;
+		case 6:
+			return String.class;
+		case 7:
+			return String.class;
+		case 8:
+			return String.class;
+		case 9:
+			return String.class;
+		case 10:
+			return String.class;
+		default:
+			return null;
+		}
+	}
+
+	@Override
+	public String getColumnName(int column) {
+		return BazaProfesora.getInstance().getColumnName(column);
+	}
+
+	@Override
+	public Object getValueAt(int rowIndex, int columnIndex) {
+		return BazaProfesora.getInstance().getValueAt(rowIndex, columnIndex);
 	}
 
 	@Override
