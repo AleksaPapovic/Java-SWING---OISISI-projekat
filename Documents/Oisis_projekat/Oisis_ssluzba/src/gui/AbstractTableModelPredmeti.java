@@ -5,6 +5,11 @@ import javax.swing.table.AbstractTableModel;
 
 public class AbstractTableModelPredmeti extends AbstractTableModel{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Override
 	public void addTableModelListener(TableModelListener arg0) {
 		// TODO Auto-generated method stub

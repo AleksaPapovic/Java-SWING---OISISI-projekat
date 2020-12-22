@@ -30,17 +30,10 @@ public class BazaProfesora {
 		this.profesori  = new ArrayList<Profesor>();
 			
 		this.profNazivi = new ArrayList<String>();
-		this.profNazivi.add("Prezime");
 		this.profNazivi.add("Ime");
-		this.profNazivi.add("Datum rođenja");
-		this.profNazivi.add("Adresa stanovanja");
-		this.profNazivi.add("Kontakt telefon");
-		this.profNazivi.add("Email");
-		this.profNazivi.add("Adresa kancelarije");
-		this.profNazivi.add("Broj lične karte");
+		this.profNazivi.add("Prezime");
 		this.profNazivi.add("Titula");
 		this.profNazivi.add("Zvanje");
-		this.profNazivi.add("Spisak predmeta");
 		
 		this.profesori.add(new Profesor("Petorivc","Petar","18.12.1990","Beograd","0003","petorvic@gmail.com","Novi Sad","0008657"));
 		this.profesori.add(new Profesor());
@@ -48,7 +41,7 @@ public class BazaProfesora {
 		
 	}
 	public int getColumnCount() {
-		return 11;
+		return 4;
 	}
 	
 	public String getColumnName(int idx) {
@@ -78,22 +71,10 @@ public class BazaProfesora {
 		
 		switch(column) {
 		case 0:
-			return profesor.getPrezime();
-		case 1:
 			return profesor.getIme();
+		case 1:
+			return profesor.getPrezime();
 		case 2: 
-			return profesor.getDatumR();
-		case 3:
-			return profesor.getAdresaS();
-		case 4:
-			return profesor.getKontaktTel();
-		case 5:
-			return profesor.getEmail();
-		case 6:
-			return profesor.getAdresaK();
-		case 7:
-			return profesor.getBrlk();
-		case 8:
 			if (profesor.getTitula() == Titula.ProfDr) { 
 				return "Prof. Dr.";
 			} else if (profesor.getTitula() == Titula.Dr) {
@@ -101,7 +82,7 @@ public class BazaProfesora {
 			} else {
 				return "Master";
 			}
-		case 9:
+		case 3:
 			if (profesor.getZvanje() == Zvanje.Saradnik) {
 				return "Saradnik u nastavi";
 			} else if(profesor.getZvanje() == Zvanje.Asistent) {

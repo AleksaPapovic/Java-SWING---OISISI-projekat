@@ -7,6 +7,11 @@ import model.BazaProfesora;
 
 public class AbstractTableModelProfesori extends AbstractTableModel {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Override
 	public void addTableModelListener(TableModelListener arg0) {
 		// TODO Auto-generated method stub
@@ -33,20 +38,6 @@ public class AbstractTableModelProfesori extends AbstractTableModel {
 		case 2:
 			return String.class;
 		case 3:
-			return String.class;
-		case 4:
-			return String.class;
-		case 5:
-			return String.class;
-		case 6:
-			return String.class;
-		case 7:
-			return String.class;
-		case 8:
-			return String.class;
-		case 9:
-			return String.class;
-		case 10:
 			return String.class;
 		default:
 			return null;

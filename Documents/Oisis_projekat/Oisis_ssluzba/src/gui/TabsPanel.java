@@ -2,6 +2,7 @@ package gui;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.io.File;
 
 import javax.swing.Icon;
@@ -13,6 +14,11 @@ import javax.swing.JTabbedPane;
 public class TabsPanel extends JTabbedPane {
 
 	
+/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 public TabsPanel(){
 	
 		//Tab student
@@ -28,13 +34,24 @@ public TabsPanel(){
 		//Tab profesor
 		JPanel  tabProfesor = new JPanel();
 		tabProfesor.setLayout(new BorderLayout());
+		JPanel  gornji = new JPanel();
+		JPanel  levi = new JPanel();
+		JPanel  desni = new JPanel();
+		JPanel  donji = new JPanel();
+		levi.setPreferredSize(new Dimension(50,tabProfesor.getHeight()));
+		desni.setPreferredSize(new Dimension(50,tabProfesor.getHeight()));
+		gornji.setPreferredSize(new Dimension(tabProfesor.getWidth(),50));
+		donji.setPreferredSize(new Dimension(tabProfesor.getWidth(),50));
 		tabProfesor.setBackground(Color.white);
 		TableProfesor tableProfesor = new TableProfesor();
 		JScrollPane scrollPane = new JScrollPane(tableProfesor);
 		tabProfesor.add(scrollPane,BorderLayout.CENTER);
+		tabProfesor.add(levi,BorderLayout.WEST);
+		tabProfesor.add(desni,BorderLayout.EAST);
+		tabProfesor.add(gornji,BorderLayout.NORTH);
+		tabProfesor.add(donji,BorderLayout.SOUTH);
 		Icon ikonProf = new ImageIcon("icons" + File.separator + "about.png");
 		this.addTab("Profesori",ikonProf,tabProfesor,"Prikaz profesora");
-		
 		//Tab predmet
 		JPanel  tabPredmet = new JPanel();
 		tabPredmet.setLayout(new BorderLayout());
