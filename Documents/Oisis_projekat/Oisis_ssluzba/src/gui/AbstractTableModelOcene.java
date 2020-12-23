@@ -1,62 +1,62 @@
 package gui;
 
-import javax.swing.event.TableModelListener;
 import javax.swing.table.AbstractTableModel;
+
+import model.BazaOcena;
 
 public class AbstractTableModelOcene extends AbstractTableModel{
 
-	@Override
-	public void addTableModelListener(TableModelListener arg0) {
-		// TODO Auto-generated method stub
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4471619261297990267L;
 
+	public AbstractTableModelOcene() {
 	}
 
 	@Override
-	public Class<?> getColumnClass(int arg0) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public int getColumnCount() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public String getColumnName(int arg0) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public int getRowCount() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public Object getValueAt(int arg0, int arg1) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public boolean isCellEditable(int arg0, int arg1) {
-		// TODO Auto-generated method stub
+	public boolean isCellEditable(int rowIndex, int columnIndex) {
 		return false;
 	}
 
 	@Override
-	public void removeTableModelListener(TableModelListener arg0) {
-		// TODO Auto-generated method stub
-
+	public int getColumnCount() {
+		return BazaOcena.getInstance().getColumnCount();
 	}
 
 	@Override
-	public void setValueAt(Object arg0, int arg1, int arg2) {
-		// TODO Auto-generated method stub
+	public int getRowCount() {
+		return BazaOcena.getInstance().getOcene().size();
+	}
 
+	@Override
+	public String getColumnName(int column) {
+		return BazaOcena.getInstance().getColumnName(column);
+	}
+
+	@Override
+	public Object getValueAt(int rowIndex, int columnIndex) {
+		if (columnIndex < 4)
+			return BazaOcena.getInstance().getValueAt(rowIndex, columnIndex);
+		return null;
+	}
+
+	@Override
+	public Class<?> getColumnClass(int columnIndex) {
+		switch (columnIndex) {
+		case 0:
+			return String.class;
+		case 1:
+			return String.class;
+		case 2:
+			return String.class;
+		case 3:
+			return String.class;
+		case 4:
+			return String.class;
+		default:
+			return null;
+		}
 	}
 
 }

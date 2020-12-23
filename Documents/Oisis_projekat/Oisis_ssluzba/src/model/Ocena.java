@@ -1,16 +1,18 @@
 package model;
 
+import java.util.Date;
+
 public class Ocena {
 	
 	private Student studentPl;
 	private Predmet predmet;
     private int ocenaVr;
-    private String datumPl;
+    private Date datumPl;
 	public Ocena() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Ocena(Student studentPl, Predmet predmet, int ocenaVr, String datumPl) {
+	public Ocena(Student studentPl, Predmet predmet, int ocenaVr, Date datumPl) {
 		super();
 		this.studentPl = studentPl;
 		this.predmet = predmet;
@@ -35,10 +37,10 @@ public class Ocena {
 	public void setOcenaVr(int ocenaVr) {
 		this.ocenaVr = ocenaVr;
 	}
-	public String getDatumPl() {
+	public Date getDatumPl() {
 		return datumPl;
 	}
-	public void setDatumPl(String datumPl) {
+	public void setDatumPl(Date datumPl) {
 		this.datumPl = datumPl;
 	}
     
