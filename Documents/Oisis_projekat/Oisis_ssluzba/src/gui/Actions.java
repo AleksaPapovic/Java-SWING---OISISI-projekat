@@ -38,7 +38,8 @@ public class Actions{
 
 	    public void actionPerformed(ActionEvent e)
 	    {
-	      JOptionPane.showMessageDialog(null, "Would have done the 'New' action.");
+	    	DodavanjeProfesoraDialog dialogNoviProfesor = new DodavanjeProfesoraDialog (MainFrame.getInstance(), "Dodavanje Profesora", true);
+			dialogNoviProfesor.setVisible(true);
 	    }
 	  }
 	public class CloseAction extends AbstractAction
