@@ -82,7 +82,8 @@ public class Actions{
 
 	    public void actionPerformed(ActionEvent e)
 	    {
-	      JOptionPane.showMessageDialog(null, "Would have done the 'Edit' action.");
+	    	DodavanjeStudentaDialog dialogNoviStudent = new DodavanjeStudentaDialog (MainFrame.getInstance(), "Dodavanje Studenta", true);
+			dialogNoviStudent.setVisible(true);
 	    }
 	  }
 	

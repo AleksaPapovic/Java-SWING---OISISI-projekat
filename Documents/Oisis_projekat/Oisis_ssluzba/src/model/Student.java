@@ -29,8 +29,7 @@ public class Student {
 	}
 
 	public Student(String prezime, String ime, Date datumR, String adresaSt, String kontaktTl, String email,
-			String brojInd, int godUp, String godSt, Status status, double prosek, ArrayList<Ocena> polozeniIsp,
-			ArrayList<Ocena> nepolozeniIsp) {
+			String brojInd, int godUp, String godSt, Status status, double prosek) {
 		super();
 		this.prezime = prezime;
 		this.ime = ime;
@@ -43,11 +42,7 @@ public class Student {
 		this.godSt = godSt;
 		this.status = status;
 		this.prosek = prosek;
-		this.polozeniIsp = polozeniIsp;
-		this.nepolozeniIsp = nepolozeniIsp;
 	}
-	
-	
 
 	public Student(String brojInd, String ime, String prezime, String godSt, Status status, double prosek) {
 		super();

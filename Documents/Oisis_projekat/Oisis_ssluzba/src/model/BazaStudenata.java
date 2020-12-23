@@ -8,7 +8,7 @@ import java.util.List;
 import model.Student.Status;
 
 public class BazaStudenata {
-	
+
 	private static BazaStudenata instance = null;
 
 	public static BazaStudenata getInstance() {
@@ -19,12 +19,10 @@ public class BazaStudenata {
 	}
 
 	private ArrayList<Student> Studenti;
-	private ArrayList<Ocena> polozeniIsp;
-	private ArrayList<Ocena> nepolozeniIsp;
 	private ArrayList<String> kolone;
-	
+
 	private BazaStudenata() {
-	
+
 		initStudente();
 
 		this.kolone = new ArrayList<String>();
@@ -34,24 +32,20 @@ public class BazaStudenata {
 		this.kolone.add("Godina studija");
 		this.kolone.add("Status");
 		this.kolone.add("Prosek");
-		
+
 		this.initStudente();
 	}
 
 	private void initStudente() {
 		this.Studenti = new ArrayList<Student>();
-		this.polozeniIsp = new ArrayList<Ocena>();
-		this.nepolozeniIsp = new ArrayList<Ocena>();
-		Studenti.add(new Student("Nikolic", "Nikola", parseDate("20.01.2011.") , "Zmajevacka 112", "0635652214", 
-				                 "milenkozfk@gmail.com", "RA178-2016", 2015, "1(Prva)", Student.Status.B, 9.05, 
-				                  polozeniIsp, nepolozeniIsp ));
+		Studenti.add(new Student("Nikolic", "Nikola", parseDate("20.01.2011."), "Zmajevacka 112", "0635652214",
+				"milenkozfk@gmail.com", "RA178-2016", 2015, "1(Prva)", Student.Status.B, 9.05));
 	}
-	
 
 	public List<Student> getStudenti() {
 		return Studenti;
 	}
-	
+
 	public void setStudenti(ArrayList<Student> Studenti) {
 		this.Studenti = Studenti;
 	}
@@ -80,9 +74,9 @@ public class BazaStudenata {
 		case 3:
 			return Student.getGodSt();
 		case 4:
-			if(Student.getStatus() == Status.B)
+			if (Student.getStatus() == Status.B)
 				return "Budzet";
-			else 
+			else
 				return "Samofinansiranje";
 		case 5:
 			return Double.toString(Student.getProsek());
@@ -92,10 +86,9 @@ public class BazaStudenata {
 	}
 
 	public void dodajStudenata(String prezime, String ime, Date datumR, String adresaSt, String kontaktTl, String email,
-			String brojInd, int godUp, String godSt, Student.Status status, double prosek, ArrayList<Ocena> polozeniIsp,
-			ArrayList<Ocena> nepolozeniIsp) {
-		this.Studenti.add(new Student( prezime, ime, datumR, adresaSt, kontaktTl, email, brojInd, godUp, godSt, status, prosek,
-				polozeniIsp, nepolozeniIsp));
+			String brojInd, int godUp, String godSt, Student.Status status, double prosek) {
+		this.Studenti.add(
+				new Student(prezime, ime, datumR, adresaSt, kontaktTl, email, brojInd, godUp, godSt, status, prosek));
 	}
 
 	public void izbrisiStudenata(String brojInd) {
@@ -107,9 +100,9 @@ public class BazaStudenata {
 		}
 	}
 
-	public void izmeniStudenata(String prezime, String ime, Date datumR, String adresaSt, String kontaktTl, String email,
-			String brojInd, int godUp, String godSt, Student.Status status, double prosek, ArrayList<Ocena> polozeniIsp,
-			ArrayList<Ocena> nepolozeniIsp) {
+	public void izmeniStudenata(String prezime, String ime, Date datumR, String adresaSt, String kontaktTl,
+			String email, String brojInd, int godUp, String godSt, Student.Status status, double prosek,
+			ArrayList<Ocena> polozeniIsp, ArrayList<Ocena> nepolozeniIsp) {
 		for (Student i : Studenti) {
 			if (i.getBrojInd() == brojInd) {
 				i.setIme(ime);
@@ -125,14 +118,14 @@ public class BazaStudenata {
 			}
 		}
 	}
-	
+
 	public static Date parseDate(String date) {
-	     try {
-	         return new SimpleDateFormat("dd.MM.yyyy.").parse(date);
-	     } catch (Exception e) {
-	         e.printStackTrace();
-	         return null;
-	     }	     
-	  }
+		try {
+			return new SimpleDateFormat("dd.MM.yyyy.").parse(date);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
 
 }
