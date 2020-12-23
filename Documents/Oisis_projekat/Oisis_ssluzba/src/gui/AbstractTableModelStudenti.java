@@ -1,63 +1,64 @@
 package gui;
 
-import javax.swing.event.TableModelListener;
 import javax.swing.table.AbstractTableModel;
 
-public class AbstractTableModelStudenti extends AbstractTableModel{
+import model.BazaStudenata;
 
+public class AbstractTableModelStudenti extends AbstractTableModel {
 
-	@Override
-	public void addTableModelListener(TableModelListener arg0) {
-		// TODO Auto-generated method stub
+	/**
+		 * 
+		 */
+	private static final long serialVersionUID = -5330664615490765357L;
 
+	public AbstractTableModelStudenti() {
 	}
 
 	@Override
-	public Class<?> getColumnClass(int arg0) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public int getColumnCount() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public String getColumnName(int arg0) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public int getRowCount() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public Object getValueAt(int arg0, int arg1) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public boolean isCellEditable(int arg0, int arg1) {
-		// TODO Auto-generated method stub
+	public boolean isCellEditable(int rowIndex, int columnIndex) {
 		return false;
 	}
 
 	@Override
-	public void removeTableModelListener(TableModelListener arg0) {
-		// TODO Auto-generated method stub
-
+	public int getColumnCount() {
+		return BazaStudenata.getInstance().getColumnCount();
 	}
 
 	@Override
-	public void setValueAt(Object arg0, int arg1, int arg2) {
-		// TODO Auto-generated method stub
+	public int getRowCount() {
+		return BazaStudenata.getInstance().getStudenti().size();
+	}
 
+	@Override
+	public String getColumnName(int column) {
+		return BazaStudenata.getInstance().getColumnName(column);
+	}
+
+	@Override
+	public Object getValueAt(int rowIndex, int columnIndex) {
+		if (columnIndex < 6)
+			return BazaStudenata.getInstance().getValueAt(rowIndex, columnIndex);
+		return null;
+	}
+
+	@Override
+	public Class<?> getColumnClass(int columnIndex) {
+		switch (columnIndex) {
+		case 0:
+			return String.class;
+		case 1:
+			return String.class;
+		case 2:
+			return String.class;
+		case 3:
+			return String.class;
+		case 4:
+			return String.class;
+		case 5:
+			return String.class;
+		default:
+			return null;
+		}
 	}
 
 }

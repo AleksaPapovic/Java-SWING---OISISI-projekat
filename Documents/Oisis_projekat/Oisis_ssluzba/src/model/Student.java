@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Student {
 
@@ -10,12 +11,12 @@ public class Student {
 
 	private String prezime;
 	private String ime;
-	private String datumR;
+	private Date datumR;
 	private String adresaSt;
 	private String kontaktTl;
 	private String email;
 	private String brojInd;
-	private int godUP;
+	private int godUp;
 	private String godSt;
 	private Status status;
 	private double prosek;
@@ -27,8 +28,8 @@ public class Student {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Student(String prezime, String ime, String datumR, String adresaSt, String kontaktTl, String email,
-			String brojInd, int godUP, String godSt, Status status, double prosek, ArrayList<Ocena> polozeniIsp,
+	public Student(String prezime, String ime, Date datumR, String adresaSt, String kontaktTl, String email,
+			String brojInd, int godUp, String godSt, Status status, double prosek, ArrayList<Ocena> polozeniIsp,
 			ArrayList<Ocena> nepolozeniIsp) {
 		super();
 		this.prezime = prezime;
@@ -38,12 +39,24 @@ public class Student {
 		this.kontaktTl = kontaktTl;
 		this.email = email;
 		this.brojInd = brojInd;
-		this.godUP = godUP;
+		this.godUp = godUp;
 		this.godSt = godSt;
 		this.status = status;
 		this.prosek = prosek;
 		this.polozeniIsp = polozeniIsp;
 		this.nepolozeniIsp = nepolozeniIsp;
+	}
+	
+	
+
+	public Student(String brojInd, String ime, String prezime, String godSt, Status status, double prosek) {
+		super();
+		this.brojInd = brojInd;
+		this.ime = ime;
+		this.prezime = prezime;
+		this.godSt = godSt;
+		this.status = status;
+		this.prosek = prosek;
 	}
 
 	public String getPrezime() {
@@ -62,11 +75,11 @@ public class Student {
 		this.ime = ime;
 	}
 
-	public String getDatumR() {
+	public Date getDatumR() {
 		return datumR;
 	}
 
-	public void setDatumR(String datumR) {
+	public void setDatumR(Date datumR) {
 		this.datumR = datumR;
 	}
 
@@ -102,12 +115,12 @@ public class Student {
 		this.brojInd = brojInd;
 	}
 
-	public int getGodUP() {
-		return godUP;
+	public int getGodUp() {
+		return godUp;
 	}
 
-	public void setGodUP(int godUP) {
-		this.godUP = godUP;
+	public void setGodUp(int godUp) {
+		this.godUp = godUp;
 	}
 
 	public String getGodSt() {
