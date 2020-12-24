@@ -5,6 +5,7 @@ import java.awt.Component;
 
 import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
+import javax.swing.table.AbstractTableModel;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableModel;
 
@@ -15,14 +16,11 @@ public class TableStudent extends JTable {
 	 * 
 	 */
 
-	public static TableModel table_model;
-
 	public TableStudent() {
 		this.setRowSelectionAllowed(true);
 		this.setColumnSelectionAllowed(true);
 		this.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		this.setModel(new AbstractTableModelStudenti());
-		table_model = this.getModel();
 	}
 
 	@Override
@@ -34,6 +32,12 @@ public class TableStudent extends JTable {
 			c.setBackground(Color.WHITE);
 		}
 		return c;
+	}
+	
+	public void update() {
+		AbstractTableModelStudenti model = (AbstractTableModelStudenti) this.getModel();
+		model.fireTableDataChanged();
+		validate();
 	}
 
 }

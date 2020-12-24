@@ -6,18 +6,17 @@ import java.awt.Frame;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.text.SimpleDateFormat;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import model.Student.Status;
+import controller.StudentController;
+import controller.StudentDocumentListener;
 
 public class DodavanjeStudentaDialog extends JDialog {
 
@@ -25,13 +24,26 @@ public class DodavanjeStudentaDialog extends JDialog {
 	 * 
 	 */
 	private static final long serialVersionUID = 6871252857743880797L;
+	public static JTextField imeField;
+	public static JTextField prezimeField;
+	public static JTextField datumRField;
+	public static JTextField adresaSField;
+	public static JTextField brojTField;
+	public static JTextField emailField;
+	public static JTextField brIndField;
+	public static JTextField godUpField;
+	public static JTextField email;
+	public JButton odustani;
+	public static JButton prihvati;
+	@SuppressWarnings("rawtypes")
+	public static JComboBox godStComboBox;
+	public static JComboBox nacinFComboBox;
 
 	public DodavanjeStudentaDialog(Frame parent, String title, boolean modal) {
-		setTitle(title);
+		super(parent, title, modal);
 		setSize(450, 550);
 		setLocationRelativeTo(parent);
 		setResizable(false);
-		setVisible(true);
 		JPanel panel = new JPanel();
 		panel.setLayout(new BorderLayout());
 		JPanel textPanel = new JPanel(new GridLayout(11, 1, 1, 10));
@@ -44,98 +56,87 @@ public class DodavanjeStudentaDialog extends JDialog {
 		JLabel imeLabela = new JLabel("Ime*");
 		imeLabela.setPreferredSize(velicina);
 		imeLabela.setMaximumSize(velicina);
-		JTextField imeField = new JTextField();
+		imeField = new JTextField();
 
 		JLabel prezimeLabela = new JLabel("Prezime*");
 		prezimeLabela.setPreferredSize(velicina);
 		prezimeLabela.setMaximumSize(velicina);
-		JTextField prezimeField = new JTextField();
+		prezimeField = new JTextField();
 
 		JLabel datumRLabela = new JLabel("Datum rodjenja*");
 		datumRLabela.setPreferredSize(velicina);
 		datumRLabela.setMaximumSize(velicina);
-		JTextField datumRField = new JTextField();
+		datumRField = new JTextField();
 
 		JLabel adresaSLabela = new JLabel("Adresa stanovanja*");
 		adresaSLabela.setPreferredSize(velicina);
 		adresaSLabela.setMaximumSize(velicina);
-		JTextField adresaSField = new JTextField();
+		adresaSField = new JTextField();
 
 		JLabel brojTLabela = new JLabel("Broj telefona*");
 		brojTLabela.setPreferredSize(velicina);
 		brojTLabela.setMaximumSize(velicina);
-		JTextField brojTField = new JTextField();
+		brojTField = new JTextField();
 
 		JLabel emailLabela = new JLabel("E-mail adresa*");
 		emailLabela.setPreferredSize(velicina);
 		emailLabela.setMaximumSize(velicina);
-		JTextField emailField = new JTextField();
+		emailField = new JTextField();
 
 		JLabel brIndLabela = new JLabel("Broj indeksa*");
 		brIndLabela.setPreferredSize(velicina);
 		brIndLabela.setMaximumSize(velicina);
-		JTextField brIndField = new JTextField();
+		brIndField = new JTextField();
 
 		JLabel godUpLabela = new JLabel("Godina upisa*");
 		godUpLabela.setPreferredSize(velicina);
 		godUpLabela.setMaximumSize(velicina);
-		JTextField godUpField = new JTextField();
+		godUpField = new JTextField();
 
 		JLabel godStLabela = new JLabel("Trenutna godina studija*");
 		godStLabela.setPreferredSize(velicina);
 		godStLabela.setMaximumSize(velicina);
 		String godSt[] = { "I(prva)", "II(druga)", "II(treca)", "IV(cetvrta)" };
-		JComboBox godStComboBox = new JComboBox(godSt);
+		godStComboBox = new JComboBox(godSt);
 
 		JLabel nacinFLabela = new JLabel("Nacin finansiranja");
 		nacinFLabela.setPreferredSize(velicina);
 		nacinFLabela.setMaximumSize(velicina);
 		String nacinF[] = { "Budzet", "Samofinansiranje" };
-		JComboBox nacinFComboBox = new JComboBox(nacinF);
+		nacinFComboBox = new JComboBox(nacinF);
 
-		JButton prihvati = new JButton("Potvrdi");
+		prihvati = new JButton("Potvrdi");
 		prihvati.setPreferredSize(velicina);
-		JButton odustani = new JButton("Odustani");
+		prihvati.setEnabled(false);
+		odustani = new JButton("Odustani");
 		odustani.setPreferredSize(velicina);
+
+		StudentDocumentListener textChangeDocumentListener = new StudentDocumentListener();
+
+		DodavanjeStudentaDialog.imeField.getDocument().addDocumentListener(textChangeDocumentListener);
+		DodavanjeStudentaDialog.prezimeField.getDocument().addDocumentListener(textChangeDocumentListener);
+		DodavanjeStudentaDialog.datumRField.getDocument().addDocumentListener(textChangeDocumentListener);
+		DodavanjeStudentaDialog.adresaSField.getDocument().addDocumentListener(textChangeDocumentListener);
+		DodavanjeStudentaDialog.emailField.getDocument().addDocumentListener(textChangeDocumentListener);
+		DodavanjeStudentaDialog.brIndField.getDocument().addDocumentListener(textChangeDocumentListener);
+		DodavanjeStudentaDialog.godUpField.getDocument().addDocumentListener(textChangeDocumentListener);
 
 		prihvati.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				// TODO Auto-generated method stub
-				if (imeField.getText().isEmpty() || prezimeField.getText().isEmpty() || datumRField.getText().isEmpty()
-						|| adresaSField.getText().isEmpty() || brojTField.getText().isEmpty()
-						|| emailField.getText().isEmpty() || brIndField.getText().isEmpty()
-						|| godUpField.getText().isEmpty()) {
-					JOptionPane.showMessageDialog(parent, "Morate uneti sve podatke");
-				} else {
-					Status status;
-					if(nacinFComboBox.getSelectedIndex()==1) {
-						status=Status.B;
-					}else {
-						status=Status.S;
-					}
 				
-					
-					String s = datumRField.getText();
-			        SimpleDateFormat format = new SimpleDateFormat("dd.mm.yyyy.");
-					try {
-						//StudentController.getInstance().dodajStudenta(imeField.getText(), prezimeField.getText(), format.parse(s), adresaSField.getText(),
-								//		brojTField.getText(), emailField.getText(), brIndField.getText(), Integer.parseInt(godUpField.getText()), godStComboBox.getSelectedItem() , nacinFComboBox.getSelectedItem,9.0);
-					} catch (NumberFormatException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					} 
-				
-				}
+				StudentController.getInstance().dodajStudenta();
+				dispose();
+
 			}
+
 		});
 
 		odustani.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				// TODO Auto-generated method stub
 				dispose();
 			}
 		});

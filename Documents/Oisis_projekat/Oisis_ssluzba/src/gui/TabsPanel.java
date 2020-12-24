@@ -10,6 +10,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
 public class TabsPanel extends JTabbedPane {
 
@@ -17,8 +19,10 @@ public class TabsPanel extends JTabbedPane {
 		 * 
 		 */
 	private static final long serialVersionUID = 1L;
-
+	public static int tab_curr = 0;
 	public static TableProfesor tableProfesor;
+	public static TableStudent tableStudent;
+	
 	public TabsPanel() {
 
 		JPanel gornji = new JPanel();
@@ -34,7 +38,7 @@ public class TabsPanel extends JTabbedPane {
 		gornji.setPreferredSize(new Dimension(tabStudent.getWidth(), 50));
 		donji.setPreferredSize(new Dimension(tabStudent.getWidth(), 50));
 		tabStudent.setBackground(Color.white);
-		TableStudent tableStudent = new TableStudent();
+		tableStudent=new TableStudent();
 		JScrollPane scrollPane1 = new JScrollPane(tableStudent);
 		tabStudent.add(scrollPane1, BorderLayout.CENTER);
 		tabStudent.add(levi, BorderLayout.WEST);
@@ -74,6 +78,15 @@ public class TabsPanel extends JTabbedPane {
 		tabPredmet.add(scrollPane3,BorderLayout.CENTER);
 		Icon ikonPred = new ImageIcon("icons" + File.separator + "about.png");
 		this.addTab("Predmeti",ikonPred,tabPredmet,"Prikaz predmeta");
+	
+		this.addChangeListener(new ChangeListener() {
 
+		@Override
+		public void stateChanged(ChangeEvent event) {
+			
+		    JTabbedPane tabbedPane = (JTabbedPane)event.getSource();
+		    tab_curr = tabbedPane.getSelectedIndex();
+		}
+	    });
 	}
 }

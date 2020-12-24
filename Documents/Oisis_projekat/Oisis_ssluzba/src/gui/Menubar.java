@@ -112,12 +112,12 @@ public class Menubar extends JMenuBar{
 	    aboutIcon = new ImageIcon("icons/about.png");
 
 	    // create our actions
-	     newAction = ac.new NewAction("New", newIcon, "Create new", new Integer(KeyEvent.VK_N),KeyStroke.getKeyStroke(KeyEvent.VK_N, ActionEvent.CTRL_MASK));
-	     closeAction = ac.new CloseAction("Close", closeIcon, "Close", new Integer(KeyEvent.VK_C),KeyStroke.getKeyStroke(KeyEvent.VK_C, ActionEvent.CTRL_MASK));
-	     editAction = ac.new EditAction("Edit", editIcon, "Edit data", new Integer(KeyEvent.VK_E),KeyStroke.getKeyStroke(KeyEvent.VK_E, ActionEvent.CTRL_MASK));
-	     deleteAction = ac.new DeleteAction("Delete", deleteIcon, "Delete data", new Integer(KeyEvent.VK_D),KeyStroke.getKeyStroke(KeyEvent.VK_D, ActionEvent.CTRL_MASK));
-	     helpAction = ac.new HelpAction("Help", helpIcon, "Help ", new Integer(KeyEvent.VK_H),KeyStroke.getKeyStroke(KeyEvent.VK_H, ActionEvent.CTRL_MASK));
-	     aboutAction = ac.new AboutAction("About", aboutIcon, "Information", new Integer(KeyEvent.VK_A),KeyStroke.getKeyStroke(KeyEvent.VK_A, ActionEvent.CTRL_MASK));
+	     newAction = ac.new NewAction("New", newIcon, "Create new", KeyEvent.VK_N,KeyStroke.getKeyStroke(KeyEvent.VK_N, ActionEvent.CTRL_MASK));
+	     closeAction = ac.new CloseAction("Close", closeIcon, "Close", KeyEvent.VK_C,KeyStroke.getKeyStroke(KeyEvent.VK_C, ActionEvent.CTRL_MASK));
+	     editAction = ac.new EditAction("Edit", editIcon, "Edit data", KeyEvent.VK_E,KeyStroke.getKeyStroke(KeyEvent.VK_E, ActionEvent.CTRL_MASK));
+	     deleteAction = ac.new DeleteAction("Delete", deleteIcon, "Delete data", KeyEvent.VK_D,KeyStroke.getKeyStroke(KeyEvent.VK_D, ActionEvent.CTRL_MASK));
+	     helpAction = ac.new HelpAction("Help", helpIcon, "Help ", KeyEvent.VK_H,KeyStroke.getKeyStroke(KeyEvent.VK_H, ActionEvent.CTRL_MASK));
+	     aboutAction = ac.new AboutAction("About", aboutIcon, "Information", KeyEvent.VK_A,KeyStroke.getKeyStroke(KeyEvent.VK_A, ActionEvent.CTRL_MASK));
 	   
 	  }
 	

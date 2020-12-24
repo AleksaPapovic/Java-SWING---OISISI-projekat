@@ -39,7 +39,7 @@ public class BazaStudenata {
 	private void initStudente() {
 		this.Studenti = new ArrayList<Student>();
 		Studenti.add(new Student("Nikolic", "Nikola", parseDate("20.01.2011."), "Zmajevacka 112", "0635652214",
-				"milenkozfk@gmail.com", "RA178-2016", 2015, "1(Prva)", Student.Status.B, 9.05));
+				"milenkozfk@gmail.com", "RA178-2016", 2015, "I(Prva)", Student.Status.B, 9.05));
 	}
 
 	public List<Student> getStudenti() {
