@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import gui.TableProfesor;
 import model.Profesor.Titula;
 import model.Profesor.Zvanje;
 
@@ -36,7 +37,7 @@ public class BazaProfesora {
 		this.profNazivi.add("Zvanje");
 		
 		this.profesori.add(new Profesor("Petorivc","Petar","18.12.1990","Beograd","0003","petorvic@gmail.com","Novi Sad","0008657"));
-		this.profesori.add(new Profesor());
+		
 		
 		
 	}
@@ -105,6 +106,10 @@ public class BazaProfesora {
 	
 	public void dodajProfesora(String prezime, String ime, String datumR, String adresaS, String kontaktTel, String email,
 				  	           String adresaK, String brlk, Titula titula, Zvanje zvanje)
-	{}
+	{
+		this.profesori.add(new Profesor(prezime, ime, datumR, adresaS, kontaktTel, email,
+	           adresaK,  brlk, titula,  zvanje));
+		
+	}
 }
 

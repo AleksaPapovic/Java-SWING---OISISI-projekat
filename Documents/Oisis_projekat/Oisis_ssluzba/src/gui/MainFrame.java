@@ -31,7 +31,7 @@ public class MainFrame extends JFrame {
 	
 		setSize(screenWidth * 3 / 4, screenHeight * 3 / 4);
 		
-		setTitle("Studenska sluzba");
+		setTitle("Studenska služba");
 		ImageIcon icon = new ImageIcon("icons/university.png");
 		setIconImage(icon.getImage());
 		setLocationRelativeTo(null);
@@ -47,9 +47,6 @@ public class MainFrame extends JFrame {
 		
 	    StatusBar status = new StatusBar();
 		add(status, BorderLayout.SOUTH);
-		
-		//Content content = new Content();
-		//add(content, BorderLayout.CENTER);
 		
 		TabsPanel tabPanel  = new TabsPanel();
 		add(tabPanel, BorderLayout.CENTER);

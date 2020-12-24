@@ -1,7 +1,6 @@
 package gui;
 
 import java.awt.BorderLayout;
-import java.awt.Dialog;
 import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.GridLayout;
@@ -13,9 +12,10 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+
+import controller.ProfesorController;
 
 public class DodavanjeProfesoraDialog extends JDialog {
 
@@ -24,12 +24,24 @@ public class DodavanjeProfesoraDialog extends JDialog {
 	 */
 	private static final long serialVersionUID = 1L;
 
+	public static JTextField imeField;
+	public static JTextField prezimeField;
+	public static JTextField datumRField;
+	public static JTextField adresaSField;
+	public static JTextField kontaktTelField;
+	public static JTextField emailField;
+	public static JTextField adresaKField;
+	public static JTextField brlkField;
+	public static JComboBox combobox1;
+	public static JComboBox combobox2;
+	
 	public DodavanjeProfesoraDialog(Frame parent, String title, boolean modal) {
 		setTitle(title);
 		setSize(450, 550);
 		setLocationRelativeTo(parent);
 		setResizable(false);
-		setVisible(true);
+		setModal(modal);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		JPanel panel = new JPanel();
 		panel.setLayout(new BorderLayout());
 		JPanel textPanel = new JPanel(new GridLayout(11, 1, 1, 10));
@@ -43,75 +55,71 @@ public class DodavanjeProfesoraDialog extends JDialog {
 		JLabel imeLabela = new JLabel("Unesite ime");
 		imeLabela.setPreferredSize(polje);
 		imeLabela.setMaximumSize(polje);
-		JTextField imeField = new JTextField();
+		imeField = new JTextField();
 
 		JLabel prezimeLabela = new JLabel("Unesite prezime");
 		prezimeLabela.setPreferredSize(polje);
 		prezimeLabela.setMaximumSize(polje);
-		JTextField prezimeField = new JTextField();
+		prezimeField = new JTextField();
 
 		JLabel datumRLabela = new JLabel("Unesite datum rodjenja");
 		datumRLabela.setPreferredSize(polje);
 		datumRLabela.setMaximumSize(polje);
-		JTextField datumRField = new JTextField();
+		datumRField = new JTextField();
 
 		JLabel adresaSLabela = new JLabel("Unesite adresu stanovanja");
 		adresaSLabela.setPreferredSize(polje);
 		adresaSLabela.setMaximumSize(polje);
-		JTextField adresaSField = new JTextField();
+		adresaSField = new JTextField();
 
 		JLabel kontaktTelLabela = new JLabel("Unesite kontakt telefon");
 		kontaktTelLabela.setPreferredSize(polje);
 		kontaktTelLabela.setMaximumSize(polje);
-		JTextField kontaktTelField = new JTextField();
+		kontaktTelField = new JTextField();
 
 		JLabel emailLabela = new JLabel("Unesite email");
 		emailLabela.setPreferredSize(polje);
 		emailLabela.setMaximumSize(polje);
-		JTextField emailField = new JTextField();
+		emailField = new JTextField();
 
 		JLabel adresaKLabela = new JLabel("Unesite adresu kancelarije");
 		adresaKLabela.setPreferredSize(polje);
 		adresaKLabela.setMaximumSize(polje);
-		JTextField adresaKField = new JTextField();
+		adresaKField = new JTextField();
 
 		JLabel brlkLabela = new JLabel("Unesite broj licne karte");
 		brlkLabela.setPreferredSize(polje);
 		brlkLabela.setMaximumSize(polje);
-		JTextField brlkField = new JTextField();
+		brlkField = new JTextField();
 
 		JLabel titulaLabela = new JLabel("Izaberite titulu");
 		titulaLabela.setPreferredSize(polje);
 		titulaLabela.setMaximumSize(polje);
 		String titule[] = { "Ms", "Dr", "ProfDr" };
-		JComboBox combobox1 = new JComboBox(titule);
+		combobox1 = new JComboBox(titule);
 
-		JLabel zvanjeLabela = new JLabel("Izaberite titulu");
+		JLabel zvanjeLabela = new JLabel("Izaberite zvanje");
 		zvanjeLabela.setPreferredSize(polje);
 		zvanjeLabela.setMaximumSize(polje);
 		String zvanja[] = { "Saradnik", "Asistent", "RProfesor", 
 				            "VProfesor", "Docent " };
-		JComboBox combobox2 = new JComboBox(zvanja);
+		combobox2 = new JComboBox(zvanja);
 		
 		JButton prihvati = new JButton("Potvrdi");
 		prihvati.setPreferredSize(polje);
-		JButton odbaci  = new JButton("Odbaci");
+		//prihvati.setEnabled(false);
+		JButton odbaci  = new JButton("Odustani");
 		odbaci.setPreferredSize(polje);
+		
 		
 		prihvati.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
-				if(imeField.getText().isEmpty() || prezimeField.getText().isEmpty() ||
-					datumRField.getText().isEmpty() || adresaSField.getText().isEmpty() ||	
-					kontaktTelField.getText().isEmpty() || emailField.getText().isEmpty() ||
-					adresaKField.getText().isEmpty() || brlkField.getText().isEmpty()) {
-					JOptionPane.showMessageDialog(parent, "Morate uneti sve podatke");
-					}
-					else {
+					if(ProfesorController.getInstance().dodatiProfesora())
+					dispose();
 					
-				}
 			}	
 		});
 		
@@ -152,5 +160,7 @@ public class DodavanjeProfesoraDialog extends JDialog {
 		
 		buttonsPanel.add(prihvati);
 		buttonsPanel.add(odbaci);
+		
+		setVisible(true);
 	}
 }

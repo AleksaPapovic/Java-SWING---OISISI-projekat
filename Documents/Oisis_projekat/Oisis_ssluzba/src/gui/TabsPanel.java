@@ -18,6 +18,7 @@ public class TabsPanel extends JTabbedPane {
 		 */
 	private static final long serialVersionUID = 1L;
 
+	public static TableProfesor tableProfesor;
 	public TabsPanel() {
 
 		JPanel gornji = new JPanel();
@@ -43,33 +44,36 @@ public class TabsPanel extends JTabbedPane {
 		Icon ikonStud = new ImageIcon("icons" + File.separator + "about.png");
 		this.addTab("Studenti", ikonStud, tabStudent, "Prikaz studenata");
 
-		// Tab profesor
-		JPanel tabProfesor = new JPanel();
+		//Tab profesor
+		JPanel  tabProfesor = new JPanel();
 		tabProfesor.setLayout(new BorderLayout());
-		levi.setPreferredSize(new Dimension(50, tabProfesor.getHeight()));
-		desni.setPreferredSize(new Dimension(50, tabProfesor.getHeight()));
-		gornji.setPreferredSize(new Dimension(tabProfesor.getWidth(), 50));
-		donji.setPreferredSize(new Dimension(tabProfesor.getWidth(), 50));
+		  gornji = new JPanel();
+		  levi = new JPanel();
+		  desni = new JPanel();
+		  donji = new JPanel();
+		levi.setPreferredSize(new Dimension(50,tabProfesor.getHeight()));
+		desni.setPreferredSize(new Dimension(50,tabProfesor.getHeight()));
+		gornji.setPreferredSize(new Dimension(tabProfesor.getWidth(),50));
+		donji.setPreferredSize(new Dimension(tabProfesor.getWidth(),50));
 		tabProfesor.setBackground(Color.white);
-		TableProfesor tableProfesor = new TableProfesor();
+		tableProfesor = new TableProfesor();
 		JScrollPane scrollPane = new JScrollPane(tableProfesor);
-		tabProfesor.add(scrollPane, BorderLayout.CENTER);
-		tabProfesor.add(levi, BorderLayout.WEST);
-		tabProfesor.add(desni, BorderLayout.EAST);
-		tabProfesor.add(gornji, BorderLayout.NORTH);
-		tabProfesor.add(donji, BorderLayout.SOUTH);
+		tabProfesor.add(scrollPane,BorderLayout.CENTER);
+		tabProfesor.add(levi,BorderLayout.WEST);
+		tabProfesor.add(desni,BorderLayout.EAST);
+		tabProfesor.add(gornji,BorderLayout.NORTH);
+		tabProfesor.add(donji,BorderLayout.SOUTH);
 		Icon ikonProf = new ImageIcon("icons" + File.separator + "about.png");
-		this.addTab("Profesori", ikonProf, tabProfesor, "Prikaz profesora");
-
-		// Tab predmet
-		JPanel tabPredmet = new JPanel();
+		this.addTab("Profesori",ikonProf,tabProfesor,"Prikaz profesora");
+		//Tab predmet
+		JPanel  tabPredmet = new JPanel();
 		tabPredmet.setLayout(new BorderLayout());
 		tabPredmet.setBackground(Color.white);
 		TablePredmet tablePredmet = new TablePredmet();
 		JScrollPane scrollPane3 = new JScrollPane(tablePredmet);
-		tabPredmet.add(scrollPane3, BorderLayout.CENTER);
+		tabPredmet.add(scrollPane3,BorderLayout.CENTER);
 		Icon ikonPred = new ImageIcon("icons" + File.separator + "about.png");
-		this.addTab("Predmeti", ikonPred, tabPredmet, "Prikaz predmeta");
+		this.addTab("Predmeti",ikonPred,tabPredmet,"Prikaz predmeta");
 
 	}
 }

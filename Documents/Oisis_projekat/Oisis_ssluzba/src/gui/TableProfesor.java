@@ -20,8 +20,8 @@ public class TableProfesor extends JTable {
 		this.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		this.setModel(new AbstractTableModelProfesori());
 	}
-	
-	//izmena boje redova prilikom selektovanja
+
+	// izmena boje redova prilikom selektovanja
 	@Override
 	public Component prepareRenderer(TableCellRenderer renderer, int row, int column) {
 		Component c = super.prepareRenderer(renderer, row, column);
@@ -32,5 +32,11 @@ public class TableProfesor extends JTable {
 		}
 		return c;
 	}
-	
+
+	public void azuriranjeTabeleProfesor() {
+		AbstractTableModelProfesori model = (AbstractTableModelProfesori) this.getModel();
+		model.fireTableDataChanged();
+		validate();
+	}
+
 }
