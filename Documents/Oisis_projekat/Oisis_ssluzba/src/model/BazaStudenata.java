@@ -1,3 +1,4 @@
+/*REFERENCA: VEZBE 6, BazaIgraca klasa*/ 
 package model;
 
 import java.text.SimpleDateFormat;
@@ -23,8 +24,6 @@ public class BazaStudenata {
 
 	private BazaStudenata() {
 
-		initStudente();
-
 		this.kolone = new ArrayList<String>();
 		this.kolone.add("Indeks");
 		this.kolone.add("Ime");
@@ -33,13 +32,15 @@ public class BazaStudenata {
 		this.kolone.add("Status");
 		this.kolone.add("Prosek");
 
-		this.initStudente();
+		initStudente();
 	}
 
 	private void initStudente() {
 		this.Studenti = new ArrayList<Student>();
-		Studenti.add(new Student("Nikolic", "Nikola", parseDate("20.01.2011."), "Zmajevacka 112", "0635652214",
-				"milenkozfk@gmail.com", "RA178-2016", 2015, "I(Prva)", Student.Status.B, 9.05));
+		Studenti.add(new Student("Dusan", "Lekic", parseDate("01.01.2000."), "Zmajevacka 10", "0635672214",
+				"dusanlekic2000@gmail.com", "RA159/2018", 2015, "III(Treca)", Student.Status.B, 9.05));
+		Studenti.add(new Student("Aleksa", "Papovic", parseDate("01.01.1999."), "Zmajevacka 1", "06342424242",
+				"aleksapapovic@gmail.com", "RA166/2018", 2015, "II(Prva)", Student.Status.B, 10));
 	}
 
 	public List<Student> getStudenti() {
@@ -123,7 +124,7 @@ public class BazaStudenata {
 		try {
 			return new SimpleDateFormat("dd.MM.yyyy.").parse(date);
 		} catch (Exception e) {
-			e.printStackTrace();
+			//JOptionPane.showMessageDialog(null, "Nevalidan datum", "GRESKA", JOptionPane.ERROR_MESSAGE);
 			return null;
 		}
 	}

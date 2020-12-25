@@ -126,7 +126,7 @@ public class DodavanjeStudentaDialog extends JDialog {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				
-				StudentController.getInstance().dodajStudenta();
+				if(StudentController.getInstance().dodajStudenta())
 				dispose();
 
 			}

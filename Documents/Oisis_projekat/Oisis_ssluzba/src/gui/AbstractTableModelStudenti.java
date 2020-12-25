@@ -1,3 +1,4 @@
+/*REFERENCA: VEZBE 6, AbstractTableModelIgraci klasa*/ 
 package gui;
 
 import javax.swing.table.AbstractTableModel;

@@ -43,6 +43,7 @@ public class Actions {
 						"Dodavanje Studenta", true);
 				dialogNoviStudent.setVisible(true);
 			}
+				break;
 			case 1: {
 				@SuppressWarnings("unused")
 				DodavanjeProfesoraDialog dialogNoviProfesor = new DodavanjeProfesoraDialog(MainFrame.getInstance(),

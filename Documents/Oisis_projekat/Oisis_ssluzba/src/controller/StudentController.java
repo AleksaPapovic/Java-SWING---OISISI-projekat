@@ -1,4 +1,7 @@
+/*REFERENCA: VEZBE 6, IgraciController klasa*/ 
 package controller;
+
+import java.util.Date;
 
 import javax.swing.JOptionPane;
 
@@ -24,7 +27,7 @@ public class StudentController {
 
 	}
 
-	public void dodajStudenta() {
+	public boolean dodajStudenta() {
 		Student st = new Student();
 
 		if (DodavanjeStudentaDialog.imeField.getText().trim().isEmpty()
@@ -36,30 +39,62 @@ public class StudentController {
 				|| DodavanjeStudentaDialog.brIndField.getText().trim().isEmpty()
 				|| DodavanjeStudentaDialog.godUpField.getText().trim().isEmpty()) {
 			JOptionPane.showMessageDialog(MainFrame.getInstance(), "Morate uneti sve podatke");
-		} else {
-
-			st.setIme(DodavanjeStudentaDialog.imeField.getText());
-			st.setPrezime(DodavanjeStudentaDialog.prezimeField.getText());
-			st.setDatumR(BazaStudenata.parseDate(DodavanjeStudentaDialog.datumRField.getText()));
-			st.setAdresaSt(DodavanjeStudentaDialog.adresaSField.getText());
-			st.setKontaktTl(DodavanjeStudentaDialog.brojTField.getText());
-			st.setEmail(DodavanjeStudentaDialog.emailField.getText());
-			st.setBrojInd(DodavanjeStudentaDialog.brIndField.getText());
-			st.setGodUp(Integer.parseInt(DodavanjeStudentaDialog.godUpField.getText()));
-			st.setGodSt(DodavanjeStudentaDialog.godStComboBox.getSelectedItem().toString());
-			Status status;
-
-			if (DodavanjeStudentaDialog.godStComboBox.getSelectedIndex() == 0) {
-				status = Status.B;
-			} else {
-				status = Status.S;
-			}
-
-			BazaStudenata.getInstance().dodajStudenata(st.getIme(), st.getPrezime(), st.getDatumR(), st.getAdresaSt(),
-					st.getKontaktTl(), st.getEmail(), st.getBrojInd(), st.getGodUp(), st.getGodSt(), status, 0);
-			TabsPanel.tableStudent.update();
+			return false;
 		}
 
+		for (Student s : BazaStudenata.getInstance().getStudenti()) {
+			if (s.getBrojInd().equals(DodavanjeStudentaDialog.brIndField.getText())) {
+				JOptionPane.showMessageDialog(null, "Student za zadatim indeksom vec postoji.", "GRESKA",
+						JOptionPane.ERROR_MESSAGE);
+				return false;
+			}
+		}
+
+		st.setIme(DodavanjeStudentaDialog.imeField.getText());
+		st.setPrezime(DodavanjeStudentaDialog.prezimeField.getText());
+		
+		Date datumr = BazaStudenata.parseDate(DodavanjeStudentaDialog.datumRField.getText());
+		if (datumr == null) {
+			JOptionPane.showMessageDialog(null, "Nevalidan datum", "GRESKA", JOptionPane.ERROR_MESSAGE);
+			return false;
+		}
+		st.setDatumR(datumr);
+		
+		st.setAdresaSt(DodavanjeStudentaDialog.adresaSField.getText());
+		st.setKontaktTl(DodavanjeStudentaDialog.brojTField.getText());
+		
+		String email=DodavanjeStudentaDialog.emailField.getText();
+		
+		if (!email.matches("[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+")) {
+			JOptionPane.showMessageDialog(null, "Nevalidna email adresa", "GRESKA", JOptionPane.ERROR_MESSAGE);
+			return false;
+		}
+		
+		st.setEmail(DodavanjeStudentaDialog.emailField.getText());
+		st.setBrojInd(DodavanjeStudentaDialog.brIndField.getText());
+		
+		String godUp= DodavanjeStudentaDialog.godUpField.getText();
+		
+		if (!godUp.matches("[1-2][0-9]{3,}")) {
+			JOptionPane.showMessageDialog(null, "Nevalidna godina upisa", "GRESKA", JOptionPane.ERROR_MESSAGE);
+			return false;
+		}
+		
+		st.setGodUp(Integer.parseInt(godUp));
+		st.setGodSt(DodavanjeStudentaDialog.godStComboBox.getSelectedItem().toString());
+		
+		Status status;
+
+		if (DodavanjeStudentaDialog.godStComboBox.getSelectedIndex() == 0) {
+			status = Status.B;
+		} else {
+			status = Status.S;
+		}
+
+		BazaStudenata.getInstance().dodajStudenata(st.getIme(), st.getPrezime(), st.getDatumR(), st.getAdresaSt(),
+				st.getKontaktTl(), st.getEmail(), st.getBrojInd(), st.getGodUp(), st.getGodSt(), status, 0);
+		TabsPanel.tableStudent.update();
+		return true;
 	}
 
 }
