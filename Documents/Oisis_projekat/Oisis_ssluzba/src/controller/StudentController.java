@@ -81,18 +81,45 @@ public class StudentController {
 		}
 		
 		st.setGodUp(Integer.parseInt(godUp));
-		st.setGodSt(DodavanjeStudentaDialog.godStComboBox.getSelectedItem().toString());
 		
-		Status status;
+	    switch (DodavanjeStudentaDialog.godStComboBox.getSelectedItem().toString()) {
+		case "I(Prva)":
+			st.setGodSt("1");
+			break;
+		case "II(Druga)":
+			st.setGodSt("2");
+			break;
 
-		if (DodavanjeStudentaDialog.godStComboBox.getSelectedIndex() == 0) {
-			status = Status.B;
-		} else {
-			status = Status.S;
+		case "III(Treca)":
+			st.setGodSt("3");
+			break;
+
+		case "IV(Cetvrta)":
+			st.setGodSt("4");
+			break;
+	
+		default:
+			break;
 		}
+		
+		Status status=null;
 
+		switch (DodavanjeStudentaDialog.nacinFComboBox.getSelectedItem().toString()) {
+		case "Budzet":
+			status = Status.B;
+			break;
+		case "Samofinansiranje":
+			status = Status.S;
+			break;
+
+		default:
+			break;
+		}		
+		
+		st.setStatus(status);
+		
 		BazaStudenata.getInstance().dodajStudenata(st.getIme(), st.getPrezime(), st.getDatumR(), st.getAdresaSt(),
-				st.getKontaktTl(), st.getEmail(), st.getBrojInd(), st.getGodUp(), st.getGodSt(), status, 0);
+				st.getKontaktTl(), st.getEmail(), st.getBrojInd(), st.getGodUp(), st.getGodSt(), st.getStatus(), 0);
 		TabsPanel.tableStudent.update();
 		return true;
 	}

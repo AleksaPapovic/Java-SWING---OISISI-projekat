@@ -38,9 +38,9 @@ public class BazaStudenata {
 	private void initStudente() {
 		this.Studenti = new ArrayList<Student>();
 		Studenti.add(new Student("Dusan", "Lekic", parseDate("01.01.2000."), "Zmajevacka 10", "0635672214",
-				"dusanlekic2000@gmail.com", "RA159/2018", 2015, "III(Treca)", Student.Status.B, 9.05));
+				"dusanlekic2000@gmail.com", "RA159/2018", 2015, "3", Student.Status.B, 9.05));
 		Studenti.add(new Student("Aleksa", "Papovic", parseDate("01.01.1999."), "Zmajevacka 1", "06342424242",
-				"aleksapapovic@gmail.com", "RA166/2018", 2015, "II(Prva)", Student.Status.B, 10));
+				"aleksapapovic@gmail.com", "RA166/2018", 2015, "3", Student.Status.B, 10));
 	}
 
 	public List<Student> getStudenti() {
@@ -87,7 +87,7 @@ public class BazaStudenata {
 	}
 
 	public void dodajStudenata(String prezime, String ime, Date datumR, String adresaSt, String kontaktTl, String email,
-			String brojInd, int godUp, String godSt, Student.Status status, double prosek) {
+			String brojInd, int godUp, String godSt, Status status, double prosek) {
 		this.Studenti.add(
 				new Student(prezime, ime, datumR, adresaSt, kontaktTl, email, brojInd, godUp, godSt, status, prosek));
 	}

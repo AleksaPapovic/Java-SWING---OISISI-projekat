@@ -35,9 +35,8 @@ public class DodavanjeStudentaDialog extends JDialog {
 	public static JTextField email;
 	public JButton odustani;
 	public static JButton prihvati;
-	@SuppressWarnings("rawtypes")
-	public static JComboBox godStComboBox;
-	public static JComboBox nacinFComboBox;
+	public static JComboBox<String> godStComboBox;
+	public static JComboBox<String> nacinFComboBox;
 
 	public DodavanjeStudentaDialog(Frame parent, String title, boolean modal) {
 		super(parent, title, modal);
@@ -97,13 +96,13 @@ public class DodavanjeStudentaDialog extends JDialog {
 		godStLabela.setPreferredSize(velicina);
 		godStLabela.setMaximumSize(velicina);
 		String godSt[] = { "I(prva)", "II(druga)", "II(treca)", "IV(cetvrta)" };
-		godStComboBox = new JComboBox(godSt);
+		godStComboBox = new JComboBox<String>(godSt);
 
 		JLabel nacinFLabela = new JLabel("Nacin finansiranja");
 		nacinFLabela.setPreferredSize(velicina);
 		nacinFLabela.setMaximumSize(velicina);
 		String nacinF[] = { "Budzet", "Samofinansiranje" };
-		nacinFComboBox = new JComboBox(nacinF);
+		nacinFComboBox = new JComboBox<String>(nacinF);
 
 		prihvati = new JButton("Potvrdi");
 		prihvati.setPreferredSize(velicina);

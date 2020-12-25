@@ -29,11 +29,11 @@ public class Student {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Student(String prezime, String ime, Date datumR, String adresaSt, String kontaktTl, String email,
+	public Student( String ime, String prezime, Date datumR, String adresaSt, String kontaktTl, String email,
 			String brojInd, int godUp, String godSt, Status status, double prosek) {
 		super();
-		this.prezime = prezime;
 		this.ime = ime;
+		this.prezime = prezime;
 		this.datumR = datumR;
 		this.adresaSt = adresaSt;
 		this.kontaktTl = kontaktTl;
