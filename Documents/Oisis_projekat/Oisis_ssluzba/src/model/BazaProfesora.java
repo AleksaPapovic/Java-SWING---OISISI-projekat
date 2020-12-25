@@ -1,10 +1,7 @@
 package model;
 
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 
-import gui.TableProfesor;
 import model.Profesor.Titula;
 import model.Profesor.Zvanje;
 
@@ -19,10 +16,10 @@ public class BazaProfesora {
 	  return instance;
 	}
 	
-	private List<Profesor> profesori;
+	private ArrayList<Profesor> profesori;
 	
 
-	private List<String>   profNazivi;
+	private ArrayList<String>   profNazivi;
 	
 	
 	private BazaProfesora() {
@@ -36,7 +33,7 @@ public class BazaProfesora {
 		this.profNazivi.add("Titula");
 		this.profNazivi.add("Zvanje");
 		
-		this.profesori.add(new Profesor("Petorivc","Petar","18.12.1990","Beograd","0003","petorvic@gmail.com","Novi Sad","0008657"));
+	//	this.profesori.add(new Profesor("Petorivc","Petar","18.12.1990","Beograd","0003","petorvic@gmail.com","Novi Sad","0008657"));
 		
 		
 		
@@ -49,33 +46,33 @@ public class BazaProfesora {
 		return this.profNazivi.get(idx);
 	}
 	
-	public List<Profesor> getProfesori() {
+	
+	public ArrayList<Profesor> getProfesori() {
 		return profesori;
 	}
-	public void setProfesori(List<Profesor> profesori) {
+	public void setProfesori(ArrayList<Profesor> profesori) {
 		this.profesori = profesori;
 	}
 
-	public List<String> getProfNazivi() {
+	public ArrayList<String> getProfNazivi() {
 		return profNazivi;
 	}
-	public void setProfNazivi(List<String> profNazivi) {
+	public void setProfNazivi(ArrayList<String> profNazivi) {
 		this.profNazivi = profNazivi;
 	}
 	public static void setInstance(BazaProfesora instance) {
 		BazaProfesora.instance = instance;
 	}
 
-	public Object getValueAt(int row, int column) {
+	public String getValueAt(int row, int column) {
 		
 		Profesor profesor = this.profesori.get(row);
-		
 		switch(column) {
 		case 0:
 			return profesor.getIme();
 		case 1:
 			return profesor.getPrezime();
-		case 2: 
+		case 2:
 			if (profesor.getTitula() == Titula.ProfDr) { 
 				return "Prof. Dr.";
 			} else if (profesor.getTitula() == Titula.Dr) {

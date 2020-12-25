@@ -14,7 +14,9 @@ import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.event.DocumentListener;
 
+import controller.DocumentListenerProfesorFields;
 import controller.ProfesorController;
 
 public class DodavanjeProfesoraDialog extends JDialog {
@@ -32,15 +34,17 @@ public class DodavanjeProfesoraDialog extends JDialog {
 	public static JTextField emailField;
 	public static JTextField adresaKField;
 	public static JTextField brlkField;
-	public static JComboBox combobox1;
-	public static JComboBox combobox2;
+	public static JComboBox<String> combobox1;
+	public static JComboBox<String> combobox2;
+	public static JButton prihvati; 
+	private DocumentListener docList = new DocumentListenerProfesorFields();
 	
 	public DodavanjeProfesoraDialog(Frame parent, String title, boolean modal) {
+		super(parent,title,modal);
 		setTitle(title);
 		setSize(450, 550);
 		setLocationRelativeTo(parent);
 		setResizable(false);
-		setModal(modal);
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		JPanel panel = new JPanel();
 		panel.setLayout(new BorderLayout());
@@ -96,18 +100,18 @@ public class DodavanjeProfesoraDialog extends JDialog {
 		titulaLabela.setPreferredSize(polje);
 		titulaLabela.setMaximumSize(polje);
 		String titule[] = { "Ms", "Dr", "ProfDr" };
-		combobox1 = new JComboBox(titule);
+		combobox1 = new JComboBox<String>(titule);
 
 		JLabel zvanjeLabela = new JLabel("Izaberite zvanje");
 		zvanjeLabela.setPreferredSize(polje);
 		zvanjeLabela.setMaximumSize(polje);
 		String zvanja[] = { "Saradnik", "Asistent", "RProfesor", 
 				            "VProfesor", "Docent " };
-		combobox2 = new JComboBox(zvanja);
+		combobox2 = new JComboBox<String>(zvanja);
 		
-		JButton prihvati = new JButton("Potvrdi");
+		prihvati = new JButton("Potvrdi");
 		prihvati.setPreferredSize(polje);
-		//prihvati.setEnabled(false);
+		prihvati.setEnabled(false);
 		JButton odbaci  = new JButton("Odustani");
 		odbaci.setPreferredSize(polje);
 		
@@ -131,6 +135,15 @@ public class DodavanjeProfesoraDialog extends JDialog {
 				dispose();
 			}
 		});
+		
+		imeField.getDocument().addDocumentListener(docList);
+		prezimeField.getDocument().addDocumentListener(docList);
+		datumRField.getDocument().addDocumentListener(docList);
+		adresaSField.getDocument().addDocumentListener(docList);
+		kontaktTelField.getDocument().addDocumentListener(docList);
+		emailField.getDocument().addDocumentListener(docList);
+		adresaKField.getDocument().addDocumentListener(docList);
+		brlkField.getDocument().addDocumentListener(docList);
 		
 		add(panel);
 

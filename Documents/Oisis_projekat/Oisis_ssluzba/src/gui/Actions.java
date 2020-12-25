@@ -37,14 +37,16 @@ public class Actions {
 		}
 
 		public void actionPerformed(ActionEvent e) {
-			DodavanjeProfesoraDialog dialogNoviProfesor = new DodavanjeProfesoraDialog(MainFrame.getInstance(),
-					"Dodavanje Profesora", true);
-			dialogNoviProfesor.setVisible(true);
 			switch (TabsPanel.tab_curr) {
 			case 0: {
 				DodavanjeStudentaDialog dialogNoviStudent = new DodavanjeStudentaDialog(MainFrame.getInstance(),
 						"Dodavanje Studenta", true);
 				dialogNoviStudent.setVisible(true);
+			}
+			case 1: {
+				@SuppressWarnings("unused")
+				DodavanjeProfesoraDialog dialogNoviProfesor = new DodavanjeProfesoraDialog(MainFrame.getInstance(),
+						"Dodavanje Profesora", true);
 			}
 				break;
 
