@@ -39,9 +39,9 @@ public class Actions {
 		public void actionPerformed(ActionEvent e) {
 			switch (TabsPanel.tab_curr) {
 			case 0: {
+				@SuppressWarnings("unused")
 				DodavanjeStudentaDialog dialogNoviStudent = new DodavanjeStudentaDialog(MainFrame.getInstance(),
 						"Dodavanje Studenta", true);
-				dialogNoviStudent.setVisible(true);
 			}
 				break;
 			case 1: {

@@ -24,7 +24,7 @@ public class TabsPanel extends JTabbedPane {
 	public static TableStudent tableStudent;
 	
 	public TabsPanel() {
-
+		
 		JPanel gornji = new JPanel();
 		JPanel levi = new JPanel();
 		JPanel desni = new JPanel();
@@ -37,9 +37,13 @@ public class TabsPanel extends JTabbedPane {
 		desni.setPreferredSize(new Dimension(50, tabStudent.getHeight()));
 		gornji.setPreferredSize(new Dimension(tabStudent.getWidth(), 50));
 		donji.setPreferredSize(new Dimension(tabStudent.getWidth(), 50));
-		tabStudent.setBackground(Color.white);
+		levi.setBackground(Color.WHITE);
+		desni.setBackground(Color.WHITE);
+		gornji.setBackground(Color.WHITE);
+		donji.setBackground(Color.WHITE);
 		tableStudent=new TableStudent();
 		JScrollPane scrollPane1 = new JScrollPane(tableStudent);
+		scrollPane1.getViewport().setBackground(Color.WHITE);
 		tabStudent.add(scrollPane1, BorderLayout.CENTER);
 		tabStudent.add(levi, BorderLayout.WEST);
 		tabStudent.add(desni, BorderLayout.EAST);

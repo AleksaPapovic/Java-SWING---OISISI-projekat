@@ -98,7 +98,7 @@ public class DodavanjeStudentaDialog extends JDialog {
 		String godSt[] = { "I(prva)", "II(druga)", "II(treca)", "IV(cetvrta)" };
 		godStComboBox = new JComboBox<String>(godSt);
 
-		JLabel nacinFLabela = new JLabel("Nacin finansiranja");
+		JLabel nacinFLabela = new JLabel("Nacin finansiranja*");
 		nacinFLabela.setPreferredSize(velicina);
 		nacinFLabela.setMaximumSize(velicina);
 		String nacinF[] = { "Budzet", "Samofinansiranje" };
@@ -168,5 +168,7 @@ public class DodavanjeStudentaDialog extends JDialog {
 
 		buttonsPanel.add(prihvati);
 		buttonsPanel.add(odustani);
+		
+		setVisible(true);
 	}
 }

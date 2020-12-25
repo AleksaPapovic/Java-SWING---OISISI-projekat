@@ -83,18 +83,18 @@ public class StudentController {
 		st.setGodUp(Integer.parseInt(godUp));
 		
 	    switch (DodavanjeStudentaDialog.godStComboBox.getSelectedItem().toString()) {
-		case "I(Prva)":
+		case "I(prva)":
 			st.setGodSt("1");
 			break;
-		case "II(Druga)":
+		case "II(druga)":
 			st.setGodSt("2");
 			break;
 
-		case "III(Treca)":
+		case "III(treca)":
 			st.setGodSt("3");
 			break;
 
-		case "IV(Cetvrta)":
+		case "IV(cetvrta)":
 			st.setGodSt("4");
 			break;
 	
