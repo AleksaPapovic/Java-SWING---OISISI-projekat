@@ -20,17 +20,17 @@ public class TablePredmet extends JTable {
 		this.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		this.setModel(new AbstractTableModelPredmeti());
 	}
-	
-		//izmena boje redova prilikom selektovanja
-		@Override
-		public Component prepareRenderer(TableCellRenderer renderer, int row, int column) {
-			Component c = super.prepareRenderer(renderer, row, column);
-			if (isRowSelected(row)) {
-				c.setBackground(Color.LIGHT_GRAY);
-			} else {
-				c.setBackground(Color.WHITE);
-			}
-			return c;
+
+	// izmena boje redova prilikom selektovanja
+	@Override
+	public Component prepareRenderer(TableCellRenderer renderer, int row, int column) {
+		Component c = super.prepareRenderer(renderer, row, column);
+		if (isRowSelected(row)) {
+			c.setBackground(Color.LIGHT_GRAY);
+		} else {
+			c.setBackground(Color.WHITE);
 		}
-	
+		return c;
+	}
+
 }

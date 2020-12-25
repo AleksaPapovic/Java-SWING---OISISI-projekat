@@ -99,14 +99,14 @@ public class DodavanjeProfesoraDialog extends JDialog {
 		JLabel titulaLabela = new JLabel("Izaberite titulu");
 		titulaLabela.setPreferredSize(polje);
 		titulaLabela.setMaximumSize(polje);
-		String titule[] = { "Ms", "Dr", "ProfDr" };
+		String titule[] = { "Master", "Doktor", "Profesor doktor" };
 		combobox1 = new JComboBox<String>(titule);
 
 		JLabel zvanjeLabela = new JLabel("Izaberite zvanje");
 		zvanjeLabela.setPreferredSize(polje);
 		zvanjeLabela.setMaximumSize(polje);
-		String zvanja[] = { "Saradnik", "Asistent", "RProfesor", 
-				            "VProfesor", "Docent " };
+		String zvanja[] = { "Saradnik", "Asistent", "Redovni Profesor", 
+				            "Vanredni Profesor", "Docent" };
 		combobox2 = new JComboBox<String>(zvanja);
 		
 		prihvati = new JButton("Potvrdi");

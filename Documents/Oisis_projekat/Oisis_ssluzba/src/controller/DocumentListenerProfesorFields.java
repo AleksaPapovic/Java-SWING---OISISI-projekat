@@ -10,10 +10,9 @@ public class DocumentListenerProfesorFields implements DocumentListener {
 	@Override
 	public void changedUpdate(DocumentEvent arg0) {
 		// TODO Auto-generated method stub
-		if(proveriPolja()) {
+		if (proveriPolja()) {
 			DodavanjeProfesoraDialog.prihvati.setEnabled(true);
-		}
-		else {
+		} else {
 			DodavanjeProfesoraDialog.prihvati.setEnabled(false);
 		}
 	}
@@ -21,10 +20,9 @@ public class DocumentListenerProfesorFields implements DocumentListener {
 	@Override
 	public void insertUpdate(DocumentEvent arg0) {
 		// TODO Auto-generated method stub
-		if(proveriPolja()) {
+		if (proveriPolja()) {
 			DodavanjeProfesoraDialog.prihvati.setEnabled(true);
-		}
-		else {
+		} else {
 			DodavanjeProfesoraDialog.prihvati.setEnabled(false);
 		}
 	}
@@ -32,10 +30,9 @@ public class DocumentListenerProfesorFields implements DocumentListener {
 	@Override
 	public void removeUpdate(DocumentEvent arg0) {
 		// TODO Auto-generated method stub
-		if(proveriPolja()) {
+		if (proveriPolja()) {
 			DodavanjeProfesoraDialog.prihvati.setEnabled(true);
-		}
-		else {
+		} else {
 			DodavanjeProfesoraDialog.prihvati.setEnabled(false);
 		}
 	}
