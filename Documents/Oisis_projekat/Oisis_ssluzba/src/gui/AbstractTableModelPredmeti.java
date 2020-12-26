@@ -1,8 +1,9 @@
+/*REFERENCA: VEZBE 6, AbstractTableModelIgraci klasa*/
 package gui;
 
 import javax.swing.table.AbstractTableModel;
 
-public class AbstractTableModelPredmeti extends AbstractTableModel{
+public class AbstractTableModelPredmeti extends AbstractTableModel {
 
 	/**
 	 * 
@@ -18,7 +19,6 @@ public class AbstractTableModelPredmeti extends AbstractTableModel{
 	public int getRowCount() {
 		return 0;
 	}
-
 
 	@Override
 	public String getColumnName(int column) {

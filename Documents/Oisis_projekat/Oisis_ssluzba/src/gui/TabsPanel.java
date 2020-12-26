@@ -1,3 +1,4 @@
+/*REFERENCA: VEZBE 5, Tabovi*/
 package gui;
 
 import java.awt.BorderLayout;
@@ -22,9 +23,9 @@ public class TabsPanel extends JTabbedPane {
 	public static int tab_curr = 0;
 	public static TableProfesor tableProfesor;
 	public static TableStudent tableStudent;
-	
+
 	public TabsPanel() {
-		
+
 		JPanel gornji = new JPanel();
 		JPanel levi = new JPanel();
 		JPanel desni = new JPanel();
@@ -41,7 +42,7 @@ public class TabsPanel extends JTabbedPane {
 		desni.setBackground(Color.WHITE);
 		gornji.setBackground(Color.WHITE);
 		donji.setBackground(Color.WHITE);
-		tableStudent=new TableStudent();
+		tableStudent = new TableStudent();
 		JScrollPane scrollPane1 = new JScrollPane(tableStudent);
 		scrollPane1.getViewport().setBackground(Color.WHITE);
 		tabStudent.add(scrollPane1, BorderLayout.CENTER);
@@ -52,45 +53,45 @@ public class TabsPanel extends JTabbedPane {
 		Icon ikonStud = new ImageIcon("icons" + File.separator + "about.png");
 		this.addTab("Studenti", ikonStud, tabStudent, "Prikaz studenata");
 
-		//Tab profesor
-		JPanel  tabProfesor = new JPanel();
+		// Tab profesor
+		JPanel tabProfesor = new JPanel();
 		tabProfesor.setLayout(new BorderLayout());
-		  gornji = new JPanel();
-		  levi = new JPanel();
-		  desni = new JPanel();
-		  donji = new JPanel();
-		levi.setPreferredSize(new Dimension(50,tabProfesor.getHeight()));
-		desni.setPreferredSize(new Dimension(50,tabProfesor.getHeight()));
-		gornji.setPreferredSize(new Dimension(tabProfesor.getWidth(),50));
-		donji.setPreferredSize(new Dimension(tabProfesor.getWidth(),50));
+		gornji = new JPanel();
+		levi = new JPanel();
+		desni = new JPanel();
+		donji = new JPanel();
+		levi.setPreferredSize(new Dimension(50, tabProfesor.getHeight()));
+		desni.setPreferredSize(new Dimension(50, tabProfesor.getHeight()));
+		gornji.setPreferredSize(new Dimension(tabProfesor.getWidth(), 50));
+		donji.setPreferredSize(new Dimension(tabProfesor.getWidth(), 50));
 		tabProfesor.setBackground(Color.white);
 		tableProfesor = new TableProfesor();
 		JScrollPane scrollPane = new JScrollPane(tableProfesor);
-		tabProfesor.add(scrollPane,BorderLayout.CENTER);
-		tabProfesor.add(levi,BorderLayout.WEST);
-		tabProfesor.add(desni,BorderLayout.EAST);
-		tabProfesor.add(gornji,BorderLayout.NORTH);
-		tabProfesor.add(donji,BorderLayout.SOUTH);
+		tabProfesor.add(scrollPane, BorderLayout.CENTER);
+		tabProfesor.add(levi, BorderLayout.WEST);
+		tabProfesor.add(desni, BorderLayout.EAST);
+		tabProfesor.add(gornji, BorderLayout.NORTH);
+		tabProfesor.add(donji, BorderLayout.SOUTH);
 		Icon ikonProf = new ImageIcon("icons" + File.separator + "about.png");
-		this.addTab("Profesori",ikonProf,tabProfesor,"Prikaz profesora");
-		//Tab predmet
-		JPanel  tabPredmet = new JPanel();
+		this.addTab("Profesori", ikonProf, tabProfesor, "Prikaz profesora");
+		// Tab predmet
+		JPanel tabPredmet = new JPanel();
 		tabPredmet.setLayout(new BorderLayout());
 		tabPredmet.setBackground(Color.white);
 		TablePredmet tablePredmet = new TablePredmet();
 		JScrollPane scrollPane3 = new JScrollPane(tablePredmet);
-		tabPredmet.add(scrollPane3,BorderLayout.CENTER);
+		tabPredmet.add(scrollPane3, BorderLayout.CENTER);
 		Icon ikonPred = new ImageIcon("icons" + File.separator + "about.png");
-		this.addTab("Predmeti",ikonPred,tabPredmet,"Prikaz predmeta");
-	
+		this.addTab("Predmeti", ikonPred, tabPredmet, "Prikaz predmeta");
+
 		this.addChangeListener(new ChangeListener() {
 
-		@Override
-		public void stateChanged(ChangeEvent event) {
-			
-		    JTabbedPane tabbedPane = (JTabbedPane)event.getSource();
-		    tab_curr = tabbedPane.getSelectedIndex();
-		}
-	    });
+			@Override
+			public void stateChanged(ChangeEvent event) {
+
+				JTabbedPane tabbedPane = (JTabbedPane) event.getSource();
+				tab_curr = tabbedPane.getSelectedIndex();
+			}
+		});
 	}
 }

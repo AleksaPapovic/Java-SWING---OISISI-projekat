@@ -1,3 +1,4 @@
+/*REFERENCA: VEZBE 6, AbstractTableModelIgraci klasa*/
 package gui;
 
 import javax.swing.table.AbstractTableModel;
@@ -11,8 +12,6 @@ public class AbstractTableModelProfesori extends AbstractTableModel {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	
-	
 	@Override
 	public int getColumnCount() {
 		return BazaProfesora.getInstance().getColumnCount();
@@ -23,7 +22,6 @@ public class AbstractTableModelProfesori extends AbstractTableModel {
 		return BazaProfesora.getInstance().getProfesori().size();
 	}
 
-
 	@Override
 	public String getColumnName(int column) {
 		return BazaProfesora.getInstance().getColumnName(column);
@@ -33,7 +31,5 @@ public class AbstractTableModelProfesori extends AbstractTableModel {
 	public Object getValueAt(int rowIndex, int columnIndex) {
 		return BazaProfesora.getInstance().getValueAt(rowIndex, columnIndex);
 	}
-
-	
 
 }

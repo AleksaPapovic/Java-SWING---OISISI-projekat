@@ -1,3 +1,4 @@
+/*REFERENCA: VEZBE 6, IgraciJTable klasa*/
 package gui;
 
 import java.awt.Color;

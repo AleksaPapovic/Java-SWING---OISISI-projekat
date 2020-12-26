@@ -1,3 +1,4 @@
+/*REFERENCA: VEZBE 6, IgraciController klasa*/
 package controller;
 
 import javax.swing.JOptionPane;
@@ -89,25 +90,21 @@ public class ProfesorController {
 			return false;
 		}
 
-		if(datumR.matches("[0-9]{2}[\\.]{1}[0-9]{2}[\\.]{1}[0-9]{4}[\\.]{1}")) {
-		String dateR [] = datumR.split("\\.");
-		int dan =Integer.parseInt(dateR[0]);
-		int mesec = Integer.parseInt(dateR[1]);
-		if(dan >31 || mesec >12)
-		 {
-			 JOptionPane.showMessageDialog(null, "Greška uneli ste pogresan dan ili mesec");
-			 return false;
-		 }
-		 else {
-			profesor.setDatumR(datumR);
-		 }
-		}
-		else
-		{
+		if (datumR.matches("[0-9]{2}[\\.]{1}[0-9]{2}[\\.]{1}[0-9]{4}[\\.]{1}")) {
+			String dateR[] = datumR.split("\\.");
+			int dan = Integer.parseInt(dateR[0]);
+			int mesec = Integer.parseInt(dateR[1]);
+			if (dan > 31 || mesec > 12) {
+				JOptionPane.showMessageDialog(null, "Greška uneli ste pogresan dan ili mesec");
+				return false;
+			} else {
+				profesor.setDatumR(datumR);
+			}
+		} else {
 			JOptionPane.showMessageDialog(null, "Greška datum mora biti u formatu dd.mm.yyyy.");
 			return false;
 		}
-		
+
 		if (email.contains("@")) {
 			profesor.setEmail(email);
 		} else {
@@ -116,16 +113,23 @@ public class ProfesorController {
 		}
 
 		profesor.setAdresaS(adresaS);
-		
-		if(kontaktTel.matches("[0-9]{9,}")) {
-		profesor.setKontaktTel(kontaktTel);
-		}
-		else {
+
+		if (kontaktTel.matches("[0-9]{9,}")) {
+			profesor.setKontaktTel(kontaktTel);
+		} else {
 			JOptionPane.showMessageDialog(null, "Greška kontakt telefon mora imati bar 9 brojeva");
 			return false;
 		}
+
 		profesor.setAdresaK(adresaK);
-		profesor.setBrlk(brlk);
+
+		if (brlk.matches("[0-9]{9}")) {
+			profesor.setBrlk(brlk);
+		} else {
+			JOptionPane.showMessageDialog(null, "Greška broj lične karte  mora imati 9 brojeva");
+			return false;
+		}
+
 		profesor.setTitula(titula);
 
 		BazaProfesora.getInstance().dodajProfesora(profesor.getPrezime(), profesor.getIme(), profesor.getDatumR(),

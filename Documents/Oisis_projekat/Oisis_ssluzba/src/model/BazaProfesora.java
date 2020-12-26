@@ -1,3 +1,4 @@
+/*REFERENCA: VEZBE 6, BazaIgraca klasa*/ 
 package model;
 
 import java.util.ArrayList;
@@ -31,8 +32,10 @@ public class BazaProfesora {
 		this.profNazivi.add("Titula");
 		this.profNazivi.add("Zvanje");
 
-		this.profesori.add(new Profesor("Petorvic", "Petar", "18.12.1990.", "Beograd", "0003", "petorvic@gmail.com",
-				"Novi Sad", "0008657", Titula.Dr, Zvanje.RProfesor));
+		this.profesori.add(new Profesor("Petrović", "Petar", "18.12.1990.", "Beograd", "069373994234", "petorvic@gmail.com",
+				"Novi Sad", "123857364", Titula.Dr, Zvanje.RProfesor));
+		this.profesori.add(new Profesor("Lekić", "Dušan", "20.10.2000.", "Kraljevo", "069373994234", "dlekic@gmail.com",
+				"Beograd", "987456321", Titula.Ms, Zvanje.VProfesor));
 
 	}
 

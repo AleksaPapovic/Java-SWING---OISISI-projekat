@@ -106,10 +106,10 @@ public class MenuToolbar extends JToolBar {
 
 		Actions ac = new Actions();
 		// create our icons (for the toolbar)
-		newIcon = new ImageIcon("icons" + File.separator +"plus.png");
-		editIcon = new ImageIcon("icons" + File.separator +"pen.png");
-		deleteIcon = new ImageIcon("icons" + File.separator +"trashbin.png");
-		searchIcon = new ImageIcon("icons" + File.separator +"search.png");
+		newIcon = new ImageIcon("icons" + File.separator + "plus.png");
+		editIcon = new ImageIcon("icons" + File.separator + "pen.png");
+		deleteIcon = new ImageIcon("icons" + File.separator + "trashbin.png");
+		searchIcon = new ImageIcon("icons" + File.separator + "search.png");
 
 		// create our actions
 		newAction = ac.new NewAction("New", newIcon, "Create new", KeyEvent.VK_N,
