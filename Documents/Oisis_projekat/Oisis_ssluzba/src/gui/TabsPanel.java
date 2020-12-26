@@ -50,29 +50,34 @@ public class TabsPanel extends JTabbedPane {
 		tabStudent.add(desni, BorderLayout.EAST);
 		tabStudent.add(gornji, BorderLayout.NORTH);
 		tabStudent.add(donji, BorderLayout.SOUTH);
-		Icon ikonStud = new ImageIcon("icons" + File.separator + "about.png");
-		this.addTab("Studenti", ikonStud, tabStudent, "Prikaz studenata");
+		Icon ikonStud = new ImageIcon("icons" + File.separator + "tab.png");
+		this.addTab("Studenti",ikonStud, tabStudent, "Prikaz studenata");
 
 		// Tab profesor
 		JPanel tabProfesor = new JPanel();
 		tabProfesor.setLayout(new BorderLayout());
-		gornji = new JPanel();
-		levi = new JPanel();
-		desni = new JPanel();
-		donji = new JPanel();
-		levi.setPreferredSize(new Dimension(50, tabProfesor.getHeight()));
-		desni.setPreferredSize(new Dimension(50, tabProfesor.getHeight()));
-		gornji.setPreferredSize(new Dimension(tabProfesor.getWidth(), 50));
-		donji.setPreferredSize(new Dimension(tabProfesor.getWidth(), 50));
+		JPanel gornji1 = new JPanel();
+		JPanel levi1 = new JPanel();
+		JPanel desni1 = new JPanel();
+		JPanel donji1 = new JPanel();
+		levi1.setBackground(Color.WHITE);
+		desni1.setBackground(Color.WHITE);
+		gornji1.setBackground(Color.WHITE);
+		donji1.setBackground(Color.WHITE);
+		levi1.setPreferredSize(new Dimension(50, tabProfesor.getHeight()));
+		desni1.setPreferredSize(new Dimension(50, tabProfesor.getHeight()));
+		gornji1.setPreferredSize(new Dimension(tabProfesor.getWidth(), 50));
+		donji1.setPreferredSize(new Dimension(tabProfesor.getWidth(), 50));
 		tabProfesor.setBackground(Color.white);
 		tableProfesor = new TableProfesor();
 		JScrollPane scrollPane = new JScrollPane(tableProfesor);
+		scrollPane.getViewport().setBackground(Color.WHITE);
 		tabProfesor.add(scrollPane, BorderLayout.CENTER);
-		tabProfesor.add(levi, BorderLayout.WEST);
-		tabProfesor.add(desni, BorderLayout.EAST);
-		tabProfesor.add(gornji, BorderLayout.NORTH);
-		tabProfesor.add(donji, BorderLayout.SOUTH);
-		Icon ikonProf = new ImageIcon("icons" + File.separator + "about.png");
+		tabProfesor.add(levi1, BorderLayout.WEST);
+		tabProfesor.add(desni1, BorderLayout.EAST);
+		tabProfesor.add(gornji1, BorderLayout.NORTH);
+		tabProfesor.add(donji1, BorderLayout.SOUTH);
+		Icon ikonProf = new ImageIcon("icons" + File.separator + "tab.png");
 		this.addTab("Profesori", ikonProf, tabProfesor, "Prikaz profesora");
 		// Tab predmet
 		JPanel tabPredmet = new JPanel();
@@ -81,9 +86,9 @@ public class TabsPanel extends JTabbedPane {
 		TablePredmet tablePredmet = new TablePredmet();
 		JScrollPane scrollPane3 = new JScrollPane(tablePredmet);
 		tabPredmet.add(scrollPane3, BorderLayout.CENTER);
-		Icon ikonPred = new ImageIcon("icons" + File.separator + "about.png");
-		this.addTab("Predmeti", ikonPred, tabPredmet, "Prikaz predmeta");
-
+		Icon ikonPred = new ImageIcon("icons" + File.separator + "tab.png");
+		this.addTab("Predmeti",ikonPred, tabPredmet, "Prikaz predmeta");
+		
 		this.addChangeListener(new ChangeListener() {
 
 			@Override
