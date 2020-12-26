@@ -1,3 +1,4 @@
+/*REFERENCA: VEZBE 6, Igrac klasa*/
 package model;
 
 import java.util.Date;
