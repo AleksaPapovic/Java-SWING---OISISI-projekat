@@ -51,7 +51,7 @@ public class TabsPanel extends JTabbedPane {
 		tabStudent.add(gornji, BorderLayout.NORTH);
 		tabStudent.add(donji, BorderLayout.SOUTH);
 		Icon ikonStud = new ImageIcon("icons" + File.separator + "tab.png");
-		this.addTab("Studenti",ikonStud, tabStudent, "Prikaz studenata");
+		this.addTab("Studenti", ikonStud, tabStudent, "Prikaz studenata");
 
 		// Tab profesor
 		JPanel tabProfesor = new JPanel();
@@ -87,8 +87,8 @@ public class TabsPanel extends JTabbedPane {
 		JScrollPane scrollPane3 = new JScrollPane(tablePredmet);
 		tabPredmet.add(scrollPane3, BorderLayout.CENTER);
 		Icon ikonPred = new ImageIcon("icons" + File.separator + "tab.png");
-		this.addTab("Predmeti",ikonPred, tabPredmet, "Prikaz predmeta");
-		
+		this.addTab("Predmeti", ikonPred, tabPredmet, "Prikaz predmeta");
+
 		this.addChangeListener(new ChangeListener() {
 
 			@Override
