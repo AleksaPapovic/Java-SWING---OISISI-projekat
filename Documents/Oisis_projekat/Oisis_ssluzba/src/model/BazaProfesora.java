@@ -1,7 +1,9 @@
 /*REFERENCA: VEZBE 6, BazaIgraca klasa*/
 package model;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import model.Profesor.Titula;
 import model.Profesor.Zvanje;
@@ -31,10 +33,13 @@ public class BazaProfesora {
 		this.profNazivi.add("Prezime");
 		this.profNazivi.add("Titula");
 		this.profNazivi.add("Zvanje");
-
-		this.profesori.add(new Profesor("Petrović", "Petar", "18.12.1990.", "Beograd", "069373994234",
+		
+		
+		Date d1 = parseDate("12.12.2020");
+		Date d2 = parseDate("10.03.2019");
+		this.profesori.add(new Profesor("Petrović", "Petar", d1, "Beograd", "069373994234",
 				"petorvic@gmail.com", "Novi Sad", "123857364", Titula.Dr, Zvanje.RProfesor));
-		this.profesori.add(new Profesor("Lekić", "Dušan", "20.10.2000.", "Kraljevo", "069373994234", "dlekic@gmail.com",
+		this.profesori.add(new Profesor("Lekić", "Dušan",d2, "Kraljevo", "069373994234", "dlekic@gmail.com",
 				"Beograd", "987456321", Titula.Ms, Zvanje.VProfesor));
 
 	}
@@ -102,10 +107,20 @@ public class BazaProfesora {
 		}
 	}
 
-	public void dodajProfesora(String prezime, String ime, String datumR, String adresaS, String kontaktTel,
+	public static Date parseDate(String date) {
+		try {
+			return new SimpleDateFormat("dd.mm.yyyy.").parse(date);
+		} catch (Exception e) {
+			return null;
+		}
+	}
+	
+	
+	public void dodajProfesora(String prezime, String ime, Date datumR, String adresaS, String kontaktTel,
 			String email, String adresaK, String brlk, Titula titula, Zvanje zvanje) {
 		this.profesori
 				.add(new Profesor(prezime, ime, datumR, adresaS, kontaktTel, email, adresaK, brlk, titula, zvanje));
 
 	}
+	
 }

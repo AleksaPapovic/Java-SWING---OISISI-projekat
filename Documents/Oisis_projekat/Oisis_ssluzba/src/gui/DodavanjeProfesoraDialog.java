@@ -13,11 +13,11 @@ import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 import javax.swing.event.DocumentListener;
 
 import controller.DocumentListenerProfesorFields;
 import controller.ProfesorController;
+import gui.FocusField.TipPolja;
 
 public class DodavanjeProfesoraDialog extends JDialog {
 
@@ -26,14 +26,14 @@ public class DodavanjeProfesoraDialog extends JDialog {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public static JTextField imeField;
-	public static JTextField prezimeField;
-	public static JTextField datumRField;
-	public static JTextField adresaSField;
-	public static JTextField kontaktTelField;
-	public static JTextField emailField;
-	public static JTextField adresaKField;
-	public static JTextField brlkField;
+	public static FocusField imeField;
+	public static FocusField prezimeField;
+	public static FocusField datumRField;
+	public static FocusField adresaSField;
+	public static FocusField kontaktTelField;
+	public static FocusField emailField;
+	public static FocusField adresaKField;
+	public static FocusField brlkField;
 	public static JComboBox<String> combobox1;
 	public static JComboBox<String> combobox2;
 	public static JButton prihvati;
@@ -58,42 +58,42 @@ public class DodavanjeProfesoraDialog extends JDialog {
 		JLabel imeLabela = new JLabel("Unesite ime");
 		imeLabela.setPreferredSize(polje);
 		imeLabela.setMaximumSize(polje);
-		imeField = new JTextField();
+		imeField = new FocusField(TipPolja.Ime, "Ime");
 
 		JLabel prezimeLabela = new JLabel("Unesite prezime");
 		prezimeLabela.setPreferredSize(polje);
 		prezimeLabela.setMaximumSize(polje);
-		prezimeField = new JTextField();
+		prezimeField = new FocusField(TipPolja.Prezime, "Prezime");
 
 		JLabel datumRLabela = new JLabel("Unesite datum rodjenja");
 		datumRLabela.setPreferredSize(polje);
 		datumRLabela.setMaximumSize(polje);
-		datumRField = new JTextField();
+		datumRField = new FocusField(TipPolja.DatumR, "dd.mm.yyyy.");
 
 		JLabel adresaSLabela = new JLabel("Unesite adresu stanovanja");
 		adresaSLabela.setPreferredSize(polje);
 		adresaSLabela.setMaximumSize(polje);
-		adresaSField = new JTextField();
+		adresaSField = new FocusField(TipPolja.AdresaS, "...");
 
 		JLabel kontaktTelLabela = new JLabel("Unesite kontakt telefon");
 		kontaktTelLabela.setPreferredSize(polje);
 		kontaktTelLabela.setMaximumSize(polje);
-		kontaktTelField = new JTextField();
+		kontaktTelField = new FocusField(TipPolja.BrojTel, "9 ili vise  brojeva");
 
 		JLabel emailLabela = new JLabel("Unesite email");
 		emailLabela.setPreferredSize(polje);
 		emailLabela.setMaximumSize(polje);
-		emailField = new JTextField();
+		emailField = new FocusField(TipPolja.Email, "...@...");
 
 		JLabel adresaKLabela = new JLabel("Unesite adresu kancelarije");
 		adresaKLabela.setPreferredSize(polje);
 		adresaKLabela.setMaximumSize(polje);
-		adresaKField = new JTextField();
+		adresaKField = new FocusField(TipPolja.AdresaK, "...");
 
 		JLabel brlkLabela = new JLabel("Unesite broj lične karte");
 		brlkLabela.setPreferredSize(polje);
 		brlkLabela.setMaximumSize(polje);
-		brlkField = new JTextField();
+		brlkField = new FocusField(TipPolja.BrojLK, "mora imati 9 brojeva");
 
 		JLabel titulaLabela = new JLabel("Izaberite titulu");
 		titulaLabela.setPreferredSize(polje);

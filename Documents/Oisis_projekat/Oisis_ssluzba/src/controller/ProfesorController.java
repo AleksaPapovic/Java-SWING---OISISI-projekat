@@ -1,7 +1,9 @@
 /*REFERENCA: VEZBE 6, IgraciController klasa*/
 package controller;
 
-import javax.swing.JOptionPane;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import gui.DodavanjeProfesoraDialog;
 import gui.TabsPanel;
@@ -75,61 +77,14 @@ public class ProfesorController {
 			zvanje = null;
 			return false;
 		}
-
-		if (Character.isUpperCase(ime.charAt(0))) {
-			profesor.setIme(ime);
-		} else {
-			JOptionPane.showMessageDialog(null, "Greška ime mora početi velikim slovom");
-			return false;
-		}
-
-		if (Character.isUpperCase(prezime.charAt(0))) {
-			profesor.setPrezime(prezime);
-		} else {
-			JOptionPane.showMessageDialog(null, "Greška prezime mora početi velikim slovom");
-			return false;
-		}
-
-		if (datumR.matches("[0-9]{2}[\\.]{1}[0-9]{2}[\\.]{1}[0-9]{4}[\\.]{1}")) {
-			String dateR[] = datumR.split("\\.");
-			int dan = Integer.parseInt(dateR[0]);
-			int mesec = Integer.parseInt(dateR[1]);
-			if (dan > 31 || mesec > 12) {
-				JOptionPane.showMessageDialog(null, "Greška uneli ste pogresan dan ili mesec");
-				return false;
-			} else {
-				profesor.setDatumR(datumR);
-			}
-		} else {
-			JOptionPane.showMessageDialog(null, "Greška datum mora biti u formatu dd.mm.yyyy.");
-			return false;
-		}
-
-		if (email.contains("@")) {
-			profesor.setEmail(email);
-		} else {
-			JOptionPane.showMessageDialog(null, "Greška email mora imati @ ");
-			return false;
-		}
-
+		profesor.setIme(ime);
+		profesor.setPrezime(prezime);
+		profesor.setDatumR(BazaProfesora.parseDate(datumR));
+		profesor.setEmail(email);
 		profesor.setAdresaS(adresaS);
-
-		if (kontaktTel.matches("[0-9]{9,}")) {
-			profesor.setKontaktTel(kontaktTel);
-		} else {
-			JOptionPane.showMessageDialog(null, "Greška kontakt telefon mora imati bar 9 brojeva");
-			return false;
-		}
-
+		profesor.setKontaktTel(kontaktTel);
 		profesor.setAdresaK(adresaK);
-
-		if (brlk.matches("[0-9]{9}")) {
-			profesor.setBrlk(brlk);
-		} else {
-			JOptionPane.showMessageDialog(null, "Greška broj lične karte  mora imati 9 brojeva");
-			return false;
-		}
-
+		profesor.setBrlk(brlk);
 		profesor.setTitula(titula);
 
 		BazaProfesora.getInstance().dodajProfesora(profesor.getPrezime(), profesor.getIme(), profesor.getDatumR(),
@@ -139,6 +94,74 @@ public class ProfesorController {
 		TabsPanel.tableProfesor.azuriranjeTabeleProfesor();
 
 		return true;
+	}
+
+	public boolean proveriImeP(String imeP) {
+		boolean ret = true;
+
+		if (imeP.isEmpty() || Character.isLowerCase(imeP.charAt(0))) {
+			ret = false;
+		}
+		return ret;
+
+	}
+
+	public boolean proveriDatumR(String datumRodjenja) {
+
+		boolean ret = true;
+		@SuppressWarnings("unused")
+		Date dateR = new Date();
+		try {
+			dateR = new SimpleDateFormat("dd.mm.yyyy.").parse(datumRodjenja);
+			ret = true;
+		} catch (ParseException e) {
+			ret = false;
+		}
+		return ret;
+	}
+
+	public boolean proveriBrojTel(String kontaktTel) {
+		boolean ret = true;
+		if (!kontaktTel.matches("[0-9]{9,}")) {
+			ret = false;
+		}
+		return ret;
+
+	}
+
+	public boolean proveriEmail(String email) {
+		boolean ret = true;
+		if (email.contains("@") && email.matches("[a-zA-Z0-9\\.]{1,30}[@][a-zA-Z\\.]{5,30}")) {
+		} else {
+
+			ret = false;
+		}
+		return ret;
+	}
+
+	public boolean proveriBrojLK(String brlk) {
+		boolean ret = true;
+
+		if (!brlk.matches("[0-9]{9}")) {
+			ret = false;
+		}
+
+		for (Profesor p : BazaProfesora.getInstance().getProfesori()) {
+			if (p.getBrlk().equals(brlk)) {
+				ret = false;
+			}
+		}
+		return ret;
+	}
+
+	public boolean proveriAdresuSK(String adresa) {
+		boolean ret = true;
+
+		if (adresa.isEmpty()) {
+			ret = false;
+		}
+
+		return ret;
 	}
 
 }

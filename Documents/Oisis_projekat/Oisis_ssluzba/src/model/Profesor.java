@@ -3,6 +3,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Profesor {
 
@@ -16,7 +17,7 @@ public class Profesor {
 
 	private String prezime;
 	private String ime;
-	private String datumR;
+	private Date datumR;
 	private String adresaS;
 	private String kontaktTel;
 	private String email;
@@ -29,7 +30,7 @@ public class Profesor {
 	public Profesor() {
 	}
 
-	public Profesor(String prezime, String ime, String datumR, String adresaS, String kontaktTel, String email,
+	public Profesor(String prezime, String ime, Date datumR, String adresaS, String kontaktTel, String email,
 			String adresaK, String brlk, Titula titula, Zvanje zvanje) {
 		super();
 		this.prezime = prezime;
@@ -45,7 +46,7 @@ public class Profesor {
 		this.predmeti = new ArrayList<Predmet>();
 	}
 
-	public Profesor(String prezime, String ime, String datumR, String adresaS, String kontaktTel, String email,
+	public Profesor(String prezime, String ime, Date datumR, String adresaS, String kontaktTel, String email,
 			String adresaK, String brlk) {
 		super();
 		this.prezime = prezime;
@@ -89,11 +90,11 @@ public class Profesor {
 		this.ime = ime;
 	}
 
-	public String getDatumR() {
+	public Date getDatumR() {
 		return this.datumR;
 	}
 
-	public void setDatumR(String datumR) {
+	public void setDatumR(Date datumR) {
 		this.datumR = datumR;
 	}
 

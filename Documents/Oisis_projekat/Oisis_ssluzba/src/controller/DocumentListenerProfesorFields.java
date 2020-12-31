@@ -38,17 +38,43 @@ public class DocumentListenerProfesorFields implements DocumentListener {
 	}
 
 	public boolean proveriPolja() {
-		boolean ret = true;
-		if (DodavanjeProfesoraDialog.imeField.getText().trim().isEmpty()
-				|| DodavanjeProfesoraDialog.prezimeField.getText().trim().isEmpty()
-				|| DodavanjeProfesoraDialog.datumRField.getText().trim().isEmpty()
-				|| DodavanjeProfesoraDialog.adresaSField.getText().trim().isEmpty()
-				|| DodavanjeProfesoraDialog.kontaktTelField.getText().trim().isEmpty()
-				|| DodavanjeProfesoraDialog.emailField.getText().trim().isEmpty()
-				|| DodavanjeProfesoraDialog.adresaKField.getText().trim().isEmpty()
-				|| DodavanjeProfesoraDialog.brlkField.getText().trim().isEmpty()) {
+		boolean ret = false;
+
+		if (ProfesorController.getInstance().proveriImeP(DodavanjeProfesoraDialog.imeField.getText().trim())
+				&& ProfesorController.getInstance().proveriImeP(DodavanjeProfesoraDialog.prezimeField.getText().trim())
+				&& ProfesorController.getInstance().proveriDatumR(DodavanjeProfesoraDialog.datumRField.getText().trim())
+				&& ProfesorController.getInstance()
+						.proveriAdresuSK(DodavanjeProfesoraDialog.adresaSField.getText().trim())
+				&& ProfesorController.getInstance()
+						.proveriBrojTel(DodavanjeProfesoraDialog.kontaktTelField.getText().trim())
+				&& ProfesorController.getInstance().proveriEmail(DodavanjeProfesoraDialog.emailField.getText().trim())
+				&& ProfesorController.getInstance()
+						.proveriAdresuSK(DodavanjeProfesoraDialog.adresaKField.getText().trim())
+				&& ProfesorController.getInstance()
+						.proveriBrojLK(DodavanjeProfesoraDialog.brlkField.getText().trim())) {
+
+			ret = true;
+		}
+
+		if (DodavanjeProfesoraDialog.imeField.getSablon().equals(DodavanjeProfesoraDialog.imeField.getText().trim())
+				|| DodavanjeProfesoraDialog.prezimeField.getSablon()
+						.equals(DodavanjeProfesoraDialog.prezimeField.getText().trim())
+				|| DodavanjeProfesoraDialog.datumRField.getSablon()
+						.equals(DodavanjeProfesoraDialog.datumRField.getText().trim())
+				|| DodavanjeProfesoraDialog.adresaSField.getSablon()
+						.equals(DodavanjeProfesoraDialog.adresaKField.getText().trim())
+				|| DodavanjeProfesoraDialog.kontaktTelField.getSablon()
+						.equals(DodavanjeProfesoraDialog.kontaktTelField.getText().trim())
+				|| DodavanjeProfesoraDialog.emailField.getSablon()
+						.equals(DodavanjeProfesoraDialog.emailField.getText().trim())
+				|| DodavanjeProfesoraDialog.adresaKField.getSablon()
+						.equals(DodavanjeProfesoraDialog.adresaKField.getText().trim())
+				|| DodavanjeProfesoraDialog.brlkField.getSablon()
+						.equals(DodavanjeProfesoraDialog.brlkField.getText().trim())) {
+
 			ret = false;
 		}
+
 		return ret;
 	}
 
