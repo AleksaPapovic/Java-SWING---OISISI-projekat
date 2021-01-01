@@ -18,7 +18,7 @@ public class Student {
 	private String email;
 	private String brojInd;
 	private int godUp;
-	private String godSt;
+	private int godSt;
 	private Status status;
 	private double prosek;
 	private ArrayList<Ocena> polozeniIsp;
@@ -30,7 +30,7 @@ public class Student {
 	}
 
 	public Student( String ime, String prezime, Date datumR, String adresaSt, String kontaktTl, String email,
-			String brojInd, int godUp, String godSt, Status status, double prosek) {
+			String brojInd, int godUp, int godSt, Status status, double prosek) {
 		super();
 		this.ime = ime;
 		this.prezime = prezime;
@@ -45,7 +45,7 @@ public class Student {
 		this.prosek = prosek;
 	}
 
-	public Student(String brojInd, String ime, String prezime, String godSt, Status status, double prosek) {
+	public Student(String brojInd, String ime, String prezime, int godSt, Status status, double prosek) {
 		super();
 		this.brojInd = brojInd;
 		this.ime = ime;
@@ -119,11 +119,11 @@ public class Student {
 		this.godUp = godUp;
 	}
 
-	public String getGodSt() {
+	public int getGodSt() {
 		return godSt;
 	}
 
-	public void setGodSt(String godSt) {
+	public void setGodSt(int godSt) {
 		this.godSt = godSt;
 	}
 

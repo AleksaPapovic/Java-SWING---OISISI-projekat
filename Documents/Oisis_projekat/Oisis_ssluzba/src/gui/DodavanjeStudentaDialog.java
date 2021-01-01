@@ -13,10 +13,10 @@ import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 
 import controller.StudentController;
 import controller.StudentDocumentListener;
+import gui.StudentTextFields.TipPolja;
 
 public class DodavanjeStudentaDialog extends JDialog {
 
@@ -24,15 +24,15 @@ public class DodavanjeStudentaDialog extends JDialog {
 	 * 
 	 */
 	private static final long serialVersionUID = 6871252857743880797L;
-	public static JTextField imeField;
-	public static JTextField prezimeField;
-	public static JTextField datumRField;
-	public static JTextField adresaSField;
-	public static JTextField brojTField;
-	public static JTextField emailField;
-	public static JTextField brIndField;
-	public static JTextField godUpField;
-	public static JTextField email;
+	public static StudentTextFields imeField;
+	public static StudentTextFields prezimeField;
+	public static StudentTextFields datumRField;
+	public static StudentTextFields adresaSField;
+	public static StudentTextFields brojTField;
+	public static StudentTextFields emailField;
+	public static StudentTextFields brIndField;
+	public static StudentTextFields godUpField;
+	public static StudentTextFields email;
 	public JButton odustani;
 	public static JButton prihvati;
 	public static JComboBox<String> godStComboBox;
@@ -55,42 +55,42 @@ public class DodavanjeStudentaDialog extends JDialog {
 		JLabel imeLabela = new JLabel("Ime*");
 		imeLabela.setPreferredSize(velicina);
 		imeLabela.setMaximumSize(velicina);
-		imeField = new JTextField();
+		imeField = new StudentTextFields(TipPolja.Ime, "Ime");
 
 		JLabel prezimeLabela = new JLabel("Prezime*");
 		prezimeLabela.setPreferredSize(velicina);
 		prezimeLabela.setMaximumSize(velicina);
-		prezimeField = new JTextField();
+		prezimeField = new StudentTextFields(TipPolja.Prezime, "Prezime");
 
 		JLabel datumRLabela = new JLabel("Datum rodjenja*");
 		datumRLabela.setPreferredSize(velicina);
 		datumRLabela.setMaximumSize(velicina);
-		datumRField = new JTextField();
+		datumRField = new StudentTextFields(TipPolja.DatumR, "dd.mm.yyyy.");
 
 		JLabel adresaSLabela = new JLabel("Adresa stanovanja*");
 		adresaSLabela.setPreferredSize(velicina);
 		adresaSLabela.setMaximumSize(velicina);
-		adresaSField = new JTextField();
+		adresaSField = new StudentTextFields(TipPolja.AdresaS, "...");
 
 		JLabel brojTLabela = new JLabel("Broj telefona*");
 		brojTLabela.setPreferredSize(velicina);
 		brojTLabela.setMaximumSize(velicina);
-		brojTField = new JTextField();
+		brojTField = new StudentTextFields(TipPolja.BrojTel, "--9 ili vise brojeva--");;
 
 		JLabel emailLabela = new JLabel("E-mail adresa*");
 		emailLabela.setPreferredSize(velicina);
 		emailLabela.setMaximumSize(velicina);
-		emailField = new JTextField();
+		emailField = new StudentTextFields(TipPolja.Email, "..@..");;
 
 		JLabel brIndLabela = new JLabel("Broj indeksa*");
 		brIndLabela.setPreferredSize(velicina);
 		brIndLabela.setMaximumSize(velicina);
-		brIndField = new JTextField();
+		brIndField = new StudentTextFields(TipPolja.BrojInd, "...");;
 
 		JLabel godUpLabela = new JLabel("Godina upisa*");
 		godUpLabela.setPreferredSize(velicina);
 		godUpLabela.setMaximumSize(velicina);
-		godUpField = new JTextField();
+		godUpField = new StudentTextFields(TipPolja.GodUp, "****");;
 
 		JLabel godStLabela = new JLabel("Trenutna godina studija*");
 		godStLabela.setPreferredSize(velicina);

@@ -27,17 +27,21 @@ public class StudentDocumentListener implements DocumentListener{
 
 	public void disableButton() {
 
-		if (DodavanjeStudentaDialog.imeField.getText().trim().isEmpty()
-				|| DodavanjeStudentaDialog.prezimeField.getText().trim().isEmpty()
-				|| DodavanjeStudentaDialog.datumRField.getText().trim().isEmpty()
-				|| DodavanjeStudentaDialog.adresaSField.getText().isEmpty()
-				|| DodavanjeStudentaDialog.brojTField.getText().trim().isEmpty()
-				|| DodavanjeStudentaDialog.emailField.getText().trim().isEmpty()
-				|| DodavanjeStudentaDialog.brIndField.getText().trim().isEmpty()
-				|| DodavanjeStudentaDialog.godUpField.getText().trim().isEmpty()) {
-			DodavanjeStudentaDialog.prihvati.setEnabled(false);
-		} else {
+		if (StudentController.getInstance().proveriIme(DodavanjeStudentaDialog.imeField.getText().trim())
+				&& StudentController.getInstance().proveriIme(DodavanjeStudentaDialog.prezimeField.getText().trim())
+				&& StudentController.getInstance().proveriDatumR(DodavanjeStudentaDialog.datumRField.getText().trim())
+				&& StudentController.getInstance()
+						.proveriAdresuSt(DodavanjeStudentaDialog.adresaSField.getText().trim())
+				&& StudentController.getInstance()
+						.proveriKontaktTl(DodavanjeStudentaDialog.brojTField.getText().trim())
+				&& StudentController.getInstance().proveriEmail(DodavanjeStudentaDialog.emailField.getText().trim())
+				&& StudentController.getInstance()
+						.proveriBrojInd(DodavanjeStudentaDialog.brIndField.getText().trim())
+				&& StudentController.getInstance()
+						.proveriGodUp(DodavanjeStudentaDialog.godUpField.getText().trim())) {
 			DodavanjeStudentaDialog.prihvati.setEnabled(true);
+		} else {
+			DodavanjeStudentaDialog.prihvati.setEnabled(false);
 		}
 	}
 
