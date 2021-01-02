@@ -23,6 +23,7 @@ public class TabsPanel extends JTabbedPane {
 	public static int tab_curr = 0;
 	public static TableProfesor tableProfesor;
 	public static TableStudent tableStudent;
+	public static TablePredmet tablePredmet;
 
 	public TabsPanel() {
 
@@ -79,13 +80,32 @@ public class TabsPanel extends JTabbedPane {
 		tabProfesor.add(donji1, BorderLayout.SOUTH);
 		Icon ikonProf = new ImageIcon("icons" + File.separator + "tab.png");
 		this.addTab("Profesori", ikonProf, tabProfesor, "Prikaz profesora");
+		
+		
 		// Tab predmet
 		JPanel tabPredmet = new JPanel();
 		tabPredmet.setLayout(new BorderLayout());
+		JPanel gornji2 = new JPanel();
+		JPanel levi2 = new JPanel();
+		JPanel desni2 = new JPanel();
+		JPanel donji2 = new JPanel();
+		levi2.setBackground(Color.WHITE);
+		desni2.setBackground(Color.WHITE);
+		gornji2.setBackground(Color.WHITE);
+		donji2.setBackground(Color.WHITE);
+		levi2.setPreferredSize(new Dimension(50, tabPredmet.getHeight()));
+		desni2.setPreferredSize(new Dimension(50, tabPredmet.getHeight()));
+		gornji2.setPreferredSize(new Dimension(tabPredmet.getWidth(), 50));
+		donji2.setPreferredSize(new Dimension(tabPredmet.getWidth(), 50));
 		tabPredmet.setBackground(Color.white);
-		TablePredmet tablePredmet = new TablePredmet();
+		tablePredmet = new TablePredmet();
 		JScrollPane scrollPane3 = new JScrollPane(tablePredmet);
+		scrollPane3.getViewport().setBackground(Color.WHITE);
 		tabPredmet.add(scrollPane3, BorderLayout.CENTER);
+		tabPredmet.add(levi2, BorderLayout.WEST);
+		tabPredmet.add(desni2, BorderLayout.EAST);
+		tabPredmet.add(gornji2, BorderLayout.NORTH);
+		tabPredmet.add(donji2, BorderLayout.SOUTH);
 		Icon ikonPred = new ImageIcon("icons" + File.separator + "tab.png");
 		this.addTab("Predmeti", ikonPred, tabPredmet, "Prikaz predmeta");
 

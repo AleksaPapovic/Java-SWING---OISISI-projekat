@@ -5,19 +5,21 @@ import java.util.ArrayList;
 
 public class Predmet {
 
+	private String sifraP;
 	private String imeP;
-	private int semestar;
+	private String semestar;
 	private int godinaS;
 	private Profesor predProf;
 	private int brojESPB;
 	private ArrayList<Student> studentiP;
 	private ArrayList<Student> studentiNP;
 
-	Predmet() {
+	public Predmet() {
 	}
 
-	public Predmet(String imeP, int semestar, int godinaS, Profesor predProf, int brojESPB) {
+	public Predmet(String sifraP, String imeP, int brojESPB, int godinaS, String semestar, Profesor predProf) {
 		super();
+		this.sifraP = sifraP;
 		this.imeP = imeP;
 		this.semestar = semestar;
 		this.godinaS = godinaS;
@@ -25,6 +27,25 @@ public class Predmet {
 		this.brojESPB = brojESPB;
 		this.studentiP = new ArrayList<Student>();
 		this.studentiNP = new ArrayList<Student>();
+	}
+
+	public Predmet(String sifraP, String imeP, int brojESPB, int godinaS, String semestar) {
+		super();
+		this.sifraP = sifraP;
+		this.imeP = imeP;
+		this.semestar = semestar;
+		this.godinaS = godinaS;
+		this.brojESPB = brojESPB;
+		this.studentiP = new ArrayList<Student>();
+		this.studentiNP = new ArrayList<Student>();
+	}
+
+	public String getSifraP() {
+		return sifraP;
+	}
+
+	public void setSifraP(String sifraP) {
+		this.sifraP = sifraP;
 	}
 
 	public String getImeP() {
@@ -35,11 +56,11 @@ public class Predmet {
 		this.imeP = imeP;
 	}
 
-	public int getSemestar() {
+	public String getSemestar() {
 		return semestar;
 	}
 
-	public void setSemestar(int semestar) {
+	public void setSemestar(String semestar) {
 		this.semestar = semestar;
 	}
 

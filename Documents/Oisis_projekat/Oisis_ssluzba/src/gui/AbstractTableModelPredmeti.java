@@ -3,6 +3,8 @@ package gui;
 
 import javax.swing.table.AbstractTableModel;
 
+import model.BazaPredmeta;
+
 public class AbstractTableModelPredmeti extends AbstractTableModel {
 
 	/**
@@ -12,21 +14,21 @@ public class AbstractTableModelPredmeti extends AbstractTableModel {
 
 	@Override
 	public int getColumnCount() {
-		return 0;
+		return BazaPredmeta.getInstance().getColumnCount();
 	}
 
 	@Override
 	public int getRowCount() {
-		return 0;
+		return BazaPredmeta.getInstance().getPredmeti().size();
 	}
 
 	@Override
 	public String getColumnName(int column) {
-		return null;
+		return BazaPredmeta.getInstance().getColumnName(column);
 	}
 
 	@Override
 	public Object getValueAt(int rowIndex, int columnIndex) {
-		return null;
+		return BazaPredmeta.getInstance().getValueAt(rowIndex, columnIndex);
 	}
 }
