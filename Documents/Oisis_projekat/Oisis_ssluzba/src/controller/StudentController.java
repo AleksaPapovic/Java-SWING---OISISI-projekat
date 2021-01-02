@@ -5,8 +5,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import javax.swing.JOptionPane;
-
 import gui.DodavanjeStudentaDialog;
 import gui.TabsPanel;
 import model.BazaStudenata;
@@ -30,14 +28,6 @@ public class StudentController {
 
 	public boolean dodajStudenta() {
 		Student st = new Student();
-
-		for (Student s : BazaStudenata.getInstance().getStudenti()) {
-			if (s.getBrojInd().equals(DodavanjeStudentaDialog.brIndField.getText())) {
-				JOptionPane.showMessageDialog(null, "Student za zadatim indeksom vec postoji.", "GRESKA",
-						JOptionPane.ERROR_MESSAGE);
-				return false;
-			}
-		}
 
 		st.setIme(DodavanjeStudentaDialog.imeField.getText());
 		st.setPrezime(DodavanjeStudentaDialog.prezimeField.getText());
@@ -153,8 +143,12 @@ public class StudentController {
 		if (brojInd.isEmpty()) {
 			ret = false;
 		}
+		for (Student s : BazaStudenata.getInstance().getStudenti()) {
+			if (s.getBrojInd().equals(brojInd)) {
+				return false;
+			}
+		}
 		return ret;
-
 	}
 	
 	public boolean proveriGodUp(String godUp) {
