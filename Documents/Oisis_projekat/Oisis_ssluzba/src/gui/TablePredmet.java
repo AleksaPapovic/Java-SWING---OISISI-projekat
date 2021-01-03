@@ -33,5 +33,11 @@ public class TablePredmet extends JTable {
 		}
 		return c;
 	}
-
+	
+	public void azuriranjeTabelePredmet() {
+		AbstractTableModelPredmeti model = (AbstractTableModelPredmeti) this.getModel();
+		model.fireTableDataChanged();
+		validate();
+	}
+	
 }

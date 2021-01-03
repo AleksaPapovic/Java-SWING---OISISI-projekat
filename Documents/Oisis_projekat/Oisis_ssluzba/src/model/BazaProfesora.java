@@ -35,8 +35,8 @@ public class BazaProfesora {
 		this.profNazivi.add("Zvanje");
 		
 		
-		Date d1 = parseDate("12.12.2020");
-		Date d2 = parseDate("10.03.2019");
+		Date d1 = parseDate("12.12.2020.");
+		Date d2 = parseDate("10.03.2019.");
 		this.profesori.add(new Profesor("Petrović", "Petar", d1, "Beograd", "069373994234",
 				"petorvic@gmail.com", "Novi Sad", "123857364", Titula.Dr, Zvanje.RProfesor));
 		this.profesori.add(new Profesor("Lekić", "Dušan",d2, "Kraljevo", "069373994234", "dlekic@gmail.com",
@@ -121,6 +121,23 @@ public class BazaProfesora {
 		this.profesori
 				.add(new Profesor(prezime, ime, datumR, adresaS, kontaktTel, email, adresaK, brlk, titula, zvanje));
 
+	}
+	
+	public Profesor getSelectedProfesor(int red) {
+		return this.profesori.get(red);
+	}
+
+	public void izmeniProfesora(Profesor izmenjeniProfesor, int index_izmenjenog) {
+		this.profesori.get(index_izmenjenog).setIme(izmenjeniProfesor.getIme());
+		this.profesori.get(index_izmenjenog).setPrezime(izmenjeniProfesor.getPrezime());
+		this.profesori.get(index_izmenjenog).setDatumR(izmenjeniProfesor.getDatumR());
+		this.profesori.get(index_izmenjenog).setAdresaS(izmenjeniProfesor.getAdresaS());
+		this.profesori.get(index_izmenjenog).setKontaktTel(izmenjeniProfesor.getKontaktTel());
+		this.profesori.get(index_izmenjenog).setEmail(izmenjeniProfesor.getEmail());
+		this.profesori.get(index_izmenjenog).setAdresaK(izmenjeniProfesor.getAdresaK());
+		this.profesori.get(index_izmenjenog).setTitula(izmenjeniProfesor.getTitula());
+		this.profesori.get(index_izmenjenog).setZvanje(izmenjeniProfesor.getZvanje());
+		this.profesori.get(index_izmenjenog).setBrlk(izmenjeniProfesor.getBrlk());
 	}
 	
 }

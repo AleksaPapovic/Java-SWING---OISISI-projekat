@@ -72,4 +72,5 @@ public class BazaPredmeta {
 	public void dodajPredmet() {
 
 	}
+
 }

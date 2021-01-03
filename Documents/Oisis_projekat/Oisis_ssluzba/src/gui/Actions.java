@@ -10,6 +10,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.KeyStroke;
 
+import controller.PredmetController;
+
 public class Actions {
 	public String tekst = "<html>Glavni prozor se sastoji iz Menubar-a, Toolbar-a, Statusbar-a, Searchbar-a u Toolbar-u i centralnog prozora <br>"
 			+ "koji prikazuje studente, profesore i predmete. Meniji koji postoje u Menubar-u su File, Edit i Help. File sadrzi stavke <br>"
@@ -93,7 +95,24 @@ public class Actions {
 		}
 
 		public void actionPerformed(ActionEvent e) {
-			JOptionPane.showMessageDialog(null, "Would have done the 'Edit' action.");
+
+			switch (TabsPanel.tab_curr) {
+			case 0: {
+				
+			}
+				break;
+			case 1: {
+				@SuppressWarnings("unused")
+				IzmenaProfesoraDialog izmenaProf = new IzmenaProfesoraDialog(MainFrame.getInstance(),
+						"Izmena profesora", true);
+			}
+				break;
+
+			default:
+				break;
+			}
+
+			
 		}
 	}
 
@@ -113,6 +132,23 @@ public class Actions {
 		}
 
 		public void actionPerformed(ActionEvent e) {
+			switch (TabsPanel.tab_curr) {
+			case 0: {
+				
+			}
+				break;
+			case 1: {
+			}
+				break;
+			case 2: {
+				int index_predmeta = TabsPanel.tablePredmet.getSelectedRow();
+				PredmetController.getInstance().izbrisiPredmet(index_predmeta);
+			}
+				break;
+
+			default:
+				break;
+			}
 			JOptionPane.showMessageDialog(null, "Would have done the 'Delete' action.");
 		}
 	}

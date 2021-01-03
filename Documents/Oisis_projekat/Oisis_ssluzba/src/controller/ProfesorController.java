@@ -6,6 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import gui.DodavanjeProfesoraDialog;
+import gui.IzmenaProfesoraPanel;
 import gui.TabsPanel;
 import model.BazaProfesora;
 import model.Profesor;
@@ -79,7 +80,10 @@ public class ProfesorController {
 		}
 		profesor.setIme(ime);
 		profesor.setPrezime(prezime);
-		profesor.setDatumR(BazaProfesora.parseDate(datumR));
+		Date dateR = BazaProfesora.parseDate(datumR);
+		profesor.setDatumR(dateR);
+		System.out.printf(dateR.toString());
+
 		profesor.setEmail(email);
 		profesor.setAdresaS(adresaS);
 		profesor.setKontaktTel(kontaktTel);
@@ -162,6 +166,65 @@ public class ProfesorController {
 		}
 
 		return ret;
+	}
+
+	public boolean izmeniProfesora() {
+		String ime = IzmenaProfesoraPanel.imeIzmena.getText();
+		String prezime = IzmenaProfesoraPanel.prezimeIzmena.getText();
+		String datumR = IzmenaProfesoraPanel.datumRIzmena.getText();
+		String adresaS = IzmenaProfesoraPanel.adresaSIzmena.getText();
+		String kontaktTel = IzmenaProfesoraPanel.kontaktTelIzmena.getText();
+		String email = IzmenaProfesoraPanel.emailIzmena.getText();
+		String adresaK = IzmenaProfesoraPanel.adresaKIzmena.getText();
+		String brlk = IzmenaProfesoraPanel.brlkIzmena.getText();
+		String comboTitula = IzmenaProfesoraPanel.combobox1Izmena.getSelectedItem().toString();
+		String comboZvanje = IzmenaProfesoraPanel.combobox2Izmena.getSelectedItem().toString();
+		Titula titula;
+		Zvanje zvanje;
+		Date dateR = BazaProfesora.parseDate(datumR);
+
+		switch (comboTitula) {
+		case "Master":
+			titula = Titula.Ms;
+			break;
+		case "Doktor":
+			titula = Titula.Dr;
+			break;
+		case "Profesor doktor":
+			titula = Titula.ProfDr;
+			break;
+		default:
+			titula = null;
+			return false;
+		}
+
+		switch (comboZvanje) {
+		case "Asistent":
+			zvanje = Zvanje.Asistent;
+			break;
+		case "Docent":
+			zvanje = Zvanje.Docent;
+			break;
+		case "Vanredni Profesor":
+			zvanje = Zvanje.VProfesor;
+			break;
+		case "Redovni Profesor":
+			zvanje = Zvanje.RProfesor;
+			break;
+		case "Saradnik":
+			zvanje = Zvanje.Saradnik;
+			break;
+		default:
+			zvanje = null;
+			return false;
+		}
+
+		int index_izmenjenog = TabsPanel.tableProfesor.getSelectedRow();
+		Profesor izmenjeniProfesor = new Profesor(prezime, ime, dateR, adresaS, kontaktTel, email, adresaK, brlk,
+				titula, zvanje);
+		BazaProfesora.getInstance().izmeniProfesora(izmenjeniProfesor, index_izmenjenog);
+		TabsPanel.tableProfesor.azuriranjeTabeleProfesor();
+		return true;
 	}
 
 }
