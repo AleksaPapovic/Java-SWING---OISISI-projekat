@@ -11,14 +11,14 @@ import javax.swing.JPanel;
 public class AboutDialog extends JDialog {
 	
 	public String tekst="<html>Verzija JDK:JavaSE-1.8<br>"
-			+ "JDK 8 je superset JRE 8 i sadr�i sve �to je u JRE 8, kao i alate poput kompajlera<br>"
-			+ "i programa za otklanjanje pogresaka neophodnih za razvoj apleta i aplikacija.<br>"
-			+ "JRE 8 pruza biblioteke, Java virtuelnu masinu (JVM) i druge komponente za pokretanje<br>"
-			+ "apleta i aplikacija napisanih na programskom jeziku Java. JRE ukljucuje komponente<br>"
-			+ "koje nisu potrebne u specifikaciji Java SE, ukljucujuci i standardne<br>"
+			+ "JDK 8 je superset JRE 8 i sadrži sve što je u JRE 8, kao i alate poput kompajlera<br>"
+			+ "i programa za otklanjanje grešaka neophodnih za razvoj apleta i aplikacija.<br>"
+			+ "JRE 8 pruža biblioteke, Java virtuelnu mašinu (JVM) i druge komponente za pokretanje<br>"
+			+ "apleta i aplikacija napisanih na programskom jeziku Java. JRE uključuje komponente<br>"
+			+ "koje nisu potrebne u specifikaciji Java SE, uključujući i standardne<br>"
 			+ "i nestandardne Java komponente."
-			+ "Dusan Lekic: 20 godina, iz Kraljeva, student na FTN-u Novi Sad, RA smer<br>"
-			+ "Aleksa Papovic: 21 godina, iz Kraljeva, student na FTN-u Novi Sad, RA smer<br><html>";
+			+ "Dusan Lekić: 20 godina, iz Kraljeva, student na FTN-u Novi Sad, RA smer<br>"
+			+ "Aleksa Papović: 21 godina, iz Kraljeva, student na FTN-u Novi Sad, RA smer<br><html>";
 	/**
 	 * 
 	 */
