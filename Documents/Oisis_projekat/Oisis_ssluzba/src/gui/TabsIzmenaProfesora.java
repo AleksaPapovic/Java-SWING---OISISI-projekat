@@ -9,7 +9,6 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
@@ -23,8 +22,6 @@ public class TabsIzmenaProfesora extends JTabbedPane {
 	public static int tab_curr_izmenaProf = 0;
 
 	public TabsIzmenaProfesora(JDialog parentDialog) {
-
-		
 
 		// Tab profesor
 		JPanel tabProfesor = new JPanel();
@@ -43,16 +40,13 @@ public class TabsIzmenaProfesora extends JTabbedPane {
 		donji1.setPreferredSize(new Dimension(tabProfesor.getWidth(), 50));
 		IzmenaProfesoraPanel panelIzmeniProfesora = new IzmenaProfesoraPanel(parentDialog);
 		tabProfesor.setBackground(Color.WHITE);
-		tabProfesor.add(panelIzmeniProfesora,BorderLayout.CENTER);
+		tabProfesor.add(panelIzmeniProfesora, BorderLayout.CENTER);
 		tabProfesor.add(levi1, BorderLayout.WEST);
 		tabProfesor.add(desni1, BorderLayout.EAST);
 		tabProfesor.add(gornji1, BorderLayout.NORTH);
 		tabProfesor.add(donji1, BorderLayout.SOUTH);
 		Icon ikonProf = new ImageIcon("icons" + File.separator + "tab.png");
 		this.addTab("Informacije", ikonProf, tabProfesor, "Prikaz informacija selektovanog studenta");
-		
-		
-	
 
 		this.addChangeListener(new ChangeListener() {
 

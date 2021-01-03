@@ -43,17 +43,17 @@ public class IzmenaProfesoraPanel extends JPanel {
 	private DocumentListener docList = new DocumentListenerIzmenaProfesora();
 
 	public IzmenaProfesoraPanel(JDialog parentDialog) {
-		
+
 		int indeks_profesora = TabsPanel.tableProfesor.getSelectedRow();
 		Profesor prof = BazaProfesora.getInstance().getSelectedProfesor(indeks_profesora);
-		
+
 		this.setLayout(new BorderLayout());
 		this.setBackground(Color.WHITE);
 		JPanel textPanel = new JPanel(new GridLayout(11, 1, 1, 10));
 		JPanel buttonsPanel = new JPanel(new GridLayout(1, 2, 20, 20));
 		textPanel.setBackground(Color.WHITE);
 		buttonsPanel.setBackground(Color.WHITE);
-		
+
 		textPanel.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
 		buttonsPanel.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
 		Dimension polje = new Dimension(100, 30);
@@ -62,8 +62,8 @@ public class IzmenaProfesoraPanel extends JPanel {
 		imeLabela.setPreferredSize(polje);
 		imeLabela.setMaximumSize(polje);
 		imeIzmena = new FocusField(TipPolja.Ime, "Ime");
-        imeIzmena.setText(prof.getIme());
-		
+		imeIzmena.setText(prof.getIme());
+
 		JLabel prezimeLabela = new JLabel("Unesite prezime");
 		prezimeLabela.setPreferredSize(polje);
 		prezimeLabela.setMaximumSize(polje);
@@ -73,17 +73,17 @@ public class IzmenaProfesoraPanel extends JPanel {
 		JLabel datumRLabela = new JLabel("Unesite datum rodjenja");
 		datumRLabela.setPreferredSize(polje);
 		datumRLabela.setMaximumSize(polje);
-		datumRIzmena = new FocusField(TipPolja.DatumR, "dd.mm.yyyy."); 
-	    SimpleDateFormat formatter = new SimpleDateFormat("dd.mm.yyyy.");  
-        String strDatumR = formatter.format(prof.getDatumR());
+		datumRIzmena = new FocusField(TipPolja.DatumR, "dd.mm.yyyy.");
+		SimpleDateFormat formatter = new SimpleDateFormat("dd.mm.yyyy.");
+		String strDatumR = formatter.format(prof.getDatumR());
 		datumRIzmena.setText(strDatumR);
-		
+
 		JLabel adresaSLabela = new JLabel("Unesite adresu stanovanja");
 		adresaSLabela.setPreferredSize(polje);
 		adresaSLabela.setMaximumSize(polje);
 		adresaSIzmena = new FocusField(TipPolja.AdresaS, "...");
 		adresaSIzmena.setText(prof.getAdresaS());
-		
+
 		JLabel kontaktTelLabela = new JLabel("Unesite kontakt telefon");
 		kontaktTelLabela.setPreferredSize(polje);
 		kontaktTelLabela.setMaximumSize(polje);
@@ -95,20 +95,20 @@ public class IzmenaProfesoraPanel extends JPanel {
 		emailLabela.setMaximumSize(polje);
 		emailIzmena = new FocusField(TipPolja.Email, "...@...");
 		emailIzmena.setText(prof.getEmail());
-		
+
 		JLabel adresaKLabela = new JLabel("Unesite adresu kancelarije");
 		adresaKLabela.setPreferredSize(polje);
 		adresaKLabela.setMaximumSize(polje);
 		adresaKIzmena = new FocusField(TipPolja.AdresaK, "...");
 		adresaKIzmena.setText(prof.getAdresaK());
-		
+
 		JLabel brlkLabela = new JLabel("Unesite broj lične karte");
 		brlkLabela.setPreferredSize(polje);
 		brlkLabela.setMaximumSize(polje);
 		brlkIzmena = new FocusField(TipPolja.BrojLK, "mora imati 9 brojeva");
 		brlkIzmena.setText(prof.getBrlk());
 		brlkIzmena.setEnabled(false);
-		
+
 		JLabel titulaLabela = new JLabel("Izaberite titulu");
 		titulaLabela.setPreferredSize(polje);
 		titulaLabela.setMaximumSize(polje);
@@ -158,8 +158,6 @@ public class IzmenaProfesoraPanel extends JPanel {
 		adresaKIzmena.getDocument().addDocumentListener(docList);
 		brlkIzmena.getDocument().addDocumentListener(docList);
 
-		
-
 		this.add(textPanel, BorderLayout.NORTH);
 		this.add(buttonsPanel, BorderLayout.CENTER);
 
@@ -186,10 +184,6 @@ public class IzmenaProfesoraPanel extends JPanel {
 
 		buttonsPanel.add(prihvatiIzmena);
 		buttonsPanel.add(odbaci);
-		
-		
-		
-		
-		
+
 	}
 }

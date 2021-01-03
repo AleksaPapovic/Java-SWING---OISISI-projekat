@@ -23,7 +23,7 @@ public class PredmetController {
 	public boolean izbrisiPredmet(int index_predmeta) {
 	
 	if(index_predmeta != -1) {
-	//BazaPredmeta.getInstance().izbrisiPredmet(index_predmeta);
+	BazaPredmeta.getInstance().izbrisiPredmet(index_predmeta);
 	TabsPanel.tablePredmet.azuriranjeTabelePredmet();
 	return true;
 	}

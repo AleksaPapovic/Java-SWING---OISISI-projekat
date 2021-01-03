@@ -73,4 +73,7 @@ public class BazaPredmeta {
 
 	}
 
+	public void izbrisiPredmet(int index_predmeta) {
+		this.predmeti.remove(index_predmeta);
+	}
 }
