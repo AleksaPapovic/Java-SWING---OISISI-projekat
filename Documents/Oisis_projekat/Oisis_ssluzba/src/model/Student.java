@@ -22,7 +22,7 @@ public class Student {
 	private Status status;
 	private double prosek;
 	private ArrayList<Ocena> polozeniIsp;
-	private ArrayList<Ocena> nepolozeniIsp;
+	private ArrayList<Predmet> nepolozeniIsp;
 
 	public Student() {
 		super();
@@ -43,6 +43,7 @@ public class Student {
 		this.godSt = godSt;
 		this.status = status;
 		this.prosek = prosek;
+		this.nepolozeniIsp = new ArrayList<Predmet>();
 	}
 
 	public Student(String brojInd, String ime, String prezime, int godSt, Status status, double prosek) {
@@ -53,6 +54,7 @@ public class Student {
 		this.godSt = godSt;
 		this.status = status;
 		this.prosek = prosek;
+		this.nepolozeniIsp = new ArrayList<Predmet>();
 	}
 
 	public String getPrezime() {
@@ -151,11 +153,11 @@ public class Student {
 		this.polozeniIsp = polozeniIsp;
 	}
 
-	public ArrayList<Ocena> getNepolozeniIsp() {
+	public ArrayList<Predmet> getNepolozeniIsp() {
 		return nepolozeniIsp;
 	}
 
-	public void setNepolozeniIsp(ArrayList<Ocena> nepolozeniIsp) {
+	public void setNepolozeniIsp(ArrayList<Predmet> nepolozeniIsp) {
 		this.nepolozeniIsp = nepolozeniIsp;
 	}
 

@@ -1,9 +1,11 @@
 package view;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Frame;
 
 import javax.swing.JDialog;
+import javax.swing.JScrollPane;
 
 public class IzmenaStudentaDialog extends JDialog {
 
@@ -23,6 +25,8 @@ public class IzmenaStudentaDialog extends JDialog {
 		IzmenaStudentaTabs izmenaStudentaTabovi = new IzmenaStudentaTabs(this);
 		add(izmenaStudentaTabovi, BorderLayout.NORTH);
 
+		
+		
 		this.setVisible(true);
 
 	}

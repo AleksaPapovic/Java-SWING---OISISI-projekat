@@ -21,16 +21,23 @@ public class BazaStudenata {
 
 	private ArrayList<Student> Studenti;
 	private ArrayList<String> kolone;
+	private ArrayList<String> koloneNepolozeniP;
 
 	private BazaStudenata() {
 
 		this.kolone = new ArrayList<String>();
+		this.koloneNepolozeniP = new ArrayList<String>();
 		this.kolone.add("Indeks");
 		this.kolone.add("Ime");
 		this.kolone.add("Prezime");
 		this.kolone.add("Godina studija");
 		this.kolone.add("Status");
 		this.kolone.add("Prosek");
+		this.koloneNepolozeniP.add("Šifra predmeta");
+		this.koloneNepolozeniP.add("Nayiv predmeta");
+		this.koloneNepolozeniP.add("ESPB");
+		this.koloneNepolozeniP.add("Godina studija");
+		this.koloneNepolozeniP.add("Semestar");
 
 		initStudente();
 	}
@@ -39,6 +46,7 @@ public class BazaStudenata {
 		this.Studenti = new ArrayList<Student>();
 		Studenti.add(new Student("Dusan", "Lekic", parseDate("01.01.2000."), "Zmajevacka 10", "0635672214",
 				"dusanlekic2000@gmail.com", "RA159/2018", 2015, 3, Student.Status.B, 9.05));
+		Studenti.get(0).setNepolozeniIsp(new ArrayList<Predmet>(BazaPredmeta.getInstance().getPredmeti()));
 		Studenti.add(new Student("Aleksa", "Papovic", parseDate("01.01.1999."), "Zmajevacka 1", "06342424242",
 				"aleksapapovic@gmail.com", "RA166/2018", 2015, 3, Student.Status.B, 10));
 	}
@@ -124,6 +132,35 @@ public class BazaStudenata {
 			//JOptionPane.showMessageDialog(null, "Nevalidan datum", "GRESKA", JOptionPane.ERROR_MESSAGE);
 			return null;
 		}
+	}
+
+	public ArrayList<Predmet> getNepolozeniPredmeti(Student student){
+		return student.getNepolozeniIsp();
+	}
+	public int getColumnCountNepolozeniPredmeti() {
+		return this.koloneNepolozeniP.size();
+	}
+	
+	public String getColumnNameNepolozeniPredmeti(int column) {
+		return this.koloneNepolozeniP.get(column);
+	}
+
+	public Object getValueAtNepolozeniPredmeti(Student student, int row, int column) {
+ Predmet predmet = student.getNepolozeniIsp().get(row);
+	switch(column)	{
+	case 0:
+		return predmet.getSifraP();
+	case 1:
+		return predmet.getImeP();
+	case 2:
+		return "" + predmet.getBrojESPB();
+	case 3:
+		return "" + predmet.getGodinaS();
+	case 4:
+		return predmet.getSemestar().toString();
+	default:
+		return null;
+	}
 	}
 
 }

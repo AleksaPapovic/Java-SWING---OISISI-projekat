@@ -3,15 +3,21 @@ package view;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.io.File;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
+
+import model.BazaStudenata;
+import model.Student;
 
 public class IzmenaStudentaTabs extends JTabbedPane{
 
@@ -20,6 +26,7 @@ public class IzmenaStudentaTabs extends JTabbedPane{
 		 */
 	private static final long serialVersionUID = 1L;
 	public static int curr_tab = 0;
+	public static TableNepolozeniPredmeti tableNepolozeniPredmeti;
 
 	public IzmenaStudentaTabs(JDialog parentDialog) {
 
@@ -47,6 +54,42 @@ public class IzmenaStudentaTabs extends JTabbedPane{
 		tabStudent.add(donji1, BorderLayout.SOUTH);
 		Icon ikonProf = new ImageIcon("icons" + File.separator + "tab.png");
 		this.addTab("Informacije", ikonProf, tabStudent, "Prikaz informacija selektovanog studenta");
+		
+		
+		JPanel tabNepolozeni = new JPanel();
+		tabNepolozeni.setLayout(new BorderLayout());
+		JPanel gornji3 = new JPanel(new FlowLayout(FlowLayout.CENTER,15,10));
+		JButton dodaj = new JButton("Dodaj");
+		JButton ukloni = new JButton("Obriši");
+		JButton polaganje = new JButton("Polaganje");
+		gornji3.add(dodaj);
+		gornji3.add(ukloni);
+		gornji3.add(polaganje);
+		JPanel levi3 = new JPanel();
+		JPanel desni3 = new JPanel();
+		JPanel donji3 = new JPanel();
+		levi3.setBackground(Color.WHITE);
+		desni3.setBackground(Color.WHITE);
+		gornji3.setBackground(Color.WHITE);
+		donji3.setBackground(Color.WHITE);
+		levi3.setPreferredSize(new Dimension(50, tabNepolozeni.getHeight()));
+		desni3.setPreferredSize(new Dimension(50, tabNepolozeni.getHeight()));
+		gornji3.setPreferredSize(new Dimension(tabNepolozeni.getWidth(), 60));
+		donji3.setPreferredSize(new Dimension(tabNepolozeni.getWidth(), 50));
+		tabNepolozeni.setBackground(Color.white);
+		Student s = BazaStudenata.getInstance().getRow(TabsPanel.tableStudent.getSelectedRow());
+		tableNepolozeniPredmeti = new TableNepolozeniPredmeti(s);
+		JScrollPane scrollPane3 = new JScrollPane(tableNepolozeniPredmeti);
+		scrollPane3.getViewport().setBackground(Color.WHITE);
+		tabNepolozeni.add(scrollPane3, BorderLayout.CENTER);
+		tabNepolozeni.setBackground(Color.WHITE);
+		tabNepolozeni.add(levi3, BorderLayout.WEST);
+		tabNepolozeni.add(desni3, BorderLayout.EAST);
+		tabNepolozeni.add(gornji3, BorderLayout.NORTH);
+		tabNepolozeni.add(donji3, BorderLayout.SOUTH);
+		
+		this.addTab("Nepoloženi predmeti", null,tabNepolozeni, "Prikaz nepoloženih ispita selektovanog studenta");
+		
 
 		this.addChangeListener(new ChangeListener() {
 
