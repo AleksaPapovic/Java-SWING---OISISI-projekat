@@ -52,6 +52,13 @@ public class Actions {
 						"Dodavanje Profesora", true);
 			}
 				break;
+			
+			case 2: {
+				@SuppressWarnings("unused")
+				DodavanjePredmetaDialog dialogNoviProfesor = new DodavanjePredmetaDialog(MainFrame.getInstance(),
+						"Dodavanje Predmeta", true);
+			}
+				break;
 
 			default:
 				break;

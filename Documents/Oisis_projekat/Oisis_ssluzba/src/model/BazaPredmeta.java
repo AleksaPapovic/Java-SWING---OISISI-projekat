@@ -69,7 +69,9 @@ public class BazaPredmeta {
 		}
 	}
 
-	public void dodajPredmet() {
+	public void dodajPredmet(String sifraP, String imeP, int brojESPB, int godinaS, String semestar) {
+		this.predmeti.add(
+				new Predmet(sifraP, imeP, brojESPB, godinaS, semestar));
 
 	}
 

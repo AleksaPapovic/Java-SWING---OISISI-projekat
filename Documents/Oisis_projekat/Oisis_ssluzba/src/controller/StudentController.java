@@ -153,7 +153,7 @@ public class StudentController {
 	
 	public boolean proveriGodUp(String godUp) {
 		boolean ret = true;
-		if (!godUp.matches("[1-2][0-9]{3,}")) {
+		if (!godUp.matches("[1-2][0-9]{3}")) {
 			ret = false;
 		}
 		return ret;
