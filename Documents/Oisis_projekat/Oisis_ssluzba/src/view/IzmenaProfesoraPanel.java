@@ -20,6 +20,8 @@ import controller.DocumentListenerIzmenaProfesora;
 import controller.ProfesorController;
 import model.BazaProfesora;
 import model.Profesor;
+import model.Profesor.Titula;
+import model.Profesor.Zvanje;
 import view.FocusField.TipPolja;
 
 public class IzmenaProfesoraPanel extends JPanel {
@@ -113,16 +115,50 @@ public class IzmenaProfesoraPanel extends JPanel {
 		titulaLabela.setPreferredSize(polje);
 		titulaLabela.setMaximumSize(polje);
 		String titule[] = { "Master", "Doktor", "Profesor doktor" };
-		combobox1Izmena = new JComboBox<String>(titule);
-		combobox1Izmena.setSelectedItem(prof.getTitula());
+		combobox1Izmena = new JComboBox<String>(titule);	
+		String combo1S;
+		switch (prof.getTitula()) {
+		case  Ms:
+			combo1S = titule[0];
+			break;
+		case  Dr:
+			combo1S = titule[1];
+			break;
+		case  ProfDr:
+			combo1S = titule[2];
+			break;
+		default:
+		combo1S = "";
+		}
+		combobox1Izmena.setSelectedItem(combo1S);
 
 		JLabel zvanjeLabela = new JLabel("Izaberite zvanje");
 		zvanjeLabela.setPreferredSize(polje);
 		zvanjeLabela.setMaximumSize(polje);
-		String zvanja[] = { "Saradnik", "Asistent", "Redovni Profesor", "Vanredni Profesor", "Docent" };
+		String zvanja[] = { "Asistent", "Docent", "Vanredni Profesor", "Redovni Profesor", "Saradnik" };
 		combobox2Izmena = new JComboBox<String>(zvanja);
-		combobox2Izmena.setSelectedItem(prof.getZvanje());
-
+		String combo2S;
+			switch (prof.getZvanje()) {
+			case Asistent:
+				combo2S = zvanja[0];
+				break;
+			case Docent:
+				combo2S = zvanja[1];
+				break;
+			case VProfesor:
+				combo2S = zvanja[2];
+				break;
+			case RProfesor:
+				combo2S = zvanja[3];
+				break;
+			case Saradnik:
+				combo2S = zvanja[4];
+				break;
+			default:
+				combo2S = "";
+			}
+		combobox2Izmena.setSelectedItem(combo2S);
+		
 		prihvatiIzmena = new JButton("Potvrdi");
 		prihvatiIzmena.setPreferredSize(polje);
 		prihvatiIzmena.setEnabled(false);

@@ -39,5 +39,7 @@ public class TableProfesor extends JTable {
 		model.fireTableDataChanged();
 		validate();
 	}
+	
+	
 
 }
