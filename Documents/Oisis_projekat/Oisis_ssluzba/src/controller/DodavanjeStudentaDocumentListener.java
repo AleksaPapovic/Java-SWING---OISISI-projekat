@@ -5,7 +5,7 @@ import javax.swing.event.DocumentListener;
 
 import gui.DodavanjeStudentaDialog;
 
-public class StudentDocumentListener implements DocumentListener {
+public class DodavanjeStudentaDocumentListener implements DocumentListener {
 
 	@Override
 	public void removeUpdate(DocumentEvent e) {

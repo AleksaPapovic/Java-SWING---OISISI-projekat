@@ -86,13 +86,13 @@ public class BazaStudenata {
 		}
 	}
 
-	public void dodajStudenata(String prezime, String ime, Date datumR, String adresaSt, String kontaktTl, String email,
+	public void dodajStudenta(String prezime, String ime, Date datumR, String adresaSt, String kontaktTl, String email,
 			String brojInd, int godUp, int godSt, Status status, double prosek) {
 		this.Studenti.add(
 				new Student(prezime, ime, datumR, adresaSt, kontaktTl, email, brojInd, godUp, godSt, status, prosek));
 	}
 
-	public void izbrisiStudenata(String brojInd) {
+	public void izbrisiStudenta(String brojInd) {
 		for (Student i : Studenti) {
 			if (i.getBrojInd() == brojInd) {
 				Studenti.remove(i);
@@ -101,23 +101,20 @@ public class BazaStudenata {
 		}
 	}
 
-	public void izmeniStudenata(String prezime, String ime, Date datumR, String adresaSt, String kontaktTl,
-			String email, String brojInd, int godUp, String godSt, Student.Status status, double prosek,
-			ArrayList<Ocena> polozeniIsp, ArrayList<Ocena> nepolozeniIsp) {
-		for (Student i : Studenti) {
-			if (i.getBrojInd() == brojInd) {
-				i.setIme(ime);
-				i.setPrezime(prezime);
-				i.setAdresaSt(adresaSt);
-				i.setAdresaSt(adresaSt);
-				i.setEmail(email);
-				i.setGodUp(godUp);
-				i.setKontaktTl(kontaktTl);
-				i.setProsek(prosek);
-				i.setPolozeniIsp(nepolozeniIsp);
-				i.setNepolozeniIsp(nepolozeniIsp);
+	public void izmeniStudenta(int index, String prezime, String ime, Date datumR, String adresaSt, String kontaktTl,
+			String email, String brojInd, int godUp, int godSt, Student.Status status, double prosek) {
+			if (Studenti.get(index).getBrojInd() == brojInd) {
+				Studenti.get(index).setIme(ime);
+				Studenti.get(index).setPrezime(prezime);
+				Studenti.get(index).setDatumR(datumR);
+				Studenti.get(index).setAdresaSt(adresaSt);
+				Studenti.get(index).setKontaktTl(kontaktTl);
+				Studenti.get(index).setEmail(email);
+				Studenti.get(index).setGodUp(godUp);
+				Studenti.get(index).setGodSt(godSt);
+				Studenti.get(index).setStatus(status);
+				Studenti.get(index).setProsek(prosek);
 			}
-		}
 	}
 
 	public static Date parseDate(String date) {

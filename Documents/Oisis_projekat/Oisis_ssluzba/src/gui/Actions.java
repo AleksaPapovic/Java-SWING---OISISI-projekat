@@ -105,7 +105,16 @@ public class Actions {
 
 			switch (TabsPanel.tab_curr) {
 			case 0: {
-				
+					if(TabsPanel.tableStudent.getSelectedRow()!=-1)
+					{
+						@SuppressWarnings("unused")
+					IzmenaStudentaDialog stIz = new IzmenaStudentaDialog(MainFrame.getInstance(),
+							"Izmena studenta", true);
+					}
+					else {
+						JOptionPane.showMessageDialog(null, "Niste odabrali red za izmenu", "GRESKA", JOptionPane.ERROR_MESSAGE);
+					}
+			
 			}
 				break;
 			case 1: {

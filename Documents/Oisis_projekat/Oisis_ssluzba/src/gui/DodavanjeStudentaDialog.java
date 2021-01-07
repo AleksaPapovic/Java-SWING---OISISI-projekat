@@ -15,7 +15,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import controller.StudentController;
-import controller.StudentDocumentListener;
+import controller.DodavanjeStudentaDocumentListener;
 import gui.StudentTextFields.TipPolja;
 
 public class DodavanjeStudentaDialog extends JDialog {
@@ -110,7 +110,7 @@ public class DodavanjeStudentaDialog extends JDialog {
 		odustani = new JButton("Odustani");
 		odustani.setPreferredSize(velicina);
 
-		StudentDocumentListener textChangeDocumentListener = new StudentDocumentListener();
+		DodavanjeStudentaDocumentListener textChangeDocumentListener = new DodavanjeStudentaDocumentListener();
 
 		DodavanjeStudentaDialog.imeField.getDocument().addDocumentListener(textChangeDocumentListener);
 		DodavanjeStudentaDialog.prezimeField.getDocument().addDocumentListener(textChangeDocumentListener);

@@ -1,4 +1,4 @@
-/*REFERENCA: VEZBE 6, IgraciController klasa*/ 
+/*REFERENCA: VEZBE 6, IgraciController klasa*/
 package controller;
 
 import java.text.ParseException;
@@ -6,6 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import gui.DodavanjeStudentaDialog;
+import gui.IzmenaStudentaPanel;
 import gui.TabsPanel;
 import model.BazaStudenata;
 import model.Student;
@@ -31,22 +32,22 @@ public class StudentController {
 
 		st.setIme(DodavanjeStudentaDialog.imeField.getText());
 		st.setPrezime(DodavanjeStudentaDialog.prezimeField.getText());
-		
+
 		Date datumr = BazaStudenata.parseDate(DodavanjeStudentaDialog.datumRField.getText());
 		st.setDatumR(datumr);
-		
+
 		st.setAdresaSt(DodavanjeStudentaDialog.adresaSField.getText());
 		st.setKontaktTl(DodavanjeStudentaDialog.brojTField.getText());
-		
-		String email=DodavanjeStudentaDialog.emailField.getText();
+
+		String email = DodavanjeStudentaDialog.emailField.getText();
 		st.setEmail(email);
-		
+
 		st.setBrojInd(DodavanjeStudentaDialog.brIndField.getText());
-		
-		String godUp= DodavanjeStudentaDialog.godUpField.getText();
+
+		String godUp = DodavanjeStudentaDialog.godUpField.getText();
 		st.setGodUp(Integer.parseInt(godUp));
-		
-	    switch (DodavanjeStudentaDialog.godStComboBox.getSelectedItem().toString()) {
+
+		switch (DodavanjeStudentaDialog.godStComboBox.getSelectedItem().toString()) {
 		case "I(prva)":
 			st.setGodSt(1);
 			break;
@@ -61,12 +62,12 @@ public class StudentController {
 		case "IV(cetvrta)":
 			st.setGodSt(4);
 			break;
-	
+
 		default:
 			break;
 		}
-		
-		Status status=null;
+
+		Status status = null;
 
 		switch (DodavanjeStudentaDialog.nacinFComboBox.getSelectedItem().toString()) {
 		case "Budzet":
@@ -78,16 +79,73 @@ public class StudentController {
 
 		default:
 			break;
-		}		
-		
+		}
+
 		st.setStatus(status);
-		
-		BazaStudenata.getInstance().dodajStudenata(st.getIme(), st.getPrezime(), st.getDatumR(), st.getAdresaSt(),
+
+		BazaStudenata.getInstance().dodajStudenta(st.getIme(), st.getPrezime(), st.getDatumR(), st.getAdresaSt(),
 				st.getKontaktTl(), st.getEmail(), st.getBrojInd(), st.getGodUp(), st.getGodSt(), st.getStatus(), 0);
 		TabsPanel.tableStudent.update();
 		return true;
 	}
+
+	public boolean izmeniStudenta() {
+		
+		String ime = IzmenaStudentaPanel.imeIzmena.getText();
+		String prezime =IzmenaStudentaPanel.prezimeIzmena.getText();
+		
+		Date datumr = BazaStudenata.parseDate(IzmenaStudentaPanel.datumRIzmena.getText());
+
+		String adresa = IzmenaStudentaPanel.adresaSIzmena.getText();
+		String kontakt = IzmenaStudentaPanel.brojTIzmena.getText();
+		
+		String email=IzmenaStudentaPanel.emailIzmena.getText();
+		
+		String brojInd = IzmenaStudentaPanel.brIndIzmena.getText();
+		
+		int godUp= Integer.parseInt(IzmenaStudentaPanel.godUpIzmena.getText());
+		
+		int godSt = 0;
+	    switch (IzmenaStudentaPanel.godStIzmena.getSelectedItem().toString()) {
+		case "I(prva)":
+			godSt = 1;
+			break;
+		case "II(druga)":
+			godSt = 2;
+			break;
+
+		case "III(treca)":
+			godSt = 3;
+			break;
+
+		case "IV(cetvrta)":
+			godSt = 4;
+			break;
 	
+		default:
+			break;
+		}
+		
+		Status status=null;
+
+		switch (IzmenaStudentaPanel.nacinFIzmena.getSelectedItem().toString()) {
+		case "Budzet":
+			status = Status.B;
+			break;
+		case "Samofinansiranje":
+			status = Status.S;
+			break;
+
+		default:
+			break;
+		}		
+		
+		int index = TabsPanel.tableStudent.getSelectedRow();
+		BazaStudenata.getInstance().izmeniStudenta(index,ime,prezime,datumr,adresa,kontakt,email,brojInd,godUp,godSt,status,0.0);
+		TabsPanel.tableStudent.update();
+		return true;
+	}
+
 	public boolean proveriIme(String ime) {
 		boolean ret = true;
 
@@ -97,7 +155,7 @@ public class StudentController {
 		return ret;
 
 	}
-	
+
 	public boolean proveriDatumR(String datumR) {
 
 		boolean ret = true;
@@ -111,7 +169,7 @@ public class StudentController {
 		}
 		return ret;
 	}
-	
+
 	public boolean proveriAdresuSt(String adresaSt) {
 		boolean ret = true;
 		if (adresaSt.isEmpty()) {
@@ -120,7 +178,7 @@ public class StudentController {
 		return ret;
 
 	}
-	
+
 	public boolean proveriKontaktTl(String kontaktTl) {
 		boolean ret = true;
 		if (!kontaktTl.matches("[0-9]{9,}")) {
@@ -137,7 +195,7 @@ public class StudentController {
 		}
 		return ret;
 	}
-	
+
 	public boolean proveriBrojInd(String brojInd) {
 		boolean ret = true;
 		if (brojInd.isEmpty()) {
@@ -150,7 +208,7 @@ public class StudentController {
 		}
 		return ret;
 	}
-	
+
 	public boolean proveriGodUp(String godUp) {
 		boolean ret = true;
 		if (!godUp.matches("[1-2][0-9]{3}")) {
