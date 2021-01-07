@@ -219,7 +219,7 @@ public class ProfesorController {
 			return false;
 		}
 
-		int index_izmenjenog = TabsPanel.tableProfesor.getSelectedRow();
+		int index_izmenjenog = TabsPanel.tableProfesor.getSelectedTableRow();
 		Profesor izmenjeniProfesor = new Profesor(prezime, ime, dateR, adresaS, kontaktTel, email, adresaK, brlk,
 				titula, zvanje);
 		BazaProfesora.getInstance().izmeniProfesora(izmenjeniProfesor, index_izmenjenog);

@@ -46,7 +46,7 @@ public class IzmenaProfesoraPanel extends JPanel {
 
 	public IzmenaProfesoraPanel(JDialog parentDialog) {
 
-		int indeks_profesora = TabsPanel.tableProfesor.getSelectedRow();
+		int indeks_profesora = TabsPanel.tableProfesor.getSelectedTableRow();
 		Profesor prof = BazaProfesora.getInstance().getSelectedProfesor(indeks_profesora);
 
 		this.setLayout(new BorderLayout());

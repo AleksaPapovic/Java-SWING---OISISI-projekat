@@ -20,6 +20,7 @@ public class TableProfesor extends JTable {
 		this.setColumnSelectionAllowed(true);
 		this.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		this.setModel(new AbstractTableModelProfesori());
+		this.setAutoCreateRowSorter(true);
 	}
 
 	// izmena boje redova prilikom selektovanja
@@ -40,6 +41,9 @@ public class TableProfesor extends JTable {
 		validate();
 	}
 	
+	public int getSelectedTableRow() {
+		return this.convertRowIndexToModel(this.getSelectedRow()) ;
+	}
 	
 
 }
