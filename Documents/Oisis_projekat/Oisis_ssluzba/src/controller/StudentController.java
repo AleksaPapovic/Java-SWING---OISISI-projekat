@@ -5,12 +5,12 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import gui.DodavanjeStudentaDialog;
-import gui.IzmenaStudentaPanel;
-import gui.TabsPanel;
 import model.BazaStudenata;
 import model.Student;
 import model.Student.Status;
+import view.DodavanjeStudentaDialog;
+import view.IzmenaStudentaPanel;
+import view.TabsPanel;
 
 public class StudentController {
 

@@ -3,7 +3,7 @@ package controller;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
-import gui.DodavanjePredmetaDialog;
+import view.DodavanjePredmetaDialog;
 
 public class PredmetDocumentListener implements DocumentListener {
 

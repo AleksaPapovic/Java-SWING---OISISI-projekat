@@ -2,10 +2,10 @@ package controller;
 
 import javax.swing.JOptionPane;
 
-import gui.DodavanjePredmetaDialog;
-import gui.TabsPanel;
 import model.BazaPredmeta;
 import model.Predmet;
+import view.DodavanjePredmetaDialog;
+import view.TabsPanel;
 
 public class PredmetController {
 

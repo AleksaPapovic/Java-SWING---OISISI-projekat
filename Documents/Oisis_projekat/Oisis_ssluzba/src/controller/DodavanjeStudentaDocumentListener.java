@@ -3,7 +3,7 @@ package controller;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
-import gui.DodavanjeStudentaDialog;
+import view.DodavanjeStudentaDialog;
 
 public class DodavanjeStudentaDocumentListener implements DocumentListener {
 

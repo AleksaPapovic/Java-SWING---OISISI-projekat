@@ -3,7 +3,7 @@ package controller;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
-import gui.IzmenaStudentaPanel;
+import view.IzmenaStudentaPanel;
 
 public class IzmenaStudentaDocumentListener implements DocumentListener {
 

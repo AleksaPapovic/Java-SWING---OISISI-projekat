@@ -3,7 +3,7 @@ package controller;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
-import gui.DodavanjeProfesoraDialog;
+import view.DodavanjeProfesoraDialog;
 
 public class DocumentListenerProfesorFields implements DocumentListener {
 

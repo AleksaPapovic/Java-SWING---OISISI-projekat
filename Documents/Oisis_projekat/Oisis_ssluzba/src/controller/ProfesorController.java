@@ -5,13 +5,13 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import gui.DodavanjeProfesoraDialog;
-import gui.IzmenaProfesoraPanel;
-import gui.TabsPanel;
 import model.BazaProfesora;
 import model.Profesor;
 import model.Profesor.Titula;
 import model.Profesor.Zvanje;
+import view.DodavanjeProfesoraDialog;
+import view.IzmenaProfesoraPanel;
+import view.TabsPanel;
 
 public class ProfesorController {
 
