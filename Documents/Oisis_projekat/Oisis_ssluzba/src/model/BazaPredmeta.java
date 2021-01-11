@@ -78,4 +78,15 @@ public class BazaPredmeta {
 	public void izbrisiPredmet(int index_predmeta) {
 		this.predmeti.remove(index_predmeta);
 	}
+
+	public Predmet nadjiPredmet(String sifraP) {
+		for(Predmet p : this.predmeti) {
+		if(p.getSifraP().equals(sifraP))
+		{
+			return p;
+		}
+		}
+		return null;
+	}
+	
 }

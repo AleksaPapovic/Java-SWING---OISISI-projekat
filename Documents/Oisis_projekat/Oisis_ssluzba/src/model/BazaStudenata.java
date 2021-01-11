@@ -7,6 +7,9 @@ import java.util.Date;
 import java.util.List;
 
 import model.Student.Status;
+import view.IzmenaStudentaDialog;
+import view.IzmenaStudentaTabs;
+import view.TabsPanel;
 
 public class BazaStudenata {
 
@@ -162,6 +165,19 @@ public class BazaStudenata {
 		return null;
 	}
 	}
+
+	public void upisiOcenu(String sifraP, String imeP, Integer ocena, String datumUpisa) {
+	Date upisDatum = parseDate(datumUpisa);
+	Student s = getSelectedStudent(TabsPanel.tableStudent.getSelectedRow());
+	Predmet p = BazaPredmeta.getInstance().nadjiPredmet(sifraP);
+    s.getPolozeniIsp().add(new  Ocena(s,p,ocena,upisDatum));
+	s.getNepolozeniIsp().remove(IzmenaStudentaTabs.tableNepolozeniPredmeti.getSelectedRow());
+	IzmenaStudentaTabs.tableNepolozeniPredmeti.azurirajNepolozene();
+	}
 	
+
+	public Student getSelectedStudent(int red) {
+		return this.Studenti.get(red);
+	}
 
 }

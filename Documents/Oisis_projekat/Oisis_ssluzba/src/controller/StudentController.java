@@ -218,4 +218,9 @@ public class StudentController {
 
 	}
 
+	public boolean upisi(String sifraP, String imeP, int ocena, String datum) {
+	    BazaStudenata.getInstance().upisiOcenu(sifraP,  imeP, ocena,datum);
+		return true;
+	}
+
 }

@@ -44,6 +44,7 @@ public class Student {
 		this.status = status;
 		this.prosek = prosek;
 		this.nepolozeniIsp = new ArrayList<Predmet>();
+		this.polozeniIsp = new ArrayList<Ocena>();
 	}
 
 	public Student(String brojInd, String ime, String prezime, int godSt, Status status, double prosek) {
@@ -55,6 +56,7 @@ public class Student {
 		this.status = status;
 		this.prosek = prosek;
 		this.nepolozeniIsp = new ArrayList<Predmet>();
+		this.polozeniIsp = new ArrayList<Ocena>();
 	}
 
 	public String getPrezime() {

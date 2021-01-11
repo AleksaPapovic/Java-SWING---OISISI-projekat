@@ -12,6 +12,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDialog;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
@@ -97,7 +98,11 @@ public class IzmenaStudentaTabs extends JTabbedPane{
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
-				UpisOceneDialog uod = new UpisOceneDialog(MainFrame.getInstance(), "Upis ocene", true);
+				if(tableNepolozeniPredmeti.getSelectedRow() != -1) {
+				UpisOceneDialog uod = new UpisOceneDialog(MainFrame.getInstance(), "Upis ocene", true);}
+				else {
+				JOptionPane.showMessageDialog(null, "Nije selektovan nepolozen predmet", "GRESKA", JOptionPane.ERROR_MESSAGE);
+				}
 			}
 		});
 
@@ -105,7 +110,7 @@ public class IzmenaStudentaTabs extends JTabbedPane{
 
 			@Override
 			public void stateChanged(ChangeEvent event) {
-
+               
 				JTabbedPane tabbedPane = (JTabbedPane) event.getSource();
 				curr_tab = tabbedPane.getSelectedIndex();
 			}
