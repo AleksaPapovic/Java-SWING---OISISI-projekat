@@ -4,6 +4,8 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
 
 import javax.swing.Icon;
@@ -90,6 +92,14 @@ public class IzmenaStudentaTabs extends JTabbedPane{
 		
 		this.addTab("Nepoloženi predmeti", null,tabNepolozeni, "Prikaz nepoloženih ispita selektovanog studenta");
 		
+		polaganje.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				UpisOceneDialog uod = new UpisOceneDialog(MainFrame.getInstance(), "Upis ocene", true);
+			}
+		});
 
 		this.addChangeListener(new ChangeListener() {
 

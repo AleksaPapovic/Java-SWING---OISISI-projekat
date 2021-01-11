@@ -20,6 +20,7 @@ public class TablePredmet extends JTable {
 		this.setColumnSelectionAllowed(true);
 		this.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		this.setModel(new AbstractTableModelPredmeti());
+		this.setAutoCreateRowSorter(true);
 	}
 
 	// izmena boje redova prilikom selektovanja
@@ -40,4 +41,7 @@ public class TablePredmet extends JTable {
 		validate();
 	}
 	
+	public int getSelectedTableRow() {
+		return this.convertRowIndexToModel(this.getSelectedRow()) ;
+	}
 }
