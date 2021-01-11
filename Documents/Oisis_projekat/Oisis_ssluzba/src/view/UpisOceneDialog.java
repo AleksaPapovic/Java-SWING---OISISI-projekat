@@ -60,16 +60,15 @@ public class UpisOceneDialog extends JDialog {
 		sifraPredmetaLabela.setPreferredSize(polje);
 		sifraPredmetaLabela.setMaximumSize(polje);
 		JTextField sifraPredmetaField = new JTextField();
-        sifraPredmetaField.setText(predmet.getSifraP());
-    	sifraPredmetaField.setEnabled(false);
-		
+		sifraPredmetaField.setText(predmet.getSifraP());
+		sifraPredmetaField.setEnabled(false);
+
 		JLabel imePredmetaLabela = new JLabel("Unesite prezime");
 		imePredmetaLabela.setPreferredSize(polje);
 		imePredmetaLabela.setMaximumSize(polje);
 		JTextField imePredmetaField = new JTextField();
 		imePredmetaField.setText(predmet.getImeP());
 		imePredmetaField.setEnabled(false);
-		
 
 		JLabel datumUpisaLabela = new JLabel("Unesite datum rodjenja");
 		datumUpisaLabela.setPreferredSize(polje);
@@ -83,7 +82,7 @@ public class UpisOceneDialog extends JDialog {
 		JLabel titulaLabela = new JLabel("Izaberite titulu");
 		titulaLabela.setPreferredSize(polje);
 		titulaLabela.setMaximumSize(polje);
-		String ocene[] = { "6","7","8","9","10" };
+		String ocene[] = { "6", "7", "8", "9", "10" };
 		comboboxUpisa = new JComboBox<String>(ocene);
 
 		prihvatiUpis = new JButton("Potvrdi");
@@ -97,9 +96,8 @@ public class UpisOceneDialog extends JDialog {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
-				if (StudentController.getInstance().upisi(predmet.getSifraP(),predmet.getImeP(),
-						comboboxUpisa.getSelectedIndex()+6,datumUpisaField.getText())
-				 )
+				if (StudentController.getInstance().upisi(predmet.getSifraP(), predmet.getImeP(),
+						comboboxUpisa.getSelectedIndex() + 6, datumUpisaField.getText()))
 					dispose();
 
 			}
@@ -114,7 +112,6 @@ public class UpisOceneDialog extends JDialog {
 			}
 		});
 
-		
 		datumUpisaField.getDocument().addDocumentListener(docUpis);
 		add(panel);
 

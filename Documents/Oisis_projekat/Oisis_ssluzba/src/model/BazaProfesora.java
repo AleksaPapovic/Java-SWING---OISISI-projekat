@@ -5,6 +5,9 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
+import javax.swing.JOptionPane;
+
+import controller.ProfesorController;
 import model.Profesor.Titula;
 import model.Profesor.Zvanje;
 
@@ -20,28 +23,27 @@ public class BazaProfesora {
 	}
 
 	private ArrayList<Profesor> profesori;
-
+	private ArrayList<Profesor> profesoriPronadjeni;
+	private ArrayList<Profesor> profesoriSvi;
 	private ArrayList<String> profNazivi;
 
 	private BazaProfesora() {
 		super();
 
 		this.profesori = new ArrayList<Profesor>();
-
 		this.profNazivi = new ArrayList<String>();
 		this.profNazivi.add("Ime");
 		this.profNazivi.add("Prezime");
 		this.profNazivi.add("Titula");
 		this.profNazivi.add("Zvanje");
-		
-		
+
 		Date d1 = parseDate("12.12.2020.");
 		Date d2 = parseDate("10.03.2019.");
-		this.profesori.add(new Profesor("Petrović", "Petar", d1, "Beograd", "069373994234",
-				"petorvic@gmail.com", "Novi Sad", "123857364", Titula.Dr, Zvanje.RProfesor));
-		this.profesori.add(new Profesor("Lekić", "Dušan",d2, "Kraljevo", "069373994234", "dlekic@gmail.com",
-				"Beograd", "987456321", Titula.Ms, Zvanje.VProfesor));
-
+		this.profesori.add(new Profesor("Petrović", "Petar", d1, "Beograd", "069373994234", "petorvic@gmail.com",
+				"Novi Sad", "123857364", Titula.Dr, Zvanje.RProfesor));
+		this.profesori.add(new Profesor("Lekić", "Dušan", d2, "Kraljevo", "069373994234", "dlekic@gmail.com", "Beograd",
+				"987456321", Titula.Ms, Zvanje.VProfesor));
+		this.profesoriSvi = this.profesori;
 	}
 
 	public int getColumnCount() {
@@ -114,15 +116,14 @@ public class BazaProfesora {
 			return null;
 		}
 	}
-	
-	
-	public void dodajProfesora(String prezime, String ime, Date datumR, String adresaS, String kontaktTel,
-			String email, String adresaK, String brlk, Titula titula, Zvanje zvanje) {
+
+	public void dodajProfesora(String prezime, String ime, Date datumR, String adresaS, String kontaktTel, String email,
+			String adresaK, String brlk, Titula titula, Zvanje zvanje) {
 		this.profesori
 				.add(new Profesor(prezime, ime, datumR, adresaS, kontaktTel, email, adresaK, brlk, titula, zvanje));
 
 	}
-	
+
 	public Profesor getSelectedProfesor(int red) {
 		return this.profesori.get(red);
 	}
@@ -139,5 +140,43 @@ public class BazaProfesora {
 		this.profesori.get(index_izmenjenog).setZvanje(izmenjeniProfesor.getZvanje());
 		this.profesori.get(index_izmenjenog).setBrlk(izmenjeniProfesor.getBrlk());
 	}
-	
+
+	public void pretraziProfesora(String text) {
+		this.profesoriPronadjeni = new ArrayList<Profesor>();
+		this.profesori = this.profesoriSvi;
+		int i = 0;
+		int k = 0;
+
+		String[] podeli = text.trim().split(" ");
+		String[] trag = new String[3];
+
+		for (String s : podeli) {
+			String pom = s.trim();
+			trag[i] = pom;
+			i++;
+		}
+		if (trag[0].equals("ime") && trag[1].equals("prezime")) {
+			JOptionPane.showMessageDialog(null, "Kriterijum pretrage mora biti:  Prezime Ime ", "GREŠKA",
+					JOptionPane.ERROR_MESSAGE);
+
+		} else {
+			for (Profesor p : BazaProfesora.getInstance().getProfesori()) {
+				if (p.getPrezime().contains(trag[0]) && k < 2) {
+					this.profesoriPronadjeni.add(p);
+				} else if (p.getPrezime().contains(trag[0]) && p.getIme().contains(trag[1]) && k > 2) {
+					this.profesoriPronadjeni.add(p);
+				}
+			}
+		}
+
+		if (text.isEmpty()) {
+			this.profesori = this.profesoriSvi;
+			JOptionPane.showMessageDialog(null, "Kriterijum pretrage mora biti:  Prezime Ime", "Neuspešna pretraga",
+					JOptionPane.ERROR_MESSAGE);
+		} else {
+			this.profesori = this.profesoriPronadjeni;
+		}
+
+	}
+
 }

@@ -90,23 +90,23 @@ public class StudentController {
 	}
 
 	public boolean izmeniStudenta() {
-		
+
 		String ime = IzmenaStudentaPanel.imeIzmena.getText();
-		String prezime =IzmenaStudentaPanel.prezimeIzmena.getText();
-		
+		String prezime = IzmenaStudentaPanel.prezimeIzmena.getText();
+
 		Date datumr = BazaStudenata.parseDate(IzmenaStudentaPanel.datumRIzmena.getText());
 
 		String adresa = IzmenaStudentaPanel.adresaSIzmena.getText();
 		String kontakt = IzmenaStudentaPanel.brojTIzmena.getText();
-		
-		String email=IzmenaStudentaPanel.emailIzmena.getText();
-		
+
+		String email = IzmenaStudentaPanel.emailIzmena.getText();
+
 		String brojInd = IzmenaStudentaPanel.brIndIzmena.getText();
-		
-		int godUp= Integer.parseInt(IzmenaStudentaPanel.godUpIzmena.getText());
-		
+
+		int godUp = Integer.parseInt(IzmenaStudentaPanel.godUpIzmena.getText());
+
 		int godSt = 0;
-	    switch (IzmenaStudentaPanel.godStIzmena.getSelectedItem().toString()) {
+		switch (IzmenaStudentaPanel.godStIzmena.getSelectedItem().toString()) {
 		case "I(prva)":
 			godSt = 1;
 			break;
@@ -121,12 +121,12 @@ public class StudentController {
 		case "IV(cetvrta)":
 			godSt = 4;
 			break;
-	
+
 		default:
 			break;
 		}
-		
-		Status status=null;
+
+		Status status = null;
 
 		switch (IzmenaStudentaPanel.nacinFIzmena.getSelectedItem().toString()) {
 		case "Budzet":
@@ -138,10 +138,11 @@ public class StudentController {
 
 		default:
 			break;
-		}		
-		
+		}
+
 		int index = TabsPanel.tableStudent.getSelectedRow();
-		BazaStudenata.getInstance().izmeniStudenta(index,ime,prezime,datumr,adresa,kontakt,email,brojInd,godUp,godSt,status,0.0);
+		BazaStudenata.getInstance().izmeniStudenta(index, ime, prezime, datumr, adresa, kontakt, email, brojInd, godUp,
+				godSt, status, 0.0);
 		TabsPanel.tableStudent.update();
 		return true;
 	}
@@ -219,7 +220,7 @@ public class StudentController {
 	}
 
 	public boolean upisi(String sifraP, String imeP, int ocena, String datum) {
-	    BazaStudenata.getInstance().upisiOcenu(sifraP,  imeP, ocena,datum);
+		BazaStudenata.getInstance().upisiOcenu(sifraP, imeP, ocena, datum);
 		return true;
 	}
 

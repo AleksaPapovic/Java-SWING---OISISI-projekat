@@ -1,4 +1,4 @@
-/*REFERENCA: VEZBE 6, BazaIgraca klasa*/ 
+/*REFERENCA: VEZBE 6, BazaIgraca klasa*/
 package model;
 
 import java.text.SimpleDateFormat;
@@ -114,67 +114,68 @@ public class BazaStudenata {
 
 	public void izmeniStudenta(int index, String prezime, String ime, Date datumR, String adresaSt, String kontaktTl,
 			String email, String brojInd, int godUp, int godSt, Student.Status status, double prosek) {
-			if (Studenti.get(index).getBrojInd() == brojInd) {
-				Studenti.get(index).setIme(ime);
-				Studenti.get(index).setPrezime(prezime);
-				Studenti.get(index).setDatumR(datumR);
-				Studenti.get(index).setAdresaSt(adresaSt);
-				Studenti.get(index).setKontaktTl(kontaktTl);
-				Studenti.get(index).setEmail(email);
-				Studenti.get(index).setGodUp(godUp);
-				Studenti.get(index).setGodSt(godSt);
-				Studenti.get(index).setStatus(status);
-				Studenti.get(index).setProsek(prosek);
-			}
+		if (Studenti.get(index).getBrojInd() == brojInd) {
+			Studenti.get(index).setIme(ime);
+			Studenti.get(index).setPrezime(prezime);
+			Studenti.get(index).setDatumR(datumR);
+			Studenti.get(index).setAdresaSt(adresaSt);
+			Studenti.get(index).setKontaktTl(kontaktTl);
+			Studenti.get(index).setEmail(email);
+			Studenti.get(index).setGodUp(godUp);
+			Studenti.get(index).setGodSt(godSt);
+			Studenti.get(index).setStatus(status);
+			Studenti.get(index).setProsek(prosek);
+		}
 	}
 
 	public static Date parseDate(String date) {
 		try {
 			return new SimpleDateFormat("dd.MM.yyyy.").parse(date);
 		} catch (Exception e) {
-			//JOptionPane.showMessageDialog(null, "Nevalidan datum", "GRESKA", JOptionPane.ERROR_MESSAGE);
+			// JOptionPane.showMessageDialog(null, "Nevalidan datum", "GRESKA",
+			// JOptionPane.ERROR_MESSAGE);
 			return null;
 		}
 	}
 
-	public ArrayList<Predmet> getNepolozeniPredmeti(Student student){
+	public ArrayList<Predmet> getNepolozeniPredmeti(Student student) {
 		return student.getNepolozeniIsp();
 	}
+
 	public int getColumnCountNepolozeniPredmeti() {
 		return this.koloneNepolozeniP.size();
 	}
-	
+
 	public String getColumnNameNepolozeniPredmeti(int column) {
 		return this.koloneNepolozeniP.get(column);
 	}
 
 	public Object getValueAtNepolozeniPredmeti(Student student, int row, int column) {
- Predmet predmet = student.getNepolozeniIsp().get(row);
-	switch(column)	{
-	case 0:
-		return predmet.getSifraP();
-	case 1:
-		return predmet.getImeP();
-	case 2:
-		return "" + predmet.getBrojESPB();
-	case 3:
-		return "" + predmet.getGodinaS();
-	case 4:
-		return predmet.getSemestar().toString();
-	default:
-		return null;
-	}
+		Predmet predmet = student.getNepolozeniIsp().get(row);
+		switch (column) {
+		case 0:
+			return predmet.getSifraP();
+		case 1:
+			return predmet.getImeP();
+		case 2:
+			return "" + predmet.getBrojESPB();
+		case 3:
+			return "" + predmet.getGodinaS();
+		case 4:
+			return predmet.getSemestar().toString();
+		default:
+			return null;
+		}
 	}
 
 	public void upisiOcenu(String sifraP, String imeP, Integer ocena, String datumUpisa) {
-	Date upisDatum = parseDate(datumUpisa);
-	Student s = getSelectedStudent(TabsPanel.tableStudent.getSelectedRow());
-	Predmet p = BazaPredmeta.getInstance().nadjiPredmet(sifraP);
-    s.getPolozeniIsp().add(new  Ocena(s,p,ocena,upisDatum));
-	s.getNepolozeniIsp().remove(IzmenaStudentaTabs.tableNepolozeniPredmeti.getSelectedRow());
-	IzmenaStudentaTabs.tableNepolozeniPredmeti.azurirajNepolozene();
+		Date upisDatum = parseDate(datumUpisa);
+		Student s = getSelectedStudent(TabsPanel.tableStudent.getSelectedRow());
+		Predmet p = BazaPredmeta.getInstance().nadjiPredmet(sifraP);
+		s.getPolozeniIsp().add(new Ocena(s, p, ocena, upisDatum));
+		s.getNepolozeniIsp().remove(IzmenaStudentaTabs.tableNepolozeniPredmeti.getSelectedRow());
+		IzmenaStudentaTabs.tableNepolozeniPredmeti.azurirajNepolozene();
 	}
-	
 
 	public Student getSelectedStudent(int red) {
 		return this.Studenti.get(red);

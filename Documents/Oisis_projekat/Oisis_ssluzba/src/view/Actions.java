@@ -9,8 +9,11 @@ import javax.swing.AbstractAction;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.KeyStroke;
+import javax.swing.event.DocumentListener;
 
+import controller.DocumentListenerSearch;
 import controller.PredmetController;
+import controller.ProfesorController;
 
 public class Actions {
 	public String tekst = "<html>Glavni prozor se sastoji iz Menubar-a, Toolbar-a, Statusbar-a, Searchbar-a u Toolbar-u i centralnog prozora <br>"
@@ -233,7 +236,23 @@ public class Actions {
 		}
 
 		public void actionPerformed(ActionEvent e) {
-			JOptionPane.showMessageDialog(null, "Would have done the 'Search' action.");
+			switch (TabsPanel.tab_curr) {
+			case 0: {
+			}
+				break;
+			case 1: {
+				ProfesorController.getInstance().pretragaProfesora(MenuToolbar.searchbar.getText());
+			}
+				break;
+			
+			case 2: {
+				
+			}
+				break;
+
+			default:
+				break;
+			}
 		}
 	}
 

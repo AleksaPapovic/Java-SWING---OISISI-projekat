@@ -227,4 +227,9 @@ public class ProfesorController {
 		return true;
 	}
 
+	public void pretragaProfesora(String text) {
+		BazaProfesora.getInstance().pretraziProfesora(text);
+		TabsPanel.tableProfesor.azuriranjeTabeleProfesor();
+	}
+
 }
