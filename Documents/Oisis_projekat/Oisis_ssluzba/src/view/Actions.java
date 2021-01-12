@@ -9,9 +9,7 @@ import javax.swing.AbstractAction;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.KeyStroke;
-import javax.swing.event.DocumentListener;
 
-import controller.DocumentListenerSearch;
 import controller.PredmetController;
 import controller.ProfesorController;
 
@@ -55,7 +53,7 @@ public class Actions {
 						"Dodavanje Profesora", true);
 			}
 				break;
-			
+
 			case 2: {
 				@SuppressWarnings("unused")
 				DodavanjePredmetaDialog dialogNoviProfesor = new DodavanjePredmetaDialog(MainFrame.getInstance(),
@@ -108,27 +106,37 @@ public class Actions {
 
 			switch (TabsPanel.tab_curr) {
 			case 0: {
-					if(TabsPanel.tableStudent.getSelectedRow()!=-1)
-					{
-						@SuppressWarnings("unused")
-					IzmenaStudentaDialog stIz = new IzmenaStudentaDialog(MainFrame.getInstance(),
-							"Izmena studenta", true);
-					}
-					else {
-						JOptionPane.showMessageDialog(null, "Niste odabrali red za izmenu", "GRESKA", JOptionPane.ERROR_MESSAGE);
-					}
-			
+				if (TabsPanel.tableStudent.getSelectedRow() != -1) {
+					@SuppressWarnings("unused")
+					IzmenaStudentaDialog stIz = new IzmenaStudentaDialog(MainFrame.getInstance(), "Izmena studenta",
+							true);
+				} else {
+					JOptionPane.showMessageDialog(null, "Niste odabrali red za izmenu", "GRESKA",
+							JOptionPane.ERROR_MESSAGE);
+				}
+
 			}
 				break;
 			case 1: {
-				if(TabsPanel.tableProfesor.getSelectedRow()!=-1)
-				{
-				@SuppressWarnings("unused")
-				IzmenaProfesoraDialog izmenaProf = new IzmenaProfesoraDialog(MainFrame.getInstance(),
-						"Izmena profesora", true);
+				if (TabsPanel.tableProfesor.getSelectedRow() != -1) {
+					@SuppressWarnings("unused")
+					IzmenaProfesoraDialog izmenaProf = new IzmenaProfesoraDialog(MainFrame.getInstance(),
+							"Izmena profesora", true);
+				} else {
+					JOptionPane.showMessageDialog(null, "Niste odabrali red za izmenu", "GRESKA",
+							JOptionPane.ERROR_MESSAGE);
 				}
-				else {
-					JOptionPane.showMessageDialog(null, "Niste odabrali red za izmenu", "GRESKA", JOptionPane.ERROR_MESSAGE);
+			}
+				break;
+
+			case 2: {
+				if (TabsPanel.tablePredmet.getSelectedRow() != -1) {
+					@SuppressWarnings("unused")
+					IzmenaPredmetaDialog prIz = new IzmenaPredmetaDialog(MainFrame.getInstance(), "Izmena predmeta",
+							true);
+				} else {
+					JOptionPane.showMessageDialog(null, "Niste odabrali red za izmenu", "GRESKA",
+							JOptionPane.ERROR_MESSAGE);
 				}
 			}
 				break;
@@ -137,7 +145,6 @@ public class Actions {
 				break;
 			}
 
-			
 		}
 	}
 
@@ -159,7 +166,7 @@ public class Actions {
 		public void actionPerformed(ActionEvent e) {
 			switch (TabsPanel.tab_curr) {
 			case 0: {
-				
+
 			}
 				break;
 			case 1: {
@@ -244,9 +251,9 @@ public class Actions {
 				ProfesorController.getInstance().pretragaProfesora(MenuToolbar.searchbar.getText());
 			}
 				break;
-			
+
 			case 2: {
-				
+
 			}
 				break;
 

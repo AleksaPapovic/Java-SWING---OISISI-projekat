@@ -5,6 +5,7 @@ import javax.swing.JOptionPane;
 import model.BazaPredmeta;
 import model.Predmet;
 import view.DodavanjePredmetaDialog;
+import view.IzmenaPredmetaPanel;
 import view.TabsPanel;
 
 public class PredmetController {
@@ -52,6 +53,40 @@ public class PredmetController {
 		pr.setSemestar(DodavanjePredmetaDialog.semestarComboBox.getSelectedItem().toString());
 
 		BazaPredmeta.getInstance().dodajPredmet(pr.getSifraP(),pr.getImeP(), pr.getBrojESPB(), pr.getGodinaS(), pr.getSemestar());
+		TabsPanel.tablePredmet.azuriranjeTabelePredmet();
+		return true;
+	}
+	
+public boolean izmeniPredmet() {
+		
+		String sifraP = IzmenaPredmetaPanel.sifraIzmena.getText();
+		String ime = IzmenaPredmetaPanel.imePredIzmena.getText();
+		int espb = Integer.parseInt(IzmenaPredmetaPanel.espbIzmena.getText());
+		int godinaS = 0;
+		switch (IzmenaPredmetaPanel.godinaIzmena.getSelectedItem().toString()) {
+		case "I(prva)":
+			godinaS = 1;
+			break;
+		case "II(druga)":
+			godinaS = 2;
+			break;
+
+		case "III(treca)":
+			godinaS = 3;
+			break;
+
+		case "IV(cetvrta)":
+			godinaS = 4;
+			break;
+
+		default:
+			break;
+		}
+
+		String semestar = IzmenaPredmetaPanel.semestarIzmena.getSelectedItem().toString();
+
+		int index = TabsPanel.tablePredmet.getSelectedRow();
+		BazaPredmeta.getInstance().izmeniPredmet(index,sifraP,ime,espb,godinaS,semestar);
 		TabsPanel.tablePredmet.azuriranjeTabelePredmet();
 		return true;
 	}

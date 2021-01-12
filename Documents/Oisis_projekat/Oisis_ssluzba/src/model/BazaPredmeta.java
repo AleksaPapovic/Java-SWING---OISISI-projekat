@@ -89,4 +89,10 @@ public class BazaPredmeta {
 		return null;
 	}
 	
+	public void izmeniPredmet(int index, String sifraP, String imeP, int brojESPB, int godinaS, String semestar) {
+		predmeti.get(index).setSifraP(sifraP);
+		predmeti.get(index).setImeP(imeP);
+		predmeti.get(index).setBrojESPB(brojESPB);
+		predmeti.get(index).setGodinaS(godinaS);
+	}
 }
