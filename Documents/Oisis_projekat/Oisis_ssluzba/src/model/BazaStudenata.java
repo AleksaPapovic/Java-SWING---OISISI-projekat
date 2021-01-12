@@ -210,6 +210,7 @@ public class BazaStudenata {
 		s.getPolozeniIsp().add(new Ocena(s, p, ocena, upisDatum));
 		s.getNepolozeniIsp().remove(IzmenaStudentaTabs.tableNepolozeniPredmeti.getSelectedRow());
 		IzmenaStudentaTabs.tableNepolozeniPredmeti.azurirajNepolozene();
+		IzmenaStudentaTabs.tablePolozeniPredmeti.update();
 	}
 
 	public Student getSelectedStudent(int red) {

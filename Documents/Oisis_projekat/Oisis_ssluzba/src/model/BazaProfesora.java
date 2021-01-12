@@ -27,16 +27,22 @@ public class BazaProfesora {
 	private ArrayList<Profesor> profesoriSvi;
 	private ArrayList<String> profNazivi;
 	private boolean pretraga = false;
+	private ArrayList<String> profPredajeNazivi;
 
 	private BazaProfesora() {
 		super();
 
 		this.profesori = new ArrayList<Profesor>();
 		this.profNazivi = new ArrayList<String>();
+		this.profPredajeNazivi = new ArrayList<String>();
 		this.profNazivi.add("Ime");
 		this.profNazivi.add("Prezime");
 		this.profNazivi.add("Titula");
 		this.profNazivi.add("Zvanje");
+		this.profPredajeNazivi.add("Šifra");
+		this.profPredajeNazivi.add("Naziv");
+		this.profPredajeNazivi.add("Godina studija");
+		this.profPredajeNazivi.add("Semestar");
 
 		Date d1 = parseDate("12.12.2020.");
 		Date d2 = parseDate("10.03.2019.");
@@ -203,6 +209,37 @@ public class BazaProfesora {
 			this.profesori = this.profesoriPronadjeni;
 		}
 
+	}
+	
+	public ArrayList<Predmet> getPredavaniPredmeti(Profesor profesor) {
+		return profesor.getPredmeti();
+	}
+	public void setPredmeti(Profesor profesor, ArrayList<Predmet> predmeti) {
+		profesor.setPredmeti(predmeti);
+	}
+	public int getColumnCountPredavaniPredmeti() {
+	
+		return this.profPredajeNazivi.size();
+	}
+	
+	public String getColumnNamePredavaniPredmeti(int column) {
+		return this.profPredajeNazivi.get(column);
+	}
+
+	public Object getValueAtPredavaniPredmeti(Profesor profesor, int row, int column) {
+		Predmet predmet = profesor.getPredmeti().get(row);
+		switch (column) {
+		case 0:
+			return predmet.getSifraP();
+		case 1:
+			return predmet.getImeP();
+		case 2:
+			return "" + predmet.getGodinaS();
+		case 3:
+			return predmet.getSemestar();
+		default:
+			return null;
+		}
 	}
 
 }

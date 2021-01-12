@@ -1,4 +1,4 @@
-/*REFERENCA: VEZBE 6, AbstractTableModelIgraci klasa*/ 
+/*REFERENCA: VEZBE 6, AbstractTableModelIgraci klasa*/
 package view;
 
 import javax.swing.table.AbstractTableModel;
