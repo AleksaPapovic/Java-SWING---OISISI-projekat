@@ -36,7 +36,7 @@ public class UpisOceneDialog extends JDialog {
 	public static JTextField datumUpisaField;
 	private DocumentListener docUpis = new DocumentListenerUpis();
 
-	public UpisOceneDialog(Frame parent, String title, boolean modal) {
+	public UpisOceneDialog(JDialog parent, String title, boolean modal) {
 		super(parent, title, modal);
 		setTitle(title);
 		setSize(450, 300);
