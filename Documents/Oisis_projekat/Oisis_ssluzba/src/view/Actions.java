@@ -266,7 +266,7 @@ public class Actions {
 				break;
 
 			case 2: {
-
+				PredmetController.getInstance().pretragaPredmeta(MenuToolbar.searchbar.getText());
 			}
 				break;
 

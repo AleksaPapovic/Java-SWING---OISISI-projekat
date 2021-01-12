@@ -9,6 +9,7 @@ import javax.swing.JOptionPane;
 
 import model.Profesor.Titula;
 import model.Profesor.Zvanje;
+import view.MenuToolbar;
 
 public class BazaProfesora {
 
@@ -25,6 +26,7 @@ public class BazaProfesora {
 	private ArrayList<Profesor> profesoriPronadjeni;
 	private ArrayList<Profesor> profesoriSvi;
 	private ArrayList<String> profNazivi;
+	private boolean pretraga = false;
 
 	private BazaProfesora() {
 		super();
@@ -55,6 +57,10 @@ public class BazaProfesora {
 
 	public ArrayList<Profesor> getProfesori() {
 		return profesori;
+	}
+
+	public ArrayList<Profesor> getProfesoriSvi() {
+		return this.profesoriSvi;
 	}
 
 	public void setProfesori(ArrayList<Profesor> profesori) {
@@ -118,10 +124,15 @@ public class BazaProfesora {
 
 	public void dodajProfesora(String prezime, String ime, Date datumR, String adresaS, String kontaktTel, String email,
 			String adresaK, String brlk, Titula titula, Zvanje zvanje) {
-		this.profesori
-				.add(new Profesor(prezime, ime, datumR, adresaS, kontaktTel, email, adresaK, brlk, titula, zvanje));
-		this.profesoriSvi
-				.add(new Profesor(prezime, ime, datumR, adresaS, kontaktTel, email, adresaK, brlk, titula, zvanje));
+		if (pretraga) {
+			this.profesoriSvi
+					.add(new Profesor(prezime, ime, datumR, adresaS, kontaktTel, email, adresaK, brlk, titula, zvanje));
+			pretraziProfesora(MenuToolbar.searchbar.getText());
+		} else {
+			this.profesori
+					.add(new Profesor(prezime, ime, datumR, adresaS, kontaktTel, email, adresaK, brlk, titula, zvanje));
+		}
+
 	}
 
 	public Profesor getSelectedProfesor(int red) {
@@ -143,14 +154,13 @@ public class BazaProfesora {
 
 	public void izbrisiProfesora(int index) {
 		int i = 0;
-		for(Profesor p : this.profesoriSvi) {
-			if(p.getBrlk().equals(this.profesori.get(index).getBrlk()))
-			{
+		for (Profesor p : this.profesoriSvi) {
+			if (p.getBrlk().equals(this.profesori.get(index).getBrlk())) {
 				this.profesoriSvi.remove(i);
 				break;
 			}
 			i++;
-			}
+		}
 		this.profesori.remove(index);
 	}
 
@@ -185,9 +195,11 @@ public class BazaProfesora {
 
 		if (text.isEmpty()) {
 			this.profesori = this.profesoriSvi;
+			pretraga = false;
 			JOptionPane.showMessageDialog(null, "Kriterijum pretrage mora biti:  Prezime Ime", "Neuspešna pretraga",
 					JOptionPane.ERROR_MESSAGE);
 		} else {
+			pretraga = true;
 			this.profesori = this.profesoriPronadjeni;
 		}
 

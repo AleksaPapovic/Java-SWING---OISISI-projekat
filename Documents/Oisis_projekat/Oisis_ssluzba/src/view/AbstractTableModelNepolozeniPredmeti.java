@@ -5,8 +5,6 @@ import javax.swing.table.AbstractTableModel;
 import model.BazaStudenata;
 import model.Student;
 
-
-
 public class AbstractTableModelNepolozeniPredmeti extends AbstractTableModel {
 
 	/**
@@ -15,10 +13,11 @@ public class AbstractTableModelNepolozeniPredmeti extends AbstractTableModel {
 	private static final long serialVersionUID = 1L;
 
 	private Student student;
-	
+
 	public AbstractTableModelNepolozeniPredmeti(Student student) {
 		this.student = student;
 	}
+
 	@Override
 	public int getColumnCount() {
 		return BazaStudenata.getInstance().getColumnCountNepolozeniPredmeti();
@@ -36,6 +35,6 @@ public class AbstractTableModelNepolozeniPredmeti extends AbstractTableModel {
 
 	@Override
 	public Object getValueAt(int row, int column) {
-		return BazaStudenata.getInstance().getValueAtNepolozeniPredmeti(student,row, column);
+		return BazaStudenata.getInstance().getValueAtNepolozeniPredmeti(student, row, column);
 	}
 }

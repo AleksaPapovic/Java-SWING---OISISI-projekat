@@ -46,7 +46,7 @@ public class TabsIzmenaProfesora extends JTabbedPane {
 		tabProfesor.add(gornji1, BorderLayout.NORTH);
 		tabProfesor.add(donji1, BorderLayout.SOUTH);
 		Icon ikonProf = new ImageIcon("icons" + File.separator + "tab.png");
-		this.addTab("Informacije", ikonProf, tabProfesor, "Prikaz informacija selektovanog studenta");
+		this.addTab("Informacije", ikonProf, tabProfesor, "Prikaz informacija selektovanog profesora");
 
 		this.addChangeListener(new ChangeListener() {
 

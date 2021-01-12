@@ -3,6 +3,10 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.JOptionPane;
+
+import view.MenuToolbar;
+
 public class BazaPredmeta {
 
 	private static BazaPredmeta instance = null;
@@ -16,6 +20,8 @@ public class BazaPredmeta {
 
 	private ArrayList<Predmet> predmeti;
 	private ArrayList<String> kolone;
+	private ArrayList<Predmet> predmetiSvi;
+	private boolean pretraga = false;
 
 	private BazaPredmeta() {
 
@@ -29,10 +35,15 @@ public class BazaPredmeta {
 		this.kolone.add("Semestar");
 
 		this.predmeti.add(new Predmet("ktet", "Osnovi elektrotehnike", 9, 1, "letnji"));
+		this.predmeti.add(new Predmet("ra", "Osnovi elektrotehnike", 9, 1, "letnji"));
+		this.predmetiSvi = this.predmeti;
 	}
 
 	public List<Predmet> getPredmeti() {
 		return this.predmeti;
+	}
+	public List<Predmet> getPredmetiSvi() {
+		return this.predmetiSvi;
 	}
 
 	public void setOPredmeti(ArrayList<Predmet> predmeti) {
@@ -70,29 +81,77 @@ public class BazaPredmeta {
 	}
 
 	public void dodajPredmet(String sifraP, String imeP, int brojESPB, int godinaS, String semestar) {
-		this.predmeti.add(
-				new Predmet(sifraP, imeP, brojESPB, godinaS, semestar));
-
+		if (pretraga) {
+			this.predmetiSvi.add(new Predmet(sifraP, imeP, brojESPB, godinaS, semestar));
+			pretraziPredmete(MenuToolbar.searchbar.getText());
+		} else {
+			this.predmeti.add(new Predmet(sifraP, imeP, brojESPB, godinaS, semestar));
+		}
 	}
 
 	public void izbrisiPredmet(int index_predmeta) {
+		int i = 0;
+		for (Predmet p : this.predmetiSvi) {
+			if (p.getSifraP().equals(this.predmeti.get(index_predmeta).getSifraP())) {
+				this.predmetiSvi.remove(i);
+				break;
+			}
+			i++;
+		}
 		this.predmeti.remove(index_predmeta);
 	}
 
 	public Predmet nadjiPredmet(String sifraP) {
-		for(Predmet p : this.predmeti) {
-		if(p.getSifraP().equals(sifraP))
-		{
-			return p;
-		}
+		for (Predmet p : this.predmeti) {
+			if (p.getSifraP().equals(sifraP)) {
+				return p;
+			}
 		}
 		return null;
 	}
-	
+
 	public void izmeniPredmet(int index, String sifraP, String imeP, int brojESPB, int godinaS, String semestar) {
 		predmeti.get(index).setSifraP(sifraP);
 		predmeti.get(index).setImeP(imeP);
 		predmeti.get(index).setBrojESPB(brojESPB);
 		predmeti.get(index).setGodinaS(godinaS);
+	}
+
+	public void pretraziPredmete(String text) {
+		ArrayList<Predmet> predmetiPronadjeni = new ArrayList<Predmet>();
+		this.predmeti = this.predmetiSvi;
+		int i = 0;
+		int k = 0;
+
+		String[] podeli = text.trim().split(" ");
+		String[] trag = new String[3];
+
+		for (String s : podeli) {
+			String pom = s.trim();
+			trag[i] = pom;
+			i++;
+		}
+		if (trag[0].equals("ime") && trag[1].equals("prezime")) {
+			JOptionPane.showMessageDialog(null, "Kriterijum pretrage mora biti:  Prezime Ime ", "GREŠKA",
+					JOptionPane.ERROR_MESSAGE);
+
+		} else {
+			for (Predmet p : this.predmeti) {
+				if (p.getSifraP().contains(trag[0]) && k < 2) {
+					predmetiPronadjeni.add(p);
+				}
+			}
+		}
+
+		if (text.isEmpty()) {
+			this.predmeti = this.predmetiSvi;
+			pretraga = false;
+			JOptionPane.showMessageDialog(null, "Kriterijum pretrage mora biti:  Prezime Ime", "Neuspešna pretraga",
+					JOptionPane.ERROR_MESSAGE);
+		} else {
+			pretraga = true;
+			this.predmeti = predmetiPronadjeni;
+		}
+
 	}
 }

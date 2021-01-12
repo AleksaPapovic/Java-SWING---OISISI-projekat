@@ -150,7 +150,7 @@ public class ProfesorController {
 			ret = false;
 		}
 
-		for (Profesor p : BazaProfesora.getInstance().getProfesori()) {
+		for (Profesor p : BazaProfesora.getInstance().getProfesoriSvi()) {
 			if (p.getBrlk().equals(brlk)) {
 				ret = false;
 			}
@@ -226,7 +226,7 @@ public class ProfesorController {
 		TabsPanel.tableProfesor.azuriranjeTabeleProfesor();
 		return true;
 	}
-	
+
 	public boolean izbrisiProfesora(int index) {
 
 		BazaProfesora.getInstance().izbrisiProfesora(index);

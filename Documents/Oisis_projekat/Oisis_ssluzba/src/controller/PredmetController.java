@@ -25,7 +25,7 @@ public class PredmetController {
 
 	public boolean dodajPredmet() {
 		Predmet pr = new Predmet();
-		
+
 		pr.setSifraP(DodavanjePredmetaDialog.sifraField.getText());
 		pr.setImeP(DodavanjePredmetaDialog.imeField.getText());
 		pr.setBrojESPB(Integer.parseInt(DodavanjePredmetaDialog.espbField.getText()));
@@ -52,13 +52,14 @@ public class PredmetController {
 
 		pr.setSemestar(DodavanjePredmetaDialog.semestarComboBox.getSelectedItem().toString());
 
-		BazaPredmeta.getInstance().dodajPredmet(pr.getSifraP(),pr.getImeP(), pr.getBrojESPB(), pr.getGodinaS(), pr.getSemestar());
+		BazaPredmeta.getInstance().dodajPredmet(pr.getSifraP(), pr.getImeP(), pr.getBrojESPB(), pr.getGodinaS(),
+				pr.getSemestar());
 		TabsPanel.tablePredmet.azuriranjeTabelePredmet();
 		return true;
 	}
-	
-public boolean izmeniPredmet() {
-		
+
+	public boolean izmeniPredmet() {
+
 		String sifraP = IzmenaPredmetaPanel.sifraIzmena.getText();
 		String ime = IzmenaPredmetaPanel.imePredIzmena.getText();
 		int espb = Integer.parseInt(IzmenaPredmetaPanel.espbIzmena.getText());
@@ -86,7 +87,7 @@ public boolean izmeniPredmet() {
 		String semestar = IzmenaPredmetaPanel.semestarIzmena.getSelectedItem().toString();
 
 		int index = TabsPanel.tablePredmet.getSelectedRow();
-		BazaPredmeta.getInstance().izmeniPredmet(index,sifraP,ime,espb,godinaS,semestar);
+		BazaPredmeta.getInstance().izmeniPredmet(index, sifraP, ime, espb, godinaS, semestar);
 		TabsPanel.tablePredmet.azuriranjeTabelePredmet();
 		return true;
 	}
@@ -103,7 +104,7 @@ public boolean izmeniPredmet() {
 		}
 
 	}
-	
+
 	public boolean proveriIme(String ime) {
 		boolean ret = true;
 
@@ -113,7 +114,7 @@ public boolean izmeniPredmet() {
 		return ret;
 
 	}
-	
+
 	public boolean proveriSifru(String sifra) {
 
 		boolean ret = true;
@@ -122,8 +123,7 @@ public boolean izmeniPredmet() {
 		}
 		return ret;
 	}
-	
-	
+
 	public boolean proveriESPB(String brojESPB) {
 		boolean ret = true;
 		if (brojESPB.isEmpty()) {
@@ -131,6 +131,11 @@ public boolean izmeniPredmet() {
 		}
 		return ret;
 
+	}
+
+	public void pretragaPredmeta(String text) {
+		BazaPredmeta.getInstance().pretraziPredmete(text);
+		TabsPanel.tablePredmet.azuriranjeTabelePredmet();
 	}
 
 }
