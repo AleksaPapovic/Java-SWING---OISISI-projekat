@@ -6,8 +6,11 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.swing.JOptionPane;
+
 import model.Student.Status;
 import view.IzmenaStudentaTabs;
+import view.MenuToolbar;
 import view.TabsPanel;
 
 public class BazaStudenata {
@@ -25,6 +28,9 @@ public class BazaStudenata {
 	private ArrayList<String> kolone;
 	private ArrayList<String> kolonePolozeniP;
 	private ArrayList<String> koloneNepolozeniP;
+	private ArrayList<Student> studentiPronadjeni;
+	private ArrayList<Student> studentiSvi;
+	private boolean pretraga = false;
 
 	private BazaStudenata() {
 
@@ -59,6 +65,7 @@ public class BazaStudenata {
 		Studenti.add(new Student("Aleksa", "Papovic", parseDate("01.01.1999."), "Zmajevacka 1", "06342424242",
 				"aleksapapovic@gmail.com", "RA166/2018", 2015, 3, Student.Status.B, 10));
 		Studenti.get(1).setPolozeniIsp(new ArrayList<Ocena>(BazaOcena.getInstance().getOcene()));
+		this.studentiSvi=this.Studenti;
 	}
 
 	public List<Student> getStudenti() {
@@ -106,14 +113,20 @@ public class BazaStudenata {
 
 	public void dodajStudenta(String prezime, String ime, Date datumR, String adresaSt, String kontaktTl, String email,
 			String brojInd, int godUp, int godSt, Status status, double prosek) {
-		this.Studenti.add(
-				new Student(prezime, ime, datumR, adresaSt, kontaktTl, email, brojInd, godUp, godSt, status, prosek));
+		if (pretraga) {
+			this.studentiSvi.add(new Student(prezime, ime, datumR, adresaSt, kontaktTl, email, brojInd, godUp, godSt,
+					status, prosek));
+			pretraziStudenta(MenuToolbar.searchbar.getText());
+		} else {
+			this.Studenti.add(new Student(prezime, ime, datumR, adresaSt, kontaktTl, email, brojInd, godUp, godSt,
+					status, prosek));
+		}
 	}
 
 	public void izbrisiStudenta(String brojInd) {
-		for (Student i : Studenti) {
+		for (Student i : this.studentiSvi) {
 			if (i.getBrojInd() == brojInd) {
-				Studenti.remove(i);
+				this.studentiSvi.remove(i);
 				break;
 			}
 		}
@@ -121,7 +134,7 @@ public class BazaStudenata {
 
 	public void izmeniStudenta(int index, String prezime, String ime, Date datumR, String adresaSt, String kontaktTl,
 			String email, String brojInd, int godUp, int godSt, Student.Status status, double prosek) {
-		if (Studenti.get(index).getBrojInd() == brojInd) {
+		if (Studenti.get(index).getBrojInd().equals(brojInd)) {
 			Studenti.get(index).setIme(ime);
 			Studenti.get(index).setPrezime(prezime);
 			Studenti.get(index).setDatumR(datumR);
@@ -133,10 +146,19 @@ public class BazaStudenata {
 			Studenti.get(index).setStatus(status);
 			Studenti.get(index).setProsek(prosek);
 		}
+		if(pretraga)
+			pretraziStudenta(MenuToolbar.searchbar.getText());
 	}
-	
+
 	public void izbrisiStudenta(int index) {
-		this.Studenti.remove(index);
+		int i = 0;
+		for (Student p : this.studentiSvi) {
+			if (p.getBrojInd().equals(this.Studenti.get(index).getBrojInd())) {
+				this.studentiSvi.remove(i);
+				break;
+			}
+			i++;
+		}
 	}
 
 	public static Date parseDate(String date) {
@@ -148,7 +170,7 @@ public class BazaStudenata {
 			return null;
 		}
 	}
-	
+
 	public ArrayList<Ocena> getPolozeniPredmeti(Student student) {
 		return student.getPolozeniIsp();
 	}
@@ -160,7 +182,7 @@ public class BazaStudenata {
 	public String getColumnNamePolozeniPredmeti(int column) {
 		return this.kolonePolozeniP.get(column);
 	}
-	
+
 	public ArrayList<Predmet> getNepolozeniPredmeti(Student student) {
 		return student.getNepolozeniIsp();
 	}
@@ -172,7 +194,7 @@ public class BazaStudenata {
 	public String getColumnNameNepolozeniPredmeti(int column) {
 		return this.koloneNepolozeniP.get(column);
 	}
-	
+
 	public Object getValueAtPolozeniPredmeti(Student student, int row, int column) {
 		Ocena ocena = student.getPolozeniIsp().get(row);
 		switch (column) {
@@ -190,7 +212,7 @@ public class BazaStudenata {
 			return null;
 		}
 	}
-	
+
 	public Object getValueAtNepolozeniPredmeti(Student student, int row, int column) {
 		Predmet predmet = student.getNepolozeniIsp().get(row);
 		switch (column) {
@@ -218,7 +240,7 @@ public class BazaStudenata {
 		IzmenaStudentaTabs.tableNepolozeniPredmeti.azurirajNepolozene();
 		IzmenaStudentaTabs.tablePolozeniPredmeti.update();
 	}
-	
+
 	public void brisanjeOcene() {
 		Student s = getSelectedStudent(TabsPanel.tableStudent.getSelectedRow());
 		int index = IzmenaStudentaTabs.tablePolozeniPredmeti.getSelectedRow();
@@ -235,7 +257,7 @@ public class BazaStudenata {
 
 	public void izbrisiPredmet(Predmet obrisaniPredmet) {
 		for (Student s : this.Studenti) {
-			for (Predmet p : s.getNepolozeniIsp()) { 
+			for (Predmet p : s.getNepolozeniIsp()) {
 				if (p.getSifraP().equals(obrisaniPredmet.getSifraP())) {
 					s.getNepolozeniIsp().remove(p);
 					break;
@@ -250,6 +272,43 @@ public class BazaStudenata {
 		}
 	}
 
-	
-	
+	public void pretraziStudenta(String text) {
+		this.studentiPronadjeni = new ArrayList<Student>();
+		this.Studenti = this.studentiSvi;
+		int i = 0;
+		int k = 0;
+
+		String[] podeli = text.trim().split(" ");
+		String[] trag = new String[4];
+
+		for (String s : podeli) {
+			String pom = s.trim();
+			trag[i] = pom;
+			i++;
+		}
+		k = i;
+
+		for (Student s : this.Studenti) {
+			if (s.getPrezime().contains(trag[0]) && k < 2) {
+				this.studentiPronadjeni.add(s);
+			} else if (s.getPrezime().contains(trag[0]) && s.getIme().contains(trag[1]) && k < 3) {
+				this.studentiPronadjeni.add(s);
+			} else if (s.getPrezime().contains(trag[0]) && s.getIme().contains(trag[1])
+					&& s.getBrojInd().contains(trag[2]) && k == 3) {
+				this.studentiPronadjeni.add(s);
+			}
+		}
+
+		if (text.isEmpty()) {
+			this.Studenti = this.studentiSvi;
+			pretraga = false;
+			JOptionPane.showMessageDialog(null, "Kriterijum pretrage mora biti:  Prezime Ime BrojIndeksa",
+					"Neuspešna pretraga", JOptionPane.ERROR_MESSAGE);
+		} else {
+			pretraga = true;
+			this.Studenti = this.studentiPronadjeni;
+		}
+
+	}
+
 }

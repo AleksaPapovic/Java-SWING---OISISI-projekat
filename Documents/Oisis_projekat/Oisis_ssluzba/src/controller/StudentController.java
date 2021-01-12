@@ -6,7 +6,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import model.BazaStudenata;
-import model.Profesor;
 import model.Student;
 import model.Student.Status;
 import view.DodavanjeStudentaDialog;
@@ -154,6 +153,11 @@ public class StudentController {
 		TabsPanel.tableStudent.update();
 		return true;
 
+	}
+	
+	public void pretragaStudenta(String text) {
+		BazaStudenata.getInstance().pretraziStudenta(text);
+		TabsPanel.tableStudent.update();;
 	}
 
 	public boolean proveriIme(String ime) {

@@ -265,7 +265,8 @@ public class Actions {
 
 		public void actionPerformed(ActionEvent e) {
 			switch (TabsPanel.tab_curr) {
-			case 0: {
+			case 0: {		
+				StudentController.getInstance().pretragaStudenta(MenuToolbar.searchbar.getText());
 			}
 				break;
 			case 1: {

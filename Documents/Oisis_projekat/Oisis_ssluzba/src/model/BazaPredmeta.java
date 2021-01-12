@@ -43,6 +43,7 @@ public class BazaPredmeta {
 	public List<Predmet> getPredmeti() {
 		return this.predmeti;
 	}
+
 	public List<Predmet> getPredmetiSvi() {
 		return this.predmetiSvi;
 	}
@@ -93,10 +94,10 @@ public class BazaPredmeta {
 	public void izbrisiPredmet(int index_predmeta) {
 		int i = 0;
 		Predmet obrisaniPredmet = this.predmeti.get(index_predmeta);
-		
+
 		BazaProfesora.getInstance().izbrisiPredmet(obrisaniPredmet);
 		BazaStudenata.getInstance().izbrisiPredmet(obrisaniPredmet);
-		
+
 		for (Predmet p : this.predmetiSvi) {
 			if (p.getSifraP().equals(this.predmeti.get(index_predmeta).getSifraP())) {
 				this.predmetiSvi.remove(i);
@@ -104,8 +105,8 @@ public class BazaPredmeta {
 			}
 			i++;
 		}
-		//this.predmeti.remove(index_predmeta);
-		if(pretraga) {
+		
+		if (pretraga) {
 			pretraziPredmete(MenuToolbar.searchbar.getText());
 		}
 		TabsPanel.tablePredmet.azuriranjeTabelePredmet();
@@ -121,7 +122,7 @@ public class BazaPredmeta {
 		}
 		return null;
 	}
-	
+
 	public Predmet getSelectedPredmet(int red) {
 		return this.predmeti.get(red);
 	}

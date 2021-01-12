@@ -49,24 +49,6 @@
   </profesori>
   <studenti>
     <Student>
-      <prezime>Lekic</prezime>
-      <ime>Dusan</ime>
-      <datumR>2000-01-01 00:00:00.0 CET</datumR>
-      <adresaSt>Zmajevacka 10</adresaSt>
-      <kontaktTl>0635672214</kontaktTl>
-      <email>dusanlekic2000@gmail.com</email>
-      <brojInd>RA159/2018</brojInd>
-      <godUp>2015</godUp>
-      <godSt>3</godSt>
-      <status>B</status>
-      <prosek>9.05</prosek>
-      <polozeniIsp/>
-      <nepolozeniIsp>
-        <Predmet reference="../../../../predmeti/Predmet"/>
-        <Predmet reference="../../../../predmeti/Predmet[2]"/>
-      </nepolozeniIsp>
-    </Student>
-    <Student>
       <prezime>Papovic</prezime>
       <ime>Aleksa</ime>
       <datumR>1999-01-01 00:00:00.0 CET</datumR>
