@@ -7,7 +7,6 @@ import java.util.Date;
 import java.util.List;
 
 import model.Student.Status;
-import view.IzmenaStudentaDialog;
 import view.IzmenaStudentaTabs;
 import view.TabsPanel;
 
@@ -126,6 +125,10 @@ public class BazaStudenata {
 			Studenti.get(index).setStatus(status);
 			Studenti.get(index).setProsek(prosek);
 		}
+	}
+	
+	public void izbrisiStudenta(int index) {
+		this.Studenti.remove(index);
 	}
 
 	public static Date parseDate(String date) {

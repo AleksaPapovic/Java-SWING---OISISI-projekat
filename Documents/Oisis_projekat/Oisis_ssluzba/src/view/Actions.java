@@ -12,6 +12,7 @@ import javax.swing.KeyStroke;
 
 import controller.PredmetController;
 import controller.ProfesorController;
+import controller.StudentController;
 
 public class Actions {
 	public String tekst = "<html>Glavni prozor se sastoji iz Menubar-a, Toolbar-a, Statusbar-a, Searchbar-a u Toolbar-u i centralnog prozora <br>"
@@ -166,7 +167,13 @@ public class Actions {
 		public void actionPerformed(ActionEvent e) {
 			switch (TabsPanel.tab_curr) {
 			case 0: {
-
+				int index = TabsPanel.tableStudent.getSelectedRow();
+				if (index != -1) {
+					StudentController.getInstance().izbrisiStudenta(index);
+				} else {
+					JOptionPane.showMessageDialog(null, "Niste odabrali red za brisanje", "GRESKA",
+							JOptionPane.ERROR_MESSAGE);
+				}
 			}
 				break;
 			case 1: {
@@ -181,7 +188,6 @@ public class Actions {
 			default:
 				break;
 			}
-			JOptionPane.showMessageDialog(null, "Would have done the 'Delete' action.");
 		}
 	}
 

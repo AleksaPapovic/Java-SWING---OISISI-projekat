@@ -147,6 +147,14 @@ public class StudentController {
 		return true;
 	}
 
+	public boolean izbrisiStudenta(int index) {
+
+		BazaStudenata.getInstance().izbrisiStudenta(index);
+		TabsPanel.tableStudent.update();
+		return true;
+
+	}
+
 	public boolean proveriIme(String ime) {
 		boolean ret = true;
 
