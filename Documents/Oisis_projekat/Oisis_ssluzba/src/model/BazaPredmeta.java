@@ -6,6 +6,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 import view.MenuToolbar;
+import view.TabsPanel;
 
 public class BazaPredmeta {
 
@@ -91,6 +92,11 @@ public class BazaPredmeta {
 
 	public void izbrisiPredmet(int index_predmeta) {
 		int i = 0;
+		Predmet obrisaniPredmet = this.predmeti.get(index_predmeta);
+		
+		BazaProfesora.getInstance().izbrisiPredmet(obrisaniPredmet);
+		BazaStudenata.getInstance().izbrisiPredmet(obrisaniPredmet);
+		
 		for (Predmet p : this.predmetiSvi) {
 			if (p.getSifraP().equals(this.predmeti.get(index_predmeta).getSifraP())) {
 				this.predmetiSvi.remove(i);
@@ -98,7 +104,13 @@ public class BazaPredmeta {
 			}
 			i++;
 		}
-		this.predmeti.remove(index_predmeta);
+		//this.predmeti.remove(index_predmeta);
+		if(pretraga) {
+			pretraziPredmete(MenuToolbar.searchbar.getText());
+		}
+		TabsPanel.tablePredmet.azuriranjeTabelePredmet();
+		TabsPanel.tableProfesor.azuriranjeTabeleProfesor();
+		TabsPanel.tableStudent.update();
 	}
 
 	public Predmet nadjiPredmet(String sifraP) {

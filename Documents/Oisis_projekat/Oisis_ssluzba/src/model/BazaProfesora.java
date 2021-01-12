@@ -254,4 +254,17 @@ public class BazaProfesora {
 		profesor.getPredmeti().addAll(predmeti);
 	}
 
+	public void izbrisiPredmet(Predmet obrisaniPredmet) {
+			for (Profesor prof : profesori) {
+				for (Predmet p : prof.getPredmeti()) {
+					if (p.getSifraP().equals(obrisaniPredmet.getSifraP())) {
+						prof.getPredmeti().remove(p);
+						break;
+					}
+				}
+			}
+		
+		
+	}
+
 }

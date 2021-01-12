@@ -217,6 +217,23 @@ public class BazaStudenata {
 		return this.Studenti.get(red);
 	}
 
+	public void izbrisiPredmet(Predmet obrisaniPredmet) {
+		for (Student s : this.Studenti) {
+			for (Predmet p : s.getNepolozeniIsp()) { 
+				if (p.getSifraP().equals(obrisaniPredmet.getSifraP())) {
+					s.getNepolozeniIsp().remove(p);
+					break;
+				}
+			}
+			for (Ocena o : s.getPolozeniIsp()) {
+				if (o.getPredmet().getSifraP().equals(obrisaniPredmet.getSifraP())) {
+					s.getPolozeniIsp().remove(o);
+					break;
+				}
+			}
+		}
+	}
+
 	
 	
 }

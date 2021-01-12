@@ -5,39 +5,25 @@
       <imeP>Osnovi elektrotehnike</imeP>
       <semestar>letnji</semestar>
       <godinaS>1</godinaS>
-      <predProf>
-        <prezime>Petrović</prezime>
-        <ime>Petar</ime>
-        <datumR>2020-01-12 00:12:00.0 CET</datumR>
-        <adresaS>Beograd</adresaS>
-        <kontaktTel>069373994234</kontaktTel>
-        <email>petorvic@gmail.com</email>
-        <adresaK>Novi Sad</adresaK>
-        <brlk>123857364</brlk>
-        <titula>Dr</titula>
-        <zvanje>RProfesor</zvanje>
-        <predmeti>
-          <Predmet reference="../../.."/>
-          <Predmet>
-            <sifraP>ra</sifraP>
-            <imeP>Osnovi elektrotehnike</imeP>
-            <semestar>letnji</semestar>
-            <godinaS>1</godinaS>
-            <predProf reference="../../.."/>
-            <brojESPB>9</brojESPB>
-            <studentiP/>
-            <studentiNP/>
-          </Predmet>
-        </predmeti>
-      </predProf>
-      <brojESPB>9</brojESPB>
+      <brojESPB>10</brojESPB>
       <studentiP/>
       <studentiNP/>
     </Predmet>
-    <Predmet reference="../Predmet/predProf/predmeti/Predmet[2]"/>
   </predmeti>
   <profesori>
-    <Profesor reference="../../predmeti/Predmet/predProf"/>
+    <Profesor>
+      <prezime>Petrović</prezime>
+      <ime>Petar</ime>
+      <datumR>2020-01-12 00:12:00.0 CET</datumR>
+      <adresaS>Beograd</adresaS>
+      <kontaktTel>069373994234</kontaktTel>
+      <email>petorvic@gmail.com</email>
+      <adresaK>Novi Sad</adresaK>
+      <brlk>123857364</brlk>
+      <titula>Dr</titula>
+      <zvanje>RProfesor</zvanje>
+      <predmeti/>
+    </Profesor>
     <Profesor>
       <prezime>Lekić</prezime>
       <ime>Dušan</ime>
@@ -68,7 +54,6 @@
       <polozeniIsp/>
       <nepolozeniIsp>
         <Predmet reference="../../../../predmeti/Predmet"/>
-        <Predmet reference="../../../../predmeti/Predmet/predProf/predmeti/Predmet[2]"/>
       </nepolozeniIsp>
     </Student>
     <Student>
