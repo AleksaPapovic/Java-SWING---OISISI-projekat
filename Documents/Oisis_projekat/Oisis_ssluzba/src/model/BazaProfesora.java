@@ -120,7 +120,8 @@ public class BazaProfesora {
 			String adresaK, String brlk, Titula titula, Zvanje zvanje) {
 		this.profesori
 				.add(new Profesor(prezime, ime, datumR, adresaS, kontaktTel, email, adresaK, brlk, titula, zvanje));
-
+		this.profesoriSvi
+				.add(new Profesor(prezime, ime, datumR, adresaS, kontaktTel, email, adresaK, brlk, titula, zvanje));
 	}
 
 	public Profesor getSelectedProfesor(int red) {
@@ -139,8 +140,17 @@ public class BazaProfesora {
 		this.profesori.get(index_izmenjenog).setZvanje(izmenjeniProfesor.getZvanje());
 		this.profesori.get(index_izmenjenog).setBrlk(izmenjeniProfesor.getBrlk());
 	}
-	
+
 	public void izbrisiProfesora(int index) {
+		int i = 0;
+		for(Profesor p : this.profesoriSvi) {
+			if(p.getBrlk().equals(this.profesori.get(index).getBrlk()))
+			{
+				this.profesoriSvi.remove(i);
+				break;
+			}
+			i++;
+			}
 		this.profesori.remove(index);
 	}
 
@@ -158,6 +168,7 @@ public class BazaProfesora {
 			trag[i] = pom;
 			i++;
 		}
+		k = i;
 		if (trag[0].equals("ime") && trag[1].equals("prezime")) {
 			JOptionPane.showMessageDialog(null, "Kriterijum pretrage mora biti:  Prezime Ime ", "GREŠKA",
 					JOptionPane.ERROR_MESSAGE);
@@ -166,7 +177,7 @@ public class BazaProfesora {
 			for (Profesor p : BazaProfesora.getInstance().getProfesori()) {
 				if (p.getPrezime().contains(trag[0]) && k < 2) {
 					this.profesoriPronadjeni.add(p);
-				} else if (p.getPrezime().contains(trag[0]) && p.getIme().contains(trag[1]) && k > 2) {
+				} else if (p.getPrezime().contains(trag[0]) && p.getIme().contains(trag[1]) && k == 2) {
 					this.profesoriPronadjeni.add(p);
 				}
 			}
