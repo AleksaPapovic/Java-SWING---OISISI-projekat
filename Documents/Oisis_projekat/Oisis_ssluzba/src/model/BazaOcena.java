@@ -59,11 +59,11 @@ public class BazaOcena {
 		Ocena Ocena = this.Ocene.get(row);
 		switch (column) {
 		case 0:
-			//return Ocena.getPredmet().getSifraP();
+			return Ocena.getPredmet().getSifraP();
 		case 1:
-			//return Ocena.getPredmet().getImeP();
+			return Ocena.getPredmet().getImeP();
 		case 2:
-			//return Ocena.getPredmet().getBrojESPB;
+			return Ocena.getPredmet().getBrojESPB();
 		case 3:
 			return Ocena.getOcenaVr();
 		case 4:

@@ -30,6 +30,7 @@ public class IzmenaStudentaTabs extends JTabbedPane{
 	private static final long serialVersionUID = 1L;
 	public static int curr_tab = 0;
 	public static TableNepolozeniPredmeti tableNepolozeniPredmeti;
+	public static TablePolozeniPredmeti tablePolozeniPredmeti;
 
 	public IzmenaStudentaTabs(JDialog parentDialog) {
 
@@ -58,6 +59,35 @@ public class IzmenaStudentaTabs extends JTabbedPane{
 		Icon ikonProf = new ImageIcon("icons" + File.separator + "tab.png");
 		this.addTab("Informacije", ikonProf, tabStudent, "Prikaz informacija selektovanog studenta");
 		
+		JPanel tabPolozeni = new JPanel();
+		tabPolozeni.setLayout(new BorderLayout());
+		JPanel gornji2 = new JPanel(new FlowLayout(FlowLayout.CENTER,15,10));
+		JButton ponisti2 = new JButton("Poništi ocenu");
+		gornji2.add(ponisti2);
+		JPanel levi2 = new JPanel();
+		JPanel desni2 = new JPanel();
+		JPanel donji2 = new JPanel();
+		levi2.setBackground(Color.WHITE);
+		desni2.setBackground(Color.WHITE);
+		gornji2.setBackground(Color.WHITE);
+		donji2.setBackground(Color.WHITE);
+		levi2.setPreferredSize(new Dimension(50, tabPolozeni.getHeight()));
+		desni2.setPreferredSize(new Dimension(50, tabPolozeni.getHeight()));
+		gornji2.setPreferredSize(new Dimension(tabPolozeni.getWidth(), 60));
+		donji2.setPreferredSize(new Dimension(tabPolozeni.getWidth(), 50));
+		tabPolozeni.setBackground(Color.white);
+		Student s2 = BazaStudenata.getInstance().getRow(TabsPanel.tableStudent.getSelectedRow());
+		tablePolozeniPredmeti = new TablePolozeniPredmeti(s2);
+		JScrollPane scrollPane2 = new JScrollPane(tablePolozeniPredmeti);
+		scrollPane2.getViewport().setBackground(Color.WHITE);
+		tabPolozeni.add(scrollPane2, BorderLayout.CENTER);
+		tabPolozeni.setBackground(Color.WHITE);
+		tabPolozeni.add(levi2, BorderLayout.WEST);
+		tabPolozeni.add(desni2, BorderLayout.EAST);
+		tabPolozeni.add(gornji2, BorderLayout.NORTH);
+		tabPolozeni.add(donji2, BorderLayout.SOUTH);
+		
+		this.addTab("Položeni predmeti", null,tabPolozeni, "Prikaz položenih ispita selektovanog studenta");
 		
 		JPanel tabNepolozeni = new JPanel();
 		tabNepolozeni.setLayout(new BorderLayout());

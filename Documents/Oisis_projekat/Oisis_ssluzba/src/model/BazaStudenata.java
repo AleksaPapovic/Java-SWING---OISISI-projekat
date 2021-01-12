@@ -23,6 +23,7 @@ public class BazaStudenata {
 
 	private ArrayList<Student> Studenti;
 	private ArrayList<String> kolone;
+	private ArrayList<String> kolonePolozeniP;
 	private ArrayList<String> koloneNepolozeniP;
 
 	private BazaStudenata() {
@@ -51,6 +52,7 @@ public class BazaStudenata {
 		Studenti.get(0).setNepolozeniIsp(new ArrayList<Predmet>(BazaPredmeta.getInstance().getPredmeti()));
 		Studenti.add(new Student("Aleksa", "Papovic", parseDate("01.01.1999."), "Zmajevacka 1", "06342424242",
 				"aleksapapovic@gmail.com", "RA166/2018", 2015, 3, Student.Status.B, 10));
+		Studenti.get(1).setPolozeniIsp(new ArrayList<Ocena>(BazaOcena.getInstance().getOcene()));
 	}
 
 	public List<Student> getStudenti() {
@@ -140,7 +142,19 @@ public class BazaStudenata {
 			return null;
 		}
 	}
+	
+	public ArrayList<Ocena> getPolozeniPredmeti(Student student) {
+		return student.getPolozeniIsp();
+	}
 
+	public int getColumnCountPolozeniPredmeti() {
+		return this.kolonePolozeniP.size();
+	}
+
+	public String getColumnNamePolozeniPredmeti(int column) {
+		return this.kolonePolozeniP.get(column);
+	}
+	
 	public ArrayList<Predmet> getNepolozeniPredmeti(Student student) {
 		return student.getNepolozeniIsp();
 	}
@@ -152,7 +166,25 @@ public class BazaStudenata {
 	public String getColumnNameNepolozeniPredmeti(int column) {
 		return this.koloneNepolozeniP.get(column);
 	}
-
+	
+	public Object getValueAtPolozeniPredmeti(Student student, int row, int column) {
+		Ocena ocena = student.getPolozeniIsp().get(row);
+		switch (column) {
+		case 0:
+			return ocena.getPredmet().getSifraP();
+		case 1:
+			return ocena.getPredmet().getImeP();
+		case 2:
+			return ocena.getPredmet().getBrojESPB();
+		case 3:
+			return ocena.getOcenaVr();
+		case 4:
+			return ocena.getDatumPl();
+		default:
+			return null;
+		}
+	}
+	
 	public Object getValueAtNepolozeniPredmeti(Student student, int row, int column) {
 		Predmet predmet = student.getNepolozeniIsp().get(row);
 		switch (column) {
