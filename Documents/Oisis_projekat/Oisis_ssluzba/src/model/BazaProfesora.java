@@ -167,7 +167,15 @@ public class BazaProfesora {
 			}
 			i++;
 		}
-		this.profesori.remove(index);
+	}
+	
+	public Profesor nadjiProfesora(String brlk) {
+		for (Profesor p : this.profesori) {
+			if (p.getBrlk().equals(brlk)) {
+				return p;
+			}
+		}
+		return null;
 	}
 
 	public void pretraziProfesora(String text) {

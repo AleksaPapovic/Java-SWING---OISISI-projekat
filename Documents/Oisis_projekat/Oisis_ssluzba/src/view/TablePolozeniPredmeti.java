@@ -20,7 +20,7 @@ public class TablePolozeniPredmeti extends JTable{
 		this.setRowSelectionAllowed(true);
 		this.setColumnSelectionAllowed(true);
 		this.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-		this.setModel(new AbstractTableModelNepolozeniPredmeti(s));
+		this.setModel(new AbstractTableModelPolozeniPredmeti(s));
 	}
 	
 		@Override
@@ -35,7 +35,7 @@ public class TablePolozeniPredmeti extends JTable{
 		}
 		
 		public void update() {
-			AbstractTableModelStudenti model = (AbstractTableModelStudenti) this.getModel();
+			AbstractTableModelPolozeniPredmeti model = (AbstractTableModelPolozeniPredmeti) this.getModel();
 			model.fireTableDataChanged();
 			validate();
 		}

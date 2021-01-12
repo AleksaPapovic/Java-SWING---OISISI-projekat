@@ -31,9 +31,9 @@ public class BazaOcena {
 		this.kolone.add("Datum");
 		
 		
-		//Ocene.add(new Ocena("MA2", "Matematicka Analiza 2", 9 ,parseDate("20.01.2000.")));
+		Ocene.add(new Ocena(new Student("Dusan", "Lekic", parseDate("01.01.2000."), "Zmajevacka 10", "0635672214",
+				"dusanlekic2000@gmail.com", "RA159/2018", 2015, 3, Student.Status.B, 9.05), new Predmet("ktet", "Osnovi elektrotehnike", 9, 1, "letnji"), 9 ,parseDate("20.01.2000.")));
 	}
-
 
 	public List<Ocena> getOcene() {
 		return Ocene;
@@ -76,26 +76,22 @@ public class BazaOcena {
 	public void dodajOcenu(Student studentPl, Predmet predmet, int ocenaVr, Date datumPl) {
 		this.Ocene.add(new Ocena(studentPl, predmet, ocenaVr, datumPl));
 	}
-
+	
 	public void izbrisiOcenu(String sifraP) {
-		/*for (Ocena i : Ocene) {
-			if (i.getPredmet().getSifraP() == sifraP) {
-				Ocene.remove(i);
-				break;
-			}
-		}*/
+		/*
+		 * for (Ocena i : Ocene) { if (i.getPredmet().getSifraP() == sifraP) {
+		 * Ocene.remove(i); break; } }
+		 */
 	}
 
 	public void izmeniOcenu(Student studentPl, Predmet predmet, int ocenaVr, Date datumPl) {
-	/*	for (Ocena i : Ocene) {
-			if (i.getPredmet().getSifraP() == predmet.getSifraP()) {
-				i.setPredmet(predmet);
-				i.setOcenaVr(ocenaVr);
-				i.setDatumPl(datumPl);;
-			}
-		}*/
+		/*
+		 * for (Ocena i : Ocene) { if (i.getPredmet().getSifraP() ==
+		 * predmet.getSifraP()) { i.setPredmet(predmet); i.setOcenaVr(ocenaVr);
+		 * i.setDatumPl(datumPl);; } }
+		 */
 	}
-
+	
 	public static Date parseDate(String date) {
 		try {
 			return new SimpleDateFormat("dd.MM.yyyy.").parse(date);

@@ -5,7 +5,16 @@
       <imeP>Osnovi elektrotehnike</imeP>
       <semestar>letnji</semestar>
       <godinaS>1</godinaS>
-      <brojESPB>10</brojESPB>
+      <brojESPB>9</brojESPB>
+      <studentiP/>
+      <studentiNP/>
+    </Predmet>
+    <Predmet>
+      <sifraP>ra</sifraP>
+      <imeP>Osnovi elektrotehnike</imeP>
+      <semestar>letnji</semestar>
+      <godinaS>1</godinaS>
+      <brojESPB>9</brojESPB>
       <studentiP/>
       <studentiNP/>
     </Predmet>
@@ -54,6 +63,7 @@
       <polozeniIsp/>
       <nepolozeniIsp>
         <Predmet reference="../../../../predmeti/Predmet"/>
+        <Predmet reference="../../../../predmeti/Predmet[2]"/>
       </nepolozeniIsp>
     </Student>
     <Student>
@@ -68,7 +78,36 @@
       <godSt>3</godSt>
       <status>B</status>
       <prosek>10.0</prosek>
-      <polozeniIsp/>
+      <polozeniIsp>
+        <model.Ocena>
+          <studentPl>
+            <prezime>Lekic</prezime>
+            <ime>Dusan</ime>
+            <datumR>2000-01-01 00:00:00.0 CET</datumR>
+            <adresaSt>Zmajevacka 10</adresaSt>
+            <kontaktTl>0635672214</kontaktTl>
+            <email>dusanlekic2000@gmail.com</email>
+            <brojInd>RA159/2018</brojInd>
+            <godUp>2015</godUp>
+            <godSt>3</godSt>
+            <status>B</status>
+            <prosek>9.05</prosek>
+            <polozeniIsp/>
+            <nepolozeniIsp/>
+          </studentPl>
+          <predmet>
+            <sifraP>ktet</sifraP>
+            <imeP>Osnovi elektrotehnike</imeP>
+            <semestar>letnji</semestar>
+            <godinaS>1</godinaS>
+            <brojESPB>9</brojESPB>
+            <studentiP/>
+            <studentiNP/>
+          </predmet>
+          <ocenaVr>9</ocenaVr>
+          <datumPl>2000-01-20 00:00:00.0 CET</datumPl>
+        </model.Ocena>
+      </polozeniIsp>
       <nepolozeniIsp/>
     </Student>
   </studenti>

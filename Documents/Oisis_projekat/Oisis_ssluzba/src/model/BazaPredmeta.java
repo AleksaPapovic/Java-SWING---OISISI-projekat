@@ -121,6 +121,10 @@ public class BazaPredmeta {
 		}
 		return null;
 	}
+	
+	public Predmet getSelectedPredmet(int red) {
+		return this.predmeti.get(red);
+	}
 
 	public void izmeniPredmet(int index, String sifraP, String imeP, int brojESPB, int godinaS, String semestar) {
 		predmeti.get(index).setSifraP(sifraP);

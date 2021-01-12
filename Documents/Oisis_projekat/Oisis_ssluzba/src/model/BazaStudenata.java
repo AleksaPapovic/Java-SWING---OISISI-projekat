@@ -30,6 +30,7 @@ public class BazaStudenata {
 
 		this.kolone = new ArrayList<String>();
 		this.koloneNepolozeniP = new ArrayList<String>();
+		this.kolonePolozeniP = new ArrayList<String>();
 		this.kolone.add("Indeks");
 		this.kolone.add("Ime");
 		this.kolone.add("Prezime");
@@ -37,10 +38,15 @@ public class BazaStudenata {
 		this.kolone.add("Status");
 		this.kolone.add("Prosek");
 		this.koloneNepolozeniP.add("Šifra predmeta");
-		this.koloneNepolozeniP.add("Nayiv predmeta");
+		this.koloneNepolozeniP.add("Naziv predmeta");
 		this.koloneNepolozeniP.add("ESPB");
 		this.koloneNepolozeniP.add("Godina studija");
 		this.koloneNepolozeniP.add("Semestar");
+		this.kolonePolozeniP.add("Šifra predmeta");
+		this.kolonePolozeniP.add("Naziv predmeta");
+		this.kolonePolozeniP.add("ESPB");
+		this.kolonePolozeniP.add("Godina studija");
+		this.kolonePolozeniP.add("Semestar");
 
 		initStudente();
 	}
@@ -209,6 +215,16 @@ public class BazaStudenata {
 		Predmet p = BazaPredmeta.getInstance().nadjiPredmet(sifraP);
 		s.getPolozeniIsp().add(new Ocena(s, p, ocena, upisDatum));
 		s.getNepolozeniIsp().remove(IzmenaStudentaTabs.tableNepolozeniPredmeti.getSelectedRow());
+		IzmenaStudentaTabs.tableNepolozeniPredmeti.azurirajNepolozene();
+		IzmenaStudentaTabs.tablePolozeniPredmeti.update();
+	}
+	
+	public void brisanjeOcene() {
+		Student s = getSelectedStudent(TabsPanel.tableStudent.getSelectedRow());
+		int index = IzmenaStudentaTabs.tablePolozeniPredmeti.getSelectedRow();
+		Predmet p = BazaPredmeta.getInstance().getSelectedPredmet(index);
+		s.getNepolozeniIsp().add(p);
+		s.getPolozeniIsp().remove(index);
 		IzmenaStudentaTabs.tableNepolozeniPredmeti.azurirajNepolozene();
 		IzmenaStudentaTabs.tablePolozeniPredmeti.update();
 	}

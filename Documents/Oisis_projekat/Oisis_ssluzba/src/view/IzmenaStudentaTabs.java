@@ -22,7 +22,7 @@ import javax.swing.event.ChangeListener;
 import model.BazaStudenata;
 import model.Student;
 
-public class IzmenaStudentaTabs extends JTabbedPane{
+public class IzmenaStudentaTabs extends JTabbedPane {
 
 	/**
 		 * 
@@ -58,10 +58,10 @@ public class IzmenaStudentaTabs extends JTabbedPane{
 		tabStudent.add(donji1, BorderLayout.SOUTH);
 		Icon ikonProf = new ImageIcon("icons" + File.separator + "tab.png");
 		this.addTab("Informacije", ikonProf, tabStudent, "Prikaz informacija selektovanog studenta");
-		
+
 		JPanel tabPolozeni = new JPanel();
 		tabPolozeni.setLayout(new BorderLayout());
-		JPanel gornji2 = new JPanel(new FlowLayout(FlowLayout.CENTER,15,10));
+		JPanel gornji2 = new JPanel(new FlowLayout(FlowLayout.CENTER, 15, 10));
 		JButton ponisti2 = new JButton("Poništi ocenu");
 		gornji2.add(ponisti2);
 		JPanel levi2 = new JPanel();
@@ -86,12 +86,28 @@ public class IzmenaStudentaTabs extends JTabbedPane{
 		tabPolozeni.add(desni2, BorderLayout.EAST);
 		tabPolozeni.add(gornji2, BorderLayout.NORTH);
 		tabPolozeni.add(donji2, BorderLayout.SOUTH);
-		
-		this.addTab("Položeni predmeti", null,tabPolozeni, "Prikaz položenih ispita selektovanog studenta");
-		
+
+		ponisti2.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				if (IzmenaStudentaTabs.tablePolozeniPredmeti.getSelectedRow() != -1) {
+					@SuppressWarnings("unused")
+					PonistavanjeOceneDialog pDialog = new PonistavanjeOceneDialog(parentDialog, "Poništavanje ocene",
+							true);
+				} else {
+					JOptionPane.showMessageDialog(null, "Niste odabrali red za ponistavanje ocene", "GRESKA",
+							JOptionPane.ERROR_MESSAGE);
+				}
+			}
+		});
+
+		this.addTab("Položeni predmeti", null, tabPolozeni, "Prikaz položenih ispita selektovanog studenta");
+
 		JPanel tabNepolozeni = new JPanel();
 		tabNepolozeni.setLayout(new BorderLayout());
-		JPanel gornji3 = new JPanel(new FlowLayout(FlowLayout.CENTER,15,10));
+		JPanel gornji3 = new JPanel(new FlowLayout(FlowLayout.CENTER, 15, 10));
 		JButton dodaj = new JButton("Dodaj");
 		JButton ukloni = new JButton("Obriši");
 		JButton polaganje = new JButton("Polaganje");
@@ -120,18 +136,19 @@ public class IzmenaStudentaTabs extends JTabbedPane{
 		tabNepolozeni.add(desni3, BorderLayout.EAST);
 		tabNepolozeni.add(gornji3, BorderLayout.NORTH);
 		tabNepolozeni.add(donji3, BorderLayout.SOUTH);
-		
-		this.addTab("Nepoloženi predmeti", null,tabNepolozeni, "Prikaz nepoloženih ispita selektovanog studenta");
-		
+
+		this.addTab("Nepoloženi predmeti", null, tabNepolozeni, "Prikaz nepoloženih ispita selektovanog studenta");
+
 		polaganje.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
-				if(tableNepolozeniPredmeti.getSelectedRow() != -1) {
-				UpisOceneDialog uod = new UpisOceneDialog(parentDialog, "Upis ocene", true);}
-				else {
-				JOptionPane.showMessageDialog(null, "Nije selektovan nepolozen predmet", "GRESKA", JOptionPane.ERROR_MESSAGE);
+				if (tableNepolozeniPredmeti.getSelectedRow() != -1) {
+					UpisOceneDialog uod = new UpisOceneDialog(parentDialog, "Upis ocene", true);
+				} else {
+					JOptionPane.showMessageDialog(null, "Nije selektovan nepolozen predmet", "GRESKA",
+							JOptionPane.ERROR_MESSAGE);
 				}
 			}
 		});
@@ -140,7 +157,7 @@ public class IzmenaStudentaTabs extends JTabbedPane{
 
 			@Override
 			public void stateChanged(ChangeEvent event) {
-               
+
 				JTabbedPane tabbedPane = (JTabbedPane) event.getSource();
 				curr_tab = tabbedPane.getSelectedIndex();
 			}

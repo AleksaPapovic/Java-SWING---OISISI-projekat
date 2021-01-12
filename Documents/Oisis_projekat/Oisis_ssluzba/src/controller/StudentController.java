@@ -6,6 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import model.BazaStudenata;
+import model.Profesor;
 import model.Student;
 import model.Student.Status;
 import view.DodavanjeStudentaDialog;
@@ -229,6 +230,11 @@ public class StudentController {
 
 	public boolean upisi(String sifraP, String imeP, int ocena, String datum) {
 		BazaStudenata.getInstance().upisiOcenu(sifraP, imeP, ocena, datum);
+		return true;
+	}
+	
+	public boolean obrisi() {
+		BazaStudenata.getInstance().brisanjeOcene();
 		return true;
 	}
 
