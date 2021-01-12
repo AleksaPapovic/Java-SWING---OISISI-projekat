@@ -226,6 +226,14 @@ public class ProfesorController {
 		TabsPanel.tableProfesor.azuriranjeTabeleProfesor();
 		return true;
 	}
+	
+	public boolean izbrisiProfesora(int index) {
+
+		BazaProfesora.getInstance().izbrisiProfesora(index);
+		TabsPanel.tableProfesor.azuriranjeTabeleProfesor();
+		return true;
+
+	}
 
 	public void pretragaProfesora(String text) {
 		BazaProfesora.getInstance().pretraziProfesora(text);

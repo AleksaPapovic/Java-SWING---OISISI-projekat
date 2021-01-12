@@ -177,6 +177,13 @@ public class Actions {
 			}
 				break;
 			case 1: {
+				int index = TabsPanel.tableProfesor.getSelectedRow();
+				if (index != -1) {
+					ProfesorController.getInstance().izbrisiProfesora(index);
+				} else {
+					JOptionPane.showMessageDialog(null, "Niste odabrali red za brisanje", "GRESKA",
+							JOptionPane.ERROR_MESSAGE);
+				}
 			}
 				break;
 			case 2: {

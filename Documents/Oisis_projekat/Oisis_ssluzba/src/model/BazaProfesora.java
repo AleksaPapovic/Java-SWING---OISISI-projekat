@@ -7,7 +7,6 @@ import java.util.Date;
 
 import javax.swing.JOptionPane;
 
-import controller.ProfesorController;
 import model.Profesor.Titula;
 import model.Profesor.Zvanje;
 
@@ -139,6 +138,10 @@ public class BazaProfesora {
 		this.profesori.get(index_izmenjenog).setTitula(izmenjeniProfesor.getTitula());
 		this.profesori.get(index_izmenjenog).setZvanje(izmenjeniProfesor.getZvanje());
 		this.profesori.get(index_izmenjenog).setBrlk(izmenjeniProfesor.getBrlk());
+	}
+	
+	public void izbrisiProfesora(int index) {
+		this.profesori.remove(index);
 	}
 
 	public void pretraziProfesora(String text) {
