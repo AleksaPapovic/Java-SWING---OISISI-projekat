@@ -4,6 +4,7 @@ package view;
 
 import java.awt.Image;
 import java.awt.event.ActionEvent;
+import java.io.IOException;
 
 import javax.swing.AbstractAction;
 import javax.swing.ImageIcon;
@@ -13,6 +14,7 @@ import javax.swing.KeyStroke;
 import controller.PredmetController;
 import controller.ProfesorController;
 import controller.StudentController;
+import model.Entiteti;
 
 public class Actions {
 	public String tekst = "<html>Glavni prozor se sastoji iz Menubar-a, Toolbar-a, Statusbar-a, Searchbar-a u Toolbar-u i centralnog prozora <br>"
@@ -84,7 +86,13 @@ public class Actions {
 		}
 
 		public void actionPerformed(ActionEvent e) {
-			JOptionPane.showMessageDialog(null, "Would have done the 'Close' action.");
+			try {
+				Entiteti.getInstance().serializeToXML();
+		        System.exit(0);
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		}
 	}
 

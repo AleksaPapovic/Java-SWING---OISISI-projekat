@@ -1,0 +1,90 @@
+<Entiteti>
+  <predmeti>
+    <Predmet>
+      <sifraP>ktet</sifraP>
+      <imeP>Osnovi elektrotehnike</imeP>
+      <semestar>letnji</semestar>
+      <godinaS>1</godinaS>
+      <predProf>
+        <prezime>Petrović</prezime>
+        <ime>Petar</ime>
+        <datumR>2020-01-12 00:12:00.0 CET</datumR>
+        <adresaS>Beograd</adresaS>
+        <kontaktTel>069373994234</kontaktTel>
+        <email>petorvic@gmail.com</email>
+        <adresaK>Novi Sad</adresaK>
+        <brlk>123857364</brlk>
+        <titula>Dr</titula>
+        <zvanje>RProfesor</zvanje>
+        <predmeti>
+          <Predmet reference="../../.."/>
+          <Predmet>
+            <sifraP>ra</sifraP>
+            <imeP>Osnovi elektrotehnike</imeP>
+            <semestar>letnji</semestar>
+            <godinaS>1</godinaS>
+            <predProf reference="../../.."/>
+            <brojESPB>9</brojESPB>
+            <studentiP/>
+            <studentiNP/>
+          </Predmet>
+        </predmeti>
+      </predProf>
+      <brojESPB>9</brojESPB>
+      <studentiP/>
+      <studentiNP/>
+    </Predmet>
+    <Predmet reference="../Predmet/predProf/predmeti/Predmet[2]"/>
+  </predmeti>
+  <profesori>
+    <Profesor reference="../../predmeti/Predmet/predProf"/>
+    <Profesor>
+      <prezime>Lekić</prezime>
+      <ime>Dušan</ime>
+      <datumR>2019-01-10 00:03:00.0 CET</datumR>
+      <adresaS>Kraljevo</adresaS>
+      <kontaktTel>069373994234</kontaktTel>
+      <email>dlekic@gmail.com</email>
+      <adresaK>Beograd</adresaK>
+      <brlk>987456321</brlk>
+      <titula>Ms</titula>
+      <zvanje>VProfesor</zvanje>
+      <predmeti/>
+    </Profesor>
+  </profesori>
+  <studenti>
+    <Student>
+      <prezime>Lekic</prezime>
+      <ime>Dusan</ime>
+      <datumR>2000-01-01 00:00:00.0 CET</datumR>
+      <adresaSt>Zmajevacka 10</adresaSt>
+      <kontaktTl>0635672214</kontaktTl>
+      <email>dusanlekic2000@gmail.com</email>
+      <brojInd>RA159/2018</brojInd>
+      <godUp>2015</godUp>
+      <godSt>3</godSt>
+      <status>B</status>
+      <prosek>9.05</prosek>
+      <polozeniIsp/>
+      <nepolozeniIsp>
+        <Predmet reference="../../../../predmeti/Predmet"/>
+        <Predmet reference="../../../../predmeti/Predmet/predProf/predmeti/Predmet[2]"/>
+      </nepolozeniIsp>
+    </Student>
+    <Student>
+      <prezime>Papovic</prezime>
+      <ime>Aleksa</ime>
+      <datumR>1999-01-01 00:00:00.0 CET</datumR>
+      <adresaSt>Zmajevacka 1</adresaSt>
+      <kontaktTl>06342424242</kontaktTl>
+      <email>aleksapapovic@gmail.com</email>
+      <brojInd>RA166/2018</brojInd>
+      <godUp>2015</godUp>
+      <godSt>3</godSt>
+      <status>B</status>
+      <prosek>10.0</prosek>
+      <polozeniIsp/>
+      <nepolozeniIsp/>
+    </Student>
+  </studenti>
+</Entiteti>

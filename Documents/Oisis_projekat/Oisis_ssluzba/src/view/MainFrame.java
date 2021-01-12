@@ -3,10 +3,15 @@ package view;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.File;
+import java.io.IOException;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+
+import model.Entiteti;
 
 public class MainFrame extends JFrame {
 
@@ -27,14 +32,13 @@ public class MainFrame extends JFrame {
 		Dimension screenSize = kit.getScreenSize();
 		int screenHeight = screenSize.height;
 		int screenWidth = screenSize.width;
-
 		setSize(screenWidth * 3 / 4, screenHeight * 3 / 4);
 
 		setTitle("Studenska služba");
 		ImageIcon icon = new ImageIcon("icons" + File.separator + "university.png");
 		setIconImage(icon.getImage());
 		setLocationRelativeTo(null);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 
 		Menubar menu = new Menubar();
 		this.setJMenuBar(menu);
@@ -47,6 +51,20 @@ public class MainFrame extends JFrame {
 
 		TabsPanel tabPanel = new TabsPanel();
 		add(tabPanel, BorderLayout.CENTER);
+
+		this.addWindowListener(new WindowAdapter() {
+
+			@Override
+			public void windowClosing(WindowEvent e) {
+				try {
+					Entiteti.getInstance().serializeToXML();
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+				System.exit(0);
+			}
+
+		});
 
 		setVisible(true);
 
