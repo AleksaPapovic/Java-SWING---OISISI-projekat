@@ -3,14 +3,19 @@ package controller;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
+import model.BazaPredmeta;
 import model.BazaProfesora;
+import model.Predmet;
 import model.Profesor;
 import model.Profesor.Titula;
 import model.Profesor.Zvanje;
+import view.DodavanjePredmetaProfesoruDialog;
 import view.DodavanjeProfesoraDialog;
 import view.IzmenaProfesoraPanel;
+import view.ProfesorPredajePanel;
 import view.TabsPanel;
 
 public class ProfesorController {
@@ -238,6 +243,23 @@ public class ProfesorController {
 	public void pretragaProfesora(String text) {
 		BazaProfesora.getInstance().pretraziProfesora(text);
 		TabsPanel.tableProfesor.azuriranjeTabeleProfesor();
+	}
+
+	public void dodajProfesoruPredmet() {
+		// TODO Auto-generated method stub
+		ArrayList<Predmet> predmeti = BazaProfesora.getInstance()
+				.getNePredajePredmeteProfesor(DodavanjePredmetaProfesoruDialog.profesor);
+		ArrayList<Predmet> predmetiPredaje = new ArrayList<Predmet>();
+		int[] rows = DodavanjePredmetaProfesoruDialog.tabelaListaPredmeta.getMultipleSelectedRows();
+		for (int i : rows) {
+			predmetiPredaje.add(predmeti.get(i));
+		}
+		for (Predmet predmet : predmetiPredaje) {
+			predmet.setPredProf(DodavanjePredmetaProfesoruDialog.profesor);
+		}
+		BazaProfesora.getInstance().dodajPredmetePofesoru(DodavanjePredmetaProfesoruDialog.profesor, predmetiPredaje);
+		DodavanjePredmetaProfesoruDialog.tabelaListaPredmeta.azurirajPrikaz();
+		ProfesorPredajePanel.tablePredavaniPredmeti.azuriranjeTabelePredavaniPredmeti();
 	}
 
 }

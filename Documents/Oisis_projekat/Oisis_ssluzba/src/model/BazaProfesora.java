@@ -210,18 +210,20 @@ public class BazaProfesora {
 		}
 
 	}
-	
+
 	public ArrayList<Predmet> getPredavaniPredmeti(Profesor profesor) {
 		return profesor.getPredmeti();
 	}
+
 	public void setPredmeti(Profesor profesor, ArrayList<Predmet> predmeti) {
 		profesor.setPredmeti(predmeti);
 	}
+
 	public int getColumnCountPredavaniPredmeti() {
-	
+
 		return this.profPredajeNazivi.size();
 	}
-	
+
 	public String getColumnNamePredavaniPredmeti(int column) {
 		return this.profPredajeNazivi.get(column);
 	}
@@ -240,6 +242,16 @@ public class BazaProfesora {
 		default:
 			return null;
 		}
+	}
+
+	public ArrayList<Predmet> getNePredajePredmeteProfesor(Profesor profesor) {
+		ArrayList<Predmet> predmeti = new ArrayList<Predmet>(BazaPredmeta.getInstance().getPredmeti());
+		predmeti.removeAll(profesor.getPredmeti());
+		return predmeti;
+	}
+
+	public void dodajPredmetePofesoru(Profesor profesor, ArrayList<Predmet> predmeti) {
+		profesor.getPredmeti().addAll(predmeti);
 	}
 
 }

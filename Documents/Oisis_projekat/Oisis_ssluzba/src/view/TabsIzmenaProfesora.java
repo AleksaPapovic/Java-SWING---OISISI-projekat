@@ -46,7 +46,7 @@ public class TabsIzmenaProfesora extends JTabbedPane {
 		tabProfesor.add(gornji1, BorderLayout.NORTH);
 		tabProfesor.add(donji1, BorderLayout.SOUTH);
 		Icon ikonProf = new ImageIcon("icons" + File.separator + "tab.png");
-		this.addTab("Informacije", ikonProf, tabProfesor, "Prikaz informacija selektovanog profesora");
+		this.addTab("Info", ikonProf, tabProfesor, "Prikaz informacija selektovanog profesora");
 
 		// Tab profesor i predmeti
 		JPanel tabPredmeti = new JPanel();
@@ -55,7 +55,6 @@ public class TabsIzmenaProfesora extends JTabbedPane {
 		JPanel donji2 = new JPanel();
 		gornji2.setBackground(Color.WHITE);
 		donji2.setBackground(Color.WHITE);
-		
 		gornji2.setPreferredSize(new Dimension(tabPredmeti.getWidth(), 15));
 		donji2.setPreferredSize(new Dimension(tabPredmeti.getWidth(), 50));
 		ProfesorPredajePanel panelProfesorPredaje = new ProfesorPredajePanel(parentDialog);
@@ -65,6 +64,8 @@ public class TabsIzmenaProfesora extends JTabbedPane {
 		tabPredmeti.add(donji2, BorderLayout.SOUTH);
 		Icon ikonProf2 = new ImageIcon("icons" + File.separator + "tab.png");
 		this.addTab("Predmeti", ikonProf2, tabPredmeti, "Prikaz predmeta");
+		
+		
 
 		this.addChangeListener(new ChangeListener() {
 

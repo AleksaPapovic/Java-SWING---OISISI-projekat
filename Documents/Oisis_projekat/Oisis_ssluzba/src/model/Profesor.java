@@ -155,7 +155,7 @@ public class Profesor {
 	}
 
 	public ArrayList<Predmet> getPredmeti() {
-		return predmeti;
+		return this.predmeti;
 	}
 
 	public void setPredmeti(ArrayList<Predmet> predmeti) {
