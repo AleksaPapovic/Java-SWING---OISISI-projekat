@@ -35,12 +35,14 @@ public class BazaPredmeta {
 		this.kolone.add("Godina studija");
 		this.kolone.add("Semestar");
 
-		this.predmeti.add(new Predmet("ktet", "Osnovi elektrotehnike", 9, 1, "letnji"));
-		this.predmeti.add(new Predmet("ra", "Osnovi elektrotehnike", 9, 1, "letnji"));
+//		this.predmeti.add(new Predmet("ktet", "Osnovi elektrotehnike", 9, 1, "letnji"));
+//		this.predmeti.add(new Predmet("ra", "Osnovi elektrotehnike", 9, 1, "letnji"));
+//		this.predmetiSvi = this.predmeti;
+		this.predmeti = Entiteti.getInstance().getPredmeti();
 		this.predmetiSvi = this.predmeti;
 	}
 
-	public List<Predmet> getPredmeti() {
+	public ArrayList<Predmet> getPredmeti() {
 		return this.predmeti;
 	}
 
@@ -50,6 +52,7 @@ public class BazaPredmeta {
 
 	public void setOPredmeti(ArrayList<Predmet> predmeti) {
 		this.predmeti = predmeti;
+		this.predmetiSvi= this.predmeti;
 	}
 
 	public int getColumnCount() {

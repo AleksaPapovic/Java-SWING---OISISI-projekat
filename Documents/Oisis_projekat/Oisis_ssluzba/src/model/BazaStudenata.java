@@ -4,7 +4,6 @@ package model;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 import javax.swing.JOptionPane;
 
@@ -33,7 +32,8 @@ public class BazaStudenata {
 	private boolean pretraga = false;
 
 	private BazaStudenata() {
-
+		this.Studenti = new ArrayList<Student>();
+		
 		this.kolone = new ArrayList<String>();
 		this.koloneNepolozeniP = new ArrayList<String>();
 		this.kolonePolozeniP = new ArrayList<String>();
@@ -54,26 +54,21 @@ public class BazaStudenata {
 		this.kolonePolozeniP.add("Godina studija");
 		this.kolonePolozeniP.add("Datum");
 
-		initStudente();
-	}
-
-	private void initStudente() {
-		this.Studenti = new ArrayList<Student>();
-		Studenti.add(new Student("Dusan", "Lekic", parseDate("01.01.2000."), "Zmajevacka 10", "0635672214",
-				"dusanlekic2000@gmail.com", "RA159/2018", 2015, 3, Student.Status.B, 9.05));
-		Studenti.get(0).setNepolozeniIsp(new ArrayList<Predmet>(BazaPredmeta.getInstance().getPredmeti()));
-		Studenti.add(new Student("Aleksa", "Papovic", parseDate("01.01.1999."), "Zmajevacka 1", "06342424242",
-				"aleksapapovic@gmail.com", "RA166/2018", 2015, 1, Student.Status.B, 10));
-		Studenti.get(1).setPolozeniIsp(new ArrayList<Ocena>(BazaOcena.getInstance().getOcene()));
+		
+		this.Studenti = Entiteti.getInstance().getStudenti();
 		this.studentiSvi = this.Studenti;
 	}
 
-	public List<Student> getStudenti() {
+	private void initStudente() {
+		}
+
+	public ArrayList<Student> getStudenti() {
 		return Studenti;
 	}
 
 	public void setStudenti(ArrayList<Student> Studenti) {
 		this.Studenti = Studenti;
+		this.studentiSvi = Studenti;
 	}
 
 	public int getColumnCount() {

@@ -44,12 +44,14 @@ public class BazaProfesora {
 		this.profPredajeNazivi.add("Godina studija");
 		this.profPredajeNazivi.add("Semestar");
 
-		Date d1 = parseDate("12.12.2020.");
-		Date d2 = parseDate("10.03.2019.");
-		this.profesori.add(new Profesor("Petrović", "Petar", d1, "Beograd", "069373994234", "petorvic@gmail.com",
-				"Novi Sad", "123857364", Titula.Dr, Zvanje.RProfesor));
-		this.profesori.add(new Profesor("Lekić", "Dušan", d2, "Kraljevo", "069373994234", "dlekic@gmail.com", "Beograd",
-				"987456321", Titula.Ms, Zvanje.VProfesor));
+//		Date d1 = parseDate("12.12.2020.");
+//		Date d2 = parseDate("10.03.2019.");
+//		this.profesori.add(new Profesor("Petrović", "Petar", d1, "Beograd", "069373994234", "petorvic@gmail.com",
+//				"Novi Sad", "123857364", Titula.Dr, Zvanje.RProfesor));
+//		this.profesori.add(new Profesor("Lekić", "Dušan", d2, "Kraljevo", "069373994234", "dlekic@gmail.com", "Beograd",
+//				"987456321", Titula.Ms, Zvanje.VProfesor));
+//		this.profesoriSvi = this.profesori;
+		this.profesori = Entiteti.getInstance().getProfesori();
 		this.profesoriSvi = this.profesori;
 	}
 
@@ -71,6 +73,7 @@ public class BazaProfesora {
 
 	public void setProfesori(ArrayList<Profesor> profesori) {
 		this.profesori = profesori;
+		this.profesoriSvi = this.profesori;
 	}
 
 	public ArrayList<String> getProfNazivi() {

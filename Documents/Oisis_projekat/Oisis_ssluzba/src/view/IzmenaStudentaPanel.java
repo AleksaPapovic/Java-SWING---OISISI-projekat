@@ -107,7 +107,7 @@ public class IzmenaStudentaPanel extends JPanel{
 		JLabel godStLabela = new JLabel("Trenutna godina studija*");
 		godStLabela.setPreferredSize(velicina);
 		godStLabela.setMaximumSize(velicina);
-		String godSt[] = { "I(prva)", "II(druga)", "II(treca)", "IV(cetvrta)" };
+		String godSt[] = { "I(prva)", "II(druga)", "III(treca)", "IV(cetvrta)" };
 		godStIzmena = new JComboBox<String>(godSt);
 		godStIzmena.setSelectedItem(st.getGodSt());
 		

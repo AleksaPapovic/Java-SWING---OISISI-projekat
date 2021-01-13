@@ -29,7 +29,7 @@ public class Student {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Student( String ime, String prezime, Date datumR, String adresaSt, String kontaktTl, String email,
+	public Student(String ime, String prezime, Date datumR, String adresaSt, String kontaktTl, String email,
 			String brojInd, int godUp, int godSt, Status status, double prosek) {
 		super();
 		this.ime = ime;
@@ -43,6 +43,23 @@ public class Student {
 		this.godSt = godSt;
 		this.status = status;
 		this.prosek = prosek;
+		this.nepolozeniIsp = new ArrayList<Predmet>();
+		this.polozeniIsp = new ArrayList<Ocena>();
+	}
+	
+	public Student(String brojInd,String ime, String prezime, int godSt, Date datumR, String adresaSt, String kontaktTl, String email,
+			   Status status, int godUp ) {
+		super();
+		this.ime = ime;
+		this.prezime = prezime;
+		this.datumR = datumR;
+		this.adresaSt = adresaSt;
+		this.kontaktTl = kontaktTl;
+		this.email = email;
+		this.brojInd = brojInd;
+		this.godUp = godUp;
+		this.godSt = godSt;
+		this.status = status;
 		this.nepolozeniIsp = new ArrayList<Predmet>();
 		this.polozeniIsp = new ArrayList<Ocena>();
 	}
