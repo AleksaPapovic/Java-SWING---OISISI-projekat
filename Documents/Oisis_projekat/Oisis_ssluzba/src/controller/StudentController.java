@@ -87,7 +87,8 @@ public class StudentController {
 		st.setStatus(status);
 
 		BazaStudenata.getInstance().dodajStudenta(st.getIme(), st.getPrezime(), st.getDatumR(), st.getAdresaSt(),
-				st.getKontaktTl(), st.getEmail(), st.getBrojInd(), st.getGodUp(), st.getGodSt(), st.getStatus(), 0);
+				st.getKontaktTl(), st.getEmail(), st.getBrojInd(), st.getGodUp(), st.getGodSt(), st.getStatus(),
+				st.getProsek());
 		TabsPanel.tableStudent.update();
 		return true;
 	}
@@ -145,7 +146,7 @@ public class StudentController {
 
 		int index = TabsPanel.tableStudent.getSelectedTableRow();
 		BazaStudenata.getInstance().izmeniStudenta(index, ime, prezime, datumr, adresa, kontakt, email, brojInd, godUp,
-				godSt, status, 0.0);
+				godSt, status, BazaStudenata.getInstance().getStudenti().get(index).getProsek());
 		TabsPanel.tableStudent.update();
 		return true;
 	}

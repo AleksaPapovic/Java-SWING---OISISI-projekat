@@ -53,7 +53,6 @@ public class BazaProfesora {
 //		this.profesoriSvi = this.profesori;
 		this.profesori = Entiteti.getInstance().getProfesori();
 		//initProfesora();
-	
 		this.profesoriSvi = this.profesori;
 	}
 

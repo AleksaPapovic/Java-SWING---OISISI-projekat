@@ -31,8 +31,15 @@ public class BazaOcena {
 		this.kolone.add("Datum");
 		
 		
-		Ocene.add(new Ocena(new Student("Dusan", "Lekic", parseDate("01.01.2000."), "Zmajevacka 10", "0635672214",
-				"dusanlekic2000@gmail.com", "RA159/2018", 2015, 3, Student.Status.B, 9.05), new Predmet("ktet", "Osnovi elektrotehnike", 9, 1, "letnji"), 9 ,parseDate("20.01.2000.")));
+		Ocene.add(new Ocena("RA 134/2015","p5",10,parseDate("12.12.2017.")));
+		Ocene.add(new Ocena("RA 134/2015","p3",9,parseDate("10.11.2019.")));
+		Ocene.add(new Ocena("RA 134/2015","p1",8,parseDate("11.11.2020.")));
+		Ocene.add(new Ocena("RA 3/2019","p1",10,parseDate("20.11.2020.")));
+		Ocene.add(new Ocena("RA 3/2019","p5",10,parseDate("30.10.2020.")));
+		Ocene.add(new Ocena("RA 11/2018","p15",9,parseDate("10.01.2021.")));
+		Ocene.add(new Ocena("RA 12/2018","p15",10,parseDate("12.01.2018.")));
+		Ocene.add(new Ocena("RA 11/2018","p16",10,parseDate("01.01.2021.")));
+		Ocene.add(new Ocena("RA 12/2018","p16",8,parseDate("04.02.2019.")));
 	}
 
 	public List<Ocena> getOcene() {

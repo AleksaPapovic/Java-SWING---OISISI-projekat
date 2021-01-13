@@ -547,8 +547,21 @@
       <godUp>2019</godUp>
       <godSt>2</godSt>
       <status>S</status>
-      <prosek>0.0</prosek>
-      <polozeniIsp/>
+      <prosek>10.0</prosek>
+      <polozeniIsp>
+        <model.Ocena>
+          <studentPl reference="../../.."/>
+          <predmet reference="../../../../../predmeti/Predmet"/>
+          <ocenaVr>10</ocenaVr>
+          <datumPl>2020-11-20 00:00:00.0 CET</datumPl>
+        </model.Ocena>
+        <model.Ocena>
+          <studentPl reference="../../.."/>
+          <predmet reference="../../../../../predmeti/Predmet[5]"/>
+          <ocenaVr>10</ocenaVr>
+          <datumPl>2020-10-30 00:00:00.0 CET</datumPl>
+        </model.Ocena>
+      </polozeniIsp>
       <nepolozeniIsp/>
     </Student>
     <Student>
@@ -577,9 +590,31 @@
       <godUp>2015</godUp>
       <godSt>3</godSt>
       <status>S</status>
-      <prosek>0.0</prosek>
-      <polozeniIsp/>
-      <nepolozeniIsp/>
+      <prosek>9.0</prosek>
+      <polozeniIsp>
+        <model.Ocena>
+          <studentPl reference="../../.."/>
+          <predmet reference="../../../../../predmeti/Predmet[5]"/>
+          <ocenaVr>10</ocenaVr>
+          <datumPl>2017-12-12 00:00:00.0 CET</datumPl>
+        </model.Ocena>
+        <model.Ocena>
+          <studentPl reference="../../.."/>
+          <predmet reference="../../../../../predmeti/Predmet[3]"/>
+          <ocenaVr>9</ocenaVr>
+          <datumPl>2019-11-10 00:00:00.0 CET</datumPl>
+        </model.Ocena>
+        <model.Ocena>
+          <studentPl reference="../../.."/>
+          <predmet reference="../../../../../predmeti/Predmet"/>
+          <ocenaVr>8</ocenaVr>
+          <datumPl>2020-11-11 00:00:00.0 CET</datumPl>
+        </model.Ocena>
+      </polozeniIsp>
+      <nepolozeniIsp>
+        <Predmet reference="../../../../predmeti/Predmet[2]"/>
+        <Predmet reference="../../../../predmeti/Predmet[4]"/>
+      </nepolozeniIsp>
     </Student>
     <Student>
       <prezime>Ilic</prezime>
@@ -742,8 +777,21 @@
       <godUp>2018</godUp>
       <godSt>4</godSt>
       <status>B</status>
-      <prosek>0.0</prosek>
-      <polozeniIsp/>
+      <prosek>9.0</prosek>
+      <polozeniIsp>
+        <model.Ocena>
+          <studentPl reference="../../.."/>
+          <predmet reference="../../../../../predmeti/Predmet[15]"/>
+          <ocenaVr>9</ocenaVr>
+          <datumPl>2021-01-10 00:00:00.0 CET</datumPl>
+        </model.Ocena>
+        <model.Ocena>
+          <studentPl reference="../../.."/>
+          <predmet reference="../../../../../predmeti/Predmet[16]"/>
+          <ocenaVr>10</ocenaVr>
+          <datumPl>2021-01-01 00:00:00.0 CET</datumPl>
+        </model.Ocena>
+      </polozeniIsp>
       <nepolozeniIsp/>
     </Student>
     <Student>
@@ -757,8 +805,21 @@
       <godUp>2018</godUp>
       <godSt>4</godSt>
       <status>S</status>
-      <prosek>0.0</prosek>
-      <polozeniIsp/>
+      <prosek>9.0</prosek>
+      <polozeniIsp>
+        <model.Ocena>
+          <studentPl reference="../../.."/>
+          <predmet reference="../../../../../predmeti/Predmet[15]"/>
+          <ocenaVr>10</ocenaVr>
+          <datumPl>2018-01-12 00:00:00.0 CET</datumPl>
+        </model.Ocena>
+        <model.Ocena>
+          <studentPl reference="../../.."/>
+          <predmet reference="../../../../../predmeti/Predmet[16]"/>
+          <ocenaVr>8</ocenaVr>
+          <datumPl>2019-02-04 00:00:00.0 CET</datumPl>
+        </model.Ocena>
+      </polozeniIsp>
       <nepolozeniIsp/>
     </Student>
     <Student>
@@ -774,7 +835,9 @@
       <status>S</status>
       <prosek>0.0</prosek>
       <polozeniIsp/>
-      <nepolozeniIsp/>
+      <nepolozeniIsp>
+        <Predmet reference="../../../../predmeti/Predmet[15]"/>
+      </nepolozeniIsp>
     </Student>
     <Student>
       <prezime>Novakovic</prezime>
@@ -789,7 +852,9 @@
       <status>B</status>
       <prosek>0.0</prosek>
       <polozeniIsp/>
-      <nepolozeniIsp/>
+      <nepolozeniIsp>
+        <Predmet reference="../../../../predmeti/Predmet[15]"/>
+      </nepolozeniIsp>
     </Student>
     <Student>
       <prezime>Ivic</prezime>
@@ -849,7 +914,10 @@
       <status>B</status>
       <prosek>0.0</prosek>
       <polozeniIsp/>
-      <nepolozeniIsp/>
+      <nepolozeniIsp>
+        <Predmet reference="../../../../predmeti/Predmet[18]"/>
+        <Predmet reference="../../../../predmeti/Predmet[19]"/>
+      </nepolozeniIsp>
     </Student>
     <Student>
       <prezime>Alicic</prezime>
@@ -864,7 +932,10 @@
       <status>S</status>
       <prosek>0.0</prosek>
       <polozeniIsp/>
-      <nepolozeniIsp/>
+      <nepolozeniIsp>
+        <Predmet reference="../../../../predmeti/Predmet[18]"/>
+        <Predmet reference="../../../../predmeti/Predmet[19]"/>
+      </nepolozeniIsp>
     </Student>
     <Student>
       <prezime>Perkovic</prezime>
@@ -879,7 +950,10 @@
       <status>S</status>
       <prosek>0.0</prosek>
       <polozeniIsp/>
-      <nepolozeniIsp/>
+      <nepolozeniIsp>
+        <Predmet reference="../../../../predmeti/Predmet[18]"/>
+        <Predmet reference="../../../../predmeti/Predmet[19]"/>
+      </nepolozeniIsp>
     </Student>
     <Student>
       <prezime>Djordjevic</prezime>
@@ -909,7 +983,10 @@
       <status>S</status>
       <prosek>0.0</prosek>
       <polozeniIsp/>
-      <nepolozeniIsp/>
+      <nepolozeniIsp>
+        <Predmet reference="../../../../predmeti/Predmet[18]"/>
+        <Predmet reference="../../../../predmeti/Predmet[19]"/>
+      </nepolozeniIsp>
     </Student>
     <Student>
       <prezime>Milić</prezime>

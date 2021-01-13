@@ -10,7 +10,7 @@ public class test {
 		// TODO Auto-generated method stub
 		System.out.println("Test");
 		try {
-			Entiteti.getInstance().desrializeToXML();
+			Entiteti.getInstance().deserializeToXML();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

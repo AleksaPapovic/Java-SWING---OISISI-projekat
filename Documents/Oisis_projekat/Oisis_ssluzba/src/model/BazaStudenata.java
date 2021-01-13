@@ -58,7 +58,9 @@ public class BazaStudenata {
 		this.studentiSvi = this.Studenti;
 	}
 
+	@SuppressWarnings("unused")
 	private void initStudente() {
+
 	}
 
 	public ArrayList<Student> getStudenti() {

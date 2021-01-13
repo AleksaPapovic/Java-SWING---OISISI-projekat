@@ -38,8 +38,8 @@ public class Entiteti {
 	public void serializeToXML() throws IOException {
 		
 		 this.predmeti = BazaPredmeta.getInstance().getPredmeti();
-		 this.profesori = BazaProfesora.getInstance().getProfesori();
-		 this.studenti = BazaStudenata.getInstance().getStudenti() ;
+		 this.profesori = BazaProfesora.getInstance().getProfesoriSvi();
+		 this.studenti = BazaStudenata.getInstance().getStudenti();
 		
 		File f = new File("data" + File.separator + "entiteti.xml");
 		OutputStream os = new BufferedOutputStream(new FileOutputStream(f));
@@ -56,7 +56,7 @@ public class Entiteti {
 		}
 	}
 	
-	public void desrializeToXML() throws IOException {
+	public void deserializeToXML() throws IOException {
 		File f = new File("data" + File.separator + "entiteti.xml");
 			XStream xsd = new XStream();
 			XStream.setupDefaultSecurity(xsd);

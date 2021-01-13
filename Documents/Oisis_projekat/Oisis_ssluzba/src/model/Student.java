@@ -4,12 +4,13 @@ package model;
 import java.util.ArrayList;
 import java.util.Date;
 
+
 public class Student {
 
 	public enum Status {
 		B, S
 	};
-
+	public static int brojac=0;
 	private String prezime;
 	private String ime;
 	private Date datumR;
@@ -157,6 +158,17 @@ public class Student {
 	}
 
 	public double getProsek() {
+		int brOcena=0;
+		int sum=0;
+		for (Ocena ocena : polozeniIsp) {
+			sum+=ocena.getOcenaVr();
+			brOcena++;
+		}
+		try {
+			prosek=sum/brOcena;
+		} catch (ArithmeticException e) {
+			// TODO: handle exception
+		};
 		return prosek;
 	}
 
@@ -179,5 +191,5 @@ public class Student {
 	public void setNepolozeniIsp(ArrayList<Predmet> nepolozeniIsp) {
 		this.nepolozeniIsp = nepolozeniIsp;
 	}
-
+	
 }

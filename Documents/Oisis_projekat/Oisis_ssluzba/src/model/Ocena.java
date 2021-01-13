@@ -20,6 +20,14 @@ public class Ocena {
 		this.ocenaVr = ocenaVr;
 		this.datumPl = datumPl;
 	}
+	
+	public Ocena(String brojInd, String sifraP, int ocenaVr, Date datumPl) {
+		super();
+		this.studentPl.setBrojInd(brojInd);;
+		this.predmet.setSifraP(sifraP);
+		this.ocenaVr = ocenaVr;
+		this.datumPl = datumPl;
+	}
 	public Student getStudentPl() {
 		return studentPl;
 	}
