@@ -20,6 +20,7 @@ public class TableStudent extends JTable {
 		this.setColumnSelectionAllowed(true);
 		this.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		this.setModel(new AbstractTableModelStudenti());
+		this.setAutoCreateRowSorter(true);
 	}
 
 	@Override
@@ -37,6 +38,10 @@ public class TableStudent extends JTable {
 		AbstractTableModelStudenti model = (AbstractTableModelStudenti) this.getModel();
 		model.fireTableDataChanged();
 		validate();
+	}
+	
+	public int getSelectedTableRow() {
+		return this.convertRowIndexToModel(this.getSelectedRow()) ;
 	}
 
 }

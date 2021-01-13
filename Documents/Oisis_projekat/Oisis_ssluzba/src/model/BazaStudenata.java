@@ -233,7 +233,7 @@ public class BazaStudenata {
 
 	public void upisiOcenu(String sifraP, String imeP, Integer ocena, String datumUpisa) {
 		Date upisDatum = parseDate(datumUpisa);
-		Student s = getSelectedStudent(TabsPanel.tableStudent.getSelectedRow());
+		Student s = getSelectedStudent(TabsPanel.tableStudent.getSelectedTableRow());
 		Predmet p = BazaPredmeta.getInstance().nadjiPredmet(sifraP);
 		s.getPolozeniIsp().add(new Ocena(s, p, ocena, upisDatum));
 		s.getNepolozeniIsp().remove(IzmenaStudentaTabs.tableNepolozeniPredmeti.getSelectedRow());
@@ -242,7 +242,7 @@ public class BazaStudenata {
 	}
 
 	public void brisanjeOcene() {
-		Student s = getSelectedStudent(TabsPanel.tableStudent.getSelectedRow());
+		Student s = getSelectedStudent(TabsPanel.tableStudent.getSelectedTableRow());
 		int index = IzmenaStudentaTabs.tablePolozeniPredmeti.getSelectedRow();
 		Predmet p = BazaPredmeta.getInstance().getSelectedPredmet(index);
 		s.getNepolozeniIsp().add(p);

@@ -175,7 +175,7 @@ public class Actions {
 		public void actionPerformed(ActionEvent e) {
 			switch (TabsPanel.tab_curr) {
 			case 0: {
-				int index = TabsPanel.tableStudent.getSelectedRow();
+				int index = TabsPanel.tableStudent.getSelectedTableRow();
 				if (index != -1) {
 					StudentController.getInstance().izbrisiStudenta(index);
 				} else {

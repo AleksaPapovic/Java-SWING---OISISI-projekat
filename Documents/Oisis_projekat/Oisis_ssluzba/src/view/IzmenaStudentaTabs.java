@@ -76,7 +76,7 @@ public class IzmenaStudentaTabs extends JTabbedPane {
 		gornji2.setPreferredSize(new Dimension(tabPolozeni.getWidth(), 60));
 		donji2.setPreferredSize(new Dimension(tabPolozeni.getWidth(), 50));
 		tabPolozeni.setBackground(Color.white);
-		Student s2 = BazaStudenata.getInstance().getRow(TabsPanel.tableStudent.getSelectedRow());
+		Student s2 = BazaStudenata.getInstance().getRow(TabsPanel.tableStudent.getSelectedTableRow());
 		tablePolozeniPredmeti = new TablePolozeniPredmeti(s2);
 		JScrollPane scrollPane2 = new JScrollPane(tablePolozeniPredmeti);
 		scrollPane2.getViewport().setBackground(Color.WHITE);
@@ -126,7 +126,7 @@ public class IzmenaStudentaTabs extends JTabbedPane {
 		gornji3.setPreferredSize(new Dimension(tabNepolozeni.getWidth(), 60));
 		donji3.setPreferredSize(new Dimension(tabNepolozeni.getWidth(), 50));
 		tabNepolozeni.setBackground(Color.white);
-		Student s = BazaStudenata.getInstance().getRow(TabsPanel.tableStudent.getSelectedRow());
+		Student s = BazaStudenata.getInstance().getRow(TabsPanel.tableStudent.getSelectedTableRow());
 		tableNepolozeniPredmeti = new TableNepolozeniPredmeti(s);
 		JScrollPane scrollPane3 = new JScrollPane(tableNepolozeniPredmeti);
 		scrollPane3.getViewport().setBackground(Color.WHITE);

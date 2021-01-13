@@ -52,7 +52,7 @@ public class UpisOceneDialog extends JDialog {
 		buttonsPanel.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
 		Dimension polje = new Dimension(100, 30);
 
-		ArrayList<Predmet> p = BazaStudenata.getInstance().getStudenti().get(TabsPanel.tableStudent.getSelectedRow())
+		ArrayList<Predmet> p = BazaStudenata.getInstance().getStudenti().get(TabsPanel.tableStudent.getSelectedTableRow())
 				.getNepolozeniIsp();
 
 		Predmet predmet = p.get(IzmenaStudentaTabs.tableNepolozeniPredmeti.getSelectedRow());

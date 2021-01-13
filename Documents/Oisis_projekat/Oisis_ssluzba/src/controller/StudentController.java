@@ -140,7 +140,7 @@ public class StudentController {
 			break;
 		}
 
-		int index = TabsPanel.tableStudent.getSelectedRow();
+		int index = TabsPanel.tableStudent.getSelectedTableRow();
 		BazaStudenata.getInstance().izmeniStudenta(index, ime, prezime, datumr, adresa, kontakt, email, brojInd, godUp,
 				godSt, status, 0.0);
 		TabsPanel.tableStudent.update();
