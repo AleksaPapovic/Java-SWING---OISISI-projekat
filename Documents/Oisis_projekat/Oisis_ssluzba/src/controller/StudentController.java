@@ -6,10 +6,13 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import model.BazaStudenata;
+import model.Predmet;
 import model.Student;
 import model.Student.Status;
+import view.DodavanjePredmetaStudentuDialog;
 import view.DodavanjeStudentaDialog;
 import view.IzmenaStudentaPanel;
+import view.IzmenaStudentaTabs;
 import view.TabsPanel;
 
 public class StudentController {
@@ -154,10 +157,11 @@ public class StudentController {
 		return true;
 
 	}
-	
+
 	public void pretragaStudenta(String text) {
 		BazaStudenata.getInstance().pretraziStudenta(text);
-		TabsPanel.tableStudent.update();;
+		TabsPanel.tableStudent.update();
+		;
 	}
 
 	public boolean proveriIme(String ime) {
@@ -236,10 +240,18 @@ public class StudentController {
 		BazaStudenata.getInstance().upisiOcenu(sifraP, imeP, ocena, datum);
 		return true;
 	}
-	
+
 	public boolean obrisi() {
 		BazaStudenata.getInstance().brisanjeOcene();
 		return true;
+	}
+
+	public void dodajStudentuPredmet(Predmet predmet) {
+		// TODO Auto-generated method stub
+		Student student = BazaStudenata.getInstance().getSelectedStudent(TabsPanel.tableStudent.getSelectedTableRow());
+		BazaStudenata.getInstance().dodajPredmeteStudentu(student, predmet);
+		DodavanjePredmetaStudentuDialog.tabelaListaPredmetaStudenta.update();
+		IzmenaStudentaTabs.tableNepolozeniPredmeti.azurirajNepolozene();
 	}
 
 }

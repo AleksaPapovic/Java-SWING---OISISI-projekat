@@ -6,7 +6,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-import model.BazaPredmeta;
 import model.BazaProfesora;
 import model.Predmet;
 import model.Profesor;

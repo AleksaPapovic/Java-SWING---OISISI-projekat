@@ -52,7 +52,7 @@ public class BazaStudenata {
 		this.kolonePolozeniP.add("Naziv predmeta");
 		this.kolonePolozeniP.add("ESPB");
 		this.kolonePolozeniP.add("Godina studija");
-		this.kolonePolozeniP.add("Semestar");
+		this.kolonePolozeniP.add("Datum");
 
 		initStudente();
 	}
@@ -63,9 +63,9 @@ public class BazaStudenata {
 				"dusanlekic2000@gmail.com", "RA159/2018", 2015, 3, Student.Status.B, 9.05));
 		Studenti.get(0).setNepolozeniIsp(new ArrayList<Predmet>(BazaPredmeta.getInstance().getPredmeti()));
 		Studenti.add(new Student("Aleksa", "Papovic", parseDate("01.01.1999."), "Zmajevacka 1", "06342424242",
-				"aleksapapovic@gmail.com", "RA166/2018", 2015, 3, Student.Status.B, 10));
+				"aleksapapovic@gmail.com", "RA166/2018", 2015, 1, Student.Status.B, 10));
 		Studenti.get(1).setPolozeniIsp(new ArrayList<Ocena>(BazaOcena.getInstance().getOcene()));
-		this.studentiSvi=this.Studenti;
+		this.studentiSvi = this.Studenti;
 	}
 
 	public List<Student> getStudenti() {
@@ -146,7 +146,7 @@ public class BazaStudenata {
 			Studenti.get(index).setStatus(status);
 			Studenti.get(index).setProsek(prosek);
 		}
-		if(pretraga)
+		if (pretraga)
 			pretraziStudenta(MenuToolbar.searchbar.getText());
 	}
 
@@ -310,5 +310,34 @@ public class BazaStudenata {
 		}
 
 	}
+	
+	public void dodajPredmeteStudentu(Student student, Predmet predmet) {
+		student.getNepolozeniIsp().add(predmet);
+	}
 
+	public ArrayList<Predmet> getNeradjeneIspite(Student student) {
+		ArrayList<Predmet> predmeti = new ArrayList<Predmet>();
+		for (Predmet p : BazaPredmeta.getInstance().getPredmeti()) {
+			boolean radjenPol = false;
+			boolean radjenNep = false;
+			boolean istiSem = false;
+			for (Ocena pol : student.getPolozeniIsp()) {
+				if (p.getSifraP().equals(pol.getPredmet().getSifraP())) {
+					radjenPol = true;
+				}
+			}
+			for (Predmet nep : student.getNepolozeniIsp()) {
+				if (p.getSifraP().equals(nep.getSifraP())) {
+					radjenNep = true;
+				}
+			}
+			if (student.getGodSt() >= p.getGodinaS()) {
+				istiSem = true;
+			}
+			if (!radjenPol && !radjenNep && istiSem) {
+				predmeti.add(p);
+				}
+		}
+		return predmeti;
+	}
 }

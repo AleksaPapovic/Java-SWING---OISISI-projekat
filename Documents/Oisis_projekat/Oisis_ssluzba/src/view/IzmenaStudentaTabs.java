@@ -31,6 +31,7 @@ public class IzmenaStudentaTabs extends JTabbedPane {
 	public static int curr_tab = 0;
 	public static TableNepolozeniPredmeti tableNepolozeniPredmeti;
 	public static TablePolozeniPredmeti tablePolozeniPredmeti;
+	public static TableListaPredmetaStudenta tableListaPredmetaStudenta;
 
 	public IzmenaStudentaTabs(JDialog parentDialog) {
 
@@ -138,6 +139,16 @@ public class IzmenaStudentaTabs extends JTabbedPane {
 		tabNepolozeni.add(donji3, BorderLayout.SOUTH);
 
 		this.addTab("Nepoloženi predmeti", null, tabNepolozeni, "Prikaz nepoloženih ispita selektovanog studenta");
+
+		dodaj.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				@SuppressWarnings("unused")
+				DodavanjePredmetaStudentuDialog dialog = new DodavanjePredmetaStudentuDialog(parentDialog, s);
+			}
+		});
 
 		polaganje.addActionListener(new ActionListener() {
 

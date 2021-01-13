@@ -254,7 +254,7 @@ public class BazaProfesora {
 
 	public ArrayList<Predmet> getNePredajePredmeteProfesor(Profesor profesor) {
 		ArrayList<Predmet> predmeti = new ArrayList<Predmet>(BazaPredmeta.getInstance().getPredmeti());
-		predmeti.removeAll(profesor.getPredmeti());
+		//predmeti.removeAll(profesor.getPredmeti());
 		return predmeti;
 	}
 
