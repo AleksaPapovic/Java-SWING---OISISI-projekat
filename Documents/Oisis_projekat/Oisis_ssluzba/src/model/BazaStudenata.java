@@ -134,6 +134,7 @@ public class BazaStudenata {
 
 	public void izmeniStudenta(int index, String prezime, String ime, Date datumR, String adresaSt, String kontaktTl,
 			String email, String brojInd, int godUp, int godSt, Student.Status status, double prosek) {
+
 		if (Studenti.get(index).getBrojInd().equals(brojInd)) {
 			Studenti.get(index).setIme(ime);
 			Studenti.get(index).setPrezime(prezime);
@@ -146,8 +147,10 @@ public class BazaStudenata {
 			Studenti.get(index).setStatus(status);
 			Studenti.get(index).setProsek(prosek);
 		}
-		if (pretraga)
+		if (pretraga) {
 			pretraziStudenta(MenuToolbar.searchbar.getText());
+		}
+
 	}
 
 	public void izbrisiStudenta(int index) {
@@ -310,7 +313,7 @@ public class BazaStudenata {
 		}
 
 	}
-	
+
 	public void dodajPredmeteStudentu(Student student, Predmet predmet) {
 		student.getNepolozeniIsp().add(predmet);
 	}
@@ -336,7 +339,7 @@ public class BazaStudenata {
 			}
 			if (!radjenPol && !radjenNep && istiSem) {
 				predmeti.add(p);
-				}
+			}
 		}
 		return predmeti;
 	}

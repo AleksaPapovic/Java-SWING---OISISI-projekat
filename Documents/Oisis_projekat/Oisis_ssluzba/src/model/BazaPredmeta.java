@@ -171,4 +171,8 @@ public class BazaPredmeta {
 		}
 
 	}
+	
+	public void dodajProfesoraPredmetu(Predmet predmet, Profesor profesor) {
+		predmet.setPredProf(profesor);
+	}
 }

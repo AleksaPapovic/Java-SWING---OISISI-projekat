@@ -5,6 +5,19 @@
       <imeP>Osnovi elektrotehnike</imeP>
       <semestar>letnji</semestar>
       <godinaS>1</godinaS>
+      <predProf>
+        <prezime>Lekić</prezime>
+        <ime>Dušan</ime>
+        <datumR>2019-01-10 00:03:00.0 CET</datumR>
+        <adresaS>Kraljevo</adresaS>
+        <kontaktTel>069373994234</kontaktTel>
+        <email>dlekic@gmail.com</email>
+        <adresaK>Beograd</adresaK>
+        <brlk>987456321</brlk>
+        <titula>Ms</titula>
+        <zvanje>VProfesor</zvanje>
+        <predmeti/>
+      </predProf>
       <brojESPB>9</brojESPB>
       <studentiP/>
       <studentiNP/>
@@ -33,19 +46,7 @@
       <zvanje>RProfesor</zvanje>
       <predmeti/>
     </Profesor>
-    <Profesor>
-      <prezime>Lekić</prezime>
-      <ime>Dušan</ime>
-      <datumR>2019-01-10 00:03:00.0 CET</datumR>
-      <adresaS>Kraljevo</adresaS>
-      <kontaktTel>069373994234</kontaktTel>
-      <email>dlekic@gmail.com</email>
-      <adresaK>Beograd</adresaK>
-      <brlk>987456321</brlk>
-      <titula>Ms</titula>
-      <zvanje>VProfesor</zvanje>
-      <predmeti/>
-    </Profesor>
+    <Profesor reference="../../predmeti/Predmet/predProf"/>
   </profesori>
   <studenti>
     <Student>

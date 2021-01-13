@@ -4,7 +4,9 @@ import javax.swing.JOptionPane;
 
 import model.BazaPredmeta;
 import model.Predmet;
+import model.Profesor;
 import view.DodavanjePredmetaDialog;
+import view.DodavanjeProfesoraPredmetuDialog;
 import view.IzmenaPredmetaPanel;
 import view.TabsPanel;
 
@@ -136,6 +138,13 @@ public class PredmetController {
 	public void pretragaPredmeta(String text) {
 		BazaPredmeta.getInstance().pretraziPredmete(text);
 		TabsPanel.tablePredmet.azuriranjeTabelePredmet();
+	}
+	
+	public void dodajPredmetuProfesora(Profesor profesor) {
+		// TODO Auto-generated method stub
+		Predmet predmet = BazaPredmeta.getInstance().getSelectedPredmet(TabsPanel.tablePredmet.getSelectedRow());
+		BazaPredmeta.getInstance().dodajProfesoraPredmetu(predmet, profesor);
+		DodavanjeProfesoraPredmetuDialog.tableListaProfesoraPredmeta.update();
 	}
 
 }

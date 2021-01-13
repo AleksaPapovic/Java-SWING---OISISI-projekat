@@ -13,10 +13,12 @@ import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 import controller.IzmenaPredmetaDocumentListener;
 import controller.PredmetController;
 import model.BazaPredmeta;
+import model.BazaProfesora;
 import model.Predmet;
 import view.PredmetTextFields.TipPolja;
 
@@ -32,6 +34,9 @@ public class IzmenaPredmetaPanel extends JPanel {
 	public static JComboBox<String> semestarIzmena;
 	public static JComboBox<String> godinaIzmena;
 	public static PredmetTextFields espbIzmena;
+	public static JTextField profesorIzmena;
+	public JButton plusIzmena;
+	public static JButton minusIzmena;
 	public JButton odustaniIzmena;
 	public static JButton prihvatiIzmena;
 
@@ -53,7 +58,7 @@ public class IzmenaPredmetaPanel extends JPanel {
 		sifraLabela.setMaximumSize(velicina);
 		sifraIzmena = new PredmetTextFields(TipPolja.Sifra, "Sifra predmeta");
 		sifraIzmena.setText(pr.getSifraP());
-		
+
 		JLabel imePredLabela = new JLabel("Ime*");
 		imePredLabela.setPreferredSize(velicina);
 		imePredLabela.setMaximumSize(velicina);
@@ -79,26 +84,42 @@ public class IzmenaPredmetaPanel extends JPanel {
 		espbLabela.setMaximumSize(velicina);
 		espbIzmena = new PredmetTextFields(TipPolja.ESPB, "Broj ESPB poena");
 		espbIzmena.setText(String.valueOf(pr.getBrojESPB()));
-		
+
+		JLabel profesorLabela = new JLabel("Profesor*");
+		profesorLabela.setPreferredSize(velicina);
+		profesorLabela.setMaximumSize(velicina);
+		profesorIzmena = new JTextField("Profesor");
+		try {
+			profesorIzmena.setText(pr.getPredProf().getIme());
+		} catch (NullPointerException np) {
+			// TODO: handle exception
+		}
+		profesorIzmena.setEnabled(false);
+
 		prihvatiIzmena = new JButton("Potvrdi");
 		prihvatiIzmena.setPreferredSize(velicina);
 		prihvatiIzmena.setEnabled(false);
 		odustaniIzmena = new JButton("Odustani");
 		odustaniIzmena.setPreferredSize(velicina);
+		plusIzmena = new JButton("+");
+		plusIzmena.setPreferredSize(velicina);
+		minusIzmena = new JButton("-");
+		minusIzmena.setPreferredSize(velicina);
 
 		IzmenaPredmetaDocumentListener textChangeDocumentListener = new IzmenaPredmetaDocumentListener();
 
 		sifraIzmena.getDocument().addDocumentListener(textChangeDocumentListener);
 		imePredIzmena.getDocument().addDocumentListener(textChangeDocumentListener);
 		espbIzmena.getDocument().addDocumentListener(textChangeDocumentListener);
+		profesorIzmena.getDocument().addDocumentListener(textChangeDocumentListener);
 
 		prihvatiIzmena.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 
-				if(PredmetController.getInstance().izmeniPredmet())
-				parent.dispose();
+				if (PredmetController.getInstance().izmeniPredmet())
+					parent.dispose();
 
 			}
 
@@ -109,6 +130,17 @@ public class IzmenaPredmetaPanel extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				parent.dispose();
+			}
+		});
+
+		plusIzmena.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				@SuppressWarnings("unused")
+				DodavanjeProfesoraPredmetuDialog dodavanjeProfesoraPredmetuDialog = new DodavanjeProfesoraPredmetuDialog(
+						parent);
+				profesorIzmena.setText(pr.getPredProf().getIme());
 			}
 		});
 
@@ -125,6 +157,10 @@ public class IzmenaPredmetaPanel extends JPanel {
 		textPanel.add(godinaIzmena);
 		textPanel.add(semestarLabela);
 		textPanel.add(semestarIzmena);
+		textPanel.add(profesorLabela);
+		textPanel.add(profesorIzmena);
+		textPanel.add(plusIzmena);
+		textPanel.add(minusIzmena);
 
 		buttonsPanel.add(prihvatiIzmena);
 		buttonsPanel.add(odustaniIzmena);

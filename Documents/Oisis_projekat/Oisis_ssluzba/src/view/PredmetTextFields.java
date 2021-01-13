@@ -17,7 +17,7 @@ public class PredmetTextFields extends JTextField {
 	private static final long serialVersionUID = 1L;
 
 	public enum TipPolja {
-		Sifra, Ime, ESPB
+		Sifra, Ime, ESPB, Profesor
 	};
 
 	private JTextField polje;
