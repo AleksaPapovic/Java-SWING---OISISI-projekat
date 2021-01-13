@@ -51,7 +51,30 @@
         </predmeti>
       </predProf>
       <brojESPB>7</brojESPB>
-      <studentiP/>
+      <studentiP>
+        <Student>
+          <prezime>Djordjevic</prezime>
+          <ime>Purisa</ime>
+          <datumR>2000-02-29 00:00:00.0 CET</datumR>
+          <adresaSt>Pavla Papa 1, Novi Sad</adresaSt>
+          <kontaktTl>0111543370</kontaktTl>
+          <email>purisa.djordjevic@mailinator.com</email>
+          <brojInd>SW 27/2018</brojInd>
+          <godUp>2018</godUp>
+          <godSt>2</godSt>
+          <status>B</status>
+          <prosek>6.0</prosek>
+          <polozeniIsp>
+            <model.Ocena>
+              <studentPl reference="../../.."/>
+              <predmet reference="../../../../.."/>
+              <ocenaVr>6</ocenaVr>
+              <datumPl>2020-12-12 00:00:00.0 CET</datumPl>
+            </model.Ocena>
+          </polozeniIsp>
+          <nepolozeniIsp/>
+        </Student>
+      </studentiP>
       <studentiNP/>
     </Predmet>
     <Predmet reference="../Predmet/predProf/predmeti/Predmet[2]"/>
@@ -1004,21 +1027,7 @@
         <Predmet reference="../../../../predmeti/Predmet[19]"/>
       </nepolozeniIsp>
     </Student>
-    <Student>
-      <prezime>Djordjevic</prezime>
-      <ime>Purisa</ime>
-      <datumR>2000-02-29 00:00:00.0 CET</datumR>
-      <adresaSt>Pavla Papa 1, Novi Sad</adresaSt>
-      <kontaktTl>0111543370</kontaktTl>
-      <email>purisa.djordjevic@mailinator.com</email>
-      <brojInd>SW 27/2018</brojInd>
-      <godUp>2018</godUp>
-      <godSt>2</godSt>
-      <status>B</status>
-      <prosek>0.0</prosek>
-      <polozeniIsp/>
-      <nepolozeniIsp/>
-    </Student>
+    <Student reference="../../predmeti/Predmet/studentiP/Student"/>
     <Student>
       <prezime>Kovacevic</prezime>
       <ime>Mikica</ime>

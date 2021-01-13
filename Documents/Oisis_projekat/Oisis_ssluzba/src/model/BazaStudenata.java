@@ -62,7 +62,7 @@ public class BazaStudenata {
 	private void initStudente() {
 
 	}
-	
+
 	public ArrayList<Student> getStudentiSvi() {
 		return Studenti;
 	}
@@ -71,7 +71,7 @@ public class BazaStudenata {
 		this.Studenti = Studenti;
 		this.studentiSvi = Studenti;
 	}
-	
+
 	public ArrayList<Student> getStudenti() {
 		return Studenti;
 	}
@@ -243,6 +243,8 @@ public class BazaStudenata {
 		Date upisDatum = parseDate(datumUpisa);
 		Student s = getSelectedStudent(TabsPanel.tableStudent.getSelectedTableRow());
 		Predmet p = BazaPredmeta.getInstance().nadjiPredmet(sifraP);
+		p.getStudentiP().add(s);
+	    p.getStudentiNP().remove(s);
 		s.getPolozeniIsp().add(new Ocena(s, p, ocena, upisDatum));
 		s.getNepolozeniIsp().remove(IzmenaStudentaTabs.tableNepolozeniPredmeti.getSelectedRow());
 		IzmenaStudentaTabs.tableNepolozeniPredmeti.azurirajNepolozene();
