@@ -89,7 +89,7 @@ public class IzmenaPredmetaPanel extends JPanel {
 		profesorLabela.setMaximumSize(velicina);
 		profesorIzmena = new JTextField("Profesor");
 		try {
-			profesorIzmena.setText(pr.getPredProf().getIme());
+			profesorIzmena.setText(pr.getPredProf().getIme()+" "+pr.getPredProf().getPrezime());
 		} catch (NullPointerException np) {
 			// TODO: handle exception
 		}
@@ -153,6 +153,37 @@ public class IzmenaPredmetaPanel extends JPanel {
 
 			}
 		});
+		
+		godinaIzmena.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if (PredmetController.getInstance().proveriIme(IzmenaPredmetaPanel.imePredIzmena.getText().trim())
+						
+						&& PredmetController.getInstance().proveriSifru(IzmenaPredmetaPanel.sifraIzmena.getText().trim())
+						
+						&& PredmetController.getInstance().proveriESPB(IzmenaPredmetaPanel.espbIzmena.getText().trim()))
+						{
+
+					prihvatiIzmena.setEnabled(true);
+				}
+			}
+		});
+		
+		semestarIzmena.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if (PredmetController.getInstance().proveriIme(IzmenaPredmetaPanel.imePredIzmena.getText().trim())
+						
+						&& PredmetController.getInstance().proveriSifru(IzmenaPredmetaPanel.sifraIzmena.getText().trim())
+						
+						&& PredmetController.getInstance().proveriESPB(IzmenaPredmetaPanel.espbIzmena.getText().trim()))
+						{
+
+					prihvatiIzmena.setEnabled(true);
+				}
+			}
+		});
+
+	
+
 
 		this.add(textPanel, BorderLayout.NORTH);
 		this.add(buttonsPanel, BorderLayout.CENTER);

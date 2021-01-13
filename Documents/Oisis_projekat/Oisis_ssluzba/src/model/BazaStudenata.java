@@ -62,7 +62,16 @@ public class BazaStudenata {
 	private void initStudente() {
 
 	}
+	
+	public ArrayList<Student> getStudentiSvi() {
+		return Studenti;
+	}
 
+	public void setStudentiSvi(ArrayList<Student> Studenti) {
+		this.Studenti = Studenti;
+		this.studentiSvi = Studenti;
+	}
+	
 	public ArrayList<Student> getStudenti() {
 		return Studenti;
 	}
@@ -240,14 +249,15 @@ public class BazaStudenata {
 		IzmenaStudentaTabs.tablePolozeniPredmeti.update();
 	}
 
-	public void brisanjeOcene() {
+	public void brisanjeNepolozenih() {
 		Student s = getSelectedStudent(TabsPanel.tableStudent.getSelectedTableRow());
-		int index = IzmenaStudentaTabs.tablePolozeniPredmeti.getSelectedRow();
-		Predmet p = BazaPredmeta.getInstance().getSelectedPredmet(index);
-		s.getNepolozeniIsp().add(p);
-		s.getPolozeniIsp().remove(index);
+		int index = IzmenaStudentaTabs.tableNepolozeniPredmeti.getSelectedRow();
+		Predmet pr = s.getNepolozeniIsp().get(index);
+		s.getNepolozeniIsp().remove(index);
+		BazaPredmeta.getInstance().dodajPredmet(pr.getSifraP(), pr.getImeP(), pr.getBrojESPB(), pr.getGodinaS(),
+				pr.getSemestar());
 		IzmenaStudentaTabs.tableNepolozeniPredmeti.azurirajNepolozene();
-		IzmenaStudentaTabs.tablePolozeniPredmeti.update();
+
 	}
 
 	public Student getSelectedStudent(int red) {

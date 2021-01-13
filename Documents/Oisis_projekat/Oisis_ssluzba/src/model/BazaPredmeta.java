@@ -1,7 +1,6 @@
 package model;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import javax.swing.JOptionPane;
 
@@ -81,7 +80,7 @@ public class BazaPredmeta {
 		return this.predmeti;
 	}
 
-	public List<Predmet> getPredmetiSvi() {
+	public ArrayList<Predmet> getPredmetiSvi() {
 		return this.predmetiSvi;
 	}
 

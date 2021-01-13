@@ -5,37 +5,58 @@
       <imeP>osnove programiranja</imeP>
       <semestar>zimski</semestar>
       <godinaS>1</godinaS>
+      <predProf>
+        <prezime>Nikolic</prezime>
+        <ime>Milos</ime>
+        <datumR>1965-01-12 00:12:00.0 CET</datumR>
+        <adresaS>Temerinska 15, Novi Sad</adresaS>
+        <kontaktTel>021356785</kontaktTel>
+        <email>milos.nikolic@mailinator.com</email>
+        <adresaK>Dositeja Obradovica 6, Novi Sad, NTP 600</adresaK>
+        <brlk>123123123</brlk>
+        <titula>ProfDr</titula>
+        <zvanje>RProfesor</zvanje>
+        <predmeti>
+          <Predmet reference="../../.."/>
+          <Predmet>
+            <sifraP>p2</sifraP>
+            <imeP>statistika</imeP>
+            <semestar>letnji</semestar>
+            <godinaS>1</godinaS>
+            <predProf reference="../../.."/>
+            <brojESPB>8</brojESPB>
+            <studentiP/>
+            <studentiNP/>
+          </Predmet>
+          <Predmet>
+            <sifraP>p3</sifraP>
+            <imeP>algoritmi i strukture podataka</imeP>
+            <semestar>letnji</semestar>
+            <godinaS>1</godinaS>
+            <predProf reference="../../.."/>
+            <brojESPB>9</brojESPB>
+            <studentiP/>
+            <studentiNP/>
+          </Predmet>
+          <Predmet>
+            <sifraP>p4</sifraP>
+            <imeP>LPRS</imeP>
+            <semestar>zimski</semestar>
+            <godinaS>1</godinaS>
+            <predProf reference="../../.."/>
+            <brojESPB>7</brojESPB>
+            <studentiP/>
+            <studentiNP/>
+          </Predmet>
+        </predmeti>
+      </predProf>
       <brojESPB>7</brojESPB>
       <studentiP/>
       <studentiNP/>
     </Predmet>
-    <Predmet>
-      <sifraP>p2</sifraP>
-      <imeP>statistika</imeP>
-      <semestar>letnji</semestar>
-      <godinaS>3</godinaS>
-      <brojESPB>8</brojESPB>
-      <studentiP/>
-      <studentiNP/>
-    </Predmet>
-    <Predmet>
-      <sifraP>p3</sifraP>
-      <imeP>algoritmi i strukture podataka</imeP>
-      <semestar>letnji</semestar>
-      <godinaS>2</godinaS>
-      <brojESPB>9</brojESPB>
-      <studentiP/>
-      <studentiNP/>
-    </Predmet>
-    <Predmet>
-      <sifraP>p4</sifraP>
-      <imeP>LPRS</imeP>
-      <semestar>zimski</semestar>
-      <godinaS>3</godinaS>
-      <brojESPB>7</brojESPB>
-      <studentiP/>
-      <studentiNP/>
-    </Predmet>
+    <Predmet reference="../Predmet/predProf/predmeti/Predmet[2]"/>
+    <Predmet reference="../Predmet/predProf/predmeti/Predmet[3]"/>
+    <Predmet reference="../Predmet/predProf/predmeti/Predmet[4]"/>
     <Predmet>
       <sifraP>p5</sifraP>
       <imeP>matematika</imeP>
@@ -68,28 +89,47 @@
       <imeP>osnove elektortehnike</imeP>
       <semestar>letnji</semestar>
       <godinaS>1</godinaS>
+      <predProf>
+        <prezime>Micic</prezime>
+        <ime>Vasa</ime>
+        <datumR>1970-01-14 00:02:00.0 CET</datumR>
+        <adresaS>Tolstojeva 55, Novi Sad</adresaS>
+        <kontaktTel>021212114</kontaktTel>
+        <email>vasa.micic@mailinator.com</email>
+        <adresaK>Dositeja Obradovica 6, Novi Sad, NTP 604</adresaK>
+        <brlk>001001001</brlk>
+        <titula>Dr</titula>
+        <zvanje>Docent</zvanje>
+        <predmeti>
+          <Predmet reference="../../.."/>
+          <Predmet>
+            <sifraP>p9</sifraP>
+            <imeP>Sociologija</imeP>
+            <semestar>zimski</semestar>
+            <godinaS>1</godinaS>
+            <predProf reference="../../.."/>
+            <brojESPB>10</brojESPB>
+            <studentiP/>
+            <studentiNP/>
+          </Predmet>
+          <Predmet>
+            <sifraP>p10</sifraP>
+            <imeP>Filozofija</imeP>
+            <semestar>zimski</semestar>
+            <godinaS>1</godinaS>
+            <predProf reference="../../.."/>
+            <brojESPB>4</brojESPB>
+            <studentiP/>
+            <studentiNP/>
+          </Predmet>
+        </predmeti>
+      </predProf>
       <brojESPB>11</brojESPB>
       <studentiP/>
       <studentiNP/>
     </Predmet>
-    <Predmet>
-      <sifraP>p9</sifraP>
-      <imeP>Sociologija</imeP>
-      <semestar>zimski</semestar>
-      <godinaS>1</godinaS>
-      <brojESPB>10</brojESPB>
-      <studentiP/>
-      <studentiNP/>
-    </Predmet>
-    <Predmet>
-      <sifraP>p10</sifraP>
-      <imeP>Filozofija</imeP>
-      <semestar>zimski</semestar>
-      <godinaS>1</godinaS>
-      <brojESPB>4</brojESPB>
-      <studentiP/>
-      <studentiNP/>
-    </Predmet>
+    <Predmet reference="../Predmet[8]/predProf/predmeti/Predmet[2]"/>
+    <Predmet reference="../Predmet[8]/predProf/predmeti/Predmet[3]"/>
     <Predmet>
       <sifraP>p11</sifraP>
       <imeP>ORT</imeP>
@@ -103,47 +143,70 @@
       <sifraP>p12</sifraP>
       <imeP>NANS</imeP>
       <semestar>letnji</semestar>
-      <godinaS>2</godinaS>
+      <godinaS>1</godinaS>
+      <predProf>
+        <prezime>Miletic</prezime>
+        <ime>Srdjan</ime>
+        <datumR>1966-01-20 00:04:00.0 CET</datumR>
+        <adresaS>Šekspirova 12, Novi Sad</adresaS>
+        <kontaktTel>021978225</kontaktTel>
+        <email>srdjan.miletic@mailinator.com</email>
+        <adresaK>Dositeja Obradovica 6, Novi Sad, NTP 605</adresaK>
+        <brlk>002002002</brlk>
+        <titula>Dr</titula>
+        <zvanje>Docent</zvanje>
+        <predmeti>
+          <Predmet reference="../../.."/>
+          <Predmet>
+            <sifraP>p13</sifraP>
+            <imeP>Organizacija podataka</imeP>
+            <semestar>zimski</semestar>
+            <godinaS>1</godinaS>
+            <predProf reference="../../.."/>
+            <brojESPB>7</brojESPB>
+            <studentiP/>
+            <studentiNP/>
+          </Predmet>
+          <Predmet>
+            <sifraP>p14</sifraP>
+            <imeP>Baze podataka</imeP>
+            <semestar>zimski</semestar>
+            <godinaS>1</godinaS>
+            <predProf reference="../../.."/>
+            <brojESPB>6</brojESPB>
+            <studentiP/>
+            <studentiNP/>
+          </Predmet>
+          <Predmet>
+            <sifraP>p15</sifraP>
+            <imeP>paralelno programiranje</imeP>
+            <semestar>zimski</semestar>
+            <godinaS>1</godinaS>
+            <predProf reference="../../.."/>
+            <brojESPB>8</brojESPB>
+            <studentiP/>
+            <studentiNP/>
+          </Predmet>
+          <Predmet>
+            <sifraP>p16</sifraP>
+            <imeP>konkurentno programiranje</imeP>
+            <semestar>letnji</semestar>
+            <godinaS>1</godinaS>
+            <predProf reference="../../.."/>
+            <brojESPB>9</brojESPB>
+            <studentiP/>
+            <studentiNP/>
+          </Predmet>
+        </predmeti>
+      </predProf>
       <brojESPB>5</brojESPB>
       <studentiP/>
       <studentiNP/>
     </Predmet>
-    <Predmet>
-      <sifraP>p13</sifraP>
-      <imeP>Organizacija podataka</imeP>
-      <semestar>zimski</semestar>
-      <godinaS>2</godinaS>
-      <brojESPB>7</brojESPB>
-      <studentiP/>
-      <studentiNP/>
-    </Predmet>
-    <Predmet>
-      <sifraP>p14</sifraP>
-      <imeP>Baze podataka</imeP>
-      <semestar>zimski</semestar>
-      <godinaS>2</godinaS>
-      <brojESPB>6</brojESPB>
-      <studentiP/>
-      <studentiNP/>
-    </Predmet>
-    <Predmet>
-      <sifraP>p15</sifraP>
-      <imeP>paralelno programiranje</imeP>
-      <semestar>zimski</semestar>
-      <godinaS>2</godinaS>
-      <brojESPB>8</brojESPB>
-      <studentiP/>
-      <studentiNP/>
-    </Predmet>
-    <Predmet>
-      <sifraP>p16</sifraP>
-      <imeP>konkurentno programiranje</imeP>
-      <semestar>letnji</semestar>
-      <godinaS>2</godinaS>
-      <brojESPB>9</brojESPB>
-      <studentiP/>
-      <studentiNP/>
-    </Predmet>
+    <Predmet reference="../Predmet[12]/predProf/predmeti/Predmet[2]"/>
+    <Predmet reference="../Predmet[12]/predProf/predmeti/Predmet[3]"/>
+    <Predmet reference="../Predmet[12]/predProf/predmeti/Predmet[4]"/>
+    <Predmet reference="../Predmet[12]/predProf/predmeti/Predmet[5]"/>
     <Predmet>
       <sifraP>p17</sifraP>
       <imeP>Operativni sistemi</imeP>
@@ -220,7 +283,32 @@
       <sifraP>it25</sifraP>
       <imeP>Informaciona bezbednost</imeP>
       <semestar>letnji</semestar>
-      <godinaS>4</godinaS>
+      <godinaS>1</godinaS>
+      <predProf>
+        <prezime>Maricic</prezime>
+        <ime>Branko</ime>
+        <datumR>1973-01-18 00:01:00.0 CET</datumR>
+        <adresaS>Nikole Tesle 25, Sombor</adresaS>
+        <kontaktTel>021487265</kontaktTel>
+        <email>branko.maricic@mailinator.com</email>
+        <adresaK>Dositeja Obradovica 6, Novi Sad, NTP 616</adresaK>
+        <brlk>004004004</brlk>
+        <titula>ProfDr</titula>
+        <zvanje>Docent</zvanje>
+        <predmeti>
+          <Predmet reference="../../.."/>
+          <Predmet>
+            <sifraP>p29</sifraP>
+            <imeP>Informacioni sistemi</imeP>
+            <semestar>zimski</semestar>
+            <godinaS>1</godinaS>
+            <predProf reference="../../.."/>
+            <brojESPB>6</brojESPB>
+            <studentiP/>
+            <studentiNP/>
+          </Predmet>
+        </predmeti>
+      </predProf>
       <brojESPB>9</brojESPB>
       <studentiP/>
       <studentiNP/>
@@ -229,7 +317,32 @@
       <sifraP>it26</sifraP>
       <imeP>Elektronsko placanje</imeP>
       <semestar>zimski</semestar>
-      <godinaS>3</godinaS>
+      <godinaS>1</godinaS>
+      <predProf>
+        <prezime>Lukovic</prezime>
+        <ime>Branislav</ime>
+        <datumR>1982-01-08 00:04:00.0 CET</datumR>
+        <adresaS>Živojina Mišica 7, Apatin</adresaS>
+        <kontaktTel>021159478</kontaktTel>
+        <email>branislav.lukovic@mailinator.com</email>
+        <adresaK>Dositeja Obradovica 6, Novi Sad, NTP 617</adresaK>
+        <brlk>005005005</brlk>
+        <titula>Dr</titula>
+        <zvanje>RProfesor</zvanje>
+        <predmeti>
+          <Predmet reference="../../.."/>
+          <Predmet>
+            <sifraP>p28</sifraP>
+            <imeP>Projektovanje softvera</imeP>
+            <semestar>zimski</semestar>
+            <godinaS>1</godinaS>
+            <predProf reference="../../.."/>
+            <brojESPB>5</brojESPB>
+            <studentiP/>
+            <studentiNP/>
+          </Predmet>
+        </predmeti>
+      </predProf>
       <brojESPB>8</brojESPB>
       <studentiP/>
       <studentiNP/>
@@ -238,29 +351,28 @@
       <sifraP>it27</sifraP>
       <imeP>Distribuirani sistemi</imeP>
       <semestar>zimski</semestar>
-      <godinaS>4</godinaS>
+      <godinaS>1</godinaS>
+      <predProf>
+        <prezime>Obradovic</prezime>
+        <ime>Branimir</ime>
+        <datumR>1979-01-07 00:01:00.0 CET</datumR>
+        <adresaS>Stari šor 18, Sremska Mitrovica</adresaS>
+        <kontaktTel>021922333</kontaktTel>
+        <email>branimir.obradovic@mailinator.com</email>
+        <adresaK>Dositeja Obradovica 6, Novi Sad, NTP 618</adresaK>
+        <brlk>006006006</brlk>
+        <titula>ProfDr</titula>
+        <zvanje>Docent</zvanje>
+        <predmeti>
+          <Predmet reference="../../.."/>
+        </predmeti>
+      </predProf>
       <brojESPB>6</brojESPB>
       <studentiP/>
       <studentiNP/>
     </Predmet>
-    <Predmet>
-      <sifraP>p28</sifraP>
-      <imeP>Projektovanje softvera</imeP>
-      <semestar>zimski</semestar>
-      <godinaS>3</godinaS>
-      <brojESPB>5</brojESPB>
-      <studentiP/>
-      <studentiNP/>
-    </Predmet>
-    <Predmet>
-      <sifraP>p29</sifraP>
-      <imeP>Informacioni sistemi</imeP>
-      <semestar>zimski</semestar>
-      <godinaS>4</godinaS>
-      <brojESPB>6</brojESPB>
-      <studentiP/>
-      <studentiNP/>
-    </Predmet>
+    <Predmet reference="../Predmet[26]/predProf/predmeti/Predmet[2]"/>
+    <Predmet reference="../Predmet[25]/predProf/predmeti/Predmet[2]"/>
     <Predmet>
       <sifraP>p30</sifraP>
       <imeP>Masinsko ucenje</imeP>
@@ -270,21 +382,18 @@
       <studentiP/>
       <studentiNP/>
     </Predmet>
+    <Predmet>
+      <sifraP>p18</sifraP>
+      <imeP>Algebra</imeP>
+      <semestar>zimski</semestar>
+      <godinaS>1</godinaS>
+      <brojESPB>15</brojESPB>
+      <studentiP/>
+      <studentiNP/>
+    </Predmet>
   </predmeti>
   <profesori>
-    <Profesor>
-      <prezime>Nikolic</prezime>
-      <ime>Milos</ime>
-      <datumR>1965-01-12 00:12:00.0 CET</datumR>
-      <adresaS>Temerinska 15, Novi Sad</adresaS>
-      <kontaktTel>021356785</kontaktTel>
-      <email>milos.nikolic@mailinator.com</email>
-      <adresaK>Dositeja Obradovica 6, Novi Sad, NTP 600</adresaK>
-      <brlk>123123123</brlk>
-      <titula>ProfDr</titula>
-      <zvanje>RProfesor</zvanje>
-      <predmeti/>
-    </Profesor>
+    <Profesor reference="../../predmeti/Predmet/predProf"/>
     <Profesor>
       <prezime>Mirkovic</prezime>
       <ime>Nikola</ime>
@@ -324,32 +433,8 @@
       <zvanje>VProfesor</zvanje>
       <predmeti/>
     </Profesor>
-    <Profesor>
-      <prezime>Micic</prezime>
-      <ime>Vasa</ime>
-      <datumR>1970-01-14 00:02:00.0 CET</datumR>
-      <adresaS>Tolstojeva 55, Novi Sad</adresaS>
-      <kontaktTel>021212114</kontaktTel>
-      <email>vasa.micic@mailinator.com</email>
-      <adresaK>Dositeja Obradovica 6, Novi Sad, NTP 604</adresaK>
-      <brlk>001001001</brlk>
-      <titula>Dr</titula>
-      <zvanje>Docent</zvanje>
-      <predmeti/>
-    </Profesor>
-    <Profesor>
-      <prezime>Miletic</prezime>
-      <ime>Srdjan</ime>
-      <datumR>1966-01-20 00:04:00.0 CET</datumR>
-      <adresaS>Šekspirova 12, Novi Sad</adresaS>
-      <kontaktTel>021978225</kontaktTel>
-      <email>srdjan.miletic@mailinator.com</email>
-      <adresaK>Dositeja Obradovica 6, Novi Sad, NTP 605</adresaK>
-      <brlk>002002002</brlk>
-      <titula>Dr</titula>
-      <zvanje>Docent</zvanje>
-      <predmeti/>
-    </Profesor>
+    <Profesor reference="../../predmeti/Predmet[8]/predProf"/>
+    <Profesor reference="../../predmeti/Predmet[12]/predProf"/>
     <Profesor>
       <prezime>Mihajlovic</prezime>
       <ime>Branislav</ime>
@@ -480,45 +565,9 @@
       <zvanje>Docent</zvanje>
       <predmeti/>
     </Profesor>
-    <Profesor>
-      <prezime>Maricic</prezime>
-      <ime>Branko</ime>
-      <datumR>1973-01-18 00:01:00.0 CET</datumR>
-      <adresaS>Nikole Tesle 25, Sombor</adresaS>
-      <kontaktTel>021487265</kontaktTel>
-      <email>branko.maricic@mailinator.com</email>
-      <adresaK>Dositeja Obradovica 6, Novi Sad, NTP 616</adresaK>
-      <brlk>004004004</brlk>
-      <titula>ProfDr</titula>
-      <zvanje>Docent</zvanje>
-      <predmeti/>
-    </Profesor>
-    <Profesor>
-      <prezime>Lukovic</prezime>
-      <ime>Branislav</ime>
-      <datumR>1982-01-08 00:04:00.0 CET</datumR>
-      <adresaS>Živojina Mišica 7, Apatin</adresaS>
-      <kontaktTel>021159478</kontaktTel>
-      <email>branislav.lukovic@mailinator.com</email>
-      <adresaK>Dositeja Obradovica 6, Novi Sad, NTP 617</adresaK>
-      <brlk>005005005</brlk>
-      <titula>Dr</titula>
-      <zvanje>RProfesor</zvanje>
-      <predmeti/>
-    </Profesor>
-    <Profesor>
-      <prezime>Obradovic</prezime>
-      <ime>Branimir</ime>
-      <datumR>1979-01-07 00:01:00.0 CET</datumR>
-      <adresaS>Stari šor 18, Sremska Mitrovica</adresaS>
-      <kontaktTel>021922333</kontaktTel>
-      <email>branimir.obradovic@mailinator.com</email>
-      <adresaK>Dositeja Obradovica 6, Novi Sad, NTP 618</adresaK>
-      <brlk>006006006</brlk>
-      <titula>ProfDr</titula>
-      <zvanje>Docent</zvanje>
-      <predmeti/>
-    </Profesor>
+    <Profesor reference="../../predmeti/Predmet[25]/predProf"/>
+    <Profesor reference="../../predmeti/Predmet[26]/predProf"/>
+    <Profesor reference="../../predmeti/Predmet[27]/predProf"/>
   </profesori>
   <studenti>
     <Student>
@@ -600,7 +649,7 @@
         </model.Ocena>
         <model.Ocena>
           <studentPl reference="../../.."/>
-          <predmet reference="../../../../../predmeti/Predmet[3]"/>
+          <predmet reference="../../../../../predmeti/Predmet/predProf/predmeti/Predmet[3]"/>
           <ocenaVr>9</ocenaVr>
           <datumPl>2019-11-10 00:00:00.0 CET</datumPl>
         </model.Ocena>
@@ -612,8 +661,8 @@
         </model.Ocena>
       </polozeniIsp>
       <nepolozeniIsp>
-        <Predmet reference="../../../../predmeti/Predmet[2]"/>
-        <Predmet reference="../../../../predmeti/Predmet[4]"/>
+        <Predmet reference="../../../../predmeti/Predmet/predProf/predmeti/Predmet[2]"/>
+        <Predmet reference="../../../../predmeti/Predmet/predProf/predmeti/Predmet[4]"/>
       </nepolozeniIsp>
     </Student>
     <Student>
@@ -781,13 +830,13 @@
       <polozeniIsp>
         <model.Ocena>
           <studentPl reference="../../.."/>
-          <predmet reference="../../../../../predmeti/Predmet[15]"/>
+          <predmet reference="../../../../../predmeti/Predmet[12]/predProf/predmeti/Predmet[4]"/>
           <ocenaVr>9</ocenaVr>
           <datumPl>2021-01-10 00:00:00.0 CET</datumPl>
         </model.Ocena>
         <model.Ocena>
           <studentPl reference="../../.."/>
-          <predmet reference="../../../../../predmeti/Predmet[16]"/>
+          <predmet reference="../../../../../predmeti/Predmet[12]/predProf/predmeti/Predmet[5]"/>
           <ocenaVr>10</ocenaVr>
           <datumPl>2021-01-01 00:00:00.0 CET</datumPl>
         </model.Ocena>
@@ -809,13 +858,13 @@
       <polozeniIsp>
         <model.Ocena>
           <studentPl reference="../../.."/>
-          <predmet reference="../../../../../predmeti/Predmet[15]"/>
+          <predmet reference="../../../../../predmeti/Predmet[12]/predProf/predmeti/Predmet[4]"/>
           <ocenaVr>10</ocenaVr>
           <datumPl>2018-01-12 00:00:00.0 CET</datumPl>
         </model.Ocena>
         <model.Ocena>
           <studentPl reference="../../.."/>
-          <predmet reference="../../../../../predmeti/Predmet[16]"/>
+          <predmet reference="../../../../../predmeti/Predmet[12]/predProf/predmeti/Predmet[5]"/>
           <ocenaVr>8</ocenaVr>
           <datumPl>2019-02-04 00:00:00.0 CET</datumPl>
         </model.Ocena>
@@ -836,7 +885,7 @@
       <prosek>0.0</prosek>
       <polozeniIsp/>
       <nepolozeniIsp>
-        <Predmet reference="../../../../predmeti/Predmet[15]"/>
+        <Predmet reference="../../../../predmeti/Predmet[12]/predProf/predmeti/Predmet[4]"/>
       </nepolozeniIsp>
     </Student>
     <Student>
@@ -853,7 +902,7 @@
       <prosek>0.0</prosek>
       <polozeniIsp/>
       <nepolozeniIsp>
-        <Predmet reference="../../../../predmeti/Predmet[15]"/>
+        <Predmet reference="../../../../predmeti/Predmet[12]/predProf/predmeti/Predmet[4]"/>
       </nepolozeniIsp>
     </Student>
     <Student>
@@ -933,8 +982,8 @@
       <prosek>0.0</prosek>
       <polozeniIsp/>
       <nepolozeniIsp>
-        <Predmet reference="../../../../predmeti/Predmet[18]"/>
         <Predmet reference="../../../../predmeti/Predmet[19]"/>
+        <Predmet reference="../../../../predmeti/Predmet[18]"/>
       </nepolozeniIsp>
     </Student>
     <Student>

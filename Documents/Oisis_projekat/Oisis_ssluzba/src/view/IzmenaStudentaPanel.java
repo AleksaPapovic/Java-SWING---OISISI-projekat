@@ -21,8 +21,8 @@ import model.BazaStudenata;
 import model.Student;
 import view.StudentTextFields.TipPolja;
 
-public class IzmenaStudentaPanel extends JPanel{
-	
+public class IzmenaStudentaPanel extends JPanel {
+
 	/**
 	 * 
 	 */
@@ -41,9 +41,9 @@ public class IzmenaStudentaPanel extends JPanel{
 	public static JComboBox<String> nacinFIzmena;
 
 	public IzmenaStudentaPanel(JDialog parent) {
-		
-		Student st = BazaStudenata.getInstance().getRow(TabsPanel.tableStudent.getSelectedTableRow());	
-	
+
+		Student st = BazaStudenata.getInstance().getRow(TabsPanel.tableStudent.getSelectedTableRow());
+
 		this.setLayout(new BorderLayout());
 		this.setBackground(Color.WHITE);
 		JPanel textPanel = new JPanel(new GridLayout(11, 1, 1, 10));
@@ -58,13 +58,13 @@ public class IzmenaStudentaPanel extends JPanel{
 		imeLabela.setMaximumSize(velicina);
 		imeIzmena = new StudentTextFields(TipPolja.Ime, "Ime");
 		imeIzmena.setText(st.getIme());
-		
+
 		JLabel prezimeLabela = new JLabel("Prezime*");
 		prezimeLabela.setPreferredSize(velicina);
 		prezimeLabela.setMaximumSize(velicina);
 		prezimeIzmena = new StudentTextFields(TipPolja.Prezime, "Prezime");
 		prezimeIzmena.setText(st.getPrezime());
-		
+
 		JLabel datumRLabela = new JLabel("Datum rodjenja*");
 		datumRLabela.setPreferredSize(velicina);
 		datumRLabela.setMaximumSize(velicina);
@@ -72,45 +72,49 @@ public class IzmenaStudentaPanel extends JPanel{
 		SimpleDateFormat formatter = new SimpleDateFormat("dd.mm.yyyy.");
 		String datumR = formatter.format(st.getDatumR());
 		datumRIzmena.setText(datumR);
-	
+
 		JLabel adresaSLabela = new JLabel("Adresa stanovanja*");
 		adresaSLabela.setPreferredSize(velicina);
 		adresaSLabela.setMaximumSize(velicina);
 		adresaSIzmena = new StudentTextFields(TipPolja.AdresaS, "...");
 		adresaSIzmena.setText(st.getAdresaSt());
-		
+
 		JLabel brojTLabela = new JLabel("Broj telefona*");
 		brojTLabela.setPreferredSize(velicina);
 		brojTLabela.setMaximumSize(velicina);
-		brojTIzmena = new StudentTextFields(TipPolja.BrojTel, "--9 ili vise brojeva--");;
+		brojTIzmena = new StudentTextFields(TipPolja.BrojTel, "--9 ili vise brojeva--");
+		;
 		brojTIzmena.setText(st.getKontaktTl());
-		
+
 		JLabel emailLabela = new JLabel("E-mail adresa*");
 		emailLabela.setPreferredSize(velicina);
 		emailLabela.setMaximumSize(velicina);
-		emailIzmena = new StudentTextFields(TipPolja.Email, "..@..");;
+		emailIzmena = new StudentTextFields(TipPolja.Email, "..@..");
+		;
 		emailIzmena.setText(st.getEmail());
-		
+
 		JLabel brIndLabela = new JLabel("Broj indeksa*");
 		brIndLabela.setPreferredSize(velicina);
 		brIndLabela.setMaximumSize(velicina);
-		brIndIzmena = new StudentTextFields(TipPolja.BrojInd, "...");;
+		brIndIzmena = new StudentTextFields(TipPolja.BrojInd, "...");
+		;
 		brIndIzmena.setText(st.getBrojInd());
 		brIndIzmena.setEnabled(false);
-		
+
 		JLabel godUpLabela = new JLabel("Godina upisa*");
 		godUpLabela.setPreferredSize(velicina);
 		godUpLabela.setMaximumSize(velicina);
-		godUpIzmena = new StudentTextFields(TipPolja.GodUp, "****");;
+		godUpIzmena = new StudentTextFields(TipPolja.GodUp, "****");
+		;
 		godUpIzmena.setText(String.valueOf(st.getGodUp()));
-		
+
 		JLabel godStLabela = new JLabel("Trenutna godina studija*");
 		godStLabela.setPreferredSize(velicina);
 		godStLabela.setMaximumSize(velicina);
 		String godSt[] = { "I(prva)", "II(druga)", "III(treca)", "IV(cetvrta)" };
 		godStIzmena = new JComboBox<String>(godSt);
 		godStIzmena.setSelectedItem(st.getGodSt());
-		
+
 		JLabel nacinFLabela = new JLabel("Nacin finansiranja*");
 		nacinFLabela.setPreferredSize(velicina);
 		nacinFLabela.setMaximumSize(velicina);
@@ -138,9 +142,9 @@ public class IzmenaStudentaPanel extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				
-				if(StudentController.getInstance().izmeniStudenta())
-				parent.dispose();
+
+				if (StudentController.getInstance().izmeniStudenta())
+					parent.dispose();
 
 			}
 
@@ -151,6 +155,60 @@ public class IzmenaStudentaPanel extends JPanel{
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				parent.dispose();
+			}
+		});
+
+		godStIzmena.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if (StudentController.getInstance().proveriIme(IzmenaStudentaPanel.imeIzmena.getText().trim())
+
+						&& StudentController.getInstance()
+								.proveriIme(IzmenaStudentaPanel.prezimeIzmena.getText().trim())
+
+						&& StudentController.getInstance()
+								.proveriDatumR(IzmenaStudentaPanel.datumRIzmena.getText().trim())
+
+						&& StudentController.getInstance()
+								.proveriAdresuSt(IzmenaStudentaPanel.adresaSIzmena.getText().trim())
+
+						&& StudentController.getInstance()
+								.proveriKontaktTl(IzmenaStudentaPanel.brojTIzmena.getText().trim())
+
+						&& StudentController.getInstance()
+								.proveriEmail(IzmenaStudentaPanel.emailIzmena.getText().trim())
+
+						&& StudentController.getInstance()
+								.proveriGodUp(IzmenaStudentaPanel.godUpIzmena.getText().trim())) {
+
+					prihvatiIzmena.setEnabled(true);
+				}
+			}
+		});
+
+		nacinFIzmena.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if (StudentController.getInstance().proveriIme(IzmenaStudentaPanel.imeIzmena.getText().trim())
+
+						&& StudentController.getInstance()
+								.proveriIme(IzmenaStudentaPanel.prezimeIzmena.getText().trim())
+
+						&& StudentController.getInstance()
+								.proveriDatumR(IzmenaStudentaPanel.datumRIzmena.getText().trim())
+
+						&& StudentController.getInstance()
+								.proveriAdresuSt(IzmenaStudentaPanel.adresaSIzmena.getText().trim())
+
+						&& StudentController.getInstance()
+								.proveriKontaktTl(IzmenaStudentaPanel.brojTIzmena.getText().trim())
+
+						&& StudentController.getInstance()
+								.proveriEmail(IzmenaStudentaPanel.emailIzmena.getText().trim())
+
+						&& StudentController.getInstance()
+								.proveriGodUp(IzmenaStudentaPanel.godUpIzmena.getText().trim())) {
+
+					prihvatiIzmena.setEnabled(true);
+				}
 			}
 		});
 
@@ -180,7 +238,7 @@ public class IzmenaStudentaPanel extends JPanel{
 
 		buttonsPanel.add(prihvatiIzmena);
 		buttonsPanel.add(odustaniIzmena);
-		
+
 		setVisible(true);
 	}
 

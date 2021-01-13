@@ -149,6 +149,17 @@ public class IzmenaStudentaTabs extends JTabbedPane {
 				DodavanjePredmetaStudentuDialog dialog = new DodavanjePredmetaStudentuDialog(parentDialog, s);
 			}
 		});
+		
+		ukloni.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				@SuppressWarnings("unused")
+				UklanjanjePredmetaSaStudentaDialog dialog = new UklanjanjePredmetaSaStudentaDialog(parentDialog, "Uklanjanje predmeta", true);
+			}
+		});
+		
 
 		polaganje.addActionListener(new ActionListener() {
 

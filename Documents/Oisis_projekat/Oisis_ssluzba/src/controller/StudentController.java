@@ -243,7 +243,7 @@ public class StudentController {
 	}
 
 	public boolean obrisi() {
-		BazaStudenata.getInstance().brisanjeOcene();
+		BazaStudenata.getInstance().brisanjeNepolozenih();
 		return true;
 	}
 

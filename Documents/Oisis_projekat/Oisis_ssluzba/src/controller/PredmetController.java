@@ -145,6 +145,7 @@ public class PredmetController {
 		// TODO Auto-generated method stub
 		Predmet predmet = BazaPredmeta.getInstance().getSelectedPredmet(TabsPanel.tablePredmet.getSelectedRow());
 		BazaPredmeta.getInstance().dodajProfesoraPredmetu(predmet, profesor);
+		BazaProfesora.getInstance().dodajPredmetPofesoru(profesor, predmet);
 		DodavanjeProfesoraPredmetuDialog.tableListaProfesoraPredmeta.update();
 	}
 

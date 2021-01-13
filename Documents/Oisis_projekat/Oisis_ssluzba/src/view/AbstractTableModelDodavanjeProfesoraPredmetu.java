@@ -31,6 +31,6 @@ public class AbstractTableModelDodavanjeProfesoraPredmetu extends AbstractTableM
 	public Object getValueAt(int rowIndex, int columnIndex) {
 		ArrayList<Profesor> profesor = BazaProfesora.getInstance().getProfesori();
 		Profesor pr = profesor.get(rowIndex);
-		return pr.getIme();
+		return pr.getIme()+" "+pr.getPrezime();
 	}
 }

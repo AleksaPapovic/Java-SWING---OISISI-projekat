@@ -338,6 +338,10 @@ public class BazaProfesora {
 		}
 
 	}
+	
+	public void dodajPredmetPofesoru(Profesor profesor, Predmet predmet) {
+		profesor.getPredmeti().add(predmet);
+	} 
 
 	public void uklanjanjeProfesoruSaPredmeta(Predmet p) {
 	p.setPredProf(null);
