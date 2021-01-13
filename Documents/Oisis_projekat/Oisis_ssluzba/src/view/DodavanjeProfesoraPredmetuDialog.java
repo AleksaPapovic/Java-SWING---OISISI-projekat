@@ -7,15 +7,12 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
 import controller.PredmetController;
-import controller.ProfesorController;
 import model.BazaProfesora;
 import model.Predmet;
-import model.Profesor;
 
 public class DodavanjeProfesoraPredmetuDialog extends JDialog {
 

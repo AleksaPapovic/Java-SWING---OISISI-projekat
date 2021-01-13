@@ -24,4 +24,3 @@ public class DocumentListenerSearch implements DocumentListener {
 	}
 
 }
-

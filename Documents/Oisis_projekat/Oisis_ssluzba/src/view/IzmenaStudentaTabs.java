@@ -156,6 +156,7 @@ public class IzmenaStudentaTabs extends JTabbedPane {
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
 				if (tableNepolozeniPredmeti.getSelectedRow() != -1) {
+					@SuppressWarnings("unused")
 					UpisOceneDialog uod = new UpisOceneDialog(parentDialog, "Upis ocene", true);
 				} else {
 					JOptionPane.showMessageDialog(null, "Nije selektovan nepolozen predmet", "GRESKA",

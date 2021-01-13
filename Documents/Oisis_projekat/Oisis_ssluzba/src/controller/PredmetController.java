@@ -3,6 +3,7 @@ package controller;
 import javax.swing.JOptionPane;
 
 import model.BazaPredmeta;
+import model.BazaProfesora;
 import model.Predmet;
 import model.Profesor;
 import view.DodavanjePredmetaDialog;
@@ -139,12 +140,23 @@ public class PredmetController {
 		BazaPredmeta.getInstance().pretraziPredmete(text);
 		TabsPanel.tablePredmet.azuriranjeTabelePredmet();
 	}
-	
+
 	public void dodajPredmetuProfesora(Profesor profesor) {
 		// TODO Auto-generated method stub
 		Predmet predmet = BazaPredmeta.getInstance().getSelectedPredmet(TabsPanel.tablePredmet.getSelectedRow());
 		BazaPredmeta.getInstance().dodajProfesoraPredmetu(predmet, profesor);
 		DodavanjeProfesoraPredmetuDialog.tableListaProfesoraPredmeta.update();
+	}
+
+	public boolean uklanjanjeProfesoruSaPredmeta() {
+		int index_predmeta = TabsPanel.tablePredmet.getSelectedTableRow();
+		Predmet p = BazaPredmeta.getInstance().getPredmeti().get(index_predmeta);
+		if (p.getPredProf() == null) {
+			return false;
+		}
+		p.getPredProf().getPredmeti().remove(p);
+		BazaProfesora.getInstance().uklanjanjeProfesoruSaPredmeta(p);
+		return true;
 	}
 
 }

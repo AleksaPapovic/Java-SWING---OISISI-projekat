@@ -17,9 +17,7 @@ import javax.swing.JTextField;
 import javax.swing.JToolBar;
 import javax.swing.KeyStroke;
 import javax.swing.SwingConstants;
-import javax.swing.event.DocumentListener;
 
-import controller.DocumentListenerSearch;
 import view.Actions.DeleteAction;
 import view.Actions.EditAction;
 import view.Actions.NewAction;
@@ -88,7 +86,7 @@ public class MenuToolbar extends JToolBar {
 		searchbar.setMinimumSize(new Dimension(24, 24));
 		searchbar.setMaximumSize(new Dimension(24, 24));
 		searchbar.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, Color.black));
-		add(searchbar); 
+		add(searchbar);
 
 		add(Box.createHorizontalStrut(5));
 		JButton btnSearch = new JButton(searchAction);
@@ -100,8 +98,6 @@ public class MenuToolbar extends JToolBar {
 		add(btnSearch);
 
 		add(Box.createHorizontalStrut(15));
-		
-	
 
 	}
 

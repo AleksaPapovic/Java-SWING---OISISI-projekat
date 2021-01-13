@@ -245,7 +245,6 @@ public class ProfesorController {
 	}
 
 	public void dodajProfesoruPredmet() {
-		// TODO Auto-generated method stub
 		ArrayList<Predmet> predmeti = BazaProfesora.getInstance()
 				.getNePredajePredmeteProfesor(DodavanjePredmetaProfesoruDialog.profesor);
 		ArrayList<Predmet> predmetiPredaje = new ArrayList<Predmet>();

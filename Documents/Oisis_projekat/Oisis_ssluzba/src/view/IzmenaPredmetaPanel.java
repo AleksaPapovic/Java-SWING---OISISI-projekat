@@ -18,7 +18,6 @@ import javax.swing.JTextField;
 import controller.IzmenaPredmetaDocumentListener;
 import controller.PredmetController;
 import model.BazaPredmeta;
-import model.BazaProfesora;
 import model.Predmet;
 import view.PredmetTextFields.TipPolja;
 
@@ -42,7 +41,7 @@ public class IzmenaPredmetaPanel extends JPanel {
 
 	public IzmenaPredmetaPanel(JDialog parent) {
 
-		Predmet pr = BazaPredmeta.getInstance().getRow(TabsPanel.tablePredmet.getSelectedRow());
+		Predmet pr = BazaPredmeta.getInstance().getRow(TabsPanel.tablePredmet.getSelectedTableRow());
 
 		this.setLayout(new BorderLayout());
 		this.setBackground(Color.WHITE);
@@ -141,6 +140,17 @@ public class IzmenaPredmetaPanel extends JPanel {
 				DodavanjeProfesoraPredmetuDialog dodavanjeProfesoraPredmetuDialog = new DodavanjeProfesoraPredmetuDialog(
 						parent);
 				profesorIzmena.setText(pr.getPredProf().getIme());
+			}
+		});
+
+		minusIzmena.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				@SuppressWarnings("unused")
+				UklanjanjeProfesoruSaPredmetaDialog uklananjeProfesoraSaPredmeta = new UklanjanjeProfesoruSaPredmetaDialog(
+						parent, "Ukloni Profesora", true, profesorIzmena);
+
 			}
 		});
 

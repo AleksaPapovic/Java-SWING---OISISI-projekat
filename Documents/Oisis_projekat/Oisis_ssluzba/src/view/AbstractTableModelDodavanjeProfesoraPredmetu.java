@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
 
 import model.BazaProfesora;
-import model.Predmet;
 import model.Profesor;
 
 public class AbstractTableModelDodavanjeProfesoraPredmetu extends AbstractTableModel {

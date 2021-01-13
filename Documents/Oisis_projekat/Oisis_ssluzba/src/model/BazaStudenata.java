@@ -33,7 +33,7 @@ public class BazaStudenata {
 
 	private BazaStudenata() {
 		this.Studenti = new ArrayList<Student>();
-		
+
 		this.kolone = new ArrayList<String>();
 		this.koloneNepolozeniP = new ArrayList<String>();
 		this.kolonePolozeniP = new ArrayList<String>();
@@ -54,13 +54,12 @@ public class BazaStudenata {
 		this.kolonePolozeniP.add("Godina studija");
 		this.kolonePolozeniP.add("Datum");
 
-		
 		this.Studenti = Entiteti.getInstance().getStudenti();
 		this.studentiSvi = this.Studenti;
 	}
 
 	private void initStudente() {
-		}
+	}
 
 	public ArrayList<Student> getStudenti() {
 		return Studenti;
@@ -335,6 +334,7 @@ public class BazaStudenata {
 			if (!radjenPol && !radjenNep && istiSem) {
 				predmeti.add(p);
 			}
+
 		}
 		return predmeti;
 	}

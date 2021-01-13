@@ -1,6 +1,304 @@
 <Entiteti>
-  <predmeti/>
-  <profesori/>
+  <predmeti>
+    <Predmet>
+      <sifraP>p1</sifraP>
+      <imeP>osnove programiranja</imeP>
+      <semestar>zimski</semestar>
+      <godinaS>1</godinaS>
+      <brojESPB>7</brojESPB>
+      <studentiP/>
+      <studentiNP/>
+    </Predmet>
+    <Predmet>
+      <sifraP>p2</sifraP>
+      <imeP>statistika</imeP>
+      <semestar>letnji</semestar>
+      <godinaS>3</godinaS>
+      <brojESPB>8</brojESPB>
+      <studentiP/>
+      <studentiNP/>
+    </Predmet>
+    <Predmet>
+      <sifraP>p3</sifraP>
+      <imeP>algoritmi i strukture podataka</imeP>
+      <semestar>letnji</semestar>
+      <godinaS>2</godinaS>
+      <brojESPB>9</brojESPB>
+      <studentiP/>
+      <studentiNP/>
+    </Predmet>
+    <Predmet>
+      <sifraP>p4</sifraP>
+      <imeP>LPRS</imeP>
+      <semestar>zimski</semestar>
+      <godinaS>3</godinaS>
+      <brojESPB>7</brojESPB>
+      <studentiP/>
+      <studentiNP/>
+    </Predmet>
+    <Predmet>
+      <sifraP>p5</sifraP>
+      <imeP>matematika</imeP>
+      <semestar>letnji</semestar>
+      <godinaS>1</godinaS>
+      <brojESPB>11</brojESPB>
+      <studentiP/>
+      <studentiNP/>
+    </Predmet>
+    <Predmet>
+      <sifraP>p6</sifraP>
+      <imeP>xml i web servisi</imeP>
+      <semestar>letnji</semestar>
+      <godinaS>4</godinaS>
+      <brojESPB>6</brojESPB>
+      <studentiP/>
+      <studentiNP/>
+    </Predmet>
+    <Predmet>
+      <sifraP>p7</sifraP>
+      <imeP>Metode optimizacije</imeP>
+      <semestar>zimski</semestar>
+      <godinaS>3</godinaS>
+      <brojESPB>6</brojESPB>
+      <studentiP/>
+      <studentiNP/>
+    </Predmet>
+    <Predmet>
+      <sifraP>p8</sifraP>
+      <imeP>osnove elektortehnike</imeP>
+      <semestar>letnji</semestar>
+      <godinaS>1</godinaS>
+      <brojESPB>11</brojESPB>
+      <studentiP/>
+      <studentiNP/>
+    </Predmet>
+    <Predmet>
+      <sifraP>p9</sifraP>
+      <imeP>Sociologija</imeP>
+      <semestar>zimski</semestar>
+      <godinaS>1</godinaS>
+      <brojESPB>10</brojESPB>
+      <studentiP/>
+      <studentiNP/>
+    </Predmet>
+    <Predmet>
+      <sifraP>p10</sifraP>
+      <imeP>Filozofija</imeP>
+      <semestar>zimski</semestar>
+      <godinaS>1</godinaS>
+      <brojESPB>4</brojESPB>
+      <studentiP/>
+      <studentiNP/>
+    </Predmet>
+    <Predmet>
+      <sifraP>p11</sifraP>
+      <imeP>ORT</imeP>
+      <semestar>letnji</semestar>
+      <godinaS>2</godinaS>
+      <brojESPB>7</brojESPB>
+      <studentiP/>
+      <studentiNP/>
+    </Predmet>
+    <Predmet>
+      <sifraP>p12</sifraP>
+      <imeP>NANS</imeP>
+      <semestar>letnji</semestar>
+      <godinaS>2</godinaS>
+      <brojESPB>5</brojESPB>
+      <studentiP/>
+      <studentiNP/>
+    </Predmet>
+    <Predmet>
+      <sifraP>p13</sifraP>
+      <imeP>Organizacija podataka</imeP>
+      <semestar>zimski</semestar>
+      <godinaS>2</godinaS>
+      <brojESPB>7</brojESPB>
+      <studentiP/>
+      <studentiNP/>
+    </Predmet>
+    <Predmet>
+      <sifraP>p14</sifraP>
+      <imeP>Baze podataka</imeP>
+      <semestar>zimski</semestar>
+      <godinaS>2</godinaS>
+      <brojESPB>6</brojESPB>
+      <studentiP/>
+      <studentiNP/>
+    </Predmet>
+    <Predmet>
+      <sifraP>p15</sifraP>
+      <imeP>paralelno programiranje</imeP>
+      <semestar>zimski</semestar>
+      <godinaS>2</godinaS>
+      <brojESPB>8</brojESPB>
+      <studentiP/>
+      <studentiNP/>
+    </Predmet>
+    <Predmet>
+      <sifraP>p16</sifraP>
+      <imeP>konkurentno programiranje</imeP>
+      <semestar>letnji</semestar>
+      <godinaS>2</godinaS>
+      <brojESPB>9</brojESPB>
+      <studentiP/>
+      <studentiNP/>
+    </Predmet>
+    <Predmet>
+      <sifraP>p17</sifraP>
+      <imeP>Operativni sistemi</imeP>
+      <semestar>letnji</semestar>
+      <godinaS>2</godinaS>
+      <brojESPB>8</brojESPB>
+      <studentiP/>
+      <studentiNP/>
+    </Predmet>
+    <Predmet>
+      <sifraP>p18</sifraP>
+      <imeP>Algebra</imeP>
+      <semestar>zimski</semestar>
+      <godinaS>1</godinaS>
+      <brojESPB>15</brojESPB>
+      <studentiP/>
+      <studentiNP/>
+    </Predmet>
+    <Predmet>
+      <sifraP>p19</sifraP>
+      <imeP>Verovatnoca</imeP>
+      <semestar>letnji</semestar>
+      <godinaS>3</godinaS>
+      <brojESPB>14</brojESPB>
+      <studentiP/>
+      <studentiNP/>
+    </Predmet>
+    <Predmet>
+      <sifraP>ps20</sifraP>
+      <imeP>Upravljacki sistemi</imeP>
+      <semestar>letnji</semestar>
+      <godinaS>3</godinaS>
+      <brojESPB>8</brojESPB>
+      <studentiP/>
+      <studentiNP/>
+    </Predmet>
+    <Predmet>
+      <sifraP>ps21</sifraP>
+      <imeP>Osnovi elektronike</imeP>
+      <semestar>zimski</semestar>
+      <godinaS>2</godinaS>
+      <brojESPB>7</brojESPB>
+      <studentiP/>
+      <studentiNP/>
+    </Predmet>
+    <Predmet>
+      <sifraP>ps22</sifraP>
+      <imeP>Slucajni procesi</imeP>
+      <semestar>letnji</semestar>
+      <godinaS>4</godinaS>
+      <brojESPB>9</brojESPB>
+      <studentiP/>
+      <studentiNP/>
+    </Predmet>
+    <Predmet>
+      <sifraP>ps23</sifraP>
+      <imeP>Racunarstvo visokih performansi</imeP>
+      <semestar>letnji</semestar>
+      <godinaS>4</godinaS>
+      <brojESPB>10</brojESPB>
+      <studentiP/>
+      <studentiNP/>
+    </Predmet>
+    <Predmet>
+      <sifraP>p24</sifraP>
+      <imeP>Analiza 1</imeP>
+      <semestar>zimski</semestar>
+      <godinaS>1</godinaS>
+      <brojESPB>20</brojESPB>
+      <studentiP/>
+      <studentiNP/>
+    </Predmet>
+    <Predmet>
+      <sifraP>it25</sifraP>
+      <imeP>Informaciona bezbednost</imeP>
+      <semestar>letnji</semestar>
+      <godinaS>4</godinaS>
+      <brojESPB>9</brojESPB>
+      <studentiP/>
+      <studentiNP/>
+    </Predmet>
+    <Predmet>
+      <sifraP>it26</sifraP>
+      <imeP>Elektronsko placanje</imeP>
+      <semestar>zimski</semestar>
+      <godinaS>3</godinaS>
+      <brojESPB>8</brojESPB>
+      <studentiP/>
+      <studentiNP/>
+    </Predmet>
+    <Predmet>
+      <sifraP>it27</sifraP>
+      <imeP>Distribuirani sistemi</imeP>
+      <semestar>zimski</semestar>
+      <godinaS>4</godinaS>
+      <brojESPB>6</brojESPB>
+      <studentiP/>
+      <studentiNP/>
+    </Predmet>
+    <Predmet>
+      <sifraP>p28</sifraP>
+      <imeP>Projektovanje softvera</imeP>
+      <semestar>zimski</semestar>
+      <godinaS>3</godinaS>
+      <brojESPB>5</brojESPB>
+      <studentiP/>
+      <studentiNP/>
+    </Predmet>
+    <Predmet>
+      <sifraP>p29</sifraP>
+      <imeP>Informacioni sistemi</imeP>
+      <semestar>zimski</semestar>
+      <godinaS>4</godinaS>
+      <brojESPB>6</brojESPB>
+      <studentiP/>
+      <studentiNP/>
+    </Predmet>
+    <Predmet>
+      <sifraP>p30</sifraP>
+      <imeP>Masinsko ucenje</imeP>
+      <semestar>letnji</semestar>
+      <godinaS>4</godinaS>
+      <brojESPB>7</brojESPB>
+      <studentiP/>
+      <studentiNP/>
+    </Predmet>
+  </predmeti>
+  <profesori>
+    <Profesor>
+      <prezime>Petkovic</prezime>
+      <ime>Ilija</ime>
+      <datumR>1988-01-03 00:09:00.0 CET</datumR>
+      <adresaS>Gogoljeva 1, Novi Sad</adresaS>
+      <kontaktTel>021215314</kontaktTel>
+      <email>ilija.petkovic@mailinator.com</email>
+      <adresaK>Dositeja Obradovica 6, Novi Sad, NTP 602</adresaK>
+      <brlk>456456456</brlk>
+      <titula>Dr</titula>
+      <zvanje>VProfesor</zvanje>
+      <predmeti/>
+    </Profesor>
+    <Profesor>
+      <prezime>Petrovic</prezime>
+      <ime>Mitar</ime>
+      <datumR>1976-01-25 00:07:00.0 CET</datumR>
+      <adresaS>Marka Kraljevica 102, Beograd</adresaS>
+      <kontaktTel>021884640</kontaktTel>
+      <email>mitar.petrovic@mailinator.com</email>
+      <adresaK>Dositeja Obradovica 6, Novi Sad, NTP 603</adresaK>
+      <brlk>789789789</brlk>
+      <titula>Dr</titula>
+      <zvanje>VProfesor</zvanje>
+      <predmeti/>
+    </Profesor>
+  </profesori>
   <studenti>
     <Student>
       <prezime>Milosevic</prezime>

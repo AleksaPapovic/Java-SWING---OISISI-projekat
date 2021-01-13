@@ -46,6 +46,21 @@ public class Profesor {
 		this.predmeti = new ArrayList<Predmet>();
 	}
 
+	public Profesor(String brlk ,String ime, String prezime, Date datumR, String adresaS, String kontaktTel, String email,
+			String adresaK, Titula titula, Zvanje zvanje) {
+		super();
+		this.prezime = prezime;
+		this.ime = ime;
+		this.datumR = datumR;
+		this.adresaS = adresaS;
+		this.kontaktTel = kontaktTel;
+		this.email = email;
+		this.adresaK = adresaK;
+		this.brlk = brlk;
+		this.titula = titula;
+		this.zvanje = zvanje;
+		this.predmeti = new ArrayList<Predmet>();
+	}
 	public Profesor(String prezime, String ime, Date datumR, String adresaS, String kontaktTel, String email,
 			String adresaK, String brlk) {
 		super();

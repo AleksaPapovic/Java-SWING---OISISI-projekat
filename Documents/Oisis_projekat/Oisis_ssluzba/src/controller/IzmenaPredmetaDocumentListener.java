@@ -31,8 +31,7 @@ public class IzmenaPredmetaDocumentListener implements DocumentListener {
 				&& !IzmenaPredmetaPanel.imePredIzmena.getSablon()
 						.equals(IzmenaPredmetaPanel.sifraIzmena.getText().trim())
 				&& PredmetController.getInstance().proveriSifru(IzmenaPredmetaPanel.sifraIzmena.getText().trim())
-				&& !IzmenaPredmetaPanel.sifraIzmena.getSablon()
-						.equals(IzmenaPredmetaPanel.sifraIzmena.getText().trim())
+				&& !IzmenaPredmetaPanel.sifraIzmena.getSablon().equals(IzmenaPredmetaPanel.sifraIzmena.getText().trim())
 				&& PredmetController.getInstance().proveriESPB(IzmenaPredmetaPanel.espbIzmena.getText().trim())
 				&& !IzmenaPredmetaPanel.espbIzmena.getSablon()
 						.equals(IzmenaPredmetaPanel.espbIzmena.getText().trim())) {

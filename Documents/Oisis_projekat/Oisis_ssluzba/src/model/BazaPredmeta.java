@@ -39,7 +39,42 @@ public class BazaPredmeta {
 //		this.predmeti.add(new Predmet("ra", "Osnovi elektrotehnike", 9, 1, "letnji"));
 //		this.predmetiSvi = this.predmeti;
 		this.predmeti = Entiteti.getInstance().getPredmeti();
+		// initPredmeta();
 		this.predmetiSvi = this.predmeti;
+	}
+
+	public void initPredmeta() {
+		this.predmeti.add(new Predmet("p1", "osnove programiranja", 1, 7, null, "zimski"));
+		this.predmeti.add(new Predmet("p2", "statistika", 3, 8, null, "letnji"));
+		this.predmeti.add(new Predmet("p3", "algoritmi i strukture podataka", 2, 9, null, "letnji"));
+		this.predmeti.add(new Predmet("p4", "LPRS", 3, 7, null, "zimski"));
+		this.predmeti.add(new Predmet("p5", "matematika", 1, 11, null, "letnji"));
+		this.predmeti.add(new Predmet("p6", "xml i web servisi", 4, 6, null, "letnji"));
+		this.predmeti.add(new Predmet("p7", "Metode optimizacije", 3, 6, null, "zimski"));
+		this.predmeti.add(new Predmet("p8", "osnove elektortehnike", 1, 11, null, "letnji"));
+		this.predmeti.add(new Predmet("p9", "Sociologija", 1, 10, null, "zimski"));
+		this.predmeti.add(new Predmet("p10", "Filozofija", 1, 4, null, "zimski"));
+		this.predmeti.add(new Predmet("p11", "ORT", 2, 7, null, "letnji"));
+		this.predmeti.add(new Predmet("p12", "NANS", 2, 5, null, "letnji"));
+		this.predmeti.add(new Predmet("p13", "Organizacija podataka", 2, 7, null, "zimski"));
+		this.predmeti.add(new Predmet("p14", "Baze podataka", 2, 6, null, "zimski"));
+		this.predmeti.add(new Predmet("p15", "paralelno programiranje", 2, 8, null, "zimski"));
+		this.predmeti.add(new Predmet("p16", "konkurentno programiranje", 2, 9, null, "letnji"));
+		this.predmeti.add(new Predmet("p17", "Operativni sistemi", 2, 8, null, "letnji"));
+		this.predmeti.add(new Predmet("p18", "Algebra", 1, 15, null, "zimski"));
+		this.predmeti.add(new Predmet("p19", "Verovatnoca", 3, 14, null, "letnji"));
+		this.predmeti.add(new Predmet("ps20", "Upravljacki sistemi", 3, 8, null, "letnji"));
+		this.predmeti.add(new Predmet("ps21", "Osnovi elektronike", 2, 7, null, "zimski"));
+		this.predmeti.add(new Predmet("ps22", "Slucajni procesi", 4, 9, null, "letnji"));
+		this.predmeti.add(new Predmet("ps23", "Racunarstvo visokih performansi", 4, 10, null, "letnji"));
+		this.predmeti.add(new Predmet("p24", "Analiza 1", 1, 20, null, "zimski"));
+		this.predmeti.add(new Predmet("it25", "Informaciona bezbednost", 4, 9, null, "letnji"));
+		this.predmeti.add(new Predmet("it26", "Elektronsko placanje", 3, 8, null, "zimski"));
+		this.predmeti.add(new Predmet("it27", "Distribuirani sistemi", 4, 6, null, "zimski"));
+		this.predmeti.add(new Predmet("p28", "Projektovanje softvera", 3, 5, null, "zimski"));
+		this.predmeti.add(new Predmet("p29", "Informacioni sistemi", 4, 6, null, "zimski"));
+		this.predmeti.add(new Predmet("p30", "Masinsko ucenje", 4, 7, null, "letnji"));
+
 	}
 
 	public ArrayList<Predmet> getPredmeti() {
@@ -52,7 +87,7 @@ public class BazaPredmeta {
 
 	public void setOPredmeti(ArrayList<Predmet> predmeti) {
 		this.predmeti = predmeti;
-		this.predmetiSvi= this.predmeti;
+		this.predmetiSvi = this.predmeti;
 	}
 
 	public int getColumnCount() {
@@ -108,7 +143,7 @@ public class BazaPredmeta {
 			}
 			i++;
 		}
-		
+
 		if (pretraga) {
 			pretraziPredmete(MenuToolbar.searchbar.getText());
 		}
@@ -174,7 +209,7 @@ public class BazaPredmeta {
 		}
 
 	}
-	
+
 	public void dodajProfesoraPredmetu(Predmet predmet, Profesor profesor) {
 		predmet.setPredProf(profesor);
 	}

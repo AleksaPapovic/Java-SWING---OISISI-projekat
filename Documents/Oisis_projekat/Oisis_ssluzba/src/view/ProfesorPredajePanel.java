@@ -44,7 +44,7 @@ public class ProfesorPredajePanel extends JPanel {
 		gornji3.setPreferredSize(new Dimension(this.getWidth(), 60));
 		donji3.setPreferredSize(new Dimension(this.getWidth(), 50));
 		this.setBackground(Color.white);
-		Profesor p = BazaProfesora.getInstance().getSelectedProfesor(TabsPanel.tableProfesor.getSelectedRow());
+		Profesor p = BazaProfesora.getInstance().getSelectedProfesor(TabsPanel.tableProfesor.getSelectedTableRow());
 		tablePredavaniPredmeti = new TablePredavaniPredmeti(p);
 		JScrollPane scrollPane3 = new JScrollPane(tablePredavaniPredmeti);
 		scrollPane3.getViewport().setBackground(Color.WHITE);
@@ -60,6 +60,7 @@ public class ProfesorPredajePanel extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
+				@SuppressWarnings("unused")
 				DodavanjePredmetaProfesoruDialog dodavanjePredmetaProfesoruDialog = new DodavanjePredmetaProfesoruDialog(
 						parent, p);
 			}

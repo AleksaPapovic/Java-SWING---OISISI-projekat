@@ -2,7 +2,6 @@ package view;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
-import java.awt.Frame;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,7 +17,6 @@ import javax.swing.JTextField;
 import javax.swing.event.DocumentListener;
 
 import controller.DocumentListenerUpis;
-import controller.ProfesorController;
 import controller.StudentController;
 import model.BazaStudenata;
 import model.Predmet;
@@ -52,8 +50,8 @@ public class UpisOceneDialog extends JDialog {
 		buttonsPanel.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
 		Dimension polje = new Dimension(100, 30);
 
-		ArrayList<Predmet> p = BazaStudenata.getInstance().getStudenti().get(TabsPanel.tableStudent.getSelectedTableRow())
-				.getNepolozeniIsp();
+		ArrayList<Predmet> p = BazaStudenata.getInstance().getStudenti()
+				.get(TabsPanel.tableStudent.getSelectedTableRow()).getNepolozeniIsp();
 
 		Predmet predmet = p.get(IzmenaStudentaTabs.tableNepolozeniPredmeti.getSelectedRow());
 		JLabel sifraPredmetaLabela = new JLabel("Šifra predmeta");

@@ -42,7 +42,7 @@ public class IzmenaStudentaPanel extends JPanel{
 
 	public IzmenaStudentaPanel(JDialog parent) {
 		
-		Student st = BazaStudenata.getInstance().getRow(TabsPanel.tableStudent.getSelectedRow());	
+		Student st = BazaStudenata.getInstance().getRow(TabsPanel.tableStudent.getSelectedTableRow());	
 	
 		this.setLayout(new BorderLayout());
 		this.setBackground(Color.WHITE);

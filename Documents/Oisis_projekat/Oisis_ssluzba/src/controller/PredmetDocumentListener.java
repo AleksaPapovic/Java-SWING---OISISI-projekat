@@ -27,12 +27,15 @@ public class PredmetDocumentListener implements DocumentListener {
 
 	public void disableButton() {
 
-		if (PredmetController.getInstance().proveriIme(DodavanjePredmetaDialog.imeField.getText().trim()) 
-				&& !DodavanjePredmetaDialog.imeField.getSablon().equals(DodavanjePredmetaDialog.imeField.getText().trim())
+		if (PredmetController.getInstance().proveriIme(DodavanjePredmetaDialog.imeField.getText().trim())
+				&& !DodavanjePredmetaDialog.imeField.getSablon()
+						.equals(DodavanjePredmetaDialog.imeField.getText().trim())
 				&& PredmetController.getInstance().proveriSifru(DodavanjePredmetaDialog.sifraField.getText().trim())
-				&& !DodavanjePredmetaDialog.sifraField.getSablon().equals(DodavanjePredmetaDialog.sifraField.getText().trim())
+				&& !DodavanjePredmetaDialog.sifraField.getSablon()
+						.equals(DodavanjePredmetaDialog.sifraField.getText().trim())
 				&& PredmetController.getInstance().proveriESPB(DodavanjePredmetaDialog.espbField.getText().trim())
-				&& !DodavanjePredmetaDialog.espbField.getSablon().equals(DodavanjePredmetaDialog.espbField.getText().trim())) {
+				&& !DodavanjePredmetaDialog.espbField.getSablon()
+						.equals(DodavanjePredmetaDialog.espbField.getText().trim())) {
 			DodavanjePredmetaDialog.prihvati.setEnabled(true);
 		} else {
 			DodavanjePredmetaDialog.prihvati.setEnabled(false);

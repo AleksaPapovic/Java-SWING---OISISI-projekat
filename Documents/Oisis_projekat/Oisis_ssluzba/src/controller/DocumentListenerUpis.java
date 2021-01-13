@@ -3,7 +3,6 @@ package controller;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
-import view.DodavanjeProfesoraDialog;
 import view.UpisOceneDialog;
 
 public class DocumentListenerUpis implements DocumentListener {

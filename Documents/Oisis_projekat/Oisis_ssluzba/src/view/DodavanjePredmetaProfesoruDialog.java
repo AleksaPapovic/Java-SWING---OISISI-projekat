@@ -16,8 +16,6 @@ import model.Profesor;
 
 public class DodavanjePredmetaProfesoruDialog extends JDialog {
 
-
-
 	/**
 	 * 
 	 */
@@ -25,18 +23,19 @@ public class DodavanjePredmetaProfesoruDialog extends JDialog {
 	public static Profesor profesor;
 	public static TableListaPredmeta tabelaListaPredmeta;
 
+	@SuppressWarnings("static-access")
 	public DodavanjePredmetaProfesoruDialog(JDialog parent, Profesor profesor) {
 		super(parent, "Dodaj predmet", true);
 		this.setResizable(false);
 		this.setSize(450, 400);
 		this.setLocationRelativeTo(parent);
-       
+
 		JPanel panTop = new JPanel();
 		this.add(panTop, BorderLayout.NORTH);
-		panTop.setLayout(new FlowLayout(FlowLayout.LEFT,30, 15));
+		panTop.setLayout(new FlowLayout(FlowLayout.LEFT, 30, 15));
 		JLabel lbl = new JLabel("Predmeti:");
 		panTop.add(lbl, FlowLayout.LEFT);
-        this.profesor = profesor;
+		this.profesor = profesor;
 		JPanel panCenter = new JPanel();
 		this.add(panCenter, BorderLayout.CENTER);
 		panCenter.setLayout(new BorderLayout());
@@ -52,9 +51,9 @@ public class DodavanjePredmetaProfesoruDialog extends JDialog {
 		btnPotvrdi.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (tabelaListaPredmeta.getCurrentSelectedRow() != -1) {
-				ProfesorController.getInstance().dodajProfesoruPredmet();
-			}
-			dispose();
+					ProfesorController.getInstance().dodajProfesoruPredmet();
+				}
+				dispose();
 			}
 		});
 		panBottom.add(btnPotvrdi);

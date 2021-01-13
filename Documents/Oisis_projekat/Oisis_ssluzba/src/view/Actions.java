@@ -127,7 +127,7 @@ public class Actions {
 			}
 				break;
 			case 1: {
-				if (TabsPanel.tableProfesor.getSelectedRow() != -1) {
+				if (TabsPanel.tableProfesor.getSelectedTableRow() != -1) {
 					@SuppressWarnings("unused")
 					IzmenaProfesoraDialog izmenaProf = new IzmenaProfesoraDialog(MainFrame.getInstance(),
 							"Izmena profesora", true);
@@ -139,7 +139,7 @@ public class Actions {
 				break;
 
 			case 2: {
-				if (TabsPanel.tablePredmet.getSelectedRow() != -1) {
+				if (TabsPanel.tablePredmet.getSelectedTableRow() != -1) {
 					@SuppressWarnings("unused")
 					IzmenaPredmetaDialog prIz = new IzmenaPredmetaDialog(MainFrame.getInstance(), "Izmena predmeta",
 							true);
@@ -185,7 +185,7 @@ public class Actions {
 			}
 				break;
 			case 1: {
-				int index = TabsPanel.tableProfesor.getSelectedRow();
+				int index = TabsPanel.tableProfesor.getSelectedTableRow();
 				if (index != -1) {
 					ProfesorController.getInstance().izbrisiProfesora(index);
 				} else {
