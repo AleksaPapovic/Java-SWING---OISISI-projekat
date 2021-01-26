@@ -7,7 +7,7 @@ import model.Student;
 
 /**
  * This class implements an abstract table model for failed exams of the student.
- * @author Dusan Lekic
+ * @author Aleksa Papovic
  *
  */
 

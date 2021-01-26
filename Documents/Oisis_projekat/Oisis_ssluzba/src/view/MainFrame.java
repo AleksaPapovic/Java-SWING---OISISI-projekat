@@ -12,7 +12,13 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 import model.Entiteti;
-
+/**
+ * This class implements a mainframe with menubar, toolbar
+ * tabs, status bar 
+ * 
+ * @author Aleksa Papovic
+ *
+ */
 public class MainFrame extends JFrame {
 
 	/**
@@ -21,7 +27,10 @@ public class MainFrame extends JFrame {
 	private static final long serialVersionUID = -7240939624608584060L;
 
 	private static MainFrame instance = null;
-
+	/*
+	 * Default constructor without parameters which initializes the mainframe and it's
+	 * components.
+	 */
 	private MainFrame() {
 		initialise();
 	}
@@ -69,7 +78,12 @@ public class MainFrame extends JFrame {
 		setVisible(true);
 
 	}
-
+	/**
+	 * This method implements the instance as a singleton(it can only be instanced
+	 * once).
+	 * 
+	 * @return the given instance
+	 */
 	public static MainFrame getInstance() {
 		if (instance == null) {
 			instance = new MainFrame();

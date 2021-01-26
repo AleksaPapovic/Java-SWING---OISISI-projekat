@@ -13,7 +13,13 @@ import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
-
+/**
+ * This class implements tabbedPane for tables
+ * 
+ * 
+ * @author Aleksa Papovic
+ *
+ */
 public class TabsPanel extends JTabbedPane {
 
 	/**

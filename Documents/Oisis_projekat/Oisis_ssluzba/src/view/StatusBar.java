@@ -18,7 +18,7 @@ import javax.swing.Timer;
 /**
  * This class implements a status bar which shows the current time and date
  * 
- * @author Admin
+ * @author Dusan Lekic
  *
  */
 public class StatusBar extends JPanel {

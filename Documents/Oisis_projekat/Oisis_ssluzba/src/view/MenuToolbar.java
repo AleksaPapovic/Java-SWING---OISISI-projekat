@@ -22,7 +22,13 @@ import view.Actions.DeleteAction;
 import view.Actions.EditAction;
 import view.Actions.NewAction;
 import view.Actions.SearchAction;
-
+/**
+ * This class implements a toolbar with items
+ * icons and search bar.
+ * 
+ * @author Aleksa Papovic
+ *
+ */
 public class MenuToolbar extends JToolBar {
 
 	public NewAction newAction;
@@ -35,7 +41,10 @@ public class MenuToolbar extends JToolBar {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
+	/*
+	 * Default constructor without parameters which initializes the toolbar and it's
+	 * components.
+	 */
 	public MenuToolbar() {
 		super(SwingConstants.HORIZONTAL);
 
@@ -100,7 +109,10 @@ public class MenuToolbar extends JToolBar {
 		add(Box.createHorizontalStrut(15));
 
 	}
-
+	/**
+	 * This method calls action methods from the Action class and creates new
+	 * actions which are binded to toolbar items, buttons, mnemonics and accelerators.
+	 */
 	private void toolbarActions() {
 
 		Actions ac = new Actions();

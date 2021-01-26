@@ -2,7 +2,12 @@
 package model;
 
 import java.util.ArrayList;
-
+/**
+ * This class implements constructors, getters and setters for subject entity.
+ * 
+ * @author Aleksa Papovic
+ *
+ */
 public class Predmet {
 
 	private String sifraP;
@@ -13,7 +18,9 @@ public class Predmet {
 	private int brojESPB;
 	private ArrayList<Student> studentiP;
 	private ArrayList<Student> studentiNP;
-
+	/**
+	 * Default constructor without parameters.
+	 */
 	public Predmet() {
 	}
 	public Predmet(String sifraP, String imeP, int brojESPB, int godinaS, String semestar, Profesor predProf) {

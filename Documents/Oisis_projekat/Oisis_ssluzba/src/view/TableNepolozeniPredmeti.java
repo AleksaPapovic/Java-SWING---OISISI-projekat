@@ -11,7 +11,7 @@ import model.Student;
 /**
  * This class implements a table for a list of exams which student failed.
  * 
- * @author Dusan Lekic
+ * @author Aleksa Papovic
  *
  */
 public class TableNepolozeniPredmeti extends JTable {

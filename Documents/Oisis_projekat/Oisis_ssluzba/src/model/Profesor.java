@@ -4,7 +4,12 @@ package model;
 
 import java.util.ArrayList;
 import java.util.Date;
-
+/**
+ * This class implements constructors, getters and setters for professor entity.
+ * 
+ * @author Aleksa Papovic
+ *
+ */
 public class Profesor {
 
 	public enum Titula {
@@ -26,10 +31,26 @@ public class Profesor {
 	private Titula titula;
 	private Zvanje zvanje;
 	ArrayList<Predmet> predmeti;
-
+	/**
+	 * Default constructor without parameters.
+	 */
 	public Profesor() {
 	}
-
+	/**
+	 * Constructor with parameters.
+	 * 
+	 * @param prezime   surname of the student
+	 * @param ime       name of the student
+	 * @param datumR    birth date of the student
+	 * @param adresaS address of the student
+	 * @param kontaktTel contact info of the student
+	 * @param email     email of the student
+	 * @param adresaS  index number of the student
+	 * @param brlk   enrollment year of the student
+	 * @param titula     current year of study of the student
+	 * @param zvanje    status of the student
+	 * @param predmeti    GPA of the student
+	 */
 	public Profesor(String prezime, String ime, Date datumR, String adresaS, String kontaktTel, String email,
 			String adresaK, String brlk, Titula titula, Zvanje zvanje) {
 		super();

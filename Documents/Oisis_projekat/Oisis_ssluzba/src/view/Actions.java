@@ -20,7 +20,7 @@ import model.Entiteti;
  * This class implements multiple actions which are used for different toolbar
  * buttons and menu items.
  * 
- * @author Dusan Lekic
+ * @author Dusan Lekic and Aleksa Papovic
  *
  */
 public class Actions {

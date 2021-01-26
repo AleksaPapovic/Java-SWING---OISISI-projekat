@@ -21,7 +21,12 @@ import controller.ProfesorController;
 import model.BazaProfesora;
 import model.Profesor;
 import view.FocusField.TipPolja;
-
+/**
+ * This class implements a panel which is used for editing a selected existing professor.
+ * This panel is added as a tab to the dialog for editing a professor.
+ * @author Aleksa Papovic
+ *
+ */
 public class IzmenaProfesoraPanel extends JPanel {
 
 	/**
@@ -41,7 +46,12 @@ public class IzmenaProfesoraPanel extends JPanel {
 	public static JComboBox<String> combobox2Izmena;
 	public static JButton prihvatiIzmena;
 	private DocumentListener docList = new DocumentListenerIzmenaProfesora();
-
+	/**
+	 * Constructor with parameters where the panel is initialized and his
+	 * dimensions and tabs are set.
+	 * 
+	 * @param parent the window which the dialog is relative to
+	 */
 	public IzmenaProfesoraPanel(JDialog parentDialog) {
 
 		int indeks_profesora = TabsPanel.tableProfesor.getSelectedTableRow();

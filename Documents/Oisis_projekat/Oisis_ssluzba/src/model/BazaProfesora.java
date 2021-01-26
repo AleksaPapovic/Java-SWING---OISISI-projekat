@@ -10,11 +10,20 @@ import javax.swing.JOptionPane;
 import model.Profesor.Titula;
 import model.Profesor.Zvanje;
 import view.MenuToolbar;
-
+/**
+ * This class serves as a database for a professor and implements methods for its modification.
+ * @author Aleksa Papovic
+ *
+ */
 public class BazaProfesora {
 
 	private static BazaProfesora instance = null;
-
+	/**
+	 * This method implements the instance as a singleton(it can only be instanced
+	 * once).
+	 * 
+	 * @return the given instance
+	 */
 	public static BazaProfesora getInstance() {
 		if (instance == null) {
 			instance = new BazaProfesora();
@@ -29,6 +38,9 @@ public class BazaProfesora {
 	private boolean pretraga = false;
 	private ArrayList<String> profPredajeNazivi;
 
+	/**
+	 * Default constructor which initializes the columns.
+	 */
 	private BazaProfesora() {
 		super();
 
@@ -128,7 +140,10 @@ public class BazaProfesora {
 	public ArrayList<Profesor> getProfesori() {
 		return profesori;
 	}
-
+	/**
+	 * This method returns all the professors.
+	 * @return all the professors
+	 */
 	public ArrayList<Profesor> getProfesoriSvi() {
 		return this.profesoriSvi;
 	}

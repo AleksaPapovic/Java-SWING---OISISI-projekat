@@ -12,7 +12,12 @@ import java.util.TimeZone;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.converters.basic.DateConverter;
 import com.thoughtworks.xstream.security.AnyTypePermission;
-
+/**
+ * This class implements serialization and deserialization for app entitys.
+ * 
+ * @author Aleksa Papovic and Dusan Lekic
+ *
+ */
 public class Entiteti {
 	
 	@Override
@@ -34,7 +39,10 @@ public class Entiteti {
 	ArrayList<Student> studenti ;
 	
 	private Entiteti() {}
-	
+	/**
+	 * This method serialize data.
+	 * @return 
+	 */
 	public void serializeToXML() throws IOException {
 		
 		 this.predmeti = BazaPredmeta.getInstance().getPredmetiSvi();
@@ -55,7 +63,10 @@ public class Entiteti {
 			os.close();
 		}
 	}
-	
+	/**
+	 * This method deserialize data.
+	 * @return 
+	 */
 	public void deserializeToXML() throws IOException {
 		File f = new File("data" + File.separator + "entiteti.xml");
 			XStream xsd = new XStream();

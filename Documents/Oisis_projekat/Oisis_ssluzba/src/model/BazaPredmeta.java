@@ -7,10 +7,20 @@ import javax.swing.JOptionPane;
 import view.MenuToolbar;
 import view.TabsPanel;
 
+/**
+ * This class serves as a database for a subject and implements methods for its modification.
+ * @author Aleksa Papovic
+ *
+ */
 public class BazaPredmeta {
 
 	private static BazaPredmeta instance = null;
-
+	/**
+	 * This method implements the instance as a singleton(it can only be instanced
+	 * once).
+	 * 
+	 * @return the given instance
+	 */
 	public static BazaPredmeta getInstance() {
 		if (instance == null) {
 			instance = new BazaPredmeta();
@@ -23,6 +33,9 @@ public class BazaPredmeta {
 	private ArrayList<Predmet> predmetiSvi;
 	private boolean pretraga = false;
 
+	/**
+	 * Default constructor which initializes the columns.
+	 */
 	private BazaPredmeta() {
 
 		this.predmeti = new ArrayList<Predmet>();
