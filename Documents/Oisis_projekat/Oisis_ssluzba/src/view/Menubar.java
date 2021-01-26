@@ -23,6 +23,13 @@ import view.Actions.EditAction;
 import view.Actions.HelpAction;
 import view.Actions.NewAction;
 
+/**
+ * This class implements a menubar with menu items for different actions and
+ * mnemonics and accelerators for those actions.
+ * 
+ * @author Dusan Lekic
+ *
+ */
 public class Menubar extends JMenuBar {
 
 	/**
@@ -38,6 +45,10 @@ public class Menubar extends JMenuBar {
 
 	ImageIcon newIcon, closeIcon, editIcon, deleteIcon, helpIcon, aboutIcon;
 
+	/*
+	 * Default constructor without parameters which initializes the menubar and it's
+	 * components.
+	 */
 	public Menubar() {
 		super();
 		createActions();
@@ -98,6 +109,10 @@ public class Menubar extends JMenuBar {
 
 	}
 
+	/**
+	 * This method calls action methods from the Action class and creates new
+	 * actions which are binded to menu items, buttons, mnemonics and accelerators.
+	 */
 	private void createActions() {
 
 		Actions ac = new Actions();

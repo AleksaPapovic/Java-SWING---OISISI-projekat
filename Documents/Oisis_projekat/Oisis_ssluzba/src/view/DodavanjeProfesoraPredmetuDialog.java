@@ -13,7 +13,13 @@ import javax.swing.JScrollPane;
 import controller.PredmetController;
 import model.BazaProfesora;
 import model.Predmet;
-
+/**
+ * This class implements a dialog which is used for adding a new professor to the
+ * selected subject.
+ * 
+ * @author Dusan Lekic
+ *
+ */	
 public class DodavanjeProfesoraPredmetuDialog extends JDialog {
 
 	/**
@@ -22,7 +28,12 @@ public class DodavanjeProfesoraPredmetuDialog extends JDialog {
 	private static final long serialVersionUID = 1L;
 	public static Predmet predmet;
 	public static TableListaProfesoraPredmeta tableListaProfesoraPredmeta;
-
+	/**
+	 * Constructor with parameters where the dialog is initialized and his
+	 * dimensions and components are set.
+	 * 
+	 * @param parent the window which the dialog is relative to
+	 */
 	public DodavanjeProfesoraPredmetuDialog(JDialog parent) {
 		super(parent, "Odaberi profesora", true);
 		this.setResizable(false);
@@ -42,7 +53,9 @@ public class DodavanjeProfesoraPredmetuDialog extends JDialog {
 		JPanel panBottom = new JPanel();
 		this.add(panBottom, BorderLayout.SOUTH);
 		panBottom.setLayout(new FlowLayout(FlowLayout.RIGHT, 10, 20));
-
+		/**
+		 * This action listener specifies the action for the 'potvrdi' button.
+		 */
 		JButton btnPotvrdi = new JButton("Potvrdi");
 		btnPotvrdi.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -54,7 +67,9 @@ public class DodavanjeProfesoraPredmetuDialog extends JDialog {
 			}
 		});
 		panBottom.add(btnPotvrdi);
-
+		/**
+		 * This action listener specifies the action for the 'odustani' button.
+		 */
 		JButton btnOdustani = new JButton("Odustani");
 		btnOdustani.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

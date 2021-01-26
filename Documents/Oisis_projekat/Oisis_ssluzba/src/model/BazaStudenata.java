@@ -12,10 +12,21 @@ import view.IzmenaStudentaTabs;
 import view.MenuToolbar;
 import view.TabsPanel;
 
+/**
+ * This class serves as a database for a student and implements methods for its modification.
+ * @author Dusan Lekic
+ *
+ */
 public class BazaStudenata {
 
 	private static BazaStudenata instance = null;
-
+	
+	/**
+	 * This method implements the instance as a singleton(it can only be instanced
+	 * once).
+	 * 
+	 * @return the given instance
+	 */
 	public static BazaStudenata getInstance() {
 		if (instance == null) {
 			instance = new BazaStudenata();
@@ -31,6 +42,9 @@ public class BazaStudenata {
 	private ArrayList<Student> studentiSvi;
 	private boolean pretraga = false;
 
+	/**
+	 * Default constructor which initializes the columns.
+	 */
 	private BazaStudenata() {
 		this.Studenti = new ArrayList<Student>();
 
@@ -62,37 +76,72 @@ public class BazaStudenata {
 	private void initStudente() {
 
 	}
-
+	
+	/**
+	 * This method returns all the students.
+	 * @return all the students
+	 */
 	public ArrayList<Student> getStudentiSvi() {
 		return Studenti;
 	}
-
+	/**
+	 * This method sets all the students.
+	 * @param Studenti all of students which are set
+	 */
 	public void setStudentiSvi(ArrayList<Student> Studenti) {
 		this.Studenti = Studenti;
 		this.studentiSvi = Studenti;
 	}
-
+	
+	/**
+	 * This method returns the students.
+	 * @return students
+	 */
 	public ArrayList<Student> getStudenti() {
 		return Studenti;
 	}
-
+	
+	/**
+	 * This method sets the students.
+	 * @param Studenti students which are set
+	 */
 	public void setStudenti(ArrayList<Student> Studenti) {
 		this.Studenti = Studenti;
 		this.studentiSvi = Studenti;
 	}
-
+	
+	/**
+	 * Returns the number of the columns of the database(number of the entity characteristics).
+	 * @return number of columns
+	 */
 	public int getColumnCount() {
 		return 6;
 	}
-
+	
+	/**
+	 * This method returns the name of a column
+	 * @param index index of the column
+	 * @return	name of the column
+	 */
 	public String getColumnName(int index) {
 		return this.kolone.get(index);
 	}
-
+	
+	/**
+	 * This method returns the selected grade.
+	 * @param rowIndex index of the grade
+	 * @return the grade with the selected index
+	 */
 	public Student getRow(int rowIndex) {
 		return this.Studenti.get(rowIndex);
 	}
-
+	
+	/**
+	 * Returns the value of the database at the selected row and column.
+	 * @param row index of the grade
+	 * @param column field of a grade
+	 * @return the data at the given row and column or null if the params are out of bounds
+	 */
 	public Object getValueAt(int row, int column) {
 		Student Student = this.Studenti.get(row);
 		switch (column) {
@@ -115,7 +164,21 @@ public class BazaStudenata {
 			return null;
 		}
 	}
-
+	
+	/**
+	 * This method adds a student to the database.
+	 * @param prezime surname of the student
+	 * @param ime name of the student
+	 * @param datumR birth date of the student
+	 * @param adresaSt address of the student	
+	 * @param kontaktTl	contact info of the student
+	 * @param email	email of the student
+	 * @param brojInd index number of the student
+	 * @param godUp enrollment year of the student
+	 * @param godSt current year of study of the student
+	 * @param status status of the student
+	 * @param prosek GPA of the student
+	 */
 	public void dodajStudenta(String prezime, String ime, Date datumR, String adresaSt, String kontaktTl, String email,
 			String brojInd, int godUp, int godSt, Status status, double prosek) {
 		if (pretraga) {
@@ -127,7 +190,11 @@ public class BazaStudenata {
 					status, prosek));
 		}
 	}
-
+	
+	/**
+	 * Deletes the student with the given index number.
+	 * @param brojInd index number of the student which we want to delete
+	 */
 	public void izbrisiStudenta(String brojInd) {
 		for (Student i : this.studentiSvi) {
 			if (i.getBrojInd() == brojInd) {
@@ -136,7 +203,22 @@ public class BazaStudenata {
 			}
 		}
 	}
-
+	
+	/**
+	 * This method changes the info of the student with the given index.
+	 * @param index selected index of the student which we want to change
+	 * @param prezime surname of the student
+	 * @param ime name of the student
+	 * @param datumR birth date of the student
+	 * @param adresaSt address of the student	
+	 * @param kontaktTl	contact info of the student
+	 * @param email	email of the student
+	 * @param brojInd index number of the student
+	 * @param godUp enrollment year of the student
+	 * @param godSt current year of study of the student
+	 * @param status status of the student
+	 * @param prosek GPA of the student
+	 */
 	public void izmeniStudenta(int index, String prezime, String ime, Date datumR, String adresaSt, String kontaktTl,
 			String email, String brojInd, int godUp, int godSt, Student.Status status, double prosek) {
 
@@ -157,7 +239,11 @@ public class BazaStudenata {
 		}
 
 	}
-
+	
+	/**
+	 * This method deletes the student with the selected index.
+	 * @param index selected index of the student which we want to delete 
+	 */
 	public void izbrisiStudenta(int index) {
 		int i = 0;
 		for (Student p : this.studentiSvi) {
@@ -168,7 +254,12 @@ public class BazaStudenata {
 			i++;
 		}
 	}
-
+	
+	/**
+	 * This method converts the date to the wanted format.
+	 * @param date the date we want to convert
+	 * @return converted date or null if the action failed
+	 */
 	public static Date parseDate(String date) {
 		try {
 			return new SimpleDateFormat("dd.MM.yyyy.").parse(date);
@@ -178,31 +269,65 @@ public class BazaStudenata {
 			return null;
 		}
 	}
-
+	
+	/**
+	 * This method returns the passed exams of the student.
+	 * @param student student whose passed exams we want to get
+	 * @return passed exams
+	 */
 	public ArrayList<Ocena> getPolozeniPredmeti(Student student) {
 		return student.getPolozeniIsp();
 	}
-
+	
+	/**
+	 * This method returns the number of the columns of the passed exams.
+	 * @return column number of the passed exams
+	 */
 	public int getColumnCountPolozeniPredmeti() {
 		return this.kolonePolozeniP.size();
 	}
-
+	
+	/**
+	 * This method returns the name of a column
+	 * @param column index of the column
+	 * @return	name of the column
+	 */
 	public String getColumnNamePolozeniPredmeti(int column) {
 		return this.kolonePolozeniP.get(column);
 	}
-
+	
+	/**
+	 * This method returns the failed exams of the student.
+	 * @param student student whose failed exams we want to get
+	 * @return failed exams
+	 */
 	public ArrayList<Predmet> getNepolozeniPredmeti(Student student) {
 		return student.getNepolozeniIsp();
 	}
-
+	/**
+	 * This method returns the number of columns of the failed exams(number of the entity characteristics).
+	 * @return	number of columns
+	 */
 	public int getColumnCountNepolozeniPredmeti() {
 		return this.koloneNepolozeniP.size();
 	}
-
+	
+	/**
+	 * This method returns the name of a column
+	 * @param column index of the column
+	 * @return	name of the column
+	 */
 	public String getColumnNameNepolozeniPredmeti(int column) {
 		return this.koloneNepolozeniP.get(column);
 	}
-
+	
+	/**
+	 * Returns the value of the passed exams at the selected row and column.
+	 * @param student student whose passed exams we are getting
+	 * @param row index of the grade
+	 * @param column field of a grade
+	 * @return the data at the given row and column or null if the params are out of bounds
+	 */
 	public Object getValueAtPolozeniPredmeti(Student student, int row, int column) {
 		Ocena ocena = student.getPolozeniIsp().get(row);
 		switch (column) {
@@ -220,7 +345,14 @@ public class BazaStudenata {
 			return null;
 		}
 	}
-
+	
+	/**
+	 * Returns the value of the failed exams at the selected row and column.
+	 * @param student student whose passed exams we are getting
+	 * @param row index of the grade
+	 * @param column field of a grade
+	 * @return the data at the given row and column or null if the params are out of bounds
+	 */
 	public Object getValueAtNepolozeniPredmeti(Student student, int row, int column) {
 		Predmet predmet = student.getNepolozeniIsp().get(row);
 		switch (column) {
@@ -238,7 +370,14 @@ public class BazaStudenata {
 			return null;
 		}
 	}
-
+	
+	/**
+	 * This method adds a grade from an exam which student passed.
+	 * @param sifraP code of the subject
+	 * @param imeP name of the subject
+	 * @param ocena grade which was given
+	 * @param datumUpisa date when the grade was given
+	 */
 	public void upisiOcenu(String sifraP, String imeP, Integer ocena, String datumUpisa) {
 		Date upisDatum = parseDate(datumUpisa);
 		Student s = getSelectedStudent(TabsPanel.tableStudent.getSelectedTableRow());
@@ -250,7 +389,10 @@ public class BazaStudenata {
 		IzmenaStudentaTabs.tableNepolozeniPredmeti.azurirajNepolozene();
 		IzmenaStudentaTabs.tablePolozeniPredmeti.update();
 	}
-
+	
+	/**
+	 * This method deletes an exam from the list of the failed exams.
+	 */
 	public void brisanjeNepolozenih() {
 		Student s = getSelectedStudent(TabsPanel.tableStudent.getSelectedTableRow());
 		int index = IzmenaStudentaTabs.tableNepolozeniPredmeti.getSelectedRow();
@@ -261,11 +403,20 @@ public class BazaStudenata {
 		IzmenaStudentaTabs.tableNepolozeniPredmeti.azurirajNepolozene();
 
 	}
-
+	
+	/**
+	 * This method returns the student that was selected.
+	 * @param red index of the selected student
+	 * @return selected student
+	 */
 	public Student getSelectedStudent(int red) {
 		return this.Studenti.get(red);
 	}
 
+	/**
+	 * This method deletes the exam from the list of the failed exams.
+	 * @param obrisaniPredmet the exam which we want to delete
+	 */
 	public void izbrisiPredmet(Predmet obrisaniPredmet) {
 		for (Student s : this.Studenti) {
 			for (Predmet p : s.getNepolozeniIsp()) {
@@ -282,7 +433,11 @@ public class BazaStudenata {
 			}
 		}
 	}
-
+	
+	/**
+	 * This method implements the action of searching trough a list of students with a key word.
+	 * @param text key word which student contains
+	 */
 	public void pretraziStudenta(String text) {
 		this.studentiPronadjeni = new ArrayList<Student>();
 		this.Studenti = this.studentiSvi;
@@ -321,11 +476,21 @@ public class BazaStudenata {
 		}
 
 	}
-
+	
+	/**
+	 * This method adds failed exams to the student
+	 * @param student student to whom we want to add the failed exam
+	 * @param predmet the failed exam
+	 */
 	public void dodajPredmeteStudentu(Student student, Predmet predmet) {
 		student.getNepolozeniIsp().add(predmet);
 	}
 
+	/**
+	 * This method returns the subjects which were neither failed nor passed.
+	 * @param student student who's subjects we want to get
+	 * @return subjects which were neither passed nor failed
+	 */
 	public ArrayList<Predmet> getNeradjeneIspite(Student student) {
 		ArrayList<Predmet> predmeti = new ArrayList<Predmet>();
 		for (Predmet p : BazaPredmeta.getInstance().getPredmeti()) {

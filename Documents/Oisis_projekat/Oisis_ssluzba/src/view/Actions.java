@@ -16,6 +16,13 @@ import controller.ProfesorController;
 import controller.StudentController;
 import model.Entiteti;
 
+/**
+ * This class implements multiple actions which are used for different toolbar
+ * buttons and menu items.
+ * 
+ * @author Dusan Lekic
+ *
+ */
 public class Actions {
 	public String tekst = "<html>Glavni prozor se sastoji iz Menubar-a, Toolbar-a, Statusbar-a, Searchbar-a u Toolbar-u i centralnog prozora <br>"
 			+ "koji prikazuje studente, profesore i predmete. Meniji koji postoje u Menubar-u su File, Edit i Help. File sadrzi stavke <br>"
@@ -23,16 +30,35 @@ public class Actions {
 			+ "i Delete, koja brise postojeci entitet. Help meni sadrzi Help stavku, koja sluzi za pomoc korisniku, i<br>"
 			+ "About stavku, koja sluzi za prikaz verzije aplikacije, kao i kratak opis iste.</html>";
 
+	/**
+	 * Default constructor without parameters.
+	 */
 	public Actions() {
 
 	}
 
+	/**
+	 * This class implements the action for creating a new object and is called when
+	 * the new menu item or button on the toolbar is clicked
+	 * 
+	 * @author Dusan Lekic
+	 *
+	 */
 	public class NewAction extends AbstractAction {
 		/**
 		 * 
 		 */
 		private static final long serialVersionUID = 4444373563346796488L;
 
+		/**
+		 * Constructor with parameters
+		 * 
+		 * @param name             name of the action
+		 * @param icon             icon for action display
+		 * @param shortDescription short description of the action
+		 * @param mnemonic         shortcut key for the action
+		 * @param accelerator      shortcut command for the action
+		 */
 		public NewAction(String name, ImageIcon icon, String shortDescription, Integer mnemonic,
 				KeyStroke accelerator) {
 			super();
@@ -42,6 +68,10 @@ public class Actions {
 			putValue(SMALL_ICON, setAbstractAction(icon));
 		}
 
+		/**
+		 * This method implements what happens when the we click the toolbar button or
+		 * menu item.
+		 */
 		public void actionPerformed(ActionEvent e) {
 			switch (TabsPanel.tab_curr) {
 			case 0: {
@@ -70,12 +100,28 @@ public class Actions {
 		}
 	}
 
+	/**
+	 * This class implements the action for closing the main frame and serializing
+	 * the data and is called when the close menu item is clicked.
+	 * 
+	 * @author Dusan Lekic
+	 *
+	 */
 	public class CloseAction extends AbstractAction {
 		/**
 		 * 
 		 */
 		private static final long serialVersionUID = 23685682457822238L;
 
+		/**
+		 * Constructor with parameters
+		 * 
+		 * @param name             name of the action
+		 * @param icon             icon for action display
+		 * @param shortDescription short description of the action
+		 * @param mnemonic         shortcut key for the action
+		 * @param accelerator      shortcut command for the action
+		 */
 		public CloseAction(String name, ImageIcon icon, String shortDescription, Integer mnemonic,
 				KeyStroke accelerator) {
 			super();
@@ -85,10 +131,13 @@ public class Actions {
 			putValue(SMALL_ICON, setAbstractAction(icon));
 		}
 
+		/**
+		 * This method implements what happens when the we click the menu item.
+		 */
 		public void actionPerformed(ActionEvent e) {
 			try {
 				Entiteti.getInstance().serializeToXML();
-		        System.exit(0);
+				System.exit(0);
 			} catch (IOException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
@@ -96,12 +145,28 @@ public class Actions {
 		}
 	}
 
+	/**
+	 * This class implements the action for editing a selected existing object and
+	 * is called when the edit menu item or button on the toolbar is clicked
+	 * 
+	 * @author Dusan Lekic
+	 *
+	 */
 	public class EditAction extends AbstractAction {
 		/**
 		 * 
 		 */
 		private static final long serialVersionUID = -5247903053441802302L;
 
+		/**
+		 * Constructor with parameters
+		 * 
+		 * @param name             name of the action
+		 * @param icon             icon for action display
+		 * @param shortDescription short description of the action
+		 * @param mnemonic         shortcut key for the action
+		 * @param accelerator      shortcut command for the action
+		 */
 		public EditAction(String name, ImageIcon icon, String shortDescription, Integer mnemonic,
 				KeyStroke accelerator) {
 			super();
@@ -111,6 +176,10 @@ public class Actions {
 			putValue(SMALL_ICON, setAbstractAction(icon));
 		}
 
+		/**
+		 * This method implements what happens when the we click the menu item or the
+		 * toolbar button.
+		 */
 		public void actionPerformed(ActionEvent e) {
 
 			switch (TabsPanel.tab_curr) {
@@ -157,12 +226,28 @@ public class Actions {
 		}
 	}
 
+	/**
+	 * This class implements the action for deleting a selected existing object and
+	 * is called when the delete menu item or button on the toolbar is clicked
+	 * 
+	 * @author Dusan Lekic
+	 *
+	 */
 	public class DeleteAction extends AbstractAction {
 		/**
 		 * 
 		 */
 		private static final long serialVersionUID = 7769040185540318009L;
 
+		/**
+		 * Constructor with parameters
+		 * 
+		 * @param name             name of the action
+		 * @param icon             icon for action display
+		 * @param shortDescription short description of the action
+		 * @param mnemonic         shortcut key for the action
+		 * @param accelerator      shortcut command for the action
+		 */
 		public DeleteAction(String name, ImageIcon icon, String shortDescription, Integer mnemonic,
 				KeyStroke accelerator) {
 			super();
@@ -172,6 +257,10 @@ public class Actions {
 			putValue(SMALL_ICON, setAbstractAction(icon));
 		}
 
+		/**
+		 * This method implements what happens when the we click the menu item or the
+		 * toolbar button.
+		 */
 		public void actionPerformed(ActionEvent e) {
 			switch (TabsPanel.tab_curr) {
 			case 0: {
@@ -206,12 +295,27 @@ public class Actions {
 		}
 	}
 
+	/**
+	 * This class implements the action for opening the help dialog and is called
+	 * when the help menu item is clicked.
+	 * 
+	 * @author Dusan Lekic
+	 *
+	 */
 	public class HelpAction extends AbstractAction {
 		/**
 		 * 
 		 */
 		private static final long serialVersionUID = 1374658992717206617L;
-
+		/**
+		 * Constructor with parameters
+		 * 
+		 * @param name             name of the action
+		 * @param icon             icon for action display
+		 * @param shortDescription short description of the action
+		 * @param mnemonic         shortcut key for the action
+		 * @param accelerator      shortcut command for the action
+		 */
 		public HelpAction(String name, ImageIcon icon, String shortDescription, Integer mnemonic,
 				KeyStroke accelerator) {
 			super();
@@ -220,19 +324,35 @@ public class Actions {
 			putValue(ACCELERATOR_KEY, accelerator);
 			putValue(SMALL_ICON, setAbstractAction(icon));
 		}
-
+		/**
+		 * This method implements what happens when the we click the menu item.
+		 */
 		public void actionPerformed(ActionEvent e) {
 			HelpDialog dialog = new HelpDialog(MainFrame.getInstance(), "Help", true);
 			dialog.setVisible(true);
 		}
 	}
-
+	/**
+	 * This class implements the action for opening the about dialog and is called
+	 * when the about menu item is clicked.
+	 * 
+	 * @author Dusan Lekic
+	 *
+	 */
 	public class AboutAction extends AbstractAction {
 		/**
 		 * 
 		 */
 		private static final long serialVersionUID = 9021628910874527061L;
-
+		/**
+		 * Constructor with parameters
+		 * 
+		 * @param name             name of the action
+		 * @param icon             icon for action display
+		 * @param shortDescription short description of the action
+		 * @param mnemonic         shortcut key for the action
+		 * @param accelerator      shortcut command for the action
+		 */
 		public AboutAction(String name, ImageIcon icon, String shortDescription, Integer mnemonic,
 				KeyStroke accelerator) {
 			super();
@@ -241,7 +361,9 @@ public class Actions {
 			putValue(ACCELERATOR_KEY, accelerator);
 			putValue(SMALL_ICON, setAbstractAction(icon));
 		}
-
+		/**
+		 * This method implements what happens when the we click the menu item.
+		 */
 		public void actionPerformed(ActionEvent e) {
 			AboutDialog dialog = new AboutDialog(MainFrame.getInstance(), "About", true);
 			dialog.setVisible(true);
@@ -265,7 +387,7 @@ public class Actions {
 
 		public void actionPerformed(ActionEvent e) {
 			switch (TabsPanel.tab_curr) {
-			case 0: {		
+			case 0: {
 				StudentController.getInstance().pretragaStudenta(MenuToolbar.searchbar.getText());
 			}
 				break;

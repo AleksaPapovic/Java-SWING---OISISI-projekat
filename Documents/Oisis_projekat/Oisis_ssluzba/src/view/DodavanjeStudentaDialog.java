@@ -18,6 +18,13 @@ import controller.StudentController;
 import view.StudentTextFields.TipPolja;
 import controller.DodavanjeStudentaDocumentListener;
 
+/**
+ * This class implements a dialog which is used for adding a new student to the
+ * model.
+ * 
+ * @author Dusan Lekic
+ *
+ */	
 public class DodavanjeStudentaDialog extends JDialog {
 
 	/**
@@ -37,7 +44,15 @@ public class DodavanjeStudentaDialog extends JDialog {
 	public static JButton prihvati;
 	public static JComboBox<String> godStComboBox;
 	public static JComboBox<String> nacinFComboBox;
-
+	/**
+	 * Constructor with parameters where the dialog is initialized and his
+	 * dimensions and components are set.
+	 * 
+	 * @param parent the window which the dialog is relative to
+	 * @param title  the name of the dialog
+	 * @param modal  boolean value which tells us if we have to finish working with
+	 *               this dialog to switch to other windows or not
+	 */
 	public DodavanjeStudentaDialog(Frame parent, String title, boolean modal) {
 		super(parent, title, modal);
 		setSize(450, 550);

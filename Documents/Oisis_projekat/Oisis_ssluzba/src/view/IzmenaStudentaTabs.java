@@ -21,7 +21,11 @@ import javax.swing.event.ChangeListener;
 
 import model.BazaStudenata;
 import model.Student;
-
+/**
+ * This class implements tabs for editing a selected existing student.
+ * @author Admin
+ *
+ */
 public class IzmenaStudentaTabs extends JTabbedPane {
 
 	/**
@@ -32,7 +36,12 @@ public class IzmenaStudentaTabs extends JTabbedPane {
 	public static TableNepolozeniPredmeti tableNepolozeniPredmeti;
 	public static TablePolozeniPredmeti tablePolozeniPredmeti;
 	public static TableListaPredmetaStudenta tableListaPredmetaStudenta;
-
+	/**
+	 * Constructor with parameters where the tabs are initialized and theirs
+	 * dimensions and components are set.
+	 * 
+	 * @param parentDialog the window which the dialog is relative to
+	 */
 	public IzmenaStudentaTabs(JDialog parentDialog) {
 
 		// Tab Student

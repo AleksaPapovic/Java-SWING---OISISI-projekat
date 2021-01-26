@@ -5,26 +5,45 @@ import javax.swing.event.DocumentListener;
 
 import view.DodavanjeStudentaDialog;
 
+/**
+ * This class implements a document listener which is used to disable buttons
+ * depending on the content of the text fields for the dialog which is used for
+ * adding students.
+ * 
+ * @author Dusan Lekic
+ *
+ */
 public class DodavanjeStudentaDocumentListener implements DocumentListener {
-
+	/**
+	 * This method calls the disable button method.
+	 */
 	@Override
 	public void removeUpdate(DocumentEvent e) {
 		disableButton();
 
 	}
 
+	/**
+	 * This method calls the disable button method.
+	 */
 	@Override
 	public void insertUpdate(DocumentEvent e) {
 		disableButton();
 
 	}
 
+	/**
+	 * This method calls the disable button method.
+	 */
 	@Override
 	public void changedUpdate(DocumentEvent e) {
 		disableButton();
 
 	}
 
+	/**
+	 * This method disables buttons depending on the content of the text fields.
+	 */
 	public void disableButton() {
 
 		if (StudentController.getInstance().proveriIme(DodavanjeStudentaDialog.imeField.getText().trim())

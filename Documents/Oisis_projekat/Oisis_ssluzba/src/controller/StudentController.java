@@ -15,10 +15,23 @@ import view.IzmenaStudentaPanel;
 import view.IzmenaStudentaTabs;
 import view.TabsPanel;
 
+/**
+ * This class connects the model and view components for the selected student
+ * and calls the methods which are used to modify him.
+ * 
+ * @author Dusan Lekic
+ *
+ */
 public class StudentController {
 
 	public static StudentController instance = null;
 
+	/**
+	 * This method implements the instance as a singleton(it can only be instanced
+	 * once).
+	 * 
+	 * @return the given instance
+	 */
 	public static StudentController getInstance() {
 		if (instance == null) {
 			instance = new StudentController();
@@ -26,10 +39,20 @@ public class StudentController {
 		return instance;
 	}
 
+	/**
+	 * Default constructor with no parameters.
+	 */
 	private StudentController() {
 
 	}
 
+	/**
+	 * This method implements the action of getting data from the dialog ,creating
+	 * an instance of the student and adding that instance to the model of a
+	 * student.
+	 * 
+	 * @return true or false depending on the success of the method
+	 */
 	public boolean dodajStudenta() {
 		Student st = new Student();
 
@@ -93,6 +116,13 @@ public class StudentController {
 		return true;
 	}
 
+	/**
+	 * This method implements the action of getting data from the dialog ,changing
+	 * the data of a student and adding those changes model of a student.
+	 * 
+	 * @return true or false depending on the success of the method
+	 */
+
 	public boolean izmeniStudenta() {
 
 		String ime = IzmenaStudentaPanel.imeIzmena.getText();
@@ -151,6 +181,14 @@ public class StudentController {
 		return true;
 	}
 
+	/**
+	 * 
+	 * This method implements the action of deleting a selected student from the model.
+	 * 
+	 * 
+	 * @param index the index from the selected table row
+	 * @return true or false depending on the success of the method
+	 */
 	public boolean izbrisiStudenta(int index) {
 
 		BazaStudenata.getInstance().izbrisiStudenta(index);
@@ -158,13 +196,21 @@ public class StudentController {
 		return true;
 
 	}
-
+	
+	/**
+	 *  This method implements the action of searching for a given text through the searchbar.
+	 * @param text text forwarded through the searchbar
+	 */
 	public void pretragaStudenta(String text) {
 		BazaStudenata.getInstance().pretraziStudenta(text);
 		TabsPanel.tableStudent.update();
-		;
 	}
-
+	
+	/**
+	 * This method checks if the name of a student is valid.
+	 * @param ime the name of the student
+	 * @return true or false depending on the validity of the name
+	 */
 	public boolean proveriIme(String ime) {
 		boolean ret = true;
 
@@ -174,7 +220,12 @@ public class StudentController {
 		return ret;
 
 	}
-
+	
+	/**
+	 * This method checks if the birth date of a student is valid.
+	 * @param datumR the birth date of a student
+	 * @return true or false depending on the validity of the birth date
+	 */
 	public boolean proveriDatumR(String datumR) {
 
 		boolean ret = true;
@@ -189,6 +240,11 @@ public class StudentController {
 		return ret;
 	}
 
+	/**
+	 * This method checks if the birth date of a student is valid.
+	 * @param adresaSt the address of a student
+	 * @return	true or false depending on the validity of the address
+	 */
 	public boolean proveriAdresuSt(String adresaSt) {
 		boolean ret = true;
 		if (adresaSt.isEmpty()) {
@@ -198,6 +254,11 @@ public class StudentController {
 
 	}
 
+	/**
+	 * This method checks if the contact info of a student is valid.
+	 * @param kontaktTl phone number of a student
+	 * @return true or false depending on the validity of the phone number
+	 */
 	public boolean proveriKontaktTl(String kontaktTl) {
 		boolean ret = true;
 		if (!kontaktTl.matches("[0-9]{9,}")) {
@@ -206,7 +267,12 @@ public class StudentController {
 		return ret;
 
 	}
-
+	
+	/**
+	 * This method checks if the email of a student is valid.
+	 * @param email e-mail of a student
+	 * @return true or false depending on the validity of the e-mail
+	 */
 	public boolean proveriEmail(String email) {
 		boolean ret = true;
 		if (!email.matches("[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+")) {
@@ -214,7 +280,12 @@ public class StudentController {
 		}
 		return ret;
 	}
-
+	
+	/**
+	 * This method checks if the index number of a student is valid.
+	 * @param brojInd index number of a student
+	 * @return true or false depending on the validity of the index number
+	 */
 	public boolean proveriBrojInd(String brojInd) {
 		boolean ret = true;
 		if (brojInd.isEmpty()) {
@@ -227,7 +298,12 @@ public class StudentController {
 		}
 		return ret;
 	}
-
+	
+	/**
+	 * This method checks if the year of enrollment of a student is valid.
+	 * @param godUp enrollment year
+	 * @return true or false depending on the validity of the enrollment year
+	 */
 	public boolean proveriGodUp(String godUp) {
 		boolean ret = true;
 		if (!godUp.matches("[1-2][0-9]{3}")) {
@@ -236,17 +312,33 @@ public class StudentController {
 		return ret;
 
 	}
-
+	
+	/**
+	 * This methods implements giving a grade to a student.
+	 * @param sifraP code of the subject
+	 * @param imeP	the name of the subject
+	 * @param ocena	the given grade
+	 * @param datum	the date when the grade was given
+	 * @return true or false depending on success of the action
+	 */
 	public boolean upisi(String sifraP, String imeP, int ocena, String datum) {
 		BazaStudenata.getInstance().upisiOcenu(sifraP, imeP, ocena, datum);
 		return true;
 	}
 
+	/**
+	 * This methods implements deleting a subject from the failed exams.
+	 * @return true or false depending on success of the action
+	 */
 	public boolean obrisi() {
 		BazaStudenata.getInstance().brisanjeNepolozenih();
 		return true;
 	}
-
+	
+	/**
+	 * This method implements adding a subject to the student.
+	 * @param predmet the subject which is added to the student
+	 */
 	public void dodajStudentuPredmet(Predmet predmet) {
 		// TODO Auto-generated method stub
 		Student student = BazaStudenata.getInstance().getSelectedStudent(TabsPanel.tableStudent.getSelectedTableRow());

@@ -9,6 +9,13 @@ import javax.swing.JTextField;
 
 import controller.PredmetController;
 
+/**
+ * This class implements templates for the text fields which are used for
+ * checking the validity of text fields for a subject.
+ * 
+ * @author Dusan Lekic
+ *
+ */
 public class PredmetTextFields extends JTextField {
 
 	/**
@@ -23,11 +30,21 @@ public class PredmetTextFields extends JTextField {
 	private JTextField polje;
 	private TipPolja tip;
 	private String sablon;
-
+	/**
+	 * Returns the template of the field.
+	 * @return template of the field
+	 */
 	public String getSablon() {
 		return sablon;
 	}
 
+	/**
+	 * Constructor with parameters which initializes the fields, checks the validity
+	 * of the fields and sets templates.
+	 * 
+	 * @param tipPolja type of the field
+	 * @param sablonPolja template of the field
+	 */
 	public PredmetTextFields(TipPolja tipPolja, String sablonPolja) {
 		polje = this;
 		this.tip = tipPolja;
@@ -62,7 +79,10 @@ public class PredmetTextFields extends JTextField {
 			}
 		});
 	}
-
+	/**
+	 * This method checks for the validity of the text fields
+	 * @return true or false depending on the validity of the text fields
+	 */
 	public boolean proveraPolja() {
 		switch (tip) {
 		case Ime:

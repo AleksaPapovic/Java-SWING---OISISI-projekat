@@ -67,7 +67,7 @@ public class Entiteti {
 			xsd.alias("Student", Student.class);
 		
 			Entiteti e = (Entiteti) xsd.fromXML(new FileInputStream(f));
-		    System.out.println(e.toString());
+		  
 		    
 	     //   BazaProfesora.getInstance().setProfesori(e.profesori);
 		

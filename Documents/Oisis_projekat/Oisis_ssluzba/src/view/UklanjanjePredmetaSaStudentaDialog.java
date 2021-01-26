@@ -12,7 +12,13 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import controller.StudentController;
-
+/**
+ * This class implements a dialog which is used for deleting a selected existing subject
+ * from the list of subjects which the professor teaches.
+ * 
+ * @author Dusan Lekic
+ *
+ */	
 public class UklanjanjePredmetaSaStudentaDialog extends JDialog {
 
 	/**
@@ -22,7 +28,15 @@ public class UklanjanjePredmetaSaStudentaDialog extends JDialog {
 
 	public static JButton da;
 	public static JButton ne;
-
+	/**
+	 * Constructor with parameters where the dialog is initialized and his
+	 * dimensions and tabs are set.
+	 * 
+	 * @param parent the window which the dialog is relative to
+	 * @param title  the name of the dialog
+	 * @param modal  boolean value which tells us if we have to finish working with
+	 *               this dialog to switch to other windows or not
+	 */
 	public UklanjanjePredmetaSaStudentaDialog(JDialog parent, String title, boolean modal) {
 		super(parent, title, modal);
 		setTitle(title);

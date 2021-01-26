@@ -102,7 +102,7 @@ public class IzmenaProfesoraPanel extends JPanel {
 		adresaKIzmena = new FocusField(TipPolja.AdresaK, "...");
 		adresaKIzmena.setText(prof.getAdresaK());
 
-		JLabel brlkLabela = new JLabel("Unesite broj lične karte");
+		JLabel brlkLabela = new JLabel("Unesite broj licne karte");
 		brlkLabela.setPreferredSize(polje);
 		brlkLabela.setMaximumSize(polje);
 		brlkIzmena = new FocusField(TipPolja.BrojLK, "mora imati 9 brojeva");

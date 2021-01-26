@@ -20,7 +20,12 @@ import controller.StudentController;
 import model.BazaStudenata;
 import model.Student;
 import view.StudentTextFields.TipPolja;
-
+/**
+ * This class implements a panel which is used for editing a selected existing student.
+ * This panel is added as a tab to the dialog for editing a student.
+ * @author Dusan Lekic
+ *
+ */
 public class IzmenaStudentaPanel extends JPanel {
 
 	/**
@@ -39,7 +44,12 @@ public class IzmenaStudentaPanel extends JPanel {
 	public static JButton prihvatiIzmena;
 	public static JComboBox<String> godStIzmena;
 	public static JComboBox<String> nacinFIzmena;
-
+	/**
+	 * Constructor with parameters where the panel is initialized and his
+	 * dimensions and tabs are set.
+	 * 
+	 * @param parent the window which the dialog is relative to
+	 */
 	public IzmenaStudentaPanel(JDialog parent) {
 
 		Student st = BazaStudenata.getInstance().getRow(TabsPanel.tableStudent.getSelectedTableRow());

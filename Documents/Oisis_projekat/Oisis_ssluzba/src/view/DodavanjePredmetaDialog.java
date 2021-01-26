@@ -18,6 +18,13 @@ import controller.PredmetController;
 import controller.PredmetDocumentListener;
 import view.PredmetTextFields.TipPolja;
 
+/**
+ * This class implements a dialog which is used for adding a new subject to the
+ * model.
+ * 
+ * @author Dusan Lekic
+ *
+ */
 public class DodavanjePredmetaDialog extends JDialog {
 
 	/**
@@ -32,6 +39,15 @@ public class DodavanjePredmetaDialog extends JDialog {
 	public JButton odustani;
 	public static JButton prihvati;
 
+	/**
+	 * Constructor with parameters where the dialog is initialized and his
+	 * dimensions and components are set.
+	 * 
+	 * @param parent the window which the dialog is relative to
+	 * @param title  the name of the dialog
+	 * @param modal  boolean value which tells us if we have to finish working with
+	 *               this dialog to switch to other windows or not
+	 */
 	public DodavanjePredmetaDialog(Frame parent, String title, boolean modal) {
 		super(parent, title, modal);
 		setSize(450, 550);
@@ -84,7 +100,10 @@ public class DodavanjePredmetaDialog extends JDialog {
 		DodavanjePredmetaDialog.sifraField.getDocument().addDocumentListener(textChangeDocumentListener);
 		DodavanjePredmetaDialog.imeField.getDocument().addDocumentListener(textChangeDocumentListener);
 		DodavanjePredmetaDialog.espbField.getDocument().addDocumentListener(textChangeDocumentListener);
-
+		
+		/**
+		 * This action listener specifies the action for the 'prihvati' button.
+		 */
 		prihvati.addActionListener(new ActionListener() {
 
 			@Override
@@ -96,7 +115,10 @@ public class DodavanjePredmetaDialog extends JDialog {
 			}
 
 		});
-
+		
+		/**
+		 * This action listener specifies the action for the 'odustani' button.
+		 */
 		odustani.addActionListener(new ActionListener() {
 
 			@Override

@@ -20,7 +20,12 @@ import controller.PredmetController;
 import model.BazaPredmeta;
 import model.Predmet;
 import view.PredmetTextFields.TipPolja;
-
+/**
+ * This class implements a panel which is used for editing a selected existing subject.
+ * This panel is added as a tab to the dialog for editing a subject.
+ * @author Dusan Lekic
+ *
+ */
 public class IzmenaPredmetaPanel extends JPanel {
 
 	/**
@@ -38,7 +43,12 @@ public class IzmenaPredmetaPanel extends JPanel {
 	public static JButton minusIzmena;
 	public JButton odustaniIzmena;
 	public static JButton prihvatiIzmena;
-
+	/**
+	 * Constructor with parameters where the panel is initialized and his
+	 * dimensions and tabs are set.
+	 * 
+	 * @param parent the window which the dialog is relative to
+	 */
 	public IzmenaPredmetaPanel(JDialog parent) {
 
 		Predmet pr = BazaPredmeta.getInstance().getRow(TabsPanel.tablePredmet.getSelectedTableRow());

@@ -8,7 +8,13 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import controller.StudentController;
-
+/**
+ * This class implements templates for the text fields which are used for
+ * checking the validity of text fields for a student.
+ * 
+ * @author Dusan Lekic
+ *
+ */
 public class StudentTextFields extends JTextField {
 
 	/**
@@ -23,11 +29,20 @@ public class StudentTextFields extends JTextField {
 	private JTextField polje;
 	private TipPolja tip;
 	private String sablon;
-
+	/**
+	 * Returns the template of the field.
+	 * @return template of the field
+	 */
 	public String getSablon() {
 		return sablon;
 	}
-
+	/**
+	 * Constructor with parameters which initializes the fields, checks the validity
+	 * of the fields and sets templates.
+	 * 
+	 * @param tipPolja type of the field
+	 * @param sablonPolja template of the field
+	 */
 	public StudentTextFields(TipPolja tipPolja, String sablonPolja) {
 		polje = this;
 		this.tip = tipPolja;
@@ -62,7 +77,10 @@ public class StudentTextFields extends JTextField {
 			}
 		});
 	}
-
+	/**
+	 * This method checks for the validity of the text fields
+	 * @return true or false depending on the validity of the text fields
+	 */
 	public boolean proveraPolja() {
 		switch (tip) {
 		case Ime:

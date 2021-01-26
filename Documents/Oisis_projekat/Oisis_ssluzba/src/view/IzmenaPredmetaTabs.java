@@ -12,7 +12,11 @@ import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
-
+/**
+ * This class implements tabs for editing a selected existing subject.
+ * @author Admin
+ *
+ */
 public class IzmenaPredmetaTabs extends JTabbedPane {
 
 	/**
@@ -21,7 +25,12 @@ public class IzmenaPredmetaTabs extends JTabbedPane {
 	private static final long serialVersionUID = 1L;
 	public static int curr_tab = 0;
 	public static TableNepolozeniPredmeti tableNepolozeniPredmeti;
-
+	/**
+	 * Constructor with parameters where the tabs are initialized and theirs
+	 * dimensions and components are set.
+	 * 
+	 * @param parentDialog the window which the dialog is relative to
+	 */
 	public IzmenaPredmetaTabs(JDialog parentDialog) {
 
 		// Tab Predmet

@@ -90,7 +90,7 @@ public class DodavanjeProfesoraDialog extends JDialog {
 		adresaKLabela.setMaximumSize(polje);
 		adresaKField = new FocusField(TipPolja.AdresaK, "...");
 
-		JLabel brlkLabela = new JLabel("Unesite broj lične karte");
+		JLabel brlkLabela = new JLabel("Unesite broj licne karte");
 		brlkLabela.setPreferredSize(polje);
 		brlkLabela.setMaximumSize(polje);
 		brlkField = new FocusField(TipPolja.BrojLK, "mora imati 9 brojeva");
