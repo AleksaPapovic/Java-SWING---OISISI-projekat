@@ -52,7 +52,6 @@ public class Profesor {
 	 * @param brlk       ID number of the professor
 	 * @param titula     title of the professor
 	 * @param zvanje     title of the professor
-	 * @param predmeti   GPA of the subjects
 	 */
 	public Profesor(String prezime, String ime, Date datumR, String adresaS, String kontaktTel, String email,
 			String adresaK, String brlk, Titula titula, Zvanje zvanje) {
@@ -127,8 +126,9 @@ public class Profesor {
 	}
 
 	/**
+	 * Constructor with parameter of type Profesor.
 	 * 
-	 * @param prof
+	 * @param prof the professor 
 	 */
 	public Profesor(Profesor prof) {
 		this.prezime = prof.prezime;

@@ -125,7 +125,7 @@ public class PredmetController {
 	 * This method implements the action of deleting a selected subject from the model.
 	 * 
 	 * 
-	 * @param index the index from the selected table row
+	 * @param index_predmeta the index from the selected table row
 	 * @return true or false depending on the success of the method
 	 */
 	public boolean izbrisiPredmet(int index_predmeta) {

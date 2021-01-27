@@ -29,9 +29,10 @@ public class Predmet {
 	/**
 	 * Constructor with parameters.
 	 * 
-	 * @param sifrap   code of the subject
+	 * @param sifraP   code of the subject
 	 * @param imeP     name of the subject
 	 * @param semestar semester of the subject
+	 * @param brojESPB number of ESPB for the subject
 	 * @param godinaS  year of study of the subject
 	 * @param predProf the professor which teaches the subject
 	 */
@@ -48,6 +49,7 @@ public class Predmet {
 	}
 
 	/**
+	 * Constructor with parameters.
 	 * 
 	 * @param sifraP   code of the subject
 	 * @param imeP     name of the subject
@@ -69,6 +71,7 @@ public class Predmet {
 	}
 
 	/**
+	 * Constructor with parameters.
 	 * 
 	 * @param sifraP   code of the subject
 	 * @param imeP     name of the subject
@@ -97,7 +100,7 @@ public class Predmet {
 	}
 
 	/**
-	 *  This method returns the code of the subject.
+	 *  This method sets the code of the subject.
 	 * 
 	 * @param sifraP the code of the subject
 	 */
@@ -115,7 +118,7 @@ public class Predmet {
 	}
 
 	/**
-	 * This method returns the name of the subject.
+	 * This method sets the name of the subject.
 	 * 
 	 * @param imeP the name of the subject
 	 */

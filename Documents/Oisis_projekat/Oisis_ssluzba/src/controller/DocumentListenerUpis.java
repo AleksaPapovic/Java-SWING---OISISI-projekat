@@ -54,6 +54,8 @@ public class DocumentListenerUpis implements DocumentListener {
 	}
 	/**
 	 * This method disables buttons depending on the content of the text fields.
+	 * 
+	 * @return true or false depends if fields are valid
 	 */
 	public boolean proveriPolja() {
 		boolean ret = false;

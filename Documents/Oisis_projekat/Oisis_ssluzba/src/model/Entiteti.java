@@ -13,20 +13,30 @@ import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.converters.basic.DateConverter;
 import com.thoughtworks.xstream.security.AnyTypePermission;
 /**
- * This class implements serialization and deserialization for app entitys.
+ * This class implements serialization and deserialization for app entities.
  * 
  * @author Aleksa Papovic and Dusan Lekic
  *
  */
 public class Entiteti {
-	
+	/**
+	 * This method implements toString() for entities
+	 * 
+	 * 
+	 * @return String  predmeti.toString() + profesori.toString() + studenti.toString()
+	 */
 	@Override
 	public String toString() {
 		return "Entiteti [predmeti=" + predmeti + ", profesori=" + profesori + ", studenti=" + studenti + "]";
 	}
 
 	private static Entiteti instance = null;
-
+	/**
+	 * This method implements the instance as a singleton(it can only be instanced
+	 * once).
+	 * 
+	 * @return the given instance
+	 */
 	public static Entiteti getInstance() {
 		if (instance == null) {
 			instance = new Entiteti();
@@ -37,11 +47,13 @@ public class Entiteti {
 	ArrayList<Predmet> predmeti ;
 	ArrayList<Profesor> profesori ;
 	ArrayList<Student> studenti ;
-	
+	/**
+	 * Default constructor without parameters.
+	 */
 	private Entiteti() {}
 	/**
 	 * This method serialize data.
-	 * @return 
+	 *  @throws IOException  failed or interrupted I/O operations
 	 */
 	public void serializeToXML() throws IOException {
 		
@@ -65,7 +77,7 @@ public class Entiteti {
 	}
 	/**
 	 * This method deserialize data.
-	 * @return 
+	 * @throws IOException failed or interrupted I/O operations
 	 */
 	public void deserializeToXML() throws IOException {
 		File f = new File("data" + File.separator + "entiteti.xml");
@@ -106,27 +118,51 @@ public class Entiteti {
 		    
 		    
 	}
-
+	/**
+	 * This method returns the list of the subjects.
+	 * 
+	 * @return the list of the subjects
+	 */
 	public ArrayList<Predmet> getPredmeti() {
 		return predmeti;
 	}
-
+	/**
+	 *  This method sets the list of the subjects.
+	 * 
+	 * @param predmeti  the list of the subjects
+	 */
 	public void setPredmeti(ArrayList<Predmet> predmeti) {
 		this.predmeti = predmeti;
 	}
-
+	/**
+	 * This method returns the list of the professors.
+	 * 
+	 * @return the list of the professors
+	 */
 	public ArrayList<Profesor> getProfesori() {
 		return profesori;
 	}
-
+	/**
+	 * This method sets the list of the professors.
+	 * 
+	 * @param profesori the list of the professors
+	 */
 	public void setProfesori(ArrayList<Profesor> profesori) {
 		this.profesori = profesori;
 	}
-
+	/**
+	 * This method returns the list of the students.
+	 * 
+	 * @return  the list of the students
+	 */
 	public ArrayList<Student> getStudenti() {
 		return studenti;
 	}
-
+	/**
+	 * This method sets the list of the students.
+	 * 
+	 * @param studenti list of the students
+	 */
 	public void setStudenti(ArrayList<Student> studenti) {
 		this.studenti = studenti;
 	}

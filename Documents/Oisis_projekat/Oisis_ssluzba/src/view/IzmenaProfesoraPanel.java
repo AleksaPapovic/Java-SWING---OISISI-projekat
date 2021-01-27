@@ -50,7 +50,7 @@ public class IzmenaProfesoraPanel extends JPanel {
 	 * Constructor with parameters where the panel is initialized and his
 	 * dimensions and tabs are set.
 	 * 
-	 * @param parent the window which the dialog is relative to
+	 * @param parentDialog the window which the dialog is relative to
 	 */
 	public IzmenaProfesoraPanel(JDialog parentDialog) {
 

@@ -26,7 +26,7 @@ public class AbstractTableModelDodavanjePredmetaProfesoru extends AbstractTableM
 	
 	/**
 	 * Constructor with parameters.
-	 * @param professor professor whose exam is being added
+	 * @param profesor professor whose exam is being added
 	 */
 	public AbstractTableModelDodavanjePredmetaProfesoru(Profesor profesor) {
 		this.profesor = profesor;

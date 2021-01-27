@@ -19,7 +19,7 @@ public class AbstractTableModelPredavaniPredmeti extends AbstractTableModel {
 
 	/**
 	 * Constructor with parameters.
-	 * @param professor professor whose exam is being added
+	 * @param profesor professor whose exam is being added
 	 */
 	public AbstractTableModelPredavaniPredmeti(Profesor profesor) {
 		this.profesor = profesor;
