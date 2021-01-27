@@ -4,6 +4,7 @@ package model;
 
 import java.util.ArrayList;
 import java.util.Date;
+
 /**
  * This class implements constructors, getters and setters for professor entity.
  * 
@@ -31,25 +32,27 @@ public class Profesor {
 	private Titula titula;
 	private Zvanje zvanje;
 	ArrayList<Predmet> predmeti;
+
 	/**
 	 * Default constructor without parameters.
 	 */
 	public Profesor() {
 	}
+
 	/**
 	 * Constructor with parameters.
 	 * 
-	 * @param prezime   surname of the student
-	 * @param ime       name of the student
-	 * @param datumR    birth date of the student
-	 * @param adresaS address of the student
-	 * @param kontaktTel contact info of the student
-	 * @param email     email of the student
-	 * @param adresaS  index number of the student
-	 * @param brlk   enrollment year of the student
-	 * @param titula     current year of study of the student
-	 * @param zvanje    status of the student
-	 * @param predmeti    GPA of the student
+	 * @param prezime    surname of the professor
+	 * @param ime        name of the professor
+	 * @param datumR     birth date of the professor
+	 * @param adresaS    address of the professor
+	 * @param kontaktTel contact info of the professor
+	 * @param email      email of the professor
+	 * @param adresaK    professor's office address
+	 * @param brlk       ID number of the professor
+	 * @param titula     title of the professor
+	 * @param zvanje     title of the professor
+	 * @param predmeti   GPA of the subjects
 	 */
 	public Profesor(String prezime, String ime, Date datumR, String adresaS, String kontaktTel, String email,
 			String adresaK, String brlk, Titula titula, Zvanje zvanje) {
@@ -67,8 +70,22 @@ public class Profesor {
 		this.predmeti = new ArrayList<Predmet>();
 	}
 
-	public Profesor(String brlk ,String ime, String prezime, Date datumR, String adresaS, String kontaktTel, String email,
-			String adresaK, Titula titula, Zvanje zvanje) {
+	/**
+	 * Constructor with parameters.
+	 * 
+	 * @param prezime    surname of the professor
+	 * @param ime        name of the professor
+	 * @param datumR     birth date of the professor
+	 * @param adresaS    address of the professor
+	 * @param kontaktTel contact info of the professor
+	 * @param email      email of the professor
+	 * @param adresaK    professor's office address
+	 * @param brlk       ID number of the professor
+	 * @param titula     title of the professor
+	 * @param zvanje     title of the professor
+	 */
+	public Profesor(String brlk, String ime, String prezime, Date datumR, String adresaS, String kontaktTel,
+			String email, String adresaK, Titula titula, Zvanje zvanje) {
 		super();
 		this.prezime = prezime;
 		this.ime = ime;
@@ -82,6 +99,19 @@ public class Profesor {
 		this.zvanje = zvanje;
 		this.predmeti = new ArrayList<Predmet>();
 	}
+
+	/**
+	 * Constructor with parameters.
+	 * 
+	 * @param prezime    surname of the professor
+	 * @param ime        name of the professor
+	 * @param datumR     birth date of the professor
+	 * @param adresaS    address of the professor
+	 * @param kontaktTel contact info of the professor
+	 * @param email      email of the professor
+	 * @param adresaK    professor's office address
+	 * @param brlk       ID number of the professor
+	 */
 	public Profesor(String prezime, String ime, Date datumR, String adresaS, String kontaktTel, String email,
 			String adresaK, String brlk) {
 		super();
@@ -96,6 +126,10 @@ public class Profesor {
 		this.predmeti = new ArrayList<Predmet>();
 	}
 
+	/**
+	 * 
+	 * @param prof
+	 */
 	public Profesor(Profesor prof) {
 		this.prezime = prof.prezime;
 		this.ime = prof.ime;
@@ -110,90 +144,200 @@ public class Profesor {
 		this.predmeti = prof.predmeti;
 	}
 
+	/**
+	 * This method returns the surname of the professor.
+	 * 
+	 * @return surname of the professor
+	 */
 	public String getPrezime() {
 		return prezime;
 	}
 
+	/**
+	 * This method sets the surname of the professor.
+	 * 
+	 * @param prezime surname which is set
+	 */
 	public void setPrezime(String prezime) {
 		this.prezime = prezime;
 	}
 
+	/**
+	 * This method returns the name of the professor.
+	 * 
+	 * @return name of the professor
+	 */
 	public String getIme() {
 		return ime;
 	}
 
+	/**
+	 * This method sets the first name of the professor.
+	 * 
+	 * @param ime first name which is set
+	 */
 	public void setIme(String ime) {
 		this.ime = ime;
 	}
 
+	/**
+	 * This method returns the birth date of the professor.
+	 * 
+	 * @return birth date of the professor
+	 */
 	public Date getDatumR() {
 		return this.datumR;
 	}
 
+	/**
+	 * This method sets the birth date of the professor.
+	 * 
+	 * @param datumR birth date of the professor
+	 */
 	public void setDatumR(Date datumR) {
 		this.datumR = datumR;
 	}
 
+	/**
+	 * This method returns address of the professor.
+	 * 
+	 * @return address of the professor
+	 */
 	public String getAdresaS() {
 		return adresaS;
 	}
 
+	/**
+	 * This method sets address of the professor.
+	 * 
+	 * @param adresaS address of the professor
+	 */
 	public void setAdresaS(String adresaS) {
 		this.adresaS = adresaS;
 	}
 
+	/**
+	 * This method returns contact info of the professor.
+	 * 
+	 * @return contact info of the professor.
+	 */
 	public String getKontaktTel() {
 		return kontaktTel;
 	}
 
+	/**
+	 * This method sets contact info of the professor.
+	 * 
+	 * @param kontaktTel contact info of the professor
+	 */
 	public void setKontaktTel(String kontaktTel) {
 		this.kontaktTel = kontaktTel;
 	}
 
+	/**
+	 * This method returns email of the professor.
+	 * 
+	 * @return email of the professor.
+	 */
 	public String getEmail() {
 		return email;
 	}
 
+	/**
+	 * This method sets email of the professor.
+	 * 
+	 * @param email email of the professor
+	 */
 	public void setEmail(String email) {
 		this.email = email;
 	}
 
+	/**
+	 * This method returns  professor's office address
+	 * 
+	 * @return  professor's office address
+	 */
 	public String getAdresaK() {
 		return adresaK;
 	}
 
+	/**
+	 * This method sets professor's office address of the professor.
+	 * 
+	 * @param adresaK professor's office address
+	 */
 	public void setAdresaK(String adresaK) {
 		this.adresaK = adresaK;
 	}
 
+	/**
+	 * This method returns ID number of the professor
+	 * 
+	 * @return ID number
+	 */
 	public String getBrlk() {
 		return brlk;
 	}
 
+	/**
+	 * This method sets ID number of the professor.
+	 * 
+	 * @param brlk ID number of the professor
+	 */
 	public void setBrlk(String brlk) {
 		this.brlk = brlk;
 	}
 
+	/**
+	 * This method returns title of the professor
+	 * 
+	 * @return title
+	 */
 	public Titula getTitula() {
 		return titula;
 	}
 
+	/**
+	 * This method sets title of the professor.
+	 * 
+	 * @param titula title
+	 */
 	public void setTitula(Titula titula) {
 		this.titula = titula;
 	}
 
+	/**
+	 * This method returns title of the professor
+	 * 
+	 * @return title
+	 */
 	public Zvanje getZvanje() {
 		return zvanje;
 	}
 
+	/**
+	 * This method sets title of the professor.
+	 * 
+	 * @param zvanje title
+	 */
 	public void setZvanje(Zvanje zvanje) {
 		this.zvanje = zvanje;
 	}
 
+	/**
+	 * This method returns list of subjects for the professor
+	 * 
+	 * @return list of subjects for the professor
+	 */
 	public ArrayList<Predmet> getPredmeti() {
 		return this.predmeti;
 	}
 
+	/**
+	 * This method sets list of subjects for the professor.
+	 * 
+	 * @param predmeti list of subjects
+	 */
 	public void setPredmeti(ArrayList<Predmet> predmeti) {
 		this.predmeti = predmeti;
 	}

@@ -11,21 +11,42 @@ import view.DodavanjeProfesoraPredmetuDialog;
 import view.IzmenaPredmetaPanel;
 import view.TabsPanel;
 
+/**
+ * This class connects the model and view components for the selected subject
+ * and calls the methods which are used to modify him.
+ * 
+ * @author Aleksa Papovic
+ *
+ */
 public class PredmetController {
 
 	public static PredmetController instance = null;
 
+	/**
+	 * This method implements the instance as a singleton(it can only be instanced
+	 * once).
+	 * 
+	 * @return the given instance
+	 */
 	public static PredmetController getInstance() {
 		if (instance == null) {
 			instance = new PredmetController();
 		}
 		return instance;
 	}
-
+	/**
+	 * Default constructor with no parameters.
+	 */
 	private PredmetController() {
 
 	}
-
+	/**
+	 * This method implements the action of getting data from the dialog ,creating
+	 * an instance of the subject and adding that instance to the model of a
+	 * subject.
+	 * 
+	 * @return true or false depending on the success of the method
+	 */
 	public boolean dodajPredmet() {
 		Predmet pr = new Predmet();
 
@@ -60,7 +81,12 @@ public class PredmetController {
 		TabsPanel.tablePredmet.azuriranjeTabelePredmet();
 		return true;
 	}
-
+	/**
+	 * This method implements the action of getting data from the dialog ,changing
+	 * the data of a subject and adding those changes model of a subject.
+	 * 
+	 * @return true or false depending on the success of the method
+	 */
 	public boolean izmeniPredmet() {
 
 		String sifraP = IzmenaPredmetaPanel.sifraIzmena.getText();
@@ -94,7 +120,14 @@ public class PredmetController {
 		TabsPanel.tablePredmet.azuriranjeTabelePredmet();
 		return true;
 	}
-
+	/**
+	 * 
+	 * This method implements the action of deleting a selected subject from the model.
+	 * 
+	 * 
+	 * @param index the index from the selected table row
+	 * @return true or false depending on the success of the method
+	 */
 	public boolean izbrisiPredmet(int index_predmeta) {
 
 		if (index_predmeta != -1) {
@@ -135,7 +168,10 @@ public class PredmetController {
 		return ret;
 
 	}
-
+	/**
+	 *  This method implements the action of searching for a given text through the searchbar.
+	 * @param text text forwarded through the searchbar
+	 */
 	public void pretragaPredmeta(String text) {
 		BazaPredmeta.getInstance().pretraziPredmete(text);
 		TabsPanel.tablePredmet.azuriranjeTabelePredmet();
