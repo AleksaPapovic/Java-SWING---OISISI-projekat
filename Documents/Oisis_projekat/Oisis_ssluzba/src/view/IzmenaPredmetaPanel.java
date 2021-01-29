@@ -33,15 +33,39 @@ public class IzmenaPredmetaPanel extends JPanel {
 	 */
 	private static final long serialVersionUID = -2444365237246739680L;
 
+	/**
+	 *  This is static text field for code  of selected subject
+	 */
 	public static PredmetTextFields sifraIzmena;
+	/**
+	 *  This is static text field for name  of selected subject
+	 */
 	public static PredmetTextFields imePredIzmena;
+	/**
+	 *  This is static text field for semester  of selected subject
+	 */
 	public static JComboBox<String> semestarIzmena;
+	/**
+	 *  This is static text field for year  of selected subject
+	 */
 	public static JComboBox<String> godinaIzmena;
+	/**
+	 *  This is static text field for ESPB  of selected subject
+	 */
 	public static PredmetTextFields espbIzmena;
+	/**
+	 *  This is static text field for professor  of selected subject
+	 */
 	public static JTextField profesorIzmena;
 	public JButton plusIzmena;
+	/**
+	 *  This is static button to reject adding of professor
+	 */
 	public static JButton minusIzmena;
 	public JButton odustaniIzmena;
+	/**
+	 *  This is static button for confirmation
+	 */
 	public static JButton prihvatiIzmena;
 	/**
 	 * Constructor with parameters where the panel is initialized and his

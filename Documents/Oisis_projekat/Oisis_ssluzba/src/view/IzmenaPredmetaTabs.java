@@ -23,7 +23,13 @@ public class IzmenaPredmetaTabs extends JTabbedPane {
 		 * 
 		 */
 	private static final long serialVersionUID = 1L;
+	/**
+	 *  This is static value of selected row
+	 */
 	public static int curr_tab = 0;
+	/**
+	 *  This is static table of not passed subjects
+	 */
 	public static TableNepolozeniPredmeti tableNepolozeniPredmeti;
 	/**
 	 * Constructor with parameters where the tabs are initialized and theirs

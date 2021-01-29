@@ -33,17 +33,49 @@ public class IzmenaProfesoraPanel extends JPanel {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
+	/**
+	 *  This is static text field for first name  of selected professor
+	 */
 	public static FocusField imeIzmena;
+	/**
+	 *  This is static text field for surname  of selected professor
+	 */
 	public static FocusField prezimeIzmena;
+	/**
+	 *  This is static text field for date of birth  of selected professor
+	 */
 	public static FocusField datumRIzmena;
+	/**
+	 *  This is static text field for address  of selected professor
+	 */
 	public static FocusField adresaSIzmena;
+	/**
+	 *  This is static text field for contact info  of selected professor
+	 */
 	public static FocusField kontaktTelIzmena;
+	/**
+	 *  This is static text field for email  of selected professor
+	 */
 	public static FocusField emailIzmena;
+	/**
+	 *  This is static text field for office address  of selected professor
+	 */
 	public static FocusField adresaKIzmena;
+	/**
+	 *  This is static text field for ID number  of selected professor
+	 */
 	public static FocusField brlkIzmena;
+	/**
+	 *  This is static combobox for the title
+	 */
 	public static JComboBox<String> combobox1Izmena;
+	/**
+	 *  This is static combobox for the title
+	 */
 	public static JComboBox<String> combobox2Izmena;
+	/**
+	 *  This is static button for the confirmation
+	 */
 	public static JButton prihvatiIzmena;
 	private DocumentListener docList = new DocumentListenerIzmenaProfesora();
 	/**

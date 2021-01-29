@@ -14,15 +14,34 @@ import javax.swing.JScrollPane;
 import controller.ProfesorController;
 import model.Profesor;
 
+/**
+ * This is dialog for adding subjects to the professor
+ * 
+ * @author Aleksa Papovic
+ *
+ */
 public class DodavanjePredmetaProfesoruDialog extends JDialog {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	/**
+	 * This is static professor
+	 */
 	public static Profesor profesor;
+	/**
+	 * This is static table with the subjects
+	 */
 	public static TableListaPredmeta tabelaListaPredmeta;
 
+	/**
+	 * Constructor with parameters where the dialog is initialized and his
+	 * dimensions and tabs are set.
+	 * 
+	 * @param parent the window which the dialog is relative to
+	 * @param profesor the selected professor
+	 */
 	@SuppressWarnings("static-access")
 	public DodavanjePredmetaProfesoruDialog(JDialog parent, Profesor profesor) {
 		super(parent, "Dodaj predmet", true);

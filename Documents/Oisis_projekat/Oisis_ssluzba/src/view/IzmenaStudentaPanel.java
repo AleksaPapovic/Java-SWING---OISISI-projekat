@@ -32,17 +32,50 @@ public class IzmenaStudentaPanel extends JPanel {
 	 * 
 	 */
 	private static final long serialVersionUID = 6871252857743880797L;
+	/**
+	 *  This is static text field for first name of selected student
+	 */
 	public static StudentTextFields imeIzmena;
+	/**
+	 *  This is static text field for surname of selected student
+	 */
 	public static StudentTextFields prezimeIzmena;
+	/**
+	 *  This is static text field for date of birth of selected student
+	 */
 	public static StudentTextFields datumRIzmena;
+	/**
+	 *  This is static text field for address of selected student
+	 */
 	public static StudentTextFields adresaSIzmena;
+	/**
+	 *  This is static text field for contact number of selected student
+	 */
 	public static StudentTextFields brojTIzmena;
+	/**
+	 *  This is static text field for email of selected student
+	 */
 	public static StudentTextFields emailIzmena;
+	/**
+	 *  This is static text field for index number of selected student
+	 */
 	public static StudentTextFields brIndIzmena;
+	/**
+	 *  This is static text field for year of enrollment  of selected student
+	 */
 	public static StudentTextFields godUpIzmena;
 	public JButton odustaniIzmena;
+	/**
+	 *  This is static button for the confirmation
+	 */
 	public static JButton prihvatiIzmena;
+	/**
+	 *  This is static combobox for the year of study
+	 */
 	public static JComboBox<String> godStIzmena;
+	/**
+	 *  This is static combobox for the type of financing
+	 */
 	public static JComboBox<String> nacinFIzmena;
 	/**
 	 * Constructor with parameters where the panel is initialized and his

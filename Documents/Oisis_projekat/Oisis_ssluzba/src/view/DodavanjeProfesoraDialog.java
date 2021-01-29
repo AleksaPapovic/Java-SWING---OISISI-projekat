@@ -37,17 +37,44 @@ public class DodavanjeProfesoraDialog extends JDialog {
 	 */
 	public static FocusField imeField;
 	/**
-	 * This is static text field which is the name of professor
+	 * This is static text field which is the surname of professor
 	 */
 	public static FocusField prezimeField;
+	/**
+	 * This is static text field which is the date of birth name of professor
+	 */
 	public static FocusField datumRField;
+	/**
+	 * This is static text field which is the address of professor
+	 */
 	public static FocusField adresaSField;
+	/**
+	 * This is static text field which is the contact info of professor
+	 */
 	public static FocusField kontaktTelField;
+	/**
+	 * This is static text field which is the email of professor
+	 */
 	public static FocusField emailField;
+	/**
+	 * This is static text field which is the address of professor office
+	 */
 	public static FocusField adresaKField;
+	/**
+	 * This is static text field which is the ID number of professor
+	 */
 	public static FocusField brlkField;
+	/**
+	 * This is static combobox which is the title of professor
+	 */
 	public static JComboBox<String> combobox1;
+	/**
+	 * This is static combobox which is the title of professor
+	 */
 	public static JComboBox<String> combobox2;
+	/**
+	 * This is static button which is used for the adding professor
+	 */
 	public static JButton prihvati;
 	private DocumentListener docList = new DocumentListenerProfesorFields();
 	/**

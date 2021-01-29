@@ -32,9 +32,21 @@ public class IzmenaStudentaTabs extends JTabbedPane {
 		 * 
 		 */
 	private static final long serialVersionUID = 1L;
+	/**
+	 * This is static value of selected row
+	 */
 	public static int curr_tab = 0;
+	/**
+	 * This is static table with not passed subjects
+	 */
 	public static TableNepolozeniPredmeti tableNepolozeniPredmeti;
+	/**
+	 *  This is static table with passed subjects
+	 */
 	public static TablePolozeniPredmeti tablePolozeniPredmeti;
+	/**
+	 *  This is static table for the list of subjects for selected student
+	 */
 	public static TableListaPredmetaStudenta tableListaPredmetaStudenta;
 	/**
 	 * Constructor with parameters where the tabs are initialized and theirs
