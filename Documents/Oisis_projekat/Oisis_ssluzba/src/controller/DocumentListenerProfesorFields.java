@@ -15,7 +15,11 @@ import view.DodavanjeProfesoraDialog;
  */
 public class DocumentListenerProfesorFields implements DocumentListener {
 
-	
+	/**
+	 *  Default constructor with no parameters.
+	 *  
+	 */
+	public DocumentListenerProfesorFields() {}
 	/**
 	 * This method calls the disable and the enable button method when change one of inserted sign.
 	 */

@@ -20,7 +20,7 @@ import view.TabsPanel;
  */
 public class PredmetController {
 
-	public static PredmetController instance = null;
+	private static PredmetController instance = null;
 
 	/**
 	 * This method implements the instance as a singleton(it can only be instanced
@@ -140,7 +140,11 @@ public class PredmetController {
 		}
 
 	}
-
+	/**
+	 * This method checks if the name of a subject is valid.
+	 * @param ime the name of the subject
+	 * @return true or false depending on the validity of the name of a subject
+	 */
 	public boolean proveriIme(String ime) {
 		boolean ret = true;
 
@@ -150,7 +154,11 @@ public class PredmetController {
 		return ret;
 
 	}
-
+	/**
+	 * This method checks if the code of a subject is valid.
+	 * @param sifra the code of the subject
+	 * @return true or false depending on the validity of the code of a subject
+	 */
 	public boolean proveriSifru(String sifra) {
 
 		boolean ret = true;
@@ -159,7 +167,11 @@ public class PredmetController {
 		}
 		return ret;
 	}
-
+	/**
+	 * This method checks if the number of ESPB of a subject is valid.
+	 * @param brojESPB the ESPB of the subject
+	 * @return true or false depending on the validity of the number of ESPB
+	 */
 	public boolean proveriESPB(String brojESPB) {
 		boolean ret = true;
 		if (brojESPB.isEmpty()) {
@@ -176,7 +188,11 @@ public class PredmetController {
 		BazaPredmeta.getInstance().pretraziPredmete(text);
 		TabsPanel.tablePredmet.azuriranjeTabelePredmet();
 	}
-
+	/**
+	 * This method adds subject to the professor
+	 * 
+	 * @param profesor selected professor 
+	 */
 	public void dodajPredmetuProfesora(Profesor profesor) {
 		// TODO Auto-generated method stub
 		Predmet predmet = BazaPredmeta.getInstance().getSelectedPredmet(TabsPanel.tablePredmet.getSelectedRow());
@@ -185,6 +201,11 @@ public class PredmetController {
 		DodavanjeProfesoraPredmetuDialog.tableListaProfesoraPredmeta.update();
 	}
 
+	/**
+	 *  This method removes professor from the subject model
+	 * 
+	 * @return true if that subject has selected professor or false if is null
+	 */
 	public boolean uklanjanjeProfesoruSaPredmeta() {
 		int index_predmeta = TabsPanel.tablePredmet.getSelectedTableRow();
 		Predmet p = BazaPredmeta.getInstance().getPredmeti().get(index_predmeta);

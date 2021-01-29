@@ -301,7 +301,11 @@ public class ProfesorController {
 		BazaProfesora.getInstance().pretraziProfesora(text);
 		TabsPanel.tableProfesor.azuriranjeTabeleProfesor();
 	}
-
+	/**
+	 * This method adds subjects to the professor in the model
+	 * 
+	 * 
+	 */
 	public void dodajProfesoruPredmet() {
 		ArrayList<Predmet> predmeti = BazaProfesora.getInstance()
 				.getNePredajePredmeteProfesor(DodavanjePredmetaProfesoruDialog.profesor);

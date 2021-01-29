@@ -14,16 +14,39 @@ import javax.swing.JTextField;
 
 import controller.PredmetController;
 
+/**
+ * This class implements a dialog which is used for removing professor from the
+ * subject
+ * 
+ * @author Aleksa Papovic
+ *
+ */
 public class UklanjanjeProfesoruSaPredmetaDialog extends JDialog {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
+	/**
+	 *  This is a static button to confirm the removal
+	 */
 	public static JButton da;
+	/**
+	 *   This is a static button to reject  the removal
+	 */
 	public static JButton ne;
 
+	/**
+	 * Constructor with parameters where the dialog is initialized and his
+	 * dimensions and tabs are set.
+	 * 
+	 * @param parent        the window which the dialog is relative to
+	 * @param title         the name of the dialog
+	 * @param modal         boolean value which tells us if we have to finish
+	 *                      working with
+	 * @param profesorFiled text field we need to reset if remove the subject this
+	 *                      dialog to switch to other windows or not
+	 */
 	public UklanjanjeProfesoruSaPredmetaDialog(JDialog parent, String title, boolean modal, JTextField profesorFiled) {
 		super(parent, title, modal);
 		setTitle(title);

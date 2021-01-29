@@ -23,7 +23,7 @@ import model.BazaStudenata;
 import model.Student;
 /**
  * This class implements tabs for editing a selected existing student.
- * @author Admin
+ * @author Dusan Lekic
  *
  */
 public class IzmenaStudentaTabs extends JTabbedPane {

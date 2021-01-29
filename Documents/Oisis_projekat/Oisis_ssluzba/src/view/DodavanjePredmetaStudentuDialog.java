@@ -15,19 +15,35 @@ import controller.StudentController;
 import model.BazaPredmeta;
 import model.Predmet;
 import model.Student;
-
+/**
+ * This is dialog for adding subjects to the student
+ * 
+ * @author Aleksa Papovic
+ *
+ */
 public class DodavanjePredmetaStudentuDialog extends JDialog {
 
 	/**
 	 * 
 	 */
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
+	/**
+	 * This is static subject
+	 */
 	public static Predmet predmet;
-	public static TableListaPredmetaStudenta tabelaListaPredmetaStudenta;
-
+	/**
+	 * This is static list of subjects for selected student
+	 */
+	public static TableListaPredmetaStudenta tabelaListaPredmetaStudenta;	
+	
+	/**
+	 * Constructor with parameters where the dialog is initialized and his
+	 * dimensions and tabs are set.
+	 * 
+	 * @param parent the window which the dialog is relative to
+	 * @param student the selected student
+	 */
+	
 	public DodavanjePredmetaStudentuDialog(JDialog parent, Student student) {
 		super(parent, "Dodavanje predmeta", true);
 		this.setResizable(false);

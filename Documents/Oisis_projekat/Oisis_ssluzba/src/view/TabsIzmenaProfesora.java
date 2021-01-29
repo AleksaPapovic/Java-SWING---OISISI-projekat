@@ -13,14 +13,29 @@ import javax.swing.JTabbedPane;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
+/**
+ * This class implements tabs for editing a selected existing professor.
+ * 
+ * 
+ * @author Aleksa Papovic
+ *
+ */
 public class TabsIzmenaProfesora extends JTabbedPane {
 
 	/**
 		 * 
 		 */
 	private static final long serialVersionUID = 1L;
+	/**
+	 *   This is a static value of selected from from selected professor for editing table
+	 */
 	public static int tab_curr_izmenaProf = 0;
-
+	/**
+	 * Constructor with parameters where the tabs are initialized and theirs
+	 * dimensions and components are set.
+	 * 
+	 * @param parentDialog the window which the dialog is relative to
+	 */
 	public TabsIzmenaProfesora(JDialog parentDialog) {
 
 		// Tab profesor

@@ -8,13 +8,16 @@ import view.MenuToolbar;
 import view.TabsPanel;
 
 /**
- * This class serves as a database for a subject and implements methods for its modification.
+ * This class serves as a database for a subject and implements methods for its
+ * modification.
+ * 
  * @author Aleksa Papovic
  *
  */
 public class BazaPredmeta {
 
 	private static BazaPredmeta instance = null;
+
 	/**
 	 * This method implements the instance as a singleton(it can only be instanced
 	 * once).
@@ -55,6 +58,9 @@ public class BazaPredmeta {
 		this.predmetiSvi = this.predmeti;
 	}
 
+	/**
+	 * This metod used to initialize subjects.
+	 */
 	public void initPredmeta() {
 		this.predmeti.add(new Predmet("p1", "osnove programiranja", 1, 7, null, "zimski"));
 		this.predmeti.add(new Predmet("p2", "statistika", 3, 8, null, "letnji"));
@@ -89,31 +95,73 @@ public class BazaPredmeta {
 
 	}
 
+	/**
+	 * This method returns the subjects.
+	 * 
+	 * @return the subjects
+	 */
 	public ArrayList<Predmet> getPredmeti() {
 		return this.predmeti;
 	}
 
+	/**
+	 * This method returns all the subjects.
+	 * 
+	 * @return all the subjects
+	 */
 	public ArrayList<Predmet> getPredmetiSvi() {
 		return this.predmetiSvi;
 	}
+
+	/**
+	 * This method sets all the subjects.
+	 * 
+	 * @param predmeti all the subjects
+	 */
 
 	public void setOPredmeti(ArrayList<Predmet> predmeti) {
 		this.predmeti = predmeti;
 		this.predmetiSvi = this.predmeti;
 	}
 
+	/**
+	 * Returns the number of the columns of the database(number of the entity
+	 * characteristics).
+	 * 
+	 * @return number of columns
+	 */
 	public int getColumnCount() {
 		return 5;
 	}
 
+	/**
+	 * This method returns the name of a column
+	 * 
+	 * @param index index of the column
+	 * @return name of the column
+	 */
 	public String getColumnName(int index) {
 		return this.kolone.get(index);
 	}
 
+	/**
+	 * This method returns the selected subject.
+	 * 
+	 * @param rowIndex index of the subject
+	 * @return the subject with the selected index
+	 */
 	public Predmet getRow(int rowIndex) {
 		return this.predmeti.get(rowIndex);
 	}
 
+	/**
+	 * Returns the value of the database at the selected row and column.
+	 * 
+	 * @param row    index of the grade
+	 * @param column field of a grade
+	 * @return the data at the given row and column or null if the params are out of
+	 *         bounds
+	 */
 	public Object getValueAt(int row, int column) {
 		Predmet predmet = this.predmeti.get(row);
 		switch (column) {
@@ -132,6 +180,15 @@ public class BazaPredmeta {
 		}
 	}
 
+	/**
+	 * This method adds a subject to the database.
+	 * 
+	 * @param sifraP   code of the subject
+	 * @param imeP     name of the subject
+	 * @param semestar semester of the subject
+	 * @param brojESPB number of ESPB for the subject
+	 * @param godinaS  year of study of the subject
+	 */
 	public void dodajPredmet(String sifraP, String imeP, int brojESPB, int godinaS, String semestar) {
 		if (pretraga) {
 			this.predmetiSvi.add(new Predmet(sifraP, imeP, brojESPB, godinaS, semestar));
@@ -141,6 +198,11 @@ public class BazaPredmeta {
 		}
 	}
 
+	/**
+	 * This method deletes the subject with the selected index.
+	 * 
+	 * @param index_predmeta selected index of the subject which we want to delete
+	 */
 	public void izbrisiPredmet(int index_predmeta) {
 		int i = 0;
 		Predmet obrisaniPredmet = this.predmeti.get(index_predmeta);
@@ -164,6 +226,12 @@ public class BazaPredmeta {
 		TabsPanel.tableStudent.update();
 	}
 
+	/**
+	 * This method find the subject with the selected code.
+	 * 
+	 * @param sifraP the selected ID number
+	 * @return subject if exists with that ID number
+	 */
 	public Predmet nadjiPredmet(String sifraP) {
 		for (Predmet p : this.predmeti) {
 			if (p.getSifraP().equals(sifraP)) {
@@ -173,10 +241,26 @@ public class BazaPredmeta {
 		return null;
 	}
 
+	/**
+	 * This method returns the subject with the given index.
+	 * 
+	 * @param red selected index
+	 * @return the subject with the given index
+	 */
 	public Predmet getSelectedPredmet(int red) {
 		return this.predmeti.get(red);
 	}
 
+	/**
+	 * This method changes the info of the subject with the given index.
+	 * 
+	 * @param index    index of the professor which we want to change
+	 * @param sifraP   code of the subject
+	 * @param imeP     name of the subject
+	 * @param semestar semester of the subject
+	 * @param brojESPB number of ESPB for the subject
+	 * @param godinaS  year of study of the subject
+	 */
 	public void izmeniPredmet(int index, String sifraP, String imeP, int brojESPB, int godinaS, String semestar) {
 		predmeti.get(index).setSifraP(sifraP);
 		predmeti.get(index).setImeP(imeP);
@@ -184,6 +268,12 @@ public class BazaPredmeta {
 		predmeti.get(index).setGodinaS(godinaS);
 	}
 
+	/**
+	 * This method implements the action of searching trough a list of subjects with
+	 * a key word.
+	 * 
+	 * @param text key word which subject contains
+	 */
 	public void pretraziPredmete(String text) {
 		ArrayList<Predmet> predmetiPronadjeni = new ArrayList<Predmet>();
 		this.predmeti = this.predmetiSvi;
@@ -222,6 +312,12 @@ public class BazaPredmeta {
 
 	}
 
+	/**
+	 * This method adds professor to the subject
+	 * 
+	 * @param predmet  selected subject
+	 * @param profesor selected professor
+	 */
 	public void dodajProfesoraPredmetu(Predmet predmet, Profesor profesor) {
 		predmet.setPredProf(profesor);
 	}

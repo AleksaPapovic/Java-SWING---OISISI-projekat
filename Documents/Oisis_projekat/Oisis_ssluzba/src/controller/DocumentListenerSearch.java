@@ -13,6 +13,12 @@ import javax.swing.event.DocumentListener;
 public class DocumentListenerSearch implements DocumentListener {
 
 	/**
+	 *  Default constructor with no parameters.
+	 *  
+	 */
+	public DocumentListenerSearch() {}
+	
+	/**
 	 * This method calls the disable and the enable button method when change one of
 	 * inserted sign.
 	 */

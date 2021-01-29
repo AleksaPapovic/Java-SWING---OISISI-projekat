@@ -26,11 +26,25 @@ public class TabsPanel extends JTabbedPane {
 		 * 
 		 */
 	private static final long serialVersionUID = 1L;
+	/**
+	 *  This is a static  value of selected row from table
+	 */
 	public static int tab_curr = 0;
+	/**
+	 *  This is a static  table of professors
+	 */
 	public static TableProfesor tableProfesor;
+	/**
+	 *  This is a static  table of students
+	 */
 	public static TableStudent tableStudent;
+	/**
+	 *  This is a static  table of subjects
+	 */
 	public static TablePredmet tablePredmet;
-
+/**
+ * This is constructor for tabs and add tables to tabs
+ */
 	public TabsPanel() {
 
 		JPanel gornji = new JPanel();

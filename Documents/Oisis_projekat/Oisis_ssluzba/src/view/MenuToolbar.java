@@ -31,10 +31,13 @@ import view.Actions.SearchAction;
  */
 public class MenuToolbar extends JToolBar {
 
-	public NewAction newAction;
-	public EditAction editAction;
-	public DeleteAction deleteAction;
-	public SearchAction searchAction;
+	private NewAction newAction;
+	private EditAction editAction;
+	private DeleteAction deleteAction;
+	private SearchAction searchAction;
+	/**
+	 * This is static text field used as search bar 
+	 */
 	public static JTextField searchbar;
 	ImageIcon newIcon, editIcon, deleteIcon, searchIcon;
 	/**

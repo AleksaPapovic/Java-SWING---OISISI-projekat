@@ -16,6 +16,12 @@ import view.IzmenaPredmetaPanel;
 public class IzmenaPredmetaDocumentListener implements DocumentListener {
 
 	/**
+	 *  Default constructor with no parameters.
+	 *  
+	 */
+	public IzmenaPredmetaDocumentListener() {}
+	
+	/**
 	 * This method disables button.
 	 */
 	@Override

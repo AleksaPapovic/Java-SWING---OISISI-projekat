@@ -14,6 +14,13 @@ import view.DodavanjeStudentaDialog;
  *
  */
 public class DodavanjeStudentaDocumentListener implements DocumentListener {
+	
+	
+	/**
+	 *  Default constructor with no parameters.
+	 *  
+	 */
+	public DodavanjeStudentaDocumentListener() {}
 	/**
 	 * This method calls the disable button method.
 	 */

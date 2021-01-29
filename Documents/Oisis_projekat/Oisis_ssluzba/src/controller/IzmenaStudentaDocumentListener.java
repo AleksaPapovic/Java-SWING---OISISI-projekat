@@ -16,6 +16,12 @@ import view.IzmenaStudentaPanel;
 public class IzmenaStudentaDocumentListener implements DocumentListener {
 
 	/**
+	 *  Default constructor with no parameters.
+	 *  
+	 */
+	public IzmenaStudentaDocumentListener() {}
+	
+	/**
 	 * This method calls the disable button method.
 	 */
 	@Override

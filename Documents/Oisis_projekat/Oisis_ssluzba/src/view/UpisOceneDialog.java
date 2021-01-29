@@ -20,20 +20,42 @@ import controller.DocumentListenerUpis;
 import controller.StudentController;
 import model.BazaStudenata;
 import model.Predmet;
-
+/**
+ * This class implements a dialog which is used for adding a grade
+ * from the list of not passed subjects which selected student has.
+ * 
+ * @author Aleksa Papovic
+ *
+ */	
 public class UpisOceneDialog extends JDialog {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
+	/**
+	 * This is static combobox for a grade
+	 */
 	public static JComboBox<String> comboboxUpisa;
-
+	/**
+	 *   This is static button to confirm the grade entry
+	 */
 	public static JButton prihvatiUpis;
+	/**
+	 * This is static text field which is the date when a grade has made
+	 */
 	public static JTextField datumUpisaField;
 	private DocumentListener docUpis = new DocumentListenerUpis();
 
+	/**
+	 * Constructor with parameters where the dialog is initialized and his
+	 * dimensions and tabs are set.
+	 * 
+	 * @param parent the window which the dialog is relative to
+	 * @param title  the name of the dialog
+	 * @param modal  boolean value which tells us if we have to finish working with
+	 *               this dialog to switch to other windows or not
+	 */
 	public UpisOceneDialog(JDialog parent, String title, boolean modal) {
 		super(parent, title, modal);
 		setTitle(title);

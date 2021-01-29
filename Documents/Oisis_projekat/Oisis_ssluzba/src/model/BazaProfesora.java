@@ -10,14 +10,18 @@ import javax.swing.JOptionPane;
 import model.Profesor.Titula;
 import model.Profesor.Zvanje;
 import view.MenuToolbar;
+
 /**
- * This class serves as a database for a professor and implements methods for its modification.
+ * This class serves as a database for a professor and implements methods for
+ * its modification.
+ * 
  * @author Aleksa Papovic
  *
  */
 public class BazaProfesora {
 
 	private static BazaProfesora instance = null;
+
 	/**
 	 * This method implements the instance as a singleton(it can only be instanced
 	 * once).
@@ -64,10 +68,13 @@ public class BazaProfesora {
 //				"987456321", Titula.Ms, Zvanje.VProfesor));
 //		this.profesoriSvi = this.profesori;
 		this.profesori = Entiteti.getInstance().getProfesori();
-		//initProfesora();
+		// initProfesora();
 		this.profesoriSvi = this.profesori;
 	}
 
+	/**
+	 * This metod used to initialize professors.
+	 */
 	public void initProfesora() {
 		this.profesori.add(new Profesor("123123123", "Milos", "Nikolic", parseDate("12.12.1965."),
 				"Temerinska 15, Novi Sad", "021356785", "milos.nikolic@mailinator.com",
@@ -129,42 +136,83 @@ public class BazaProfesora {
 
 	}
 
+	/**
+	 * Returns the number of the columns of the database(number of the entity
+	 * characteristics).
+	 * 
+	 * @return number of columns
+	 */
 	public int getColumnCount() {
 		return 4;
 	}
 
+	/**
+	 * This method returns the name of a column.
+	 * 
+	 * @param idx index of the column
+	 * @return name of the column
+	 */
 	public String getColumnName(int idx) {
 		return this.profNazivi.get(idx);
 	}
 
+	/**
+	 * This method returns the professors.
+	 * 
+	 * @return the professors
+	 */
 	public ArrayList<Profesor> getProfesori() {
 		return profesori;
 	}
+
 	/**
 	 * This method returns all the professors.
+	 * 
 	 * @return all the professors
 	 */
 	public ArrayList<Profesor> getProfesoriSvi() {
 		return this.profesoriSvi;
 	}
 
+	/**
+	 * This method sets all the professors.
+	 * 
+	 * @param profesori all of professors which are set
+	 */
 	public void setProfesori(ArrayList<Profesor> profesori) {
 		this.profesori = profesori;
 		this.profesoriSvi = this.profesori;
 	}
 
+	/**
+	 * This method returns the list of column names.
+	 * 
+	 * @return the list of column names
+	 */
 	public ArrayList<String> getProfNazivi() {
 		return profNazivi;
 	}
 
+	/**
+	 * This method sets list of column names.
+	 * 
+	 * @param profNazivi list of column names
+	 */
 	public void setProfNazivi(ArrayList<String> profNazivi) {
 		this.profNazivi = profNazivi;
 	}
 
-	public static void setInstance(BazaProfesora instance) {
-		BazaProfesora.instance = instance;
-	}
-
+//	public static void setInstance(BazaProfesora instance) {
+//		BazaProfesora.instance = instance;
+//	}
+	/**
+	 * Returns the value of the database at the selected row and column.
+	 * 
+	 * @param row    index of the grade
+	 * @param column field of a grade
+	 * @return the data at the given row and column or null if the params are out of
+	 *         bounds
+	 */
 	public String getValueAt(int row, int column) {
 
 		Profesor profesor = this.profesori.get(row);
@@ -200,6 +248,12 @@ public class BazaProfesora {
 		}
 	}
 
+	/**
+	 * This method converts the date to the wanted format.
+	 * 
+	 * @param date the date we want to convert
+	 * @return converted date or null if the action failed
+	 */
 	public static Date parseDate(String date) {
 		try {
 			return new SimpleDateFormat("dd.mm.yyyy.").parse(date);
@@ -208,6 +262,20 @@ public class BazaProfesora {
 		}
 	}
 
+	/**
+	 * This method adds a professor to the database.
+	 * 
+	 * @param prezime    surname of the professor
+	 * @param ime        name of the professor
+	 * @param datumR     birth date of the professor
+	 * @param adresaS    address of the professor
+	 * @param kontaktTel contact info of the professor
+	 * @param email      email of the professor
+	 * @param adresaK    professor's office address
+	 * @param brlk       ID number of the professor
+	 * @param titula     title of the professor
+	 * @param zvanje     title of the professor
+	 */
 	public void dodajProfesora(String prezime, String ime, Date datumR, String adresaS, String kontaktTel, String email,
 			String adresaK, String brlk, Titula titula, Zvanje zvanje) {
 		if (pretraga) {
@@ -221,10 +289,22 @@ public class BazaProfesora {
 
 	}
 
+	/**
+	 * This method returns the professor that was selected.
+	 * 
+	 * @param red index of the selected professor
+	 * @return selected professor
+	 */
 	public Profesor getSelectedProfesor(int red) {
 		return this.profesori.get(red);
 	}
 
+	/**
+	 * This method changes the info of the professor with the given index.
+	 * 
+	 * @param izmenjeniProfesor the professor which we want to change
+	 * @param index_izmenjenog  index of the professor which we want to change
+	 */
 	public void izmeniProfesora(Profesor izmenjeniProfesor, int index_izmenjenog) {
 		this.profesori.get(index_izmenjenog).setIme(izmenjeniProfesor.getIme());
 		this.profesori.get(index_izmenjenog).setPrezime(izmenjeniProfesor.getPrezime());
@@ -238,6 +318,11 @@ public class BazaProfesora {
 		this.profesori.get(index_izmenjenog).setBrlk(izmenjeniProfesor.getBrlk());
 	}
 
+	/**
+	 * This method deletes the professor with the selected index.
+	 * 
+	 * @param index selected index of the professor which we want to delete
+	 */
 	public void izbrisiProfesora(int index) {
 		int i = 0;
 		for (Profesor p : this.profesoriSvi) {
@@ -249,6 +334,12 @@ public class BazaProfesora {
 		}
 	}
 
+	/**
+	 * This method find the professor with the selected ID number.
+	 * 
+	 * @param brlk the selected ID number
+	 * @return professor if exists with that ID number
+	 */
 	public Profesor nadjiProfesora(String brlk) {
 		for (Profesor p : this.profesori) {
 			if (p.getBrlk().equals(brlk)) {
@@ -258,6 +349,12 @@ public class BazaProfesora {
 		return null;
 	}
 
+	/**
+	 * This method implements the action of searching trough a list of professors
+	 * with a key word.
+	 * 
+	 * @param text key word which professor contains
+	 */
 	public void pretraziProfesora(String text) {
 		this.profesoriPronadjeni = new ArrayList<Profesor>();
 		this.profesori = this.profesoriSvi;
@@ -299,23 +396,55 @@ public class BazaProfesora {
 
 	}
 
+	/**
+	 * This method returns the subjects which are taught by the professor
+	 * 
+	 * @param profesor selected professor
+	 * @return the subjects which are taught by the professor
+	 */
 	public ArrayList<Predmet> getPredavaniPredmeti(Profesor profesor) {
 		return profesor.getPredmeti();
 	}
 
+	/**
+	 * This method sets the subjects which are taught by the professor
+	 * 
+	 * @param profesor selected professor
+	 * @param predmeti the subjects which are taught by the professor
+	 */
 	public void setPredmeti(Profesor profesor, ArrayList<Predmet> predmeti) {
 		profesor.setPredmeti(predmeti);
 	}
 
+	/**
+	 * This method returns the number of column for table of subjects that taught
+	 * 
+	 * @return the number of column for table of subjects that taught
+	 */
 	public int getColumnCountPredavaniPredmeti() {
 
 		return this.profPredajeNazivi.size();
 	}
 
+	/**
+	 * This method returns the name of selected column
+	 * 
+	 * @param column selected column
+	 * @return the name of selected column
+	 */
 	public String getColumnNamePredavaniPredmeti(int column) {
 		return this.profPredajeNazivi.get(column);
 	}
 
+	/**
+	 * This method the value of the database at the selected row and column.
+	 * 
+	 * @param profesor selected professor
+	 * @param row      index of the grade
+	 * @param column   field of a grade
+	 * @return the data for selected professor at the given row and column or null
+	 *         if the params are out of bounds
+	 */
 	public Object getValueAtPredavaniPredmeti(Profesor profesor, int row, int column) {
 		Predmet predmet = profesor.getPredmeti().get(row);
 		switch (column) {
@@ -332,16 +461,33 @@ public class BazaProfesora {
 		}
 	}
 
+	/**
+	 *  This method returns the subjects which professor isn't teaching
+	 * 
+	 * @param profesor selected professor
+	 * @return  the subjects which selected professor isn't teaching
+	 */
 	public ArrayList<Predmet> getNePredajePredmeteProfesor(Profesor profesor) {
 		ArrayList<Predmet> predmeti = new ArrayList<Predmet>(BazaPredmeta.getInstance().getPredmeti());
 		// predmeti.removeAll(profesor.getPredmeti());
 		return predmeti;
 	}
 
+	/**
+	 * This method adds subjects to the professor
+	 * 
+	 * @param profesor selected professor
+	 * @param predmeti the list of subjects we want to add
+	 */
 	public void dodajPredmetePofesoru(Profesor profesor, ArrayList<Predmet> predmeti) {
 		profesor.getPredmeti().addAll(predmeti);
 	}
 
+	/**
+	 * This method deletes subject for all professors
+	 * 
+	 * @param obrisaniPredmet  subject to delete
+	 */
 	public void izbrisiPredmet(Predmet obrisaniPredmet) {
 		for (Profesor prof : profesori) {
 			for (Predmet p : prof.getPredmeti()) {
@@ -353,15 +499,25 @@ public class BazaProfesora {
 		}
 
 	}
-	
+
+	/**
+	 * This method adds subject to the professor
+	 * 
+	 * @param profesor selected professor
+	 * @param predmet  selected subject which we want to add to the professor
+	 */
 	public void dodajPredmetPofesoru(Profesor profesor, Predmet predmet) {
 		profesor.getPredmeti().add(predmet);
-	} 
-
-	public void uklanjanjeProfesoruSaPredmeta(Predmet p) {
-	p.setPredProf(null);
-		
 	}
 
+	/**
+	 * This method removes professor from the subject
+	 * 
+	 * @param p selected subject
+	 */
+	public void uklanjanjeProfesoruSaPredmeta(Predmet p) {
+		p.setPredProf(null);
+
+	}
 
 }

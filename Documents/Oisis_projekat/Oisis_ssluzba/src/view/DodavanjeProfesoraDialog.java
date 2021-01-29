@@ -19,14 +19,26 @@ import controller.DocumentListenerProfesorFields;
 import controller.ProfesorController;
 import view.FocusField.TipPolja;
 
+/**
+ * This class implements a dialog which is used for adding a new professor
+ * 
+ * 
+ * @author Aleksa Papovic
+ *
+ */	
 public class DodavanjeProfesoraDialog extends JDialog {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
+	/**
+	 * This is static text field which is the first name of professor
+	 */
 	public static FocusField imeField;
+	/**
+	 * This is static text field which is the name of professor
+	 */
 	public static FocusField prezimeField;
 	public static FocusField datumRField;
 	public static FocusField adresaSField;
@@ -38,7 +50,15 @@ public class DodavanjeProfesoraDialog extends JDialog {
 	public static JComboBox<String> combobox2;
 	public static JButton prihvati;
 	private DocumentListener docList = new DocumentListenerProfesorFields();
-
+	/**
+	 * Constructor with parameters where the dialog is initialized and his
+	 * dimensions and tabs are set.
+	 * 
+	 * @param parent the window which the dialog is relative to
+	 * @param title  the name of the dialog
+	 * @param modal  boolean value which tells us if we have to finish working with
+	 *               this dialog to switch to other windows or not
+	 */
 	public DodavanjeProfesoraDialog(Frame parent, String title, boolean modal) {
 		super(parent, title, modal);
 		setTitle(title);

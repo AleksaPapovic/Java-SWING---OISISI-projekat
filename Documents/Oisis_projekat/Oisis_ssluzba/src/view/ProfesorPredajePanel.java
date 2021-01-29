@@ -15,14 +15,30 @@ import javax.swing.JScrollPane;
 import model.BazaProfesora;
 import model.Profesor;
 
+/**
+ * This class implements panel for adding new subject to the professor
+ * 
+ * 
+ * @author Aleksa Papovic
+ *
+ */
 public class ProfesorPredajePanel extends JPanel {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	/**
+	 * This is static table of the list of subjects which are taught by selected professor
+	 */
 	public static TablePredavaniPredmeti tablePredavaniPredmeti;
 
+	/**
+	 * Constructor with parameters where the panel is initialized and his
+	 * dimensions and tabs are set.
+	 * 
+	 * @param parent the window which the dialog is relative to
+	 */
 	public ProfesorPredajePanel(JDialog parent) {
 		this.setLayout(new BorderLayout());
 		this.setBackground(Color.WHITE);

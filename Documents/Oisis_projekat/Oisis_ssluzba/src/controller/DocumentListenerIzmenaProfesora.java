@@ -13,7 +13,14 @@ import view.IzmenaProfesoraPanel;
  * @author Aleksa Papovic
  *
  */
+
 public class DocumentListenerIzmenaProfesora implements DocumentListener {
+	
+	/**
+	 *  Default constructor with no parameters.
+	 *  
+	 */
+	public DocumentListenerIzmenaProfesora() {}
 	
 	/**
 	 * This method calls the disable and the enable button method when change one of

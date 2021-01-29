@@ -16,6 +16,12 @@ import view.DodavanjePredmetaDialog;
 public class PredmetDocumentListener implements DocumentListener {
 	
 	/**
+	 *  Default constructor with no parameters
+	 *  
+	 */
+	public PredmetDocumentListener() {}
+	
+	/**
 	 * This method calls the disable button method.
 	 */
 	@Override

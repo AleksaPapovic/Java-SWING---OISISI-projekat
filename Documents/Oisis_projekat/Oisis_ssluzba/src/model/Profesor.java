@@ -12,11 +12,22 @@ import java.util.Date;
  *
  */
 public class Profesor {
-
+  /**
+   * 
+   * This is enumeration for professor title,
+   * title could be Master , Doktor, Profesor Doktor
+   * @author Aleksa Papovic
+   * 
+   */
 	public enum Titula {
 		Ms, Dr, ProfDr
 	};
-
+	/**
+	 * This is enumeration for professor title,
+     * title could be Saradnik, Asistent, Redovni Profesor, Vanredni Profesor, Docent
+	 * @author Aleksa Papovic
+	 *
+	 */
 	public enum Zvanje {
 		Saradnik, Asistent, RProfesor, VProfesor, Docent
 	};

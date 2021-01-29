@@ -15,6 +15,12 @@ import view.UpisOceneDialog;
 public class DocumentListenerUpis implements DocumentListener {
 
 	/**
+	 *  Default constructor with no parameters.
+	 *  
+	 */
+	public DocumentListenerUpis() {}
+	
+	/**
 	 * This method calls the disable and the enable button method when change one of
 	 * inserted sign.
 	 */
