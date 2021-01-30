@@ -28,11 +28,11 @@ public class UklanjanjeProfesoruSaPredmetaDialog extends JDialog {
 	 */
 	private static final long serialVersionUID = 1L;
 	/**
-	 *  This is a static button to confirm the removal
+	 *  This is a static button to confirm the removal.
 	 */
 	public static JButton da;
 	/**
-	 *   This is a static button to reject  the removal
+	 *   This is a static button to reject the removal.
 	 */
 	public static JButton ne;
 

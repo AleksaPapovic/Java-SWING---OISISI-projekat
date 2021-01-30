@@ -17,7 +17,7 @@ import javax.swing.JPanel;
  */
 public class AboutDialog extends JDialog {
 	
-	public String tekst="<html>Verzija JDK:JavaSE-1.8<br>"
+	private String tekst="<html>Verzija JDK:JavaSE-1.8<br>"
 			+ "JDK 8 je superset JRE 8 i sadrži sve što je u JRE 8, kao i alate poput kompajlera<br>"
 			+ "i programa za otklanjanje grešaka neophodnih za razvoj apleta i aplikacija.<br>"
 			+ "JRE 8 pruža biblioteke, Java virtuelnu mašinu (JVM) i druge komponente za pokretanje<br>"

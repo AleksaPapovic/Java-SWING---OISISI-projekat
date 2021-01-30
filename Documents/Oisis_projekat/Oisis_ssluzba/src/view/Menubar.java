@@ -36,16 +36,16 @@ public class Menubar extends JMenuBar {
 	 * 
 	 */
 	private static final long serialVersionUID = -3785591432336951155L;
-	public NewAction newAction;
-	public CloseAction closeAction;
-	public EditAction editAction;
-	public DeleteAction deleteAction;
-	public HelpAction helpAction;
-	public AboutAction aboutAction;
+	private NewAction newAction;
+	private CloseAction closeAction;
+	private EditAction editAction;
+	private DeleteAction deleteAction;
+	private HelpAction helpAction;
+	private AboutAction aboutAction;
 
 	ImageIcon newIcon, closeIcon, editIcon, deleteIcon, helpIcon, aboutIcon;
 
-	/*
+	/**
 	 * Default constructor without parameters which initializes the menubar and it's
 	 * components.
 	 */

@@ -34,47 +34,47 @@ public class IzmenaProfesoraPanel extends JPanel {
 	 */
 	private static final long serialVersionUID = 1L;
 	/**
-	 *  This is static text field for first name  of selected professor
+	 *  This is a static text field for the first name of the selected professor.
 	 */
 	public static FocusField imeIzmena;
 	/**
-	 *  This is static text field for surname  of selected professor
+	 *  This is a static text field for the surname of the selected professor.
 	 */
 	public static FocusField prezimeIzmena;
 	/**
-	 *  This is static text field for date of birth  of selected professor
+	 *  This is a static text field for the date of birth of the selected professor.
 	 */
 	public static FocusField datumRIzmena;
 	/**
-	 *  This is static text field for address  of selected professor
+	 *  This is a static text field for the address of the selected professor.
 	 */
 	public static FocusField adresaSIzmena;
 	/**
-	 *  This is static text field for contact info  of selected professor
+	 *  This is a static text field for the contact info of the selected professor.
 	 */
 	public static FocusField kontaktTelIzmena;
 	/**
-	 *  This is static text field for email  of selected professor
+	 *  This is a static text field for the email of the selected professor.
 	 */
 	public static FocusField emailIzmena;
 	/**
-	 *  This is static text field for office address  of selected professor
+	 *  This is a static text field for the office address of the selected professor.
 	 */
 	public static FocusField adresaKIzmena;
 	/**
-	 *  This is static text field for ID number  of selected professor
+	 *  This is a static text field for the ID number of the selected professor.
 	 */
 	public static FocusField brlkIzmena;
 	/**
-	 *  This is static combobox for the title
+	 *  This is a static combo box for the title.
 	 */
 	public static JComboBox<String> combobox1Izmena;
 	/**
-	 *  This is static combobox for the title
+	 *  This is a static combo box for the title.
 	 */
 	public static JComboBox<String> combobox2Izmena;
 	/**
-	 *  This is static button for the confirmation
+	 *  This is a static button for confirmation.
 	 */
 	public static JButton prihvatiIzmena;
 	private DocumentListener docList = new DocumentListenerIzmenaProfesora();

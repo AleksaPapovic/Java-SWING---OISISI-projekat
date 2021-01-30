@@ -25,7 +25,13 @@ public class PonistavanjeOceneDialog extends JDialog {
 	private static final long serialVersionUID = 1L;
 
 	public static JButton da;
+	/**
+	 *  This is a static button for confirmation.
+	 */
 	public static JButton ne;
+	/**
+	 *  This is a static button for rejection.
+	 */
 
 	/**
 	 * Constructor with parameters where the dialog is initialized and his

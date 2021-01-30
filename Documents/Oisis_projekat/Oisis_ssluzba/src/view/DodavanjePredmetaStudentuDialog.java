@@ -28,11 +28,11 @@ public class DodavanjePredmetaStudentuDialog extends JDialog {
 	 */
 	private static final long serialVersionUID = 1L;
 	/**
-	 * This is static subject
+	 * This is a static subject.
 	 */
 	public static Predmet predmet;
 	/**
-	 * This is static list of subjects for selected student
+	 * This is a static list of subjects for the selected student.
 	 */
 	public static TableListaPredmetaStudenta tabelaListaPredmetaStudenta;	
 	

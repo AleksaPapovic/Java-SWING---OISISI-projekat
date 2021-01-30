@@ -34,15 +34,15 @@ public class UpisOceneDialog extends JDialog {
 	 */
 	private static final long serialVersionUID = 1L;
 	/**
-	 * This is static combobox for a grade
+	 * This is a static combo box for a grade.
 	 */
 	public static JComboBox<String> comboboxUpisa;
 	/**
-	 *   This is static button to confirm the grade entry
+	 *   This is a static button to confirm the grade entry.
 	 */
 	public static JButton prihvatiUpis;
 	/**
-	 * This is static text field which is the date when a grade has made
+	 * This is a static text field which is the date when a grade has made.
 	 */
 	public static JTextField datumUpisaField;
 	private DocumentListener docUpis = new DocumentListenerUpis();

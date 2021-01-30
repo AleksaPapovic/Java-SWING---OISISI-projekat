@@ -26,7 +26,13 @@ public class DodavanjeProfesoraPredmetuDialog extends JDialog {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	/**
+	 *  This is a static subject which is added to the professor.
+	 */
 	public static Predmet predmet;
+	/**
+	 *  This is a static table which is used for the list of the professors for the selected subject.
+	 */
 	public static TableListaProfesoraPredmeta tableListaProfesoraPredmeta;
 	/**
 	 * Constructor with parameters where the dialog is initialized and his

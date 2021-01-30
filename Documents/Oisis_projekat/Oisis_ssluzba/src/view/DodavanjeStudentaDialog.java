@@ -31,18 +31,50 @@ public class DodavanjeStudentaDialog extends JDialog {
 	 * 
 	 */
 	private static final long serialVersionUID = 6871252857743880797L;
+	/**
+	 *  This is a static text field for the first name of the student.
+	 */
 	public static StudentTextFields imeField;
+	/**
+	 *  This is a static text field for the surname of the student.
+	 */
 	public static StudentTextFields prezimeField;
+	/**
+	 *  This is a static text field for the birth date of the student.
+	 */
 	public static StudentTextFields datumRField;
+	/**
+	 *  This is a static text field for the address of the student.
+	 */
 	public static StudentTextFields adresaSField;
+	/**
+	 *  This is a static text field for the contact info of the student.
+	 */
 	public static StudentTextFields brojTField;
+	/**
+	 * This is a static text field for the email of the student.
+	 */
 	public static StudentTextFields emailField;
+	/**
+	 *  This is a static text field for the index number of the student.
+	 */
 	public static StudentTextFields brIndField;
+	/**
+	 *  This is a static text field for the enrollment year of the student.
+	 */
 	public static StudentTextFields godUpField;
-	public static StudentTextFields email;
-	public JButton odustani;
+	private JButton odustani;
+	/**
+	 *   This is a static button for confirmation.
+	 */
 	public static JButton prihvati;
+	/**
+	 *   This is a static combo box for the year of study of the student.
+	 */
 	public static JComboBox<String> godStComboBox;
+	/**
+	 *	 This is a static combo box for the type of financing of the student.
+	 */
 	public static JComboBox<String> nacinFComboBox;
 	/**
 	 * Constructor with parameters where the dialog is initialized and his

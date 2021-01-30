@@ -33,48 +33,48 @@ public class IzmenaStudentaPanel extends JPanel {
 	 */
 	private static final long serialVersionUID = 6871252857743880797L;
 	/**
-	 *  This is static text field for first name of selected student
+	 *  This is a static text field for the first name of the selected student.
 	 */
 	public static StudentTextFields imeIzmena;
 	/**
-	 *  This is static text field for surname of selected student
+	 *  This is a static text field for the surname of the selected student.
 	 */
 	public static StudentTextFields prezimeIzmena;
 	/**
-	 *  This is static text field for date of birth of selected student
+	 *  This is a static text field for the birth date of the selected student.
 	 */
 	public static StudentTextFields datumRIzmena;
 	/**
-	 *  This is static text field for address of selected student
+	 *  This is a static text field for the address of the selected student.
 	 */
 	public static StudentTextFields adresaSIzmena;
 	/**
-	 *  This is static text field for contact number of selected student
+	 *  This is a static text field for the contact info of the selected student.
 	 */
 	public static StudentTextFields brojTIzmena;
 	/**
-	 *  This is static text field for email of selected student
+	 * This is a static text field for the email of the selected student.
 	 */
 	public static StudentTextFields emailIzmena;
 	/**
-	 *  This is static text field for index number of selected student
+	 *  This is a static text field for the index number of the selected student.
 	 */
 	public static StudentTextFields brIndIzmena;
 	/**
-	 *  This is static text field for year of enrollment  of selected student
+	 *  This is a static text field for the enrollment year of the selected student.
 	 */
 	public static StudentTextFields godUpIzmena;
 	public JButton odustaniIzmena;
 	/**
-	 *  This is static button for the confirmation
+	 *   This is a static button for confirmation.
 	 */
 	public static JButton prihvatiIzmena;
 	/**
-	 *  This is static combobox for the year of study
+	 *   This is a static combo box for the year of study of the selected student.
 	 */
 	public static JComboBox<String> godStIzmena;
 	/**
-	 *  This is static combobox for the type of financing
+	 *	 This is a static combo box for the type of financing of the selected student.
 	 */
 	public static JComboBox<String> nacinFIzmena;
 	/**

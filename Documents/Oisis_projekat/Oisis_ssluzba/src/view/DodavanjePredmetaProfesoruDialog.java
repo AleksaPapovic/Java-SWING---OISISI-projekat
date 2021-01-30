@@ -27,11 +27,11 @@ public class DodavanjePredmetaProfesoruDialog extends JDialog {
 	 */
 	private static final long serialVersionUID = 1L;
 	/**
-	 * This is static professor
+	 * This is a static professor.
 	 */
 	public static Profesor profesor;
 	/**
-	 * This is static table with the subjects
+	 * This is a static table with subjects.
 	 */
 	public static TableListaPredmeta tabelaListaPredmeta;
 

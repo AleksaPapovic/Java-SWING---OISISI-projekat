@@ -32,28 +32,28 @@ public class DodavanjePredmetaDialog extends JDialog {
 	 */
 	private static final long serialVersionUID = 6871252857743880797L;
 	/**
-	 * This is static text field for the code
+	 * This is a static text field for the code of the subject.
 	 */
 	public static PredmetTextFields sifraField;
 	/**
-	 * This is static text field for the name
+	 * This is a static text field for the name of the subject.
 	 */
 	public static PredmetTextFields imeField;
 	/**
-	 * This is static text field for the semester
+	 * This is a static text field for the semester of the subject.
 	 */
 	public static JComboBox<String> semestarComboBox;
 	/**
-	 * This is static combobox for the year
+	 * This is a static combo box for the year of the subject.
 	 */
 	public static JComboBox<String> godinaComboBox;
 	/**
-	 * This is static text field for the ESPB
+	 * This is a static text field for the ESPB of the subject.
 	 */
 	public static PredmetTextFields espbField;
-	public JButton odustani;
+	private JButton odustani;
 	/**
-	 * This is static button for the confirmation
+	 * This is a static button for the confirmation of the subject.
 	 */
 	public static JButton prihvati;
 
